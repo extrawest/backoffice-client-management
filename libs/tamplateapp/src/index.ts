@@ -7,6 +7,7 @@ export * from "./lib/contexts/AuthContext/AuthContext";
 export * from "./lib/material-ui/layouts/MainLayout/MainLayout";
 export * from "./lib/material-ui/layouts/PageLayout/PageLayout";
 export * from "./lib/material-ui/containers";
+export * from "./lib/tailwind/containers";
 export * from "./lib/routes/PrivateRoute";
 export * from "./lib/routes/PublicRoute";
 export * from "./lib/prime-react/containers";

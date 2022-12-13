@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "mono-redux-starter",
+  "npmScope": "backoffice-panel-app",
   "affected": {
     "defaultBase": "main"
   },
@@ -48,5 +48,5 @@
       }
     }
   },
-  "defaultProject": "template-material"
+  "defaultProject": "template"
 }

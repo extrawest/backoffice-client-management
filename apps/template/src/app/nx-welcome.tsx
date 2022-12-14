@@ -6,8 +6,8 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 export function NxWelcome({ title }: { title: string }) {
-  return (
-    <>
+		return (
+			<>
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -422,7 +422,10 @@ export function NxWelcome({ title }: { title: string }) {
             </h1>
           </div>
 
-          <div id="hero" className="rounded">
+          <div
+id="hero"
+className="rounded"
+          >
             <div className="text-container">
               <h2>
                 <svg
@@ -455,7 +458,10 @@ export function NxWelcome({ title }: { title: string }) {
           </div>
 
           <div id="middle-content">
-            <div id="learning-materials" className="rounded shadow">
+            <div
+id="learning-materials"
+className="rounded shadow"
+            >
               <h2>Learning materials</h2>
               <a
                 href="https://nx.dev/getting-started/intro?utm_source=nx-project"
@@ -663,7 +669,10 @@ export function NxWelcome({ title }: { title: string }) {
                   <span>Plugin for VSCode</span>
                 </span>
               </a>
-              <div id="nx-cloud" className="rounded shadow">
+              <div
+id="nx-cloud"
+className="rounded shadow"
+              >
                 <div>
                   <svg
                     viewBox="0 0 120 120"
@@ -694,8 +703,8 @@ export function NxWelcome({ title }: { title: string }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {' '}
-                  What is Nx Cloud?{' '}
+                  {" "}
+                  What is Nx Cloud?{" "}
                 </a>
               </div>
               <a
@@ -721,7 +730,10 @@ export function NxWelcome({ title }: { title: string }) {
             </div>
           </div>
 
-          <div id="commands" className="rounded shadow">
+          <div
+id="commands"
+className="rounded shadow"
+          >
             <h2>Next steps</h2>
             <p>Here are some things you can do with Nx:</p>
             <details>
@@ -813,8 +825,8 @@ export function NxWelcome({ title }: { title: string }) {
           </p>
         </div>
       </div>
-    </>
-  );
+			</>
+		);
 }
 
 export default NxWelcome;

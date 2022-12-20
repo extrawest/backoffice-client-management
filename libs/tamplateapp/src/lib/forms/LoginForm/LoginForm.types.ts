@@ -1,7 +1,7 @@
 import { FormikHelpers } from "formik";
 
 export type Values = {
-	username: string,
+	email: string,
 	password: string
 };
 

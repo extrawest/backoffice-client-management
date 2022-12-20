@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useIntl } from "react-intl";
 import { Typography } from "@mui/material";
 
-export const MaterialUnitsContainer: FC = () => {
+export const UnitsContainer: FC = () => {
 	const intl = useIntl();
 
 	return (

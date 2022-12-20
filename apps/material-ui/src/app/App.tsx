@@ -1,53 +1,83 @@
-import NxWelcome from "./nx-welcome";
-
+import { FC, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { Provider } from "react-redux";
+import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
 import {
-	Route, Routes, Link
-} from "react-router-dom";
+	Box,
+	Button,
+	CssBaseline,
+	PaletteMode
+} from "@mui/material";
+import { SnackbarProvider } from "notistack";
+import { ThemeProvider } from "@mui/material/styles";
+import { abilityCheckStorage, AbilityContext } from "@mono-redux-starter/shared/permissions";
+import { YupGlobalLocale } from "@mono-redux-starter/shared/ui";
+import { AppIntlProvider } from "@mono-redux-starter/shared/hoks";
+import {
+	store,
+	Loader,
+	persistor,
+	AuthContext
+} from "@mono-redux-starter/tamplateapp";
+import AppRoutes from "../routes";
+import { theme } from "../theme";
+import React from "react";
 
-const App = () => {
+const ability = abilityCheckStorage(store);
+
+export const App: FC = () => {
+	const [mode, setMode] = useState<PaletteMode>("light");
+
+	const handleChangeMode = () => {
+		setMode(mode === "light" ? "dark" : "light");
+	};
+
 	return (
-		<>
-			<NxWelcome title="material-ui" />
-			<div />
-
-			{/* START: routes */}
-			{/* These routes and navigation have been generated for you */}
-			{/* Feel free to move and update them to fit your needs */}
-			<br />
-			<hr />
-			<br />
-			<div role="navigation">
-				<ul>
-					<li>
-						<Link to="/">Home</Link>
-					</li>
-					<li>
-						<Link to="/page-2">Page 2</Link>
-					</li>
-				</ul>
-			</div>
-			<Routes>
-				<Route
-					path="/"
-					element={
-						<div>
-							This is the generated root route.{" "}
-							<Link to="/page-2">Click here for page 2.</Link>
-						</div>
-					}
-				/>
-				<Route
-					path="/page-2"
-					element={
-						<div>
-							<Link to="/">Click here to go back to root page.</Link>
-						</div>
-					}
-				/>
-			</Routes>
-			{/* END: routes */}
-		</>
+		<Provider store={store}>
+			<Button onClick={handleChangeMode}>
+				Mode
+			</Button>
+			<HelmetProvider>
+				<AppIntlProvider>
+						<ThemeProvider theme={theme(mode)}>
+							<PersistGate
+								loading={
+									<Box
+										component="div"
+										sx={{
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+											minHeight: "100vh",
+										}}
+									>
+										<Loader />
+									</Box>
+								}
+								persistor={persistor}
+							>
+								<BrowserRouter>
+									<AbilityContext.Provider value={ability}>
+										<SnackbarProvider
+											maxSnack={3}
+											anchorOrigin={{
+												horizontal: "center",
+												vertical: "bottom"
+											}}
+										>
+											<AuthContext>
+												<CssBaseline />
+												<YupGlobalLocale />
+												<AppRoutes />
+											</AuthContext>
+										</SnackbarProvider>
+									</AbilityContext.Provider>
+								</BrowserRouter>
+							</PersistGate>
+						</ThemeProvider>
+				</AppIntlProvider>
+			</HelmetProvider>
+		</Provider>
 	);
 };
-
-export default App;

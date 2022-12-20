@@ -16,6 +16,7 @@
 		"resolveJsonModule": true,
 		"baseUrl": ".",
 		"paths": {
+			"@mono-redux-starter/firebase": ["libs/firebase/src/index.ts"],
 			"@mono-redux-starter/redux": ["libs/redux/src/index.ts"],
 			"@mono-redux-starter/shared": ["libs/shared/src/index.ts"],
 			"@mono-redux-starter/shared/hoks": ["libs/shared/hoks/src/index.ts"],

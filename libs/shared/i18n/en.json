@@ -17,5 +17,6 @@
   "oneCharacter": "Must be at least 1 number or letter",
 	"onlyNumbers": "Only digit number",
   "required": "This field is required",
-  "validUrlText": "Must be a valid URL"
+  "validUrlText": "Must be a valid URL",
+	"admin.content": "Admin content"
 }

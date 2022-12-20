@@ -7,15 +7,15 @@
   },
   "include": [
     "jest.config.ts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.tsx",
-    "src/**/*.spec.tsx",
-    "src/**/*.test.js",
-    "src/**/*.spec.js",
-    "src/**/*.test.jsx",
-    "src/**/*.spec.jsx",
-    "src/**/*.d.ts"
+    "src-1/**/*.test.ts",
+    "src-1/**/*.spec.ts",
+    "src-1/**/*.test.tsx",
+    "src-1/**/*.spec.tsx",
+    "src-1/**/*.test.js",
+    "src-1/**/*.spec.js",
+    "src-1/**/*.test.jsx",
+    "src-1/**/*.spec.jsx",
+    "src-1/**/*.d.ts"
   ],
   "files": [
     "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",

@@ -4,6 +4,7 @@
 	"projects": {
 		"antd": "apps/antd",
 		"antd-e2e": "apps/antd-e2e",
+		"firebase": "libs/firebase",
 		"material-ui": "apps/material-ui",
 		"material-ui-e2e": "apps/material-ui-e2e",
 		"prime": "apps/prime",

@@ -1,31 +1,54 @@
-import { FC } from "react";
+import { FC, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import { FormikHelpers } from "formik";
-import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { LoginForm, Values } from "../../forms/LoginForm";
-import { useTypedDispatch } from "../../../store";
-import { AppRouteEnum } from "../../../types";
+import { useTypedDispatch } from "../../store";
+import { AppRouteEnum } from "../../types";
 import { styles } from "./LoginContainer.styles";
+import { getAuth } from "firebase/auth";
+import { firebaseApp } from "@mono-redux-starter/firebase";
+import {
+	useAuthState,
+	useCreateUserWithEmailAndPassword,
+	useSignInWithEmailAndPassword
+} from "react-firebase-hooks/auth";
+import { updateIsLoggedIn } from "@mono-redux-starter/redux";
+import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 
-export const MaterialLoginContainer: FC = () => {
+export const LoginContainer: FC = () => {
 	const navigate = useNavigate();
 	const dispatch = useTypedDispatch();
-
 	const initialValuesLogin = {
-		username: "",
+		email: "",
 		password: ""
 	};
+	const auth = getAuth(firebaseApp);
+	const [
+		signInWithEmailAndPassword,
+		user,
+		loading,
+		error,
+	] = useSignInWithEmailAndPassword(auth);
 
-	const onSubmit = async(
+	useShowSnackBarMessage(
+		!!error,
+		"Error",
+		"error"
+	);
+
+	const onSubmit = async (
 		values: Values, form: FormikHelpers<Values>
 	) => {
-		// login logic...
-
-		dispatch(updateIsLoggedIn(true));
-		navigate(AppRouteEnum.DASHBOARD);
-
-		form.setSubmitting(false);
+		const result = await signInWithEmailAndPassword(
+			values.email,
+			values.password
+		);
+		if(result){
+			dispatch(updateIsLoggedIn(true));
+			navigate(AppRouteEnum.DASHBOARD);
+			form.setSubmitting(false);
+		}
 	};
 
 	return (
@@ -41,5 +64,3 @@ export const MaterialLoginContainer: FC = () => {
 		</Box>
 	);
 };
-
-export default MaterialLoginContainer;

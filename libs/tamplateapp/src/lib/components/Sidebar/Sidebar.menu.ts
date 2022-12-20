@@ -1,5 +1,5 @@
 import { IntlShape } from "react-intl";
-import { AppRouteEnum } from "../../../types";
+import { AppRouteEnum } from "../../types";
 import { MenuItemProps } from "../common/MenuItem/MenuItem.types";
 
 export const getContentLinks = (intl: IntlShape): Array<MenuItemProps> => [

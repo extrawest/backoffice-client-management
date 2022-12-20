@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import { useIntl } from "react-intl";
 import { logOut, updateIsLoggedIn } from "@mono-redux-starter/redux";
-import { useTypedDispatch, useTypedSelector } from "../../../store";
-import { AppRouteEnum } from "../../../types";
+import { useTypedDispatch, useTypedSelector } from "../../store";
+import { AppRouteEnum } from "../../types";
 import { MenuItem as StyledMenuItem } from "../common/MenuItem/MenuItem";
 import { Button } from "../common/Button/Button";
 import { getContentLinks } from "./Sidebar.menu";

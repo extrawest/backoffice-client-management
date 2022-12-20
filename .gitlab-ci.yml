@@ -30,7 +30,7 @@ build:
     NX_FIREBASE_APP_ID: "$NX_FIREBASE_APP_ID"
   script:
     - echo $REACT_APP_BACKEND_URL
-    - npm run build:material-ui
+    - npm run build:material
   artifacts:
     expire_in: 1 hour
     paths:

@@ -37,7 +37,7 @@ build:
       - build
 
 
-deploy_dev:
+deploy:
   only:
     refs:
       - development

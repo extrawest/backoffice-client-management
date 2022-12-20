@@ -6,6 +6,7 @@
 		"update": "nx migrate latest",
 		"start:template": "nx serve template",
 		"build:template": "nx build template --skip-nx-cache --prod",
+		"build:material": "nx build materila-ui --skip-nx-cache --prod",
 		"run:many": "nx run-many --target=build --projects=template --prod",
 		"lint:template": "nx lint --project=template",
 		"lint": "nx workspace-lint && nx lint",

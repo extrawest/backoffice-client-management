@@ -13,7 +13,7 @@ install:
   stage: install
   script:
     - npm install
-  	- npm install -g firebase-tools
+    - npm install -g firebase-tools
 
 build:
   only:
@@ -35,6 +35,7 @@ build:
     expire_in: 1 hour
     paths:
       - build
+
 
 deploy_dev:
   only:

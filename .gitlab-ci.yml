@@ -1,43 +1,48 @@
-# deploy-firestore:
-#   stage: deploy
-#   script:
-#     - firebase deploy --only firestore --token $FIREBASE_DEPLOY_KEY
-#   only:
-#     refs:
-#       - development
-#     changes:
-#       - firebase-config/firestore.rules
-#       - firebase-config/firestore.indexes.json
+image: node:14
 
-# deploy-functions:
-#   stage: deploy
-#   script:
-#     - cd functions
-#     - npm install
-#     - cd ..
-#     - firebase deploy --only functions --token $FIREBASE_DEPLOY_KEY
-#   only:
-#     refs:
-#       - development
-#     changes:
-#       - functions/**/*
+cache:
+  paths:
+    - node_modules/
 
-prod-hosting:
+stages:
+  - install
+  - build
+  - deploy
+
+install:
+  stage: install
+  script:
+    - npm install
+  	- npm install -g firebase-tools
+
+build_dev:
+  only:
+    refs:
+      - development
+  stage: build
+  variables:
+    NX_FIREBASE_API_KEY: "$NX_FIREBASE_API_KEY"
+    NX_FIREBASE_AUTH_DOMAIN: "$NX_FIREBASE_AUTH_DOMAIN"
+    NX_FIREBASE_DATA_BASE_URL: "$NX_FIREBASE_DATA_BASE_URL"
+    NX_FIREBASE_PROJECT_ID: "$NX_FIREBASE_PROJECT_ID"
+    NX_FIREBASE_STORAGE_BUCKET: "$NX_FIREBASE_STORAGE_BUCKET"
+    NX_FIREBASE_MESSAGING_SENDER_ID: "$NX_FIREBASE_MESSAGING_SENDER_ID"
+    NX_FIREBASE_APP_ID: "$NX_FIREBASE_APP_ID"
+  script:
+    - echo $REACT_APP_BACKEND_URL
+    - npm run build
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - build
+
+deploy_dev:
+  only:
+    refs:
+      - development
   stage: deploy
   script:
-    - echo $NX_FIREBASE_API_KEY
-    - npm i
-  	- npm i -g firebase-tools
+    - npm install
+  	- npm install -g firebase-tools
     - npm run build
     - firebase deploy --only hosting --token $FIREBASE_DEPLOY_KEY
-  only:
-    - development
-  # environment:
-    # NX_FIREBASE_API_KEY: "$NX_FIREBASE_API_KEY"
-    # NX_FIREBASE_AUTH_DOMAIN: "$NX_FIREBASE_AUTH_DOMAIN"
-    # NX_FIREBASE_DATA_BASE_URL: "$NX_FIREBASE_DATA_BASE_URL"
-    # NX_FIREBASE_PROJECT_ID: "$NX_FIREBASE_PROJECT_ID"
-    # NX_FIREBASE_STORAGE_BUCKET: "$NX_FIREBASE_STORAGE_BUCKET"
-    # NX_FIREBASE_MESSAGING_SENDER_ID: "$NX_FIREBASE_MESSAGING_SENDER_ID"
-    # NX_FIREBASE_APP_ID: "$NX_FIREBASE_APP_ID"
-

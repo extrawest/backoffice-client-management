@@ -1,16 +1,16 @@
 before_script:
   - npm i -g firebase-tools
 
-deploy-firestore:
-  stage: deploy
-  script:
-    - firebase deploy --only firestore --token $FIREBASE_DEPLOY_KEY
-  only:
-    refs:
-      - development
-    changes:
-      - firebase-config/firestore.rules
-      - firebase-config/firestore.indexes.json
+# deploy-firestore:
+#   stage: deploy
+#   script:
+#     - firebase deploy --only firestore --token $FIREBASE_DEPLOY_KEY
+#   only:
+#     refs:
+#       - development
+#     changes:
+#       - firebase-config/firestore.rules
+#       - firebase-config/firestore.indexes.json
 
 # deploy-functions:
 #   stage: deploy

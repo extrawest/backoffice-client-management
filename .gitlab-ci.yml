@@ -1,6 +1,3 @@
-before_script:
-  - npm i -g firebase-tools
-
 # deploy-firestore:
 #   stage: deploy
 #   script:
@@ -30,6 +27,7 @@ prod-hosting:
   script:
 		- echo $NX_FIREBASE_API_KEY
     - npm i
+  	- npm i -g firebase-tools
     - npm run build
     - firebase deploy --only hosting --token $FIREBASE_DEPLOY_KEY
   only:

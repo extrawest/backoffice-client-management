@@ -1,18 +1,6 @@
-image: node:14
-
-cache:
-  paths:
-    - node_modules/
-
 stages:
-  - install
   - build_dev
   - deploy_dev
-
-install:
-  stage: install
-  script:
-    - npm install
 
 build_dev:
   only:
@@ -50,8 +38,4 @@ deploy_dev:
   script:
 		- firebase use $NX_FIREBASE_PROJECT_ID
 		- firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY --only hosting"
-    # - cd build/
-    # - ls
-    # - sshpass -V
-    # - export SSHPASS=$USER_PASS_DEV
-    # - sshpass -e rsync -r --omit-dir-times -e "ssh -o StrictHostKeyChecking=no" . $USER_NAME_DEV@$SERVER_IP_DEV:$PROJECT_PATH_DEV
+

@@ -1,4 +1,4 @@
-import { AppRouteTitleEnum } from "../../../../types/paths";
+import { AppRouteTitleEnum } from "../../../types/paths";
 import { ContentElementType } from "./DashboardField.types";
 
 export const dashboardContent: Array<ContentElementType> = [

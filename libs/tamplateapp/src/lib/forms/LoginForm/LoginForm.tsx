@@ -46,7 +46,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 						</Typography>
 						<FormFieldText
 							type="email"
-							name="username"
+							name="email"
 							sx={loginStyles.textInput}
 							title={""}
 							placeholder={loginText}

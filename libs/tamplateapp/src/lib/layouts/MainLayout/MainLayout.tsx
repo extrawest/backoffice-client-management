@@ -12,7 +12,7 @@ import {
 	useMediaQuery
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { AppRouteEnum } from "../../../types/paths";
+import { AppRouteEnum } from "../../types/paths";
 import { MainLayoutProps } from "./MainLayout.types";
 import { mainLayoutStyles } from "./MainLayout.styles";
 import Sidebar from "../../components/Sidebar/Sidebar";

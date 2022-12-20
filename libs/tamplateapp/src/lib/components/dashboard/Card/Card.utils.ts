@@ -1,4 +1,4 @@
-import { AppRouteTitleEnum } from "../../../../types/paths";
+import { AppRouteTitleEnum } from "../../../types/paths";
 import { GetRouteTitle } from "./Card.types";
 
 export const getRouteTitle: GetRouteTitle = (

@@ -2,8 +2,6 @@ import { FC } from "react";
 import { useIntl } from "react-intl";
 import {
 	Box,
-	Checkbox,
-	FormControlLabel,
 	Typography
 } from "@mui/material";
 import { Form, Formik } from "formik";
@@ -13,7 +11,6 @@ import { validateShema } from "./LoginForm.schema";
 import { loginStyles } from "./LoginForm.styles";
 import type { LoginFormProps } from "./LoginForm.types";
 import { LockIcon, UserIcon } from "../../icons";
-import { CircleOutlined, CircleSharp } from "@mui/icons-material";
 import { FormCheckbox } from "../../components/common/FormCheckbox";
 import Link from "../../components/common/Link/Link";
 

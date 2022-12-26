@@ -1,6 +1,4 @@
 import { pxToRem } from "@mono-redux-starter/shared/utils";
-import { Theme } from "@mui/material";
-import { styled } from "@mui/material/styles";
 import { theme } from "../../theme";
 
 export const loginStyles = {

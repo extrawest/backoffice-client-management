@@ -1,4 +1,3 @@
-import {Theme} from "@mui/material";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { theme } from "../../../theme";
 

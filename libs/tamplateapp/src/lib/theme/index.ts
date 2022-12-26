@@ -1,6 +1,5 @@
 import { createTheme } from "@mui/material/styles";
 import { pxToRem, defaultBodyFontSize } from "@mono-redux-starter/shared/utils";
-import { PaletteMode } from "@mui/material";
 interface CustomColorTypes {
 	50?: string;
 	100?: string;

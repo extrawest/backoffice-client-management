@@ -18,29 +18,21 @@ import {
 	store,
 	Loader,
 	persistor,
-	AuthContext
+	AuthContext,
+	theme
 } from "@mono-redux-starter/tamplateapp";
 import AppRoutes from "../routes";
-import { theme } from "../theme";
 import React from "react";
 
 const ability = abilityCheckStorage(store);
 
 export const App: FC = () => {
-	const [mode, setMode] = useState<PaletteMode>("light");
-
-	const handleChangeMode = () => {
-		setMode(mode === "light" ? "dark" : "light");
-	};
 
 	return (
 		<Provider store={store}>
-			<Button onClick={handleChangeMode}>
-				Mode
-			</Button>
 			<HelmetProvider>
 				<AppIntlProvider>
-						<ThemeProvider theme={theme(mode)}>
+						<ThemeProvider theme={theme}>
 							<PersistGate
 								loading={
 									<Box

@@ -1,12 +1,21 @@
 import { FC } from "react";
 import { useIntl } from "react-intl";
-import { Box, Typography } from "@mui/material";
+import {
+	Box,
+	Checkbox,
+	FormControlLabel,
+	Typography
+} from "@mui/material";
 import { Form, Formik } from "formik";
 import { FormFieldText } from "../../components/common/FormFieldText/FormFieldText";
 import Button from "../../components/common/Button/Button";
 import { validateShema } from "./LoginForm.schema";
 import { loginStyles } from "./LoginForm.styles";
 import type { LoginFormProps } from "./LoginForm.types";
+import { LockIcon, UserIcon } from "../../icons";
+import { CircleOutlined, CircleSharp } from "@mui/icons-material";
+import { FormCheckbox } from "../../components/common/FormCheckbox";
+import Link from "../../components/common/Link/Link";
 
 export const LoginForm: FC<LoginFormProps> = ({
 	initialValues,
@@ -30,41 +39,73 @@ export const LoginForm: FC<LoginFormProps> = ({
 			{({
 				isSubmitting
 			}) => (
-				<Form className="dark">
+				<Form
+					className="dark"
+				>
 					<Box
-						component="div"
-						sx={loginStyles.pageContent}
+						sx={loginStyles.formWrapper}
 					>
-						<Typography
-							sx={loginStyles.title}
-							variant="h1"
+						<Box
+							component="div"
+							sx={loginStyles.pageContent}
 						>
-							{intl.formatMessage({
-								id: "template.login",
-								defaultMessage: "Log In"
-							})}
-						</Typography>
-						<FormFieldText
-							type="email"
-							name="email"
-							sx={loginStyles.textInput}
-							title={""}
-							placeholder={loginText}
-							variant="filled"
-							color="primary"
-						/>
-						<FormFieldText
-							type="password"
-							name="password"
-							sx={loginStyles.textInput}
-							title={""}
-							placeholder={intl.formatMessage({
-								id: "template.password",
-								defaultMessage: "Password"
-							})}
-							variant="filled"
-							color="primary"
-						/>
+							<Typography
+								sx={loginStyles.title}
+								variant="h1"
+							>
+								{intl.formatMessage({
+									id: "template.loginToAccount",
+									defaultMessage: "Log In"
+								})}
+							</Typography>
+							<Typography
+								sx={loginStyles.subtitle}
+								variant="body2"
+							>
+								{intl.formatMessage({
+									id: "template.loginDescription"
+								})}
+							</Typography>
+							<FormFieldText
+								type="email"
+								name="email"
+								sx={loginStyles.textInput}
+								title={""}
+								startIcon={<UserIcon />}
+								placeholder={loginText}
+								variant="filled"
+								color="primary"
+							/>
+							<FormFieldText
+								type="password"
+								name="password"
+								sx={loginStyles.textInput}
+								title={""}
+								startIcon={<LockIcon />}
+								placeholder={intl.formatMessage({
+									id: "template.password",
+									defaultMessage: "Password"
+								})}
+								variant="filled"
+								color="primary"
+							/>
+						</Box>
+						<Box sx={loginStyles.actionsWrapper}>
+							<FormCheckbox
+								label={intl.formatMessage({
+									id: "template.remember"
+								})}
+							/>
+							<Link href="/">
+								<Typography
+									variant="body1"
+								>
+									{intl.formatMessage({
+										id: "forgot"
+									})}
+								</Typography>
+							</Link>
+						</Box>
 						<Button
 							color="primary"
 							disabled={isSubmitting}
@@ -75,7 +116,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 							isLoading={isLoading}
 						>
 							{intl.formatMessage({
-								id: "template.go",
+								id: "template.login",
 								defaultMessage: "Go"
 							})}
 						</Button>

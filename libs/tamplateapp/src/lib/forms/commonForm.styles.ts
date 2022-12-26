@@ -1,5 +1,6 @@
 import { Theme } from "@mui/material";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
+import { theme } from "../theme";
 
 export const commonFormStyles = {
 	wrapper: {
@@ -13,10 +14,10 @@ export const commonFormStyles = {
 	titleWrap: {
 		display: "flex",
 		justifyContent: "space-between",
-		marginBottom: (theme: Theme) => theme.spacing(24 / 8),
+		marginBottom: theme.spacing(24 / 8),
 	},
 	title: {
-		marginBottom: (theme: Theme) => theme.spacing(12 / 8),
+		marginBottom: theme.spacing(12 / 8),
 		color: "common.black"
 	},
 	removeBtn: {
@@ -33,7 +34,7 @@ export const commonFormStyles = {
 		color: "common.black",
 	},
 	field: {
-		margin: (theme: Theme) => theme.spacing(
+		margin: theme.spacing(
 			1.25,
 			0
 		),
@@ -47,22 +48,22 @@ export const commonFormStyles = {
 		},
 	},
 	headerWrapper: {
-		marginBottom: (theme: Theme) => theme.spacing(5)
+		marginBottom: theme.spacing(5)
 	},
 	btnWrap: {
-		marginTop: (theme: Theme) => theme.spacing(70 / 8),
+		marginTop: theme.spacing(70 / 8),
 		display: "flex",
 		justifyContent: "space-between",
 	},
 	editBtn: {
-		padding: (theme: Theme) => theme.spacing(
+		padding: theme.spacing(
 			1.5,
 			2.75
 		),
-		width: (theme: Theme) => theme.spacing(100 / 8),
+		width: theme.spacing(100 / 8),
 	},
 	addBtn: {
-		minWidth: (theme: Theme) => theme.spacing(100 / 8),
+		minWidth: theme.spacing(100 / 8),
 	},
 	featureWrap: {
 		display: "flex",
@@ -78,7 +79,7 @@ export const commonFormStyles = {
 		justifyContent: "space-between",
 		borderBottom: "1px solid",
 		borderColor: "success.main",
-		padding: (theme: Theme) => theme.spacing(
+		padding: theme.spacing(
 			1.25,
 			0
 		),
@@ -96,19 +97,24 @@ export const commonFormStyles = {
 
 		"& svg": {
 			position: "absolute",
-			right: (theme: Theme) => theme.spacing(15 / 8),
+			right: theme.spacing(15 / 8),
 			pointerEvents: "none",
 		},
 	},
 	subtitle: {
-		marginLeft: (theme: Theme) => theme.spacing(5 / 8),
+		marginLeft: theme.spacing(5 / 8),
 		color: "primary.dark",
 	},
 	addWrap: {
 		display: "flex",
 		alignItems: "flex-start",
 		"& button": {
-			marginRight: (theme: Theme) => theme.spacing(16 / 8),
+			marginRight: theme.spacing(16 / 8),
 		}
 	},
+	checkboxInput:{
+		"&.Mui-checked": {
+			color: theme.palette.blue[600]
+		}
+	}
 };

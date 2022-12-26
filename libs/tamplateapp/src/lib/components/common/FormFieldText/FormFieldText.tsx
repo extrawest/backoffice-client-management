@@ -12,6 +12,7 @@ export const FormFieldText: FC<FormFieldTextProps> = ({
 		<Field
 			name={name}
 			sx={rest.sx ?? styles.field }
+
 		>
 			{({ field, meta }: FieldProps) => {
 				const { value, ...fieldProps } = field;

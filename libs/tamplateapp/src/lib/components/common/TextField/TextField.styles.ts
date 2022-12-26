@@ -10,11 +10,11 @@ export const textFieldStyles =  {
 				2
 			),
 			fontSize: pxToRem(14),
-			fontWeight: 600,
+			fontWeight: 400,
 		},
 		"& .MuiInputAdornment-root .MuiTypography-root.MuiTypography-body1": {
 			fontSize: pxToRem(14),
-			fontWeight: 500,
+			fontWeight: 400,
 		}
 	}
 };

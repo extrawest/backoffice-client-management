@@ -5,4 +5,5 @@ export type TextFieldProps = MuiTextFieldProps & {
 	title: ReactNode;
 	isPrice?: boolean;
 	isArea?: boolean;
+	startIcon?: ReactNode;
 };

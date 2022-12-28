@@ -1,7 +1,7 @@
 import { RouteProps } from "react-router-dom";
 import { RoleEnum } from "@mono-redux-starter/shared/types";
 
-export interface BaseRoutesItem extends RouteProps {
+export type BaseRoutesItem = RouteProps & {
 	path?: string,
 	roles?: Array<RoleEnum>,
 	exact?: boolean,

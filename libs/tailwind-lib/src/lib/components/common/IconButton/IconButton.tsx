@@ -1,13 +1,18 @@
+import { mergeStrings } from "@mono-redux-starter/shared/utils";
 import { FC } from "react";
 import { IconButtonProps } from "./IconButton.types";
 
 export const IconButton: FC<IconButtonProps> = ({
 	children,
-	onClick
+	onClick,
+	extraClasses
 }) => {
 	return (
 		<button
-			className="mr-16 xs:flex none"
+			className={mergeStrings(
+				"xs:flex none",
+				extraClasses
+			)}
 			onClick={onClick}
 		>
 			{children}

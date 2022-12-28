@@ -9,7 +9,7 @@ export const Link: FC<LinkProps> = ({
 	return (
 		<NavLink
 			to={to}
-			className="decoration-none cursor-pointer hover:opacity-70 text-primary.contrastText"
+			className="decoration-none cursor-pointer hover:opacity-70 text-primary.contrastText text-blue-600"
 		>
 			{children}
 		</NavLink>

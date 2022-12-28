@@ -4,6 +4,14 @@ import { Form, Formik } from "formik";
 import { validateShema } from "./LoginForm.schema";
 import type { LoginFormProps } from "./LoginForm.types";
 import { FormikField } from "../../components/common/FormikField/FormikField";
+import { Button } from "../../components/common/Button/Button";
+import {
+	EyeIcon,
+	LockIcon,
+	UserIcon
+} from "../../icons";
+import { Checkbox } from "../../components/common/Checkbox/Checkbox";
+import { Link } from "../../components/common/Link/Link";
 
 export const LoginForm: FC<LoginFormProps> = ({
 	initialValues,
@@ -20,12 +28,12 @@ export const LoginForm: FC<LoginFormProps> = ({
 	return (
 		<Formik
 			initialValues={initialValues}
-			// validateOnBlur={false}
+			validateOnBlur={false}
 			validationSchema={validateShema}
 			onSubmit={onSubmit}
 		>
 			{({errors, touched, }) => (
-				<Form>
+				<Form className="w-100% flex flex-col items-center justify-center">
 					<FormikField
 						type="text"
 						id="email"
@@ -33,6 +41,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 						placeholder={loginText}
 						hasError={Boolean(errors.email && touched.email)}
 						error={errors.email}
+						startAdornment={<UserIcon />}
 					/>
 					<FormikField
 						id="password"
@@ -41,11 +50,23 @@ export const LoginForm: FC<LoginFormProps> = ({
 						type="password"
 						hasError={Boolean(errors.password && touched.password)}
 						error={errors.password}
+						startAdornment={<LockIcon />}
+						endAdornment
 					/>
-
-					<button type="submit">
+					<div className="w-100% flex justify-between items-center mb-4 p-4">
+						<Checkbox
+							label={intl.formatMessage({id: "template.remember"})}
+							name="forgot"
+							id="forgotPass"
+							onChange={(e) => console.log(e)}
+						/>
+						<Link to="/">
+							<FormattedMessage id="forgot" />
+						</Link>
+					</div>
+					<Button submitType>
 						<FormattedMessage id="template.login"/>
-					</button>
+					</Button>
 				</Form>
 			)}
 		</Formik>

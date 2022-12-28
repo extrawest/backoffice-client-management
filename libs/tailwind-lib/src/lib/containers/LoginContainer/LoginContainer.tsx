@@ -14,6 +14,9 @@ import {
 } from "react-firebase-hooks/auth";
 import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
+import { Typography } from "../../components/common/Typography/Typography";
+import { TypographyEnum } from "../../types/typography";
+import { FormattedMessage } from "react-intl";
 
 export const LoginContainer: FC = () => {
 	const navigate = useNavigate();
@@ -52,8 +55,19 @@ export const LoginContainer: FC = () => {
 
 	return (
 		<div
-			className="h-100vh flex justify-center items-center bg-background.paper"
+			className="h-100vh flex flex-col justify-center items-center bg-background.paper max-w-xl mx-auto"
 		>
+			<div className="flex flex-col justify-center items-center gap-5 mb-10 lead">
+				<Typography
+					type={TypographyEnum.H1}
+					extraClasses="max-w-sm leading-tight"
+				>
+					<FormattedMessage id="template.loginToAccount"/>
+				</Typography>
+				<Typography type={TypographyEnum.DESCRIPTION}>
+					<FormattedMessage id="template.loginDescription"/>
+				</Typography>
+			</div>
 			<LoginForm
 				initialValues={initialValuesLogin}
 				onSubmit={onSubmit}

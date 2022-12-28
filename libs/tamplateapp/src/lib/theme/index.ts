@@ -1,5 +1,8 @@
 import { createTheme } from "@mui/material/styles";
-import { pxToRem, defaultBodyFontSize } from "@mono-redux-starter/shared/utils";
+import {
+	pxToRem,
+	defaultBodyFontSize,
+} from "@mono-redux-starter/shared/utils";
 interface CustomColorTypes {
 	50?: string;
 	100?: string;
@@ -55,6 +58,15 @@ declare module "@mui/material/styles" {
 
 declare module "@mui/material/Checkbox" {
 	interface CheckboxPropsColorOverrides {
+		green: true
+		blue: true
+		purple: true
+		primaryColor: true
+		grayscale: true
+	}
+}
+declare module "@mui/material/Button" {
+	interface ButtonPropsColorOverrides {
 		green: true
 		blue: true
 		purple: true

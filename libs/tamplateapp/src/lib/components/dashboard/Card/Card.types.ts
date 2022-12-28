@@ -1,5 +1,5 @@
 import { IntlShape } from "react-intl";
-import { AppRouteTitleEnum } from "../../../../types/paths";
+import { AppRouteTitleEnum } from "../../../types";
 
 export type CardProps = {
 	title: AppRouteTitleEnum,

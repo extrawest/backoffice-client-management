@@ -1,4 +1,4 @@
-import { AppRouteTitleEnum } from "../../../../types";
+import { AppRouteTitleEnum } from "../../../types";
 
 export type ContentElementType = {
 	key: string,

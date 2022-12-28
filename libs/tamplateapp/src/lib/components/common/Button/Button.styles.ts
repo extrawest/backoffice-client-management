@@ -23,10 +23,10 @@ export const buttonStyles =  {
 		transition: "0.3 ease",
 		background: linearGradient(
 			174.19,
-			theme.palette.info.contrastText,
 			-0.39,
+			154.32,
+			theme.palette.info.contrastText,
 			theme.palette.blue[600],
-			154.32
 		),
 		"&.MuiButton-contained": {
 			color: "common.white",

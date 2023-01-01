@@ -49,5 +49,10 @@ export const buttonStyles =  {
 	},
 	disabled: {
 		opacity: 0.24,
+	},
+	boxWrapper: {
+		display: "flex",
+		gap: theme.spacing(5/8),
+		alingItems: "center"
 	}
 };

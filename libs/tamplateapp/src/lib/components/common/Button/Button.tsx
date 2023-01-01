@@ -23,6 +23,7 @@ export const Button: FC<ButtonProps> = ({
 				<Box
 					component="span"
 					mr={isShowText ? 1 : 0}
+					sx={buttonStyles.boxWrapper}
 					onClick={onInnerBoxClickHandler}
 				>
 					{children}

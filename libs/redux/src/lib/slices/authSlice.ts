@@ -1,17 +1,24 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AuthResponse } from "@mono-redux-starter/shared/types";
+import { User } from "@firebase/auth/dist/auth-public";
 import { login } from "../apis/authService";
 import { logOut } from "../apis/userService";
 
-const initialState: AuthResponse & { isLoggedIn: boolean } = {
+const initialState: AuthResponse = {
 	access_token: "",
-	isLoggedIn: false
+	isLoggedIn: false,
+	authInfo: undefined
 };
 
 export const authSlice = createSlice({
 	name: "authSlice",
 	initialState,
 	reducers: {
+		updateAuthInfo(
+			state, action: PayloadAction<User>
+		) {
+			state.authInfo = action.payload;
+		},
 		updateAccessToken(
 			state, action: PayloadAction<string>
 		) {
@@ -44,5 +51,7 @@ export const authSlice = createSlice({
 	},
 });
 
+export const getAuthInfo = (state: AuthResponse) => state.authInfo;
+
 export const authReducer = authSlice.reducer;
-export const { updateAccessToken, updateIsLoggedIn } = authSlice.actions;
+export const { updateAccessToken, updateIsLoggedIn, updateAuthInfo } = authSlice.actions;

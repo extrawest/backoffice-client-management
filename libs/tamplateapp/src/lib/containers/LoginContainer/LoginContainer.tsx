@@ -1,4 +1,4 @@
-import { FC, useCallback } from "react";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import { FormikHelpers } from "formik";
@@ -8,12 +8,8 @@ import { AppRouteEnum } from "../../types";
 import { styles } from "./LoginContainer.styles";
 import { getAuth } from "firebase/auth";
 import { firebaseApp } from "@mono-redux-starter/firebase";
-import {
-	useAuthState,
-	useCreateUserWithEmailAndPassword,
-	useSignInWithEmailAndPassword
-} from "react-firebase-hooks/auth";
-import { updateIsLoggedIn } from "@mono-redux-starter/redux";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { updateAuthInfo, updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 
 export const LoginContainer: FC = () => {
@@ -45,6 +41,7 @@ export const LoginContainer: FC = () => {
 			values.password
 		);
 		if(result){
+			dispatch(updateAuthInfo(result.user));
 			dispatch(updateIsLoggedIn(true));
 			navigate(AppRouteEnum.DASHBOARD);
 			form.setSubmitting(false);

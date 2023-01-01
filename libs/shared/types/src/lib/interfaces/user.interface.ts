@@ -1,7 +1,10 @@
+import { User as UserInfo } from "@firebase/auth/dist/auth-public";
 import { RoleEnum } from "../enums";
 
 export interface AuthResponse {
 	access_token: string;
+	isLoggedIn: boolean;
+	authInfo?: UserInfo;
 }
 
 export type Role = {

@@ -205,7 +205,7 @@ theme.typography.h5 = {
 	fontWeight: 550,
 };
 theme.typography.button = {
-	fontSize: pxToRem(23),
+	fontSize: pxToRem(22),
 	[theme.breakpoints.down("lg")]: {
 		fontSize: pxToRem(15),
 	},

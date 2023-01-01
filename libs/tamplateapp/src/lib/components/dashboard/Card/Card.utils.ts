@@ -15,10 +15,10 @@ export const getRouteTitle: GetRouteTitle = (
 				id: "template.dashboard",
 				defaultMessage: "Dashboard"
 			});
-		case AppRouteTitleEnum.UNITS:
+		case AppRouteTitleEnum.CLIENTS:
 			return intl.formatMessage({
-				id: "template.units",
-				defaultMessage: "Units"
+				id: "template.clients",
+				defaultMessage: "Clients"
 			});
 		default:
 			return intl.formatMessage({

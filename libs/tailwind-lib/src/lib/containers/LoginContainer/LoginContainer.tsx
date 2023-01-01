@@ -1,17 +1,12 @@
-import { FC, useCallback } from "react";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box } from "@mui/material";
 import { FormikHelpers } from "formik";
 import { LoginForm, Values } from "../../forms/LoginForm";
 import { useTypedDispatch } from "../../store";
 import { AppRouteEnum } from "../../types";
 import { getAuth } from "firebase/auth";
 import { firebaseApp } from "@mono-redux-starter/firebase";
-import {
-	useAuthState,
-	useCreateUserWithEmailAndPassword,
-	useSignInWithEmailAndPassword
-} from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 import { Typography } from "../../components/common/Typography/Typography";
@@ -55,7 +50,7 @@ export const LoginContainer: FC = () => {
 
 	return (
 		<div
-			className="h-100vh flex flex-col justify-center items-center bg-background.paper max-w-xl mx-auto"
+			className="h-100vh flex flex-col justify-center items-center bg-background.paper max-w-lg mx-auto"
 		>
 			<div className="flex flex-col justify-center items-center gap-5 mb-10 lead">
 				<Typography

@@ -1,4 +1,8 @@
-import { ChangeEventHandler, FC, useState } from "react";
+import {
+	ChangeEventHandler,
+	FC,
+	useState
+} from "react";
 import { TypographyEnum } from "../../../types/typography";
 import { Typography } from "../Typography/Typography";
 import { CheckboxProps } from "./Checkbox.types";
@@ -19,7 +23,7 @@ export const Checkbox: FC<CheckboxProps> = ({
 
 	return (
 		<label
-			className="relative flex justify-between gap-2 items-center group"
+			className="relative flex justify-between gap-2 items-center group cursor-pointer"
 			htmlFor={id}
 		>
 			<input

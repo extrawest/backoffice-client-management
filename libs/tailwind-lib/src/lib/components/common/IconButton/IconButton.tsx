@@ -14,6 +14,7 @@ export const IconButton: FC<IconButtonProps> = ({
 				extraClasses
 			)}
 			onClick={onClick}
+			type="button"
 		>
 			{children}
 		</button>

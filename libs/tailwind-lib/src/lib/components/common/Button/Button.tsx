@@ -1,6 +1,5 @@
 import { mergeStrings } from "@mono-redux-starter/shared/utils";
 import { FC } from "react";
-import { TypographyEnum } from "../../../types/typography";
 import { Typography } from "../Typography/Typography";
 import { ButtonProps } from "./Button.types";
 

@@ -1,4 +1,5 @@
-import { Theme } from "@mui/material";
+import { alpha, Theme } from "@mui/material";
+import { theme } from "../../theme";
 
 export const mainLayoutStyles = {
 	layoutContainer: {
@@ -15,26 +16,28 @@ export const mainLayoutStyles = {
 	},
 	drawer: {
 		flexShrink: 0,
-		width: "240px",
-		backgroundColor: "primary.main",
+		width: "370px",
 		overflowY: "auto",
 		"&.MuiDrawer-docked": {
 			overflowX: "hidden",
 		},
 		"&.MuiDrawer-root>.MuiPaper-root": {
-			width: "240px",
+			width: "350px",
+			boxShadow: `0 4px 34px ${alpha(
+				theme.palette.secondary.main,
+				0.09
+			)}`,
 			position: "relative",
 			top: "0",
-			padding: (theme: Theme) => theme.spacing(
+			padding: theme.spacing(
 				6.25,
-				0,
+				50/8,
 				5
 			),
-			backgroundColor: "primary.light",
+			backgroundColor: "background.default",
 			border: "none",
 			scrollWidth: 0,
 			overflowX: "hidden",
-
 			"&::-webkit-scrollbar-track": {
 				backgroundColor: "primary.main",
 			},
@@ -44,7 +47,7 @@ export const mainLayoutStyles = {
 		}
 	},
 	menuButton: {
-		marginRight: (theme: Theme) => theme.spacing(2),
+		marginRight: theme.spacing(2),
 		display: {
 			xs: "flex",
 			md: "none",

@@ -3,7 +3,7 @@ import { RoleEnum } from "@mono-redux-starter/shared/types";
 import { AppRouteEnum, PrivateRoutes } from "libs/tailwind-lib/src";
 
 const Dashboard = lazy(() => import("../pages/Dashboard/Dashboard"));
-const Units = lazy(() => import("../pages/Units/Units"));
+const Clients = lazy(() => import("../pages/Clients/Clients"));
 
 export const privateRoutes: PrivateRoutes = [
 	{
@@ -14,8 +14,8 @@ export const privateRoutes: PrivateRoutes = [
 		isAuth: true
 	},
 	{
-		element: <Units />,
-		path: AppRouteEnum.UNITS,
+		element: <Clients />,
+		path: AppRouteEnum.CLIENTS,
 		exact: true,
 		roles: [RoleEnum.ROLE_SUPER_ADMIN],
 		isAuth: true

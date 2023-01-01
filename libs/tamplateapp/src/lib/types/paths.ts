@@ -1,11 +1,19 @@
 export const enum AppRouteEnum {
 	LOGIN = "/login",
 	DASHBOARD = "/",
-	UNITS = "/units",
+	CLIENTS = "/clients",
+	TEAM = "/",
+	OFFERS = "/",
+	PARTNERS = "/",
+	FINANCES = "/"
 }
 
 export const enum AppRouteTitleEnum {
 	LOGIN = "Login",
 	DASHBOARD = "Dashboard",
-	UNITS = "Units",
+	CLIENTS = "Clients",
+	TEAM = "Team",
+	OFFERS = "Offers",
+	PARTNERS = "Partners",
+	FINANCES = "Finances"
 }

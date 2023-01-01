@@ -1,5 +1,9 @@
 {
   "template.dashboard": "Dashboard",
+	"template.team": "Team",
+	"template.offers": "Offers",
+	"template.partners": "Partners",
+	"template.finances": "Finances",
   "template.editor": "Editor",
   "template.email": "Email",
   "template.go": "Go",
@@ -10,7 +14,7 @@
   "template.password": "Password",
   "template.returnToDashboard": "Return to dashboard",
   "template.signOut": "Sign out",
-  "template.units": "Units",
+  "template.clients": "Clients",
 	"template.remember": "Remember me",
   "invalidemail": "Enter a valid email format",
   "maxNumberText": "This field must be at most ${max}",
@@ -22,5 +26,6 @@
   "required": "This field is required",
   "validUrlText": "Must be a valid URL",
 	"admin.content": "Admin content",
-	"forgot": "Forgot password?"
+	"forgot": "Forgot password?",
+	"search": "Search"
 }

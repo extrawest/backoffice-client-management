@@ -37,7 +37,7 @@ import { isDevelopmentMode } from "@mono-redux-starter/shared/utils";
 const secretKey: string = process.env["NX_CRYPTO_JS_KEY"] as string;
 
 const encryptor = encryptTransform({
-	secretKey: "NX_CRYPTO_JS_KEY",
+	secretKey: secretKey,
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	onError: (error: any) => {
 		// Handle the error.

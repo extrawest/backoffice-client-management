@@ -16,6 +16,8 @@
   "template.signOut": "Sign out",
   "template.clients": "Clients",
 	"template.remember": "Remember me",
+	"template.reset": "Reset",
+	"template.resetTitle": "Reset your password",
   "invalidemail": "Enter a valid email format",
   "maxNumberText": "This field must be at most ${max}",
   "maxStringText": "This field must be at most ${max} characters",
@@ -27,5 +29,6 @@
   "validUrlText": "Must be a valid URL",
 	"admin.content": "Admin content",
 	"forgot": "Forgot password?",
-	"search": "Search"
+	"search": "Search",
+	"return": "Return"
 }

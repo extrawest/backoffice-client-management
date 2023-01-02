@@ -14,10 +14,11 @@ export const Button: FC<ButtonProps> = ({
 
 	return (
 		<MuiButton
+			{...rest}
 			sx={{
+				...rest.sx,
 				...buttonStyles.tableBtn,
 			}}
-			{...rest}
 		>
 			{(!isLoading || isShowText) && (
 				<Box

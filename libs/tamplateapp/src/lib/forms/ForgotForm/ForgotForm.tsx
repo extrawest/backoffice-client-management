@@ -7,15 +7,15 @@ import {
 import { Form, Formik } from "formik";
 import { FormFieldText } from "../../components/common/FormFieldText/FormFieldText";
 import Button from "../../components/common/Button/Button";
-import { validateShema } from "./LoginForm.schema";
-import { loginStyles } from "./LoginForm.styles";
-import type { LoginFormProps } from "./LoginForm.types";
+import { validateShema } from "./ForgotForm.schema";
+import { forgotStyles } from "./ForgotForm.styles";
+import type { ForgotFormProps } from "./ForgotForm.types";
 import { LockIcon, UserIcon } from "../../icons";
 import { FormCheckbox } from "../../components/common/FormCheckbox";
 import Link from "../../components/common/Link/Link";
 import { AppRouteEnum } from "../../types";
 
-export const LoginForm: FC<LoginFormProps> = ({
+export const ForgotForm: FC<ForgotFormProps> = ({
 	initialValues,
 	isLoading,
 	onSubmit
@@ -41,68 +41,31 @@ export const LoginForm: FC<LoginFormProps> = ({
 					className="dark"
 				>
 					<Box
-						sx={loginStyles.formWrapper}
+						sx={forgotStyles.formWrapper}
 					>
 						<Box
 							component="div"
-							sx={loginStyles.pageContent}
+							sx={forgotStyles.pageContent}
 						>
 							<Typography
-								sx={loginStyles.title}
-								variant="h1"
+								sx={forgotStyles.title}
+								variant="h5"
 							>
 								{intl.formatMessage({
-									id: "template.loginToAccount",
-									defaultMessage: "Log In"
-								})}
-							</Typography>
-							<Typography
-								sx={loginStyles.subtitle}
-								variant="body2"
-							>
-								{intl.formatMessage({
-									id: "template.loginDescription"
+									id: "template.resetTitle",
+									defaultMessage: "Reset"
 								})}
 							</Typography>
 							<FormFieldText
 								type="email"
 								name="email"
-								sx={loginStyles.textInput}
+								sx={forgotStyles.textInput}
 								title={""}
 								startIcon={<UserIcon />}
 								placeholder={loginText}
 								variant="filled"
 								color="primary"
 							/>
-							<FormFieldText
-								type="password"
-								name="password"
-								sx={loginStyles.textInput}
-								title={""}
-								startIcon={<LockIcon />}
-								placeholder={intl.formatMessage({
-									id: "template.password",
-									defaultMessage: "Password"
-								})}
-								variant="filled"
-								color="primary"
-							/>
-						</Box>
-						<Box sx={loginStyles.actionsWrapper}>
-							<FormCheckbox
-								label={intl.formatMessage({
-									id: "template.remember"
-								})}
-							/>
-							<Link href={AppRouteEnum.FORGOT}>
-								<Typography
-									variant="body1"
-								>
-									{intl.formatMessage({
-										id: "forgot"
-									})}
-								</Typography>
-							</Link>
 						</Box>
 						<Button
 							color="primary"
@@ -112,12 +75,22 @@ export const LoginForm: FC<LoginFormProps> = ({
 							variant="contained"
 							data-testid="submitBtn"
 							isLoading={isLoading}
+							sx={forgotStyles.submitButton}
 						>
 							{intl.formatMessage({
-								id: "template.login",
-								defaultMessage: "Go"
+								id: "template.reset",
+								defaultMessage: "Reset"
 							})}
 						</Button>
+						<Link href={AppRouteEnum.LOGIN}>
+							<Typography
+								variant="body1"
+							>
+								{intl.formatMessage({
+									id: "return"
+								})}
+							</Typography>
+						</Link>
 					</Box>
 				</Form>
 			)}
@@ -125,4 +98,4 @@ export const LoginForm: FC<LoginFormProps> = ({
 	);
 };
 
-export default LoginForm;
+export default ForgotForm;

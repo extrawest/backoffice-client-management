@@ -6,7 +6,8 @@ export const enum AppRouteEnum {
 	OFFERS = "/",
 	PARTNERS = "/",
 	FINANCES = "/",
-	FORGOT = "/forgot"
+	FORGOT = "/forgot",
+	REGISTRATION = "/registration"
 }
 
 export const enum AppRouteTitleEnum {
@@ -17,5 +18,6 @@ export const enum AppRouteTitleEnum {
 	OFFERS = "Offers",
 	PARTNERS = "Partners",
 	FINANCES = "Finances",
-	FORGOT = "Forgot"
+	FORGOT = "Forgot",
+	REGISTRATION = "Registration"
 }

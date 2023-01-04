@@ -1,9 +1,11 @@
 import { lazy } from "react";
 import { AppRouteEnum, RoutesType } from "@mono-redux-starter/tamplateapp";
+import React from "react";
 
 const LoginPage = lazy(() => import("../pages/Login/Login"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 const Forgot = lazy(() => import("../pages/Forgot/Forgot"));
+const Registration = lazy(() => import("../pages/Registration/Registration"));
 
 export const commonRoutes: RoutesType = [
 	{
@@ -20,6 +22,11 @@ export const commonRoutes: RoutesType = [
 	{
 		element: <Forgot />,
 		path: AppRouteEnum.FORGOT,
+		isAuth: false,
+	},
+	{
+		element: <Registration />,
+		path: AppRouteEnum.REGISTRATION,
 		isAuth: false,
 	},
 ];

@@ -1,5 +1,20 @@
+import { getAuth } from "firebase/auth";
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import {
+	getFirestore,
+	collection,
+	doc,
+	setDoc,
+	getDoc
+} from "firebase/firestore";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {
+	useCollection,
+	useCollectionData,
+	useDocument,
+	useDocumentData
+} from "react-firebase-hooks/firestore";
 
 export const firebaseApp = firebase.initializeApp({
 	apiKey: process.env["NX_FIREBASE_API_KEY"],
@@ -10,3 +25,16 @@ export const firebaseApp = firebase.initializeApp({
 	messagingSenderId: process.env["NX_FIREBASE_MESSAGING_SENDER_ID"],
 	appId: process.env["NX_FIREBASE_APP_ID"],
 });
+
+export const auth = getAuth(firebaseApp);
+export const firestore = () => getFirestore(firebaseApp);
+
+export {useCollection,
+	useCollectionData,
+	useDocument,
+	useDocumentData,
+	collection,
+	doc,
+	setDoc,
+	getDoc,
+	useAuthState};

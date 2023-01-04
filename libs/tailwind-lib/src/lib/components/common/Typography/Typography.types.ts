@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
-import { TypographyEnum } from "../../../types/typography";
+import { TagEnum, TypographyEnum } from "../../../types/typography";
 
 export interface TypographyProps {
 	children: ReactNode,
 	type?: TypographyEnum,
-	extraClasses?: string
+	extraClasses?: string,
+	tag?: TagEnum
 }

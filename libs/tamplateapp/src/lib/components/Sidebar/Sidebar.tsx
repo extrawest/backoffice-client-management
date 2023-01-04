@@ -28,8 +28,6 @@ export const Sidebar: FC = () => {
 
 	const { isLoading } = useTypedSelector(logOut.select());
 
-	const { authInfo } = useTypedSelector(state => state.authSlice);
-
 	const handleLogOut = () => {
 		// logout logic...
 		dispatch(updateIsLoggedIn(false));
@@ -39,11 +37,11 @@ export const Sidebar: FC = () => {
 	return (
 		<Box
 			component="div"
-			sx={sidebarStyles.sidebarContainer}
+			sx={sidebarStyles["sidebarContainer"]}
 		>
 			<Box
 				component="div"
-				sx={sidebarStyles.sidebarWrap}
+				sx={sidebarStyles["sidebarWrap"]}
 			>
 				<Image
 					size="125"
@@ -51,12 +49,12 @@ export const Sidebar: FC = () => {
 				/>
 				<Typography
 					variant="button"
-					sx={sidebarStyles.userName}
+					sx={sidebarStyles["userName"]}
 				>
-					{authInfo?.displayName ?? "John Doe"}
+					{"John Doe"}
 				</Typography>
 			</Box>
-			<Box sx={sidebarStyles.menuWrap}>
+			<Box sx={sidebarStyles["menuWrap"]}>
 				<MenuList dense>
 					{getContentLinks(intl)?.map(({ href, title, icon }) =>
 						<StyledMenuItem
@@ -70,7 +68,7 @@ export const Sidebar: FC = () => {
 				<Button
 					variant="text"
 					sx={{
-						...sidebarStyles.btnOut,
+						...sidebarStyles["btnOut"],
 					}}
 					onClick={handleLogOut}
 					isLoading={isLoading}

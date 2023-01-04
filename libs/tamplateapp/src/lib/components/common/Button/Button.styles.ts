@@ -1,8 +1,9 @@
 import {Theme} from "@mui/material";
 import { linearGradient, pxToRem } from "@mono-redux-starter/shared/utils";
 import { theme } from "../../../theme";
+import { SxStyles } from "../../../types/styles";
 
-export const buttonStyles =  {
+export const buttonStyles: SxStyles =  {
 	tableBtn: {
 		minWidth:  theme.spacing(100/8),
 		maxWidth: theme.spacing(180/8),
@@ -28,6 +29,7 @@ export const buttonStyles =  {
 			theme.palette.info.contrastText,
 			theme.palette.blue[600],
 		),
+		color: theme.palette.background.default,
 		"&.MuiButton-contained": {
 			color: "common.white",
 			"&.MuiButtonBase-root.MuiButton-root:hover": {

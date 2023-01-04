@@ -8,12 +8,11 @@ import { Form, Formik } from "formik";
 import { FormFieldText } from "../../components/common/FormFieldText/FormFieldText";
 import Button from "../../components/common/Button/Button";
 import { validateShema } from "./ForgotForm.schema";
-import { forgotStyles } from "./ForgotForm.styles";
 import type { ForgotFormProps } from "./ForgotForm.types";
-import { LockIcon, UserIcon } from "../../icons";
-import { FormCheckbox } from "../../components/common/FormCheckbox";
+import { UserIcon } from "../../icons";
 import Link from "../../components/common/Link/Link";
 import { AppRouteEnum } from "../../types";
+import { commonFormStyles } from "../commonForm.styles";
 
 export const ForgotForm: FC<ForgotFormProps> = ({
 	initialValues,
@@ -41,14 +40,14 @@ export const ForgotForm: FC<ForgotFormProps> = ({
 					className="dark"
 				>
 					<Box
-						sx={forgotStyles.formWrapper}
+						sx={commonFormStyles.formWrapper}
 					>
 						<Box
 							component="div"
-							sx={forgotStyles.pageContent}
+							sx={commonFormStyles.pageContent}
 						>
 							<Typography
-								sx={forgotStyles.title}
+								sx={commonFormStyles.title}
 								variant="h5"
 							>
 								{intl.formatMessage({
@@ -59,7 +58,7 @@ export const ForgotForm: FC<ForgotFormProps> = ({
 							<FormFieldText
 								type="email"
 								name="email"
-								sx={forgotStyles.textInput}
+								sx={commonFormStyles.textInput}
 								title={""}
 								startIcon={<UserIcon />}
 								placeholder={loginText}
@@ -75,7 +74,7 @@ export const ForgotForm: FC<ForgotFormProps> = ({
 							variant="contained"
 							data-testid="submitBtn"
 							isLoading={isLoading}
-							sx={forgotStyles.submitButton}
+							sx={commonFormStyles.submitButton}
 						>
 							{intl.formatMessage({
 								id: "template.reset",

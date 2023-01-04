@@ -1,8 +1,8 @@
-import { SxProps, Theme } from "@mui/material";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { theme } from "../../theme";
+import { SxStyles } from "../../types/styles";
 
-export const sidebarStyles =  {
+export const sidebarStyles: SxStyles =  {
 	sidebarContainer: {
 		width: "240px",
 		height: `calc(100vh - 90px)`,

@@ -6,11 +6,14 @@ import { LoginForm, Values } from "../../forms/LoginForm";
 import { useTypedDispatch } from "../../store";
 import { AppRouteEnum } from "../../types";
 import { styles } from "./LoginContainer.styles";
-import { getAuth } from "firebase/auth";
-import { firebaseApp } from "@mono-redux-starter/firebase";
+import {
+	auth,
+	getDoc,
+	firestore,
+	doc
+} from "@mono-redux-starter/firebase";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { updateAuthInfo, updateIsLoggedIn } from "@mono-redux-starter/redux";
-import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
+import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 
 export const LoginContainer: FC = () => {
 	const navigate = useNavigate();
@@ -19,19 +22,13 @@ export const LoginContainer: FC = () => {
 		email: "",
 		password: ""
 	};
-	const auth = getAuth(firebaseApp);
+
 	const [
 		signInWithEmailAndPassword,
 		user,
 		loading,
 		error,
 	] = useSignInWithEmailAndPassword(auth);
-
-	useShowSnackBarMessage(
-		!!error,
-		"Error",
-		"error"
-	);
 
 	const onSubmit = async (
 		values: Values, form: FormikHelpers<Values>
@@ -41,7 +38,13 @@ export const LoginContainer: FC = () => {
 			values.password
 		);
 		if(result){
-			dispatch(updateAuthInfo(result.user));
+			const snapshot = await getDoc(doc(
+				firestore(),
+				"managers",
+				result.user.uid
+			));
+			console.log(snapshot.data());
+
 			dispatch(updateIsLoggedIn(true));
 			navigate(AppRouteEnum.DASHBOARD);
 			form.setSubmitting(false);

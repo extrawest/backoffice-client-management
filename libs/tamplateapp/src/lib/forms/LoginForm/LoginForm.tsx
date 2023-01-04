@@ -8,12 +8,12 @@ import { Form, Formik } from "formik";
 import { FormFieldText } from "../../components/common/FormFieldText/FormFieldText";
 import Button from "../../components/common/Button/Button";
 import { validateShema } from "./LoginForm.schema";
-import { loginStyles } from "./LoginForm.styles";
 import type { LoginFormProps } from "./LoginForm.types";
 import { LockIcon, UserIcon } from "../../icons";
 import { FormCheckbox } from "../../components/common/FormCheckbox";
 import Link from "../../components/common/Link/Link";
 import { AppRouteEnum } from "../../types";
+import { commonFormStyles } from "../commonForm.styles";
 
 export const LoginForm: FC<LoginFormProps> = ({
 	initialValues,
@@ -41,14 +41,14 @@ export const LoginForm: FC<LoginFormProps> = ({
 					className="dark"
 				>
 					<Box
-						sx={loginStyles.formWrapper}
+						sx={commonFormStyles.formWrapper}
 					>
 						<Box
 							component="div"
-							sx={loginStyles.pageContent}
+							sx={commonFormStyles.pageContent}
 						>
 							<Typography
-								sx={loginStyles.title}
+								sx={commonFormStyles.title}
 								variant="h1"
 							>
 								{intl.formatMessage({
@@ -57,7 +57,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 								})}
 							</Typography>
 							<Typography
-								sx={loginStyles.subtitle}
+								sx={commonFormStyles.subtitle}
 								variant="body2"
 							>
 								{intl.formatMessage({
@@ -67,7 +67,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 							<FormFieldText
 								type="email"
 								name="email"
-								sx={loginStyles.textInput}
+								sx={commonFormStyles.textInput}
 								title={""}
 								startIcon={<UserIcon />}
 								placeholder={loginText}
@@ -77,7 +77,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 							<FormFieldText
 								type="password"
 								name="password"
-								sx={loginStyles.textInput}
+								sx={commonFormStyles.textInput}
 								title={""}
 								startIcon={<LockIcon />}
 								placeholder={intl.formatMessage({
@@ -88,7 +88,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 								color="primary"
 							/>
 						</Box>
-						<Box sx={loginStyles.actionsWrapper}>
+						<Box sx={commonFormStyles.actionsWrapper}>
 							<FormCheckbox
 								label={intl.formatMessage({
 									id: "template.remember"
@@ -112,12 +112,22 @@ export const LoginForm: FC<LoginFormProps> = ({
 							variant="contained"
 							data-testid="submitBtn"
 							isLoading={isLoading}
+							sx={commonFormStyles.submitButton}
 						>
 							{intl.formatMessage({
 								id: "template.login",
 								defaultMessage: "Go"
 							})}
 						</Button>
+						<Link href={AppRouteEnum.REGISTRATION}>
+							<Typography
+								variant="body1"
+							>
+								{intl.formatMessage({
+									id: "template.signUp"
+								})}
+							</Typography>
+						</Link>
 					</Box>
 				</Form>
 			)}

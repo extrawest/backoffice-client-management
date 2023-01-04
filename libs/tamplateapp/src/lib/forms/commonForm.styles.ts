@@ -1,8 +1,9 @@
-import { Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { theme } from "../theme";
+import { SxStyles } from "../types/styles";
 
-export const commonFormStyles = {
+export const commonFormStyles: SxStyles = {
 	wrapper: {
 		boxSizing: "border-box",
 		width: "100%",
@@ -15,10 +16,6 @@ export const commonFormStyles = {
 		display: "flex",
 		justifyContent: "space-between",
 		marginBottom: theme.spacing(24 / 8),
-	},
-	title: {
-		marginBottom: theme.spacing(12 / 8),
-		color: "common.black"
 	},
 	removeBtn: {
 		color: "error.main",
@@ -101,10 +98,6 @@ export const commonFormStyles = {
 			pointerEvents: "none",
 		},
 	},
-	subtitle: {
-		marginLeft: theme.spacing(5 / 8),
-		color: "primary.dark",
-	},
 	addWrap: {
 		display: "flex",
 		alignItems: "flex-start",
@@ -112,9 +105,123 @@ export const commonFormStyles = {
 			marginRight: theme.spacing(16 / 8),
 		}
 	},
+	pageContent: {
+		width: theme.spacing(500 / 8),
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		justifyContent: "stretch",
+		padding: 0,
+		color: "primary.main",
+		"& .MuiFormControl-root.MuiTextField-root": {
+			width: "100%",
+			marginTop: 0,
+			marginBottom: theme.spacing(20 / 8),
+		},
+	},
+	formWrapper:{
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	title: {
+		textAlign: "center",
+		color: "secondary.main",
+		marginBottom: theme.spacing(20 / 8),
+		maxWidth: theme.spacing(340 / 8)
+	},
+	subtitle: {
+		textAlign: "center",
+		color: "secondary.main",
+		marginBottom: theme.spacing(50 / 8),
+		maxWidth: theme.spacing(405 / 8)
+	},
+	fieldsWrap: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "space-between",
+		gap: theme.spacing(10/8)
+	},
+	textInput: {
+		color: "primary.main",
+		"& input:-internal-autofill-selected": {
+			backgroundColor: "secondary.main",
+			color: "primary.main",
+		},
+		"& .MuiFormLabel-root.MuiInputLabel-root": {
+			fontSize: pxToRem(14),
+			fontWeight: 500,
+			color: "primary.main",
+			opacity: 0.45,
+			left: theme.spacing(4 / 8),
+			top: theme.spacing(-2 / 8),
+			"&.MuiInputLabel-shrink": {
+				opacity: 0,
+				display: "none",
+			}
+		},
+		"& .MuiInputBase-input.MuiFilledInput-input": {
+			padding: theme.spacing(
+				1.375,
+				2
+			),
+			borderRadius: theme.spacing(2 / 8),
+			overflow: "hidden",
+		},
+		"& .MuiInputBase-root.MuiFilledInput-root": {
+			color: theme.palette.grayscale[600],
+			backgroundColor: "common.white",
+			opacity: 1,
+			boxShadow: "none",
+			borderRadius: theme.spacing(50 / 8),
+			border: `${theme.spacing(1 / 8)} solid ${theme.palette.grayscale[300]}`,
+			overflow: "hidden",
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "center",
+			"&::before": {
+				display: "none",
+				border: "none"
+			},
+			"&:hover::after": {
+				display: "none",
+				border: "none"
+			}
+		},
+		"& .MuiFormHelperText-root": {
+			textTransform: "none",
+			fontWeight: "400",
+			fontSize: theme.typography.subtitle1
+		},
+		"& .MuiFormHelperText-root.Mui-error": {
+			color: "error.main",
+			border: "none"
+		},
+		"& .MuiInputBase-root.MuiFilledInput-root:after": {
+			display: "none",
+			border: "none"
+		},
+		"& .MuiInputBase-root.MuiFilledInput-root .MuiInputAdornment-root.MuiInputAdornment-filled": {
+			marginTop: 0
+		},
+		"& .MuiInputAdornment-positionEnd": {
+			cursor: "pointer"
+		}
+	},
 	checkboxInput:{
 		"&.Mui-checked": {
 			color: theme.palette.blue[600]
 		}
+	},
+	actionsWrapper: {
+		width: "100%",
+		display: "flex",
+		justifyContent: "space-between",
+		alignItems: "center",
+		marginBottom: theme.spacing(20/8)
+	},
+	submitButton: {
+		marginBottom: theme.spacing(20/8)
 	}
 };

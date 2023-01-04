@@ -1,7 +1,6 @@
-import { firebaseApp } from "@mono-redux-starter/firebase";
+import { auth } from "@mono-redux-starter/firebase";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 import { Box } from "@mui/material";
-import { getAuth } from "firebase/auth";
 import { FormikHelpers } from "formik";
 import { FC } from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
@@ -16,7 +15,6 @@ export const ForgotContainer: FC = () => {
 	const initialValuesForgot = {
 		email: "",
 	};
-	const auth = getAuth(firebaseApp);
 	const [
 		sendPasswordResetEmail,
 		sending,

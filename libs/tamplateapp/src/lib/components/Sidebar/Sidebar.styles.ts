@@ -29,6 +29,10 @@ export const sidebarStyles: SxStyles =  {
 		marginTop: theme.spacing(20 / 8),
 		display: "block"
 	},
+	role: {
+		marginTop: theme.spacing(10 / 8),
+		display: "block"
+	},
 	caption: {
 		textTransform: "uppercase",
 		opacity: 0.5,

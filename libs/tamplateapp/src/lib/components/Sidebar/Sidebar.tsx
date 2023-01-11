@@ -28,6 +28,8 @@ export const Sidebar: FC = () => {
 
 	const { isLoading } = useTypedSelector(logOut.select());
 
+	const { managerInfo } = useTypedSelector(state => state.authSlice);
+
 	const handleLogOut = () => {
 		// logout logic...
 		dispatch(updateIsLoggedIn(false));
@@ -51,7 +53,13 @@ export const Sidebar: FC = () => {
 					variant="button"
 					sx={sidebarStyles["userName"]}
 				>
-					{"John Doe"}
+					{managerInfo ? `${managerInfo["firstName"]} ${managerInfo["lastName"]}` : "John Doe"}
+				</Typography>
+				<Typography
+					variant="body2"
+					sx={sidebarStyles["role"]}
+				>
+					{managerInfo && managerInfo["role"]}
 				</Typography>
 			</Box>
 			<Box sx={sidebarStyles["menuWrap"]}>

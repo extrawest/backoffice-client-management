@@ -1,8 +1,8 @@
 import { DocumentReference } from "firebase/firestore";
 // import { ref } from "firebase/storage";
 
-export interface ImageProps {
+export interface ImageWrapperProps {
 	size: number | string,
-	src?: string,
+	reference: DocumentReference,
 	rounded?: boolean
 }

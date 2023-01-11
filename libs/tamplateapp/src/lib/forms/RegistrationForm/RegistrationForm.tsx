@@ -29,11 +29,11 @@ export const RegistrationForm: FC<RegistrationFormProps> = ({
 	});
 	const firstNameText = intl.formatMessage({
 		id: "template.lastName",
-		defaultMessage: "First Name"
+		defaultMessage: "Last Name"
 	});
 	const lastNameText = intl.formatMessage({
 		id: "template.firstName",
-		defaultMessage: "Last Name"
+		defaultMessage: "First Name"
 	});
 
 	return (

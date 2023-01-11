@@ -17,14 +17,14 @@ export const Button: FC<ButtonProps> = ({
 			{...rest}
 			sx={{
 				...rest.sx,
-				...buttonStyles.tableBtn,
+				...buttonStyles["tableBtn"],
 			}}
 		>
 			{(!isLoading || isShowText) && (
 				<Box
 					component="span"
 					mr={isShowText ? 1 : 0}
-					sx={buttonStyles.boxWrapper}
+					sx={buttonStyles["boxWrapper"]}
 					onClick={onInnerBoxClickHandler}
 				>
 					{children}

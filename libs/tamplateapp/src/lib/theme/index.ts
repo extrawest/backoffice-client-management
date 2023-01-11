@@ -43,6 +43,14 @@ declare module "@mui/material/styles" {
 		reserved: PaletteOptions["primary"];
 		sold: PaletteOptions["primary"];
 	}
+	interface TypographyVariants {
+		description: React.CSSProperties;
+	}
+
+	// allow configuration using `createTheme`
+	interface TypographyVariantsOptions {
+		description?: React.CSSProperties;
+	}
 }
 
 declare module "@mui/material/styles" {
@@ -53,6 +61,12 @@ declare module "@mui/material/styles" {
 		lg: true;
 		xl: true;
 		xxl: true; // adds the `doubleLarge` breakpoint
+	}
+}
+
+declare module "@mui/material/Typography" {
+	interface TypographyPropsVariantOverrides {
+		description: true;
 	}
 }
 
@@ -149,7 +163,7 @@ export const theme = createTheme({
 			black: "#000",
 		},
 		success: {
-			main: "#00ff22",
+			main: "#29CC97",
 			dark: "#2b822d"
 		},
 		error: {
@@ -220,7 +234,6 @@ theme.typography.body1 = {
 };
 theme.typography.body2 = {
 	fontSize: pxToRem(14),
-	letterSpacing: "2px",
 	fontWeight: 400,
 	[theme.breakpoints.down("lg")]: {
 		fontSize: pxToRem(12),
@@ -239,6 +252,13 @@ theme.typography.caption = {
 	fontWeight: 700,
 	[theme.breakpoints.down("lg")]: {
 		fontSize: pxToRem(12),
+	},
+};
+theme.typography.description = {
+	fontSize: pxToRem(12),
+	fontWeight: 400,
+	[theme.breakpoints.down("lg")]: {
+		fontSize: pxToRem(10),
 	},
 };
 

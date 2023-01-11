@@ -1,3 +1,4 @@
+import { DocumentData } from "firebase/firestore";
 import { RoleEnum } from "../enums";
 
 export interface AuthResponse {

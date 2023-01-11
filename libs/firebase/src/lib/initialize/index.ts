@@ -15,6 +15,7 @@ import {
 	useDocument,
 	useDocumentData
 } from "react-firebase-hooks/firestore";
+import { getStorage, ref as refStorage } from "firebase/storage";
 
 export const firebaseApp = firebase.initializeApp({
 	apiKey: process.env["NX_FIREBASE_API_KEY"],
@@ -38,3 +39,15 @@ export {useCollection,
 	setDoc,
 	getDoc,
 	useAuthState};
+
+export const ticketsCollectionRef = collection(
+	firestore(),
+	"tickets"
+);
+
+export const storage = getStorage(firebaseApp);
+
+export const clientsStorage = refStorage(
+	storage,
+	"/clients"
+);

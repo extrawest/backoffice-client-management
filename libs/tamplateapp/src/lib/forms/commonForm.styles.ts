@@ -144,15 +144,15 @@ export const commonFormStyles: SxStyles = {
 		gap: theme.spacing(10/8)
 	},
 	textInput: {
-		color: "primary.main",
+		color: theme.palette.grayscale[600],
 		"& input:-internal-autofill-selected": {
 			backgroundColor: "secondary.main",
-			color: "primary.main",
+			color: theme.palette.grayscale[600],
 		},
 		"& .MuiFormLabel-root.MuiInputLabel-root": {
 			fontSize: pxToRem(14),
 			fontWeight: 500,
-			color: "primary.main",
+			color: theme.palette.grayscale[600],
 			opacity: 0.45,
 			left: theme.spacing(4 / 8),
 			top: theme.spacing(-2 / 8),
@@ -203,7 +203,7 @@ export const commonFormStyles: SxStyles = {
 			border: "none"
 		},
 		"& .MuiInputBase-root.MuiFilledInput-root .MuiInputAdornment-root.MuiInputAdornment-filled": {
-			marginTop: 0
+			margin: 0
 		},
 		"& .MuiInputAdornment-positionEnd": {
 			cursor: "pointer"
@@ -223,5 +223,71 @@ export const commonFormStyles: SxStyles = {
 	},
 	submitButton: {
 		marginBottom: theme.spacing(20/8)
+	},
+	wrapperDateInput: {
+		width: "100%",
+
+		"& .MuiInputBase-root": {
+			borderRadius: theme.spacing(50/8),
+		},
+		"& .MuiFormLabel-root.MuiInputLabel-root": {
+			fontSize: pxToRem(14),
+			fontWeight: 500,
+			color: theme.palette.grayscale[600],
+			opacity: 0.45,
+			left: theme.spacing(4 / 8),
+			top: theme.spacing(-2 / 8),
+			"&.MuiInputLabel-shrink": {
+				opacity: 0,
+				display: "none",
+			}
+		},
+		"& .MuiInputBase-input.MuiOutlinedInput-input": {
+			padding: theme.spacing(
+				1.375,
+				2
+			),
+			borderRadius: theme.spacing(2 / 8),
+			overflow: "hidden",
+
+		},
+		"& .MuiInputBase-root.MuiOutlinedInput-root": {
+			color: theme.palette.grayscale[600],
+			backgroundColor: "common.white",
+			opacity: 1,
+			boxShadow: "none",
+			borderRadius: theme.spacing(50 / 8),
+			border: `${theme.spacing(1 / 8)} solid ${theme.palette.grayscale[300]}`,
+			overflow: "hidden",
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "center",
+			"&::before": {
+				display: "none",
+				border: "none"
+			},
+			"&:hover": {
+				borderColor: theme.palette.grayscale[300],
+				"& .MuiOutlinedInput-notchedOutline": {
+					border: "transparent"
+				}
+			},
+			"&:hover::after": {
+				display: "none",
+				border: "none"
+			},
+			"& .MuiOutlinedInput-notchedOutline": {
+				border: "transparent"
+			},
+		},
+		"& .MuiFormHelperText-root": {
+			textTransform: "none",
+			fontWeight: "400",
+			fontSize: theme.typography.subtitle1
+		},
+		"& .MuiFormHelperText-root.Mui-error": {
+			color: "error.main",
+			border: "none"
+		},
 	}
 };

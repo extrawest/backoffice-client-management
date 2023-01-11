@@ -63,7 +63,8 @@ export const RegistrationContainer: FC = () => {
 				{
 					email: values.email,
 					firstName: values.firstName,
-					lastName: values.lastName
+					lastName: values.lastName,
+					uid: result.user.uid,
 				}
 			);
 			navigate(AppRouteEnum.LOGIN);

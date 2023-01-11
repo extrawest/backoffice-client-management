@@ -1,27 +1,26 @@
-import { SxProps } from "@mui/material";
-import { theme } from "../../theme";
+import { SxProps, Theme } from "@mui/material";
 
-export const wrapperSx: SxProps = {
-	padding: theme.spacing(
+export const wrapperSx: SxProps<Theme> = {
+	padding: (theme: Theme) => theme.spacing(
 		50/8,
 		20/8
 	)
 };
-export const textFieldSx:SxProps = {
+export const textFieldSx: SxProps<Theme> = {
 	"& .MuiInputBase-root.MuiFilledInput-root": {
-		maxWidth: theme.spacing(500/8),
-		color: theme.palette.grayscale[600],
+		maxWidth: (theme: Theme) => theme.spacing(500/8),
+		color: (theme: Theme) => theme.palette.grayscale[600],
 		backgroundColor: "common.white",
 		opacity: 1,
 		boxShadow: "none",
-		borderRadius: theme.spacing(50 / 8),
-		border: `${theme.spacing(1 / 8)} solid ${theme.palette.grayscale[300]}`,
+		borderRadius: (theme: Theme) => theme.spacing(50 / 8),
+		border: (theme: Theme) => `${theme.spacing(1 / 8)} solid ${theme.palette.grayscale[300]}`,
 		overflow: "hidden",
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "center",
 		"& .MuiInputBase-input": {
-			paddingTop: theme.spacing(8/8),
+			paddingTop: (theme: Theme) => theme.spacing(8/8),
 		},
 		"&::before": {
 			display: "none",
@@ -37,6 +36,13 @@ export const textFieldSx:SxProps = {
 	},
 };
 
-export const contentSx: SxProps = {
-	marginTop: theme.spacing(30/8),
+export const contentSx: SxProps<Theme> = {
+	marginTop: (theme: Theme) => theme.spacing(30/8),
+};
+
+export const titleWrapperSx: SxProps<Theme> = {
+	display: "flex",
+	justifyContent: "space-between",
+	alignItems: "center",
+	marginBottom: (theme: Theme) => theme.spacing(20/8)
 };

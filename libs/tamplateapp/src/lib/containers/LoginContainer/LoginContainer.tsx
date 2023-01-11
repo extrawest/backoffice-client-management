@@ -13,7 +13,8 @@ import {
 	doc
 } from "@mono-redux-starter/firebase";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { updateIsLoggedIn } from "@mono-redux-starter/redux";
+import { updateIsLoggedIn, updateManager } from "@mono-redux-starter/redux";
+import { Manager } from "@mono-redux-starter/shared/types";
 
 export const LoginContainer: FC = () => {
 	const navigate = useNavigate();
@@ -43,8 +44,8 @@ export const LoginContainer: FC = () => {
 				"managers",
 				result.user.uid
 			));
-			console.log(snapshot.data());
-
+			const data = snapshot.data();
+			data && dispatch(updateManager(data as Manager));
 			dispatch(updateIsLoggedIn(true));
 			navigate(AppRouteEnum.DASHBOARD);
 			form.setSubmitting(false);

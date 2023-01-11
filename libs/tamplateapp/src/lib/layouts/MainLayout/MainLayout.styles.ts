@@ -73,4 +73,11 @@ export const mainLayoutStyles = {
 			textDecoration: "none",
 		},
 	},
+	wrapperSx: {
+		width: "100%",
+		padding: theme.spacing(
+			50/8,
+			20/8
+		)
+	}
 };

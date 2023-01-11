@@ -16,9 +16,14 @@ import { AppRouteEnum } from "../../types/paths";
 import { MainLayoutProps } from "./MainLayout.types";
 import { mainLayoutStyles } from "./MainLayout.styles";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import { textFieldSx } from "../../containers/ClientsContainer/ClientsContainer.styles";
+import { Search } from "@mui/icons-material";
+import { useIntl } from "react-intl";
+import TextField from "../../components/common/TextField/TextField";
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	const theme = useTheme();
+	const intl = useIntl();
 
 	const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 	const [open, setOpen] = useState(false);
@@ -71,7 +76,19 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 				sx={mainLayoutStyles.contentWrap}
 				id="pageWrap"
 			>
-				{children}
+				<Box sx={mainLayoutStyles.wrapperSx}>
+					<TextField
+						sx={textFieldSx}
+						type="email"
+						name="email"
+						title=""
+						startIcon={<Search />}
+						placeholder={intl.formatMessage({id: "search"})}
+						variant="filled"
+						color="primary"
+					/>
+					{children}
+				</Box>
 			</Box>
 		</Box>
 	);

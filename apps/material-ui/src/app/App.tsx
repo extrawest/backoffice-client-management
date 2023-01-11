@@ -23,6 +23,8 @@ import {
 } from "@mono-redux-starter/tamplateapp";
 import AppRoutes from "../routes";
 import React from "react";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const ability = abilityCheckStorage(store);
 
@@ -30,46 +32,48 @@ export const App: FC = () => {
 
 	return (
 		<Provider store={store}>
-			<HelmetProvider>
-				<AppIntlProvider>
-						<ThemeProvider theme={theme}>
-							<PersistGate
-								loading={
-									<Box
-										component="div"
-										sx={{
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											minHeight: "100vh",
-										}}
-									>
-										<Loader />
-									</Box>
-								}
-								persistor={persistor}
-							>
-								<BrowserRouter>
-									<AbilityContext.Provider value={ability}>
-										<SnackbarProvider
-											maxSnack={3}
-											anchorOrigin={{
-												horizontal: "center",
-												vertical: "bottom"
+			<LocalizationProvider dateAdapter={AdapterDayjs}>
+				<HelmetProvider>
+					<AppIntlProvider>
+							<ThemeProvider theme={theme}>
+								<PersistGate
+									loading={
+										<Box
+											component="div"
+											sx={{
+												display: "flex",
+												justifyContent: "center",
+												alignItems: "center",
+												minHeight: "100vh",
 											}}
 										>
-											<AuthContext>
-												<CssBaseline />
-												<YupGlobalLocale />
-												<AppRoutes />
-											</AuthContext>
-										</SnackbarProvider>
-									</AbilityContext.Provider>
-								</BrowserRouter>
-							</PersistGate>
-						</ThemeProvider>
-				</AppIntlProvider>
-			</HelmetProvider>
+											<Loader />
+										</Box>
+									}
+									persistor={persistor}
+								>
+									<BrowserRouter>
+										<AbilityContext.Provider value={ability}>
+											<SnackbarProvider
+												maxSnack={3}
+												anchorOrigin={{
+													horizontal: "center",
+													vertical: "bottom"
+												}}
+											>
+												<AuthContext>
+													<CssBaseline />
+													<YupGlobalLocale />
+													<AppRoutes />
+												</AuthContext>
+											</SnackbarProvider>
+										</AbilityContext.Provider>
+									</BrowserRouter>
+								</PersistGate>
+							</ThemeProvider>
+					</AppIntlProvider>
+				</HelmetProvider>
+			</LocalizationProvider>
 		</Provider>
 	);
 };

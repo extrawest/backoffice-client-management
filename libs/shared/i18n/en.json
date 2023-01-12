@@ -50,5 +50,8 @@
 	"addClient": "+ Add Client",
 	"addNewClient": "Add new client",
 	"uploaded": "Uploaded",
-	"dragFile": "Drag you photo"
+	"dragFile": "Drag you photo",
+	"select": "Select",
+	"clear": "Clear",
+	"allTickets": "All tickets"
 }

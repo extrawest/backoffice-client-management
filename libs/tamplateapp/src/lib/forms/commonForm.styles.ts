@@ -23,7 +23,7 @@ export const commonFormStyles: SxStyles = {
 		transition: "opacity 0.3s ease",
 		"&:hover": {
 			textDecoration: "underline",
-			backgroundColor: "ransparent",
+			backgroundColor: "transparent",
 			opacity: 0.8
 		}
 	},

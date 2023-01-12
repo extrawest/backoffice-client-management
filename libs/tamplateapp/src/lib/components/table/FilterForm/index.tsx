@@ -34,14 +34,14 @@ export const FilterForm: FC<FilterFormProps>= ({
 	};
 
 	const handleSubmit = () => {
-		handleFilter({ priority: activePriority, date: new Date() });
+		handleFilter({ priority: activePriority, date: (new Date()).getTime() });
 		isFilterActive(true);
 		handleClose();
 	};
 
 	const handleClear = () => {
 		setActivePriority("");
-		handleFilter({ priority: "", date: new Date() });
+		handleFilter({ priority: "", date: (new Date()).getTime() });
 		isFilterActive(false);
 	};
 	return (

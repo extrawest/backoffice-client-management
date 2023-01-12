@@ -12,6 +12,7 @@ import {
 import { FormattedMessage, useIntl } from "react-intl";
 import { ClientCreateFormWrapper } from "../../clients/ClientCreateFormWrapper/ClientCreateFormWrapper";
 import { Modal } from "../../common/Modal/Modal";
+import { TicketCreateFormWrapper } from "../../tickets/TicketCreateFormWrapper/TicketCreateFormWrapper";
 import { FilterForm } from "../FilterForm";
 import {
 	actionsWrapperSx,
@@ -23,9 +24,13 @@ import {
 import { TableActionProps } from "./TableAction.types";
 
 export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
+	const intl = useIntl();
+
 	const [activePriority, setActivePriority] = useState<string>("");
 	const [isFilterActive, setIsFilterActive] = useState<boolean>(false);
 	const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+	const [openModal, setOpenModal] = useState<boolean>(false);
+
 	const open = Boolean(anchorEl);
 
 	const filterStatus = (value: boolean) => {
@@ -39,6 +44,15 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+
+	const handleOpenModal = () => {
+		setOpenModal(true);
+	};
+
+	const handleCloseModal = () => {
+		setOpenModal(false);
+	};
+
 	return (
     <Box sx={actionsWrapperSx}>
 			<Typography variant='button'>
@@ -47,6 +61,7 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
       <Box sx={filterWrapperSx}>
 				<IconButton
 					sx={filterButtonSx}
+					onClick={handleOpenModal}
 				>
           <Add />
           <Typography variant='body2'>
@@ -86,17 +101,17 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
           />
         </Popover>
       </Box>
-			{/* <Modal
-				handleClose={handleClose}
-        open={open}
-        title={intl.formatMessage({ id: "addNewClient" })}
+			<Modal
+				handleClose={handleCloseModal}
+        open={openModal}
+        title={intl.formatMessage({ id: "addNewTicket" })}
         type="md"
         fullWidth
 			>
-				<ClientCreateFormWrapper
-					handleClose={handleClose}
+				<TicketCreateFormWrapper
+					handleClose={handleCloseModal}
 				/>
-			</Modal> */}
+			</Modal>
     </Box>
 	);
 };

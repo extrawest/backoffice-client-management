@@ -3,3 +3,9 @@ export enum CollectionEnum {
 	TICKETS = "tickets",
 	MANAGERS = "managers"
 }
+
+export enum TicketSortFields {
+	NAME = "name",
+	DATE = "date",
+	PRIORITY = "priority"
+}

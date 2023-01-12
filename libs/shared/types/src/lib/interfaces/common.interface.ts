@@ -1,4 +1,5 @@
 import { DocumentReference } from "firebase/firestore";
+import { TicketSortFields } from "../enums";
 import { PriorityEnum } from "../enums/PriorityEnum";
 
 export type DataProps<T> = {
@@ -18,6 +19,13 @@ export interface Tickets {
 	uid: string,
 	id: number,
 	reference: DocumentReference<Clients>
+}
+
+export interface TicketsRequest {
+	priority: PriorityEnum | string,
+	date: string | number,
+	sortAsc: boolean,
+	sortField: TicketSortFields | string
 }
 
 export interface Clients {

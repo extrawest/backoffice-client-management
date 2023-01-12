@@ -1,7 +1,7 @@
+import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import { SxProps, Theme } from "@mui/material";
-import { PriorityEnum } from "libs/shared/types/src/lib/enums/PriorityEnum";
 
-export const priorityStatusStyles = (priority: PriorityEnum): SxProps<Theme> => ({
+export const priorityStatusStyles = (priority: PriorityEnum | string): SxProps<Theme> => ({
 	borderRadius: (theme: Theme) => theme.spacing(50/8),
 	padding: (theme: Theme) => theme.spacing(
 		5/8,
@@ -9,12 +9,13 @@ export const priorityStatusStyles = (priority: PriorityEnum): SxProps<Theme> => 
 	),
 	background: (theme: Theme) => {
 		const MapStyles = {
-			HIGH: theme.palette.error.main,
-			NORMAL: theme.palette.success.main,
-			LOW: theme.palette.warning.main,
+			"HIGH": theme.palette.error.main,
+			"NORMAL": theme.palette.success.main,
+			"LOW": theme.palette.warning.main,
 		} as const;
 		return MapStyles[priority];
-	}
+	},
+	width: "max-content"
 });
 
 export const typographySx : SxProps<Theme> = {

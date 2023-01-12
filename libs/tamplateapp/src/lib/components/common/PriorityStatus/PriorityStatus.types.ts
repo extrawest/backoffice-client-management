@@ -1,5 +1,5 @@
-import { PriorityEnum } from "libs/shared/types/src/lib/enums/PriorityEnum";
+import { PriorityEnum } from "@mono-redux-starter/shared/types";
 
 export interface PriorityStatusProps {
-	priority: PriorityEnum
+	priority: PriorityEnum | string
 }

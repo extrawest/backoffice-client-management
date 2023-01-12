@@ -32,10 +32,6 @@ export const buttonStyles: SxStyles =  {
 		color: theme.palette.background.default,
 		"&.MuiButton-contained": {
 			color: "common.white",
-			"&.MuiButtonBase-root.MuiButton-root:hover": {
-				backgroundColor: "primary.main",
-				opacity: 0.8,
-			}
 		},
 
 		"&:disabled": {

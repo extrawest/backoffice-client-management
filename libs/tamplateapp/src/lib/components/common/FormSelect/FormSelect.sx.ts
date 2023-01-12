@@ -42,8 +42,10 @@ export const optionBtnSx:SxProps = {
 export const selectSx: SxProps<Theme> = {
 	width: "100%",
 	outline: "none",
+	borderRadius: theme.spacing(50/8),
+	overflow: "hidden",
 	"&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-		border: `${theme.spacing(1/8)} solid ${theme.palette.grayscale[400]} `
+		border: `${theme.spacing(1/8)} solid ${theme.palette.grayscale[400]} `,
 	}
 };
 

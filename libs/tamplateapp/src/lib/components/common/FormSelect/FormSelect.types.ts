@@ -1,3 +1,4 @@
+import { SelectValue } from "@mono-redux-starter/shared/types";
 import {
 	SelectChangeEvent,
 	SxProps,
@@ -23,10 +24,4 @@ export interface SelectInputProps {
 	select?: boolean,
 	data: SelectValue[],
 	defaultValue?: boolean
-}
-
-export interface SelectValue {
-	value: string,
-	id: number,
-	name: string
 }

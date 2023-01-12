@@ -36,3 +36,9 @@ export interface Clients {
 	tickets: string[],
 	imageReference: DocumentReference
 }
+
+export interface SelectValue {
+	value: string,
+	id: number,
+	name: string
+}

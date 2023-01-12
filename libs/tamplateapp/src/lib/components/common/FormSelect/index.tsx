@@ -1,3 +1,4 @@
+import { SelectValue } from "@mono-redux-starter/shared/types";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import {
 	Box,
@@ -20,7 +21,7 @@ import {
 	placeholderWrapperSx,
 	selectSx
 } from "./FormSelect.sx";
-import { SelectInputProps, SelectValue } from "./FormSelect.types";
+import { SelectInputProps } from "./FormSelect.types";
 
 export const FormSelect: FC<SelectInputProps> = ({
 	input,
@@ -34,6 +35,7 @@ export const FormSelect: FC<SelectInputProps> = ({
 	description,
 	disabled,
 	value,
+	placeholder = "select",
 	...rest
 }) => {
 	const intl = useIntl();
@@ -42,7 +44,7 @@ export const FormSelect: FC<SelectInputProps> = ({
 		setShowPlaceholder(false);
 	};
 	const handleBlurField = () => {
-		rest.placeholder && setShowPlaceholder(true);
+		placeholder && setShowPlaceholder(true);
 	};
 
 	const inputIsPriority = input === "priority";
@@ -69,7 +71,7 @@ export const FormSelect: FC<SelectInputProps> = ({
             sx={placeholderSx}
             variant="body1"
           >
-            <FormattedMessage id="select" />
+            <FormattedMessage id={placeholder} />
           </Typography>
         )}
         <Select

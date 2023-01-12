@@ -1,3 +1,4 @@
+import { TicketSortFields } from "@mono-redux-starter/shared/types";
 import { convertToDate, convertToDateTime } from "@mono-redux-starter/shared/utils";
 import { GridColumns } from "@mui/x-data-grid";
 import { FormattedMessage } from "react-intl";
@@ -11,9 +12,8 @@ export const columnConfigUsers: GridColumns = [
 		field: "image",
 		headerName: "",
 		flex: 1,
-		minWidth: 80,
 		sortable: false,
-		cellClassName: "ampTableCell",
+		minWidth: 80,
 		renderCell: (params) => (
 			params.row.reference ?
 			<ImageWrapper
@@ -25,12 +25,10 @@ export const columnConfigUsers: GridColumns = [
 		)
 	},
 	{
-		field: "ticketDetails",
+		field: TicketSortFields.NAME,
 		renderHeader: (params) => <FormattedMessage id={"ticketDetails"} />,
 		flex: 5,
 		minWidth: 200,
-		sortable: false,
-		cellClassName: "ampTableCell",
 		renderCell: (params) => (
 			<CellWithCaption
 				mainText={params.row.name}
@@ -45,7 +43,6 @@ export const columnConfigUsers: GridColumns = [
 		flex: 3,
 		minWidth: 120,
 		sortable: false,
-		cellClassName: "ampTableCell",
 		renderCell: (params) => (
 			<ClientCell
 				clientReference={params.row.reference}
@@ -53,12 +50,10 @@ export const columnConfigUsers: GridColumns = [
 		)
 	},
 	{
-		field: "date",
+		field: TicketSortFields.DATE,
 		renderHeader: (params) => <FormattedMessage id={"date"} />,
 		flex: 3,
 		minWidth: 120,
-		sortable: false,
-		cellClassName: "ampTableCell",
 		renderCell: (params) => {
 			const dateTime = convertToDateTime(params.row.date.seconds);
 			return (
@@ -70,12 +65,10 @@ export const columnConfigUsers: GridColumns = [
 		}
 	},
 	{
-		field: "priority",
+		field: TicketSortFields.PRIORITY,
 		renderHeader: (params) => <FormattedMessage id={"priority"} />,
 		flex: 2,
 		minWidth: 120,
-		sortable: false,
-		cellClassName: "ampTableCell",
 		renderCell: (params) => {
 			return(
 				<PriorityStatus priority={params.row.priority} />
@@ -86,9 +79,8 @@ export const columnConfigUsers: GridColumns = [
 		field: "actions",
 		headerName: "",
 		flex: 1,
-		minWidth: 80,
 		sortable: false,
-		cellClassName: "ampTableCell",
+		minWidth: 80,
 		renderCell: (params) => (<>123</>)
 	}
 ];

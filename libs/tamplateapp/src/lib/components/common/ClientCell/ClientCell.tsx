@@ -11,6 +11,9 @@ import { ClientCellProps } from "./ClientCell.types";
 export const getClient = (
 	clientReference: DocumentReference<Clients>, setClientData: Dispatch<SetStateAction<Clients | undefined>>
 ) => async () => {
+	if(!clientReference){
+		return;
+	}
 	const client = await getDoc(clientReference);
 	setClientData(client.data());
 };
@@ -28,9 +31,9 @@ export const ClientCell: FC<ClientCellProps> = ({ clientReference }) => {
 	);
 	return clientData ? (
 		<CellWithCaption
-			mainText={`${clientData.firstName} ${clientData.lastName}`}
+			mainText={clientData ? `${clientData.firstName} ${clientData.lastName}` : ""}
 			captionFormatMessage="on"
-			caption={convertToDate(clientData.date.seconds)}
+			caption={clientData ? convertToDate(clientData.date.seconds) : ""}
 		/>
 	): (<></>);
 };

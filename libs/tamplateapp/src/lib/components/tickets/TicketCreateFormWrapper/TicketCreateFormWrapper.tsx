@@ -26,24 +26,24 @@ const handleSubmit = (handleClose: () => void) => async (values: TicketValues) =
 	);
 	try{
 		const currentDate = (new Date()).getTime();
+		const clientRef = doc(
+			firestore(),
+			CollectionEnum.CLIENTS,
+			values.client
+		);
+
 		const data = {
 			date: Timestamp.fromMillis(currentDate),
 			last_updated: Timestamp.fromMillis(currentDate),
 			name: values.name,
 			priority: values.priority,
 			id:"id" + currentDate,
-			clientsRef: `${CollectionEnum.CLIENTS}/${values.client}`
+			reference: clientRef
 		};
 
 		const currentTicketDoc = await addDoc(
 			ticketsRef,
 			data
-		);
-
-		const clientRef = doc(
-			firestore(),
-			CollectionEnum.CLIENTS,
-			values.client
 		);
 
 		const clientDoc = await getDoc(clientRef);

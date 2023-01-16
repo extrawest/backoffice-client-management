@@ -56,5 +56,6 @@
 	"allTickets": "All tickets",
 	"addNewTicket": "Add new ticket",
 	"ticketName": "Ticket Name",
-	"client": "Client"
+	"client": "Client",
+	"rowsPerPage": "Rows per page:"
 }

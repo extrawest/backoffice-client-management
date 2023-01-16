@@ -10,17 +10,27 @@ import {
 import { DefaultTable } from "../DefaultTable";
 import { TableAction } from "../TableAction";
 import { FilterValue } from "../TableAction/TableAction.types";
+import { TablePagination } from "../TablePagination";
+import { TableRowCounter } from "../TableRowCounter";
 import { tableFooterSx, wrapperSx } from "./TicketsTable.styles";
 import { columnConfigUsers } from "./TicketsTable.tableConfig";
 import { TicketsTableProps } from "./TicketsTable.types";
 
-export const TicketsTable: FC<TicketsTableProps> = ({ data, handleUpdateTableData, handleChangePage, handleChangeRowsNumber }) => {
+export const TicketsTable: FC<TicketsTableProps> = ({
+	data,
+	currentPage,
+	totalElements,
+	limit,
+	handleUpdateTableData,
+	handleChangePage,
+	handleChangeRowsNumber
+}) => {
 	const [sortValue, setSortValue] = useState<GridSortItem>({ field: "", sort: "asc" });
 	const [filterValue, setFilterValue] = useState<FilterValue>({ date: 0, priority: "" });
 
 	useEffect(
 		() => {
-			handleUpdateTableData && handleUpdateTableData({
+			handleUpdateTableData({
 				...filterValue,
 				sortAsc: sortValue ? sortValue.sort === "asc" : true,
 				sortField: (sortValue && sortValue.field) || TicketSortFields.DATE
@@ -40,16 +50,16 @@ export const TicketsTable: FC<TicketsTableProps> = ({ data, handleUpdateTableDat
 				columns={columnConfigUsers}
 				handleSort={( val: GridSortModel ) => setSortValue(val[0])}
 			/>
-      {/* <Box sx={tableFooterSx}>
+      <Box sx={tableFooterSx}>
         <TableRowCounter
           handleChangeRowsNumber={handleChangeRowsNumber}
         />
         <TablePagination
-          totalPages={data.totalPages}
-          page={data.number}
+          totalPages={Math.ceil(totalElements/limit)}
+          page={currentPage}
           handleChangePage={handleChangePage}
         />
-      </Box> */}
+      </Box>
     </Box>
 	);
 };

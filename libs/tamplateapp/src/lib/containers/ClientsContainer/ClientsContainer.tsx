@@ -6,7 +6,11 @@ import {
 	useState
 } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Box, Typography } from "@mui/material";
+import {
+	Box,
+	SelectProps,
+	Typography
+} from "@mui/material";
 import { contentSx, titleWrapperSx } from "./ClientsContainer.styles";
 import { TicketsTable } from "../../components/table/TicketsTable";
 import {
@@ -26,13 +30,14 @@ import {
 	getDocs,
 	DocumentData,
 	QueryDocumentSnapshot,
-	Timestamp
+	getCountFromServer
 } from "firebase/firestore";
 import { convertData, ticketsCollectionRef } from "@mono-redux-starter/firebase";
 import { ClientCreateFormWrapper } from "../../components/clients/ClientCreateFormWrapper/ClientCreateFormWrapper";
 
 const getTicketsCollection = (
-	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<unknown>[]>>,
+	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<DocumentData>[]>>,
+	setCount: Dispatch<SetStateAction<number>>,
 	limitValues = 10,
 	values?: TicketsRequest,
 	currentTickets: QueryDocumentSnapshot<DocumentData>[] = [],
@@ -42,11 +47,6 @@ const getTicketsCollection = (
 
 	const firstVisible = currentTickets.at(0);
 	const lastVisible = currentTickets.at(-1);
-
-	if(getNext !== undefined){
-		getNext && lastVisible && queryParams.push(startAfter(lastVisible));
-		!getNext && firstVisible && queryParams.push(endBefore(firstVisible));
-	}
 
 	if(values?.priority){
 		queryParams.push(where(
@@ -65,22 +65,31 @@ const getTicketsCollection = (
 		values.sortField,
 		values.sortAsc ? "asc" : "desc"
 	));
+	if(getNext !== undefined){
+		getNext && lastVisible && queryParams.push(startAfter(lastVisible));
+		!getNext && firstVisible && queryParams.push(endBefore(firstVisible));
+	}
 
 	const queryCollection = query(
 		...queryParams,
 		limit(limitValues)
 	);
-
+	const countOfDocuments = await getCountFromServer(query(...queryParams));
+	getNext === undefined && setCount(countOfDocuments.data().count);
 	const documentSnapshots = await getDocs(queryCollection);
-	setTickets(documentSnapshots.docs);
+	setTickets(documentSnapshots.docs as QueryDocumentSnapshot<DocumentData>[]);
 	return;
 };
 
 export const ClientsContainer: FC = () => {
 	const intl = useIntl();
-	const [ticketsSnapshot, setTicketsSnapshot] = useState<QueryDocumentSnapshot<unknown>[]>([]);
+	const [ticketsSnapshot, setTicketsSnapshot] = useState<QueryDocumentSnapshot<DocumentData>[]>([]);
 	const [tickets, setTickets] = useState<Tickets[]>([]);
+	const [currentPage, setCurrentPage] = useState<number>(0);
+	const [count, setCount] = useState<number>(0);
 	const [open, setOpen] = useState<boolean>(false);
+	const [limitElements, setLimitElements] = useState<number>(10);
+	const [filterValue, setFilterValue] = useState<TicketsRequest>();
 
 	const handleClose = () => {
 		setOpen(false);
@@ -92,7 +101,10 @@ export const ClientsContainer: FC = () => {
 
 	useEffect(
 		() => {
-			getTicketsCollection(setTicketsSnapshot)();
+			getTicketsCollection(
+				setTicketsSnapshot,
+				setCount
+			)();
 		},
 		[]
 	);
@@ -104,12 +116,42 @@ export const ClientsContainer: FC = () => {
 		[ticketsSnapshot]
 	);
 
-	const handleUpdateTableData = (value: TicketsRequest) => {
+	const handleChangeRowsNumber: SelectProps["onChange"] = (e) => {
+		const currentLimit = e.target.value as number;
+		setLimitElements(currentLimit);
 		getTicketsCollection(
 			setTicketsSnapshot,
-			10,
+			setCount,
+			currentLimit,
+			filterValue
+		)();
+	};
+
+	const handleUpdateTableData = (value: TicketsRequest) => {
+		setFilterValue(value);
+		getTicketsCollection(
+			setTicketsSnapshot,
+			setCount,
+			limitElements,
 			value
 		)();
+	};
+
+	const handleChangePage = (page: number) => {
+		const checkCurrentPage = page === currentPage
+			? undefined
+			: page > currentPage
+				? true
+				: false;
+		getTicketsCollection(
+			setTicketsSnapshot,
+			setCount,
+			limitElements,
+			filterValue && filterValue,
+			ticketsSnapshot,
+			checkCurrentPage
+		)();
+		setCurrentPage(page);
 	};
 
 	return (
@@ -132,7 +174,12 @@ export const ClientsContainer: FC = () => {
 			</Box>
 			{tickets && <TicketsTable
 				data={tickets}
+				currentPage={currentPage}
+				handleChangePage={handleChangePage}
 				handleUpdateTableData={handleUpdateTableData}
+				handleChangeRowsNumber={handleChangeRowsNumber}
+				totalElements={count}
+				limit={limitElements}
 			/>}
 			<Modal
 				handleClose={handleClose}

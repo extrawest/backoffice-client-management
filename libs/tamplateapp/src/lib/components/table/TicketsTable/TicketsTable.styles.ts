@@ -10,7 +10,7 @@ export const wrapperSx: SxProps<Theme> = {
 export const tableFooterSx: SxProps<Theme> = {
 	display: "flex",
 	alignItems: "center",
-	justifyContent: "space-between",
+	justifyContent: "flex-end",
 	px: 0,
 	py: 1
 };

@@ -9,7 +9,7 @@ import { ChartWrapper } from "../../components/common/ChartWrapper/ChartWrapper"
 import { commonContainers } from "../commonContainers.styles";
 
 export const DashboardContainer: FC = () => (
-	<Box>
+	<Box sx={commonContainers["contentSx"]}>
 		<Box sx={commonContainers["titleWrapperSx"]}>
 			<Typography
 				variant="h5"

@@ -11,7 +11,6 @@ import {
 	SelectProps,
 	Typography
 } from "@mui/material";
-import { contentSx } from "./ClientsContainer.styles";
 import { TicketsTable } from "../../components/table/TicketsTable";
 import {
 	Tickets,
@@ -156,7 +155,7 @@ export const ClientsContainer: FC = () => {
 	};
 
 	return (
-		<Box sx={contentSx}>
+		<Box sx={commonContainers["contentSx"]}>
 			<Box sx={commonContainers["titleWrapperSx"]}>
 				<Typography
 					variant="h5"

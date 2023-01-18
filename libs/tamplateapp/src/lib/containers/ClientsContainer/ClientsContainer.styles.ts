@@ -35,7 +35,3 @@ export const textFieldSx: SxProps<Theme> = {
 		}
 	},
 };
-
-export const contentSx: SxProps<Theme> = {
-	marginTop: (theme: Theme) => theme.spacing(30/8),
-};

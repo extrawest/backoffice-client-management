@@ -12,4 +12,7 @@ export const commonContainers: SxStyles = {
 		border: (theme: Theme) => `${theme.spacing(1/8)} solid ${theme.palette.grayscale[200]}`,
 		borderRadius: (theme: Theme) => theme.spacing(8/8),
 	},
+	contentSx: {
+		marginTop: (theme: Theme) => theme.spacing(30/8),
+	}
 };

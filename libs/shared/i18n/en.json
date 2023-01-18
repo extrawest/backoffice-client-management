@@ -57,5 +57,12 @@
 	"addNewTicket": "Add new ticket",
 	"ticketName": "Ticket Name",
 	"client": "Client",
-	"rowsPerPage": "Rows per page:"
+	"rowsPerPage": "Rows per page:",
+	"todaysTrends": "Today's trends",
+	"asOf": "as of {date}",
+	"resolved": "Resolved",
+	"received": "Reveiced",
+	"avarageFirstResponse": "Avarage first response time",
+	"avarageResponse": "Avarage response time",
+	"resolutionSLA": "Resolution within SLA"
 }

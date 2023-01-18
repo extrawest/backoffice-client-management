@@ -10,7 +10,7 @@ import { TableRowCounterType } from "./TableRowCounter.types";
 import { counterWrapperSx, rowsSelectSx } from "./TableRowCounter.sx";
 import { KeyboardArrowDown } from "@mui/icons-material";
 
-export const TableRowCounter: FC<TableRowCounterType> = ({handleChangeRowsNumber, value}) => {
+export const TableRowCounter: FC<TableRowCounterType> = ({handleChangeRowsNumber, value = 10}) => {
 
 	return (
     <Box sx={counterWrapperSx}>

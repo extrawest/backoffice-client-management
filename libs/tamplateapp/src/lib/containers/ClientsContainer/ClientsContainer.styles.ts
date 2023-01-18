@@ -39,10 +39,3 @@ export const textFieldSx: SxProps<Theme> = {
 export const contentSx: SxProps<Theme> = {
 	marginTop: (theme: Theme) => theme.spacing(30/8),
 };
-
-export const titleWrapperSx: SxProps<Theme> = {
-	display: "flex",
-	justifyContent: "space-between",
-	alignItems: "center",
-	marginBottom: (theme: Theme) => theme.spacing(20/8)
-};

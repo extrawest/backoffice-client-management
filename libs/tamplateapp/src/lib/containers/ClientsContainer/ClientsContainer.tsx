@@ -11,7 +11,7 @@ import {
 	SelectProps,
 	Typography
 } from "@mui/material";
-import { contentSx, titleWrapperSx } from "./ClientsContainer.styles";
+import { contentSx } from "./ClientsContainer.styles";
 import { TicketsTable } from "../../components/table/TicketsTable";
 import {
 	Tickets,
@@ -34,6 +34,7 @@ import {
 } from "firebase/firestore";
 import { convertData, ticketsCollectionRef } from "@mono-redux-starter/firebase";
 import { ClientCreateFormWrapper } from "../../components/clients/ClientCreateFormWrapper/ClientCreateFormWrapper";
+import { commonContainers } from "../commonContainers.styles";
 
 const getTicketsCollection = (
 	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<DocumentData>[]>>,
@@ -156,7 +157,7 @@ export const ClientsContainer: FC = () => {
 
 	return (
 		<Box sx={contentSx}>
-			<Box sx={titleWrapperSx}>
+			<Box sx={commonContainers["titleWrapperSx"]}>
 				<Typography
 					variant="h5"
 					sx={{ width: "calc(100% - 240px)" }}

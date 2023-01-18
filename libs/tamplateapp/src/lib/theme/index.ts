@@ -45,11 +45,13 @@ declare module "@mui/material/styles" {
 	}
 	interface TypographyVariants {
 		description: React.CSSProperties;
+		title: React.CSSProperties
 	}
 
 	// allow configuration using `createTheme`
 	interface TypographyVariantsOptions {
 		description?: React.CSSProperties;
+		title?: React.CSSProperties
 	}
 }
 
@@ -67,6 +69,7 @@ declare module "@mui/material/styles" {
 declare module "@mui/material/Typography" {
 	interface TypographyPropsVariantOverrides {
 		description: true;
+		title: true
 	}
 }
 
@@ -257,6 +260,13 @@ theme.typography.caption = {
 theme.typography.description = {
 	fontSize: pxToRem(12),
 	fontWeight: 400,
+	[theme.breakpoints.down("lg")]: {
+		fontSize: pxToRem(10),
+	},
+};
+theme.typography.title = {
+	fontSize: pxToRem(24),
+	fontWeight: 700,
 	[theme.breakpoints.down("lg")]: {
 		fontSize: pxToRem(10),
 	},

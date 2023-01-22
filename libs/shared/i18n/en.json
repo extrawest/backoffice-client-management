@@ -64,5 +64,19 @@
 	"received": "Reveiced",
 	"avarageFirstResponse": "Avarage first response time",
 	"avarageResponse": "Avarage response time",
-	"resolutionSLA": "Resolution within SLA"
+	"resolutionSLA": "Resolution within SLA",
+	"unresolvedTickets": "Unresolved tickets",
+	"viewDetails": "View details",
+	"waitingRequest": "Waiting on Feature Request",
+	"awaitingResponse": "Awaiting Customer Response",
+	"awaitingFix": "Awaiting Developer Fix",
+	"pending": "Pending",
+	"group": "Group: {caption}",
+	"tasks": "Tasks",
+	"today": "Today",
+	"viewAll": "View all",
+	"finishTicket": "Finish ticket update",
+	"createNewTicket": "Create new ticket example",
+	"updateTicket": "Update ticket report",
+	"createNewTask": "Create new task"
 }

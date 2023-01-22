@@ -6,12 +6,16 @@ export const linkStyles =  {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
-		fontSize: pxToRem(14),
-		fontWeight: 700,
 		borderRadius: theme.spacing(2/8),
 		overflow: "hidden",
 		outline: "none",
 		transition: "0.3 ease",
-		color: theme.palette.blue[600]
+		backgorund: "transparent",
+		color: theme.palette.blue[600],
+		border: "none",
+		fontSize: pxToRem(14),
+		fontWeight: 600,
+		letterSpacing: "0.2px",
+		width: "max-content"
 	},
 };

@@ -21,6 +21,7 @@
 			"@mono-redux-starter/shared": ["libs/shared/src/index.ts"],
 			"@mono-redux-starter/shared/hoks": ["libs/shared/hoks/src/index.ts"],
 			"@mono-redux-starter/shared/hooks": ["libs/shared/hooks/src/index.ts"],
+			"@mono-redux-starter/shared/fonts": ["libs/shared/fonts/stylesheet.css"],
 			"@mono-redux-starter/shared/permissions": [
 				"libs/shared/permissions/src/index.ts"
 			],

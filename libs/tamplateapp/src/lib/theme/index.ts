@@ -3,6 +3,7 @@ import {
 	pxToRem,
 	defaultBodyFontSize,
 } from "@mono-redux-starter/shared/utils";
+import "@mono-redux-starter/shared/fonts";
 interface CustomColorTypes {
 	50?: string;
 	100?: string;
@@ -201,6 +202,7 @@ export const theme = createTheme({
 });
 
 theme.typography.h1 = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(56),
 	[theme.breakpoints.down("lg")]: {
 		fontSize: pxToRem(28),
@@ -208,6 +210,7 @@ theme.typography.h1 = {
 	fontWeight: 550,
 };
 theme.typography.h4 = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(40),
 	[theme.breakpoints.down("lg")]: {
 		fontSize: pxToRem(26),
@@ -215,6 +218,7 @@ theme.typography.h4 = {
 	fontWeight: 550,
 };
 theme.typography.h5 = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(40),
 	[theme.breakpoints.down("lg")]: {
 		fontSize: pxToRem(26),
@@ -222,6 +226,7 @@ theme.typography.h5 = {
 	fontWeight: 550,
 };
 theme.typography.button = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(22),
 	[theme.breakpoints.down("lg")]: {
 		fontSize: pxToRem(15),
@@ -229,6 +234,7 @@ theme.typography.button = {
 	fontWeight: 550,
 };
 theme.typography.body1 = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(16),
 	fontWeight: 400,
 	[theme.breakpoints.down("lg")]: {
@@ -236,6 +242,7 @@ theme.typography.body1 = {
 	},
 };
 theme.typography.body2 = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(14),
 	fontWeight: 400,
 	[theme.breakpoints.down("lg")]: {
@@ -244,6 +251,7 @@ theme.typography.body2 = {
 	},
 };
 theme.typography.subtitle1 = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(18),
 	fontWeight: 500,
 	[theme.breakpoints.down("lg")]: {
@@ -251,6 +259,7 @@ theme.typography.subtitle1 = {
 	},
 };
 theme.typography.caption = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(19),
 	fontWeight: 700,
 	[theme.breakpoints.down("lg")]: {
@@ -258,6 +267,7 @@ theme.typography.caption = {
 	},
 };
 theme.typography.description = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(12),
 	fontWeight: 400,
 	[theme.breakpoints.down("lg")]: {
@@ -265,6 +275,7 @@ theme.typography.description = {
 	},
 };
 theme.typography.title = {
+	fontFamily: "Open Sans, sans-serif",
 	fontSize: pxToRem(24),
 	fontWeight: 700,
 	[theme.breakpoints.down("lg")]: {
@@ -279,7 +290,6 @@ theme.components = {
 				fontSize: defaultBodyFontSize,
 				fontFamily: [
 					"Open Sans",
-					"Roboto",
 					"sans-serif"
 				].join(",")
 			},

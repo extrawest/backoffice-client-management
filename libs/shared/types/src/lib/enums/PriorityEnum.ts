@@ -3,3 +3,9 @@ export enum PriorityEnum {
 	NORMAL = "NORMAL",
 	LOW = "LOW"
 }
+
+export enum TaskStatusEnum {
+	URGENT = "URGENT",
+	NEW = "NEW",
+	DEFAULT = "DEFAULT"
+}

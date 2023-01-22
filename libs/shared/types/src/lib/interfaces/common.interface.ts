@@ -1,6 +1,6 @@
 import { DocumentReference } from "firebase/firestore";
 import { TicketSortFields } from "../enums";
-import { PriorityEnum } from "../enums/PriorityEnum";
+import { PriorityEnum, TaskStatusEnum } from "../enums/PriorityEnum";
 
 export type DataProps<T> = {
 	[key: string]: T
@@ -41,4 +41,15 @@ export interface SelectValue {
 	value: string,
 	id: number,
 	name: string
+}
+
+export interface SimpleDataList {
+	value: string,
+	title: string
+}
+
+export interface TaskDataList {
+	id: number,
+	text: string,
+	taskStatus: TaskStatusEnum
 }

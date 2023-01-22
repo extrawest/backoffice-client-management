@@ -84,7 +84,7 @@ export const Sidebar: FC = () => {
 				>
 					<Logout />
 					<Typography
-						variant="caption"
+						variant="body1"
 						fontWeight="400"
 					>
 						{intl.formatMessage({

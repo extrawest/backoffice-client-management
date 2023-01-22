@@ -1,11 +1,11 @@
 import { SxProps, Theme } from "@mui/material";
 
 export const mergeStyles = (
-	firstStyle: SxProps<Theme>,
+	firstStyle?: SxProps<Theme>,
 	lastStyle?: SxProps<Theme>
 ) => {
-	if(!lastStyle){
-		return firstStyle;
+	if(!lastStyle || !firstStyle){
+		return undefined;
 	}
 	return {
 		...firstStyle,

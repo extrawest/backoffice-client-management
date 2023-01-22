@@ -18,10 +18,10 @@ export const Button: FC<ButtonProps> = ({
 		<MuiButton
 			{...rest}
 			sx={mergeStyles(
+				!outlined
+				? buttonStyles["tableBtn"]
+				: buttonStyles["outlined"]
 					rest.sx,
-					!outlined
-					? buttonStyles["tableBtn"]
-					: buttonStyles["outlined"]
 				)
 			}
 		>

@@ -1,3 +1,4 @@
+import { SimpleDataList } from "@mono-redux-starter/shared/types";
 import {
 	Box,
 	Grid,
@@ -6,16 +7,12 @@ import {
 import { FC } from "react";
 import { useIntl } from "react-intl";
 import { Chart } from "../Chart/Chart";
+import { GridList } from "../GridList/GridList";
 import { chartWrapper } from "./ChartWrapper.styles";
-
-interface TrendsDataType {
-	value: string,
-	title: string
-}
 
 export const ChartWrapper: FC = () => {
 	const intl = useIntl();
-	const trendsData: TrendsDataType[] = [
+	const trendsData: SimpleDataList[] = [
 		{
 			title: intl.formatMessage({id: "resolved"}),
 			value: "449"
@@ -48,42 +45,17 @@ export const ChartWrapper: FC = () => {
 				md={9}
 			>
 				<Box
-					sx={chartWrapper["chart"]}
+					sx={chartWrapper}
 				>
 					<Chart />
 				</Box>
 			</Grid>
 			<Grid
-				container
 				item
 				xs={12}
 				md={3}
 			>
-				{
-					trendsData.map((
-						item: TrendsDataType,
-						index: number
-					) => (
-						<Grid
-							sx={chartWrapper["chartDataItem"]}
-							key={index}
-							item
-							xs={4}
-							md={12}
-						>
-							<Typography
-								variant="body1"
-								color="grayscale.400"
-								fontWeight={600}
-							>
-								{item.title}
-							</Typography>
-							<Typography variant="title">
-								{item.value}
-							</Typography>
-						</Grid>
-					))
-				}
+				<GridList data={trendsData}/>
 			</Grid>
 		</Grid>
 	);

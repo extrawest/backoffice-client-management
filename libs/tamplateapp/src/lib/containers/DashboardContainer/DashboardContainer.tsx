@@ -6,6 +6,8 @@ import {
 import { FC } from "react";
 import { FormattedMessage } from "react-intl";
 import { ChartWrapper } from "../../components/common/ChartWrapper/ChartWrapper";
+import { Tasks } from "../../components/tickets/Tasks/Tasks";
+import { UnresolvedTickets } from "../../components/tickets/UnresolvedTickets/UnresolvedTickets";
 import { commonContainers } from "../commonContainers.styles";
 
 export const DashboardContainer: FC = () => (
@@ -41,7 +43,7 @@ export const DashboardContainer: FC = () => (
 				<Box
 					sx={commonContainers["gridItem"]}
 				>
-					xs=6
+					<UnresolvedTickets />
 				</Box>
 			</Grid>
 			<Grid
@@ -52,7 +54,7 @@ export const DashboardContainer: FC = () => (
 				<Box
 					sx={commonContainers["gridItem"]}
 				>
-					xs=6
+					<Tasks />
 				</Box>
 			</Grid>
 		</Grid>

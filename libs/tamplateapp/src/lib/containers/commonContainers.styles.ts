@@ -9,6 +9,7 @@ export const commonContainers: SxStyles = {
 		marginBottom: (theme: Theme) => theme.spacing(20/8)
 	},
 	gridItem: {
+		height: "100%",
 		border: (theme: Theme) => `${theme.spacing(1/8)} solid ${theme.palette.grayscale[200]}`,
 		borderRadius: (theme: Theme) => theme.spacing(8/8),
 	},

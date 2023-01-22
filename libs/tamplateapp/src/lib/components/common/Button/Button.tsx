@@ -3,11 +3,13 @@ import { Button as MuiButton, Box, } from "@mui/material";
 import Loader from "../Loader/Loader";
 import { buttonStyles } from "./Button.styles";
 import { ButtonProps } from "./Button.types";
+import { mergeStyles } from "@mono-redux-starter/shared/utils";
 
 export const Button: FC<ButtonProps> = ({
 	children,
 	isLoading = false,
 	isShowText = false,
+	outlined,
 	...rest
 }) => {
 	const onInnerBoxClickHandler = (event: MouseEvent) => rest.disabled && event.stopPropagation();
@@ -15,10 +17,13 @@ export const Button: FC<ButtonProps> = ({
 	return (
 		<MuiButton
 			{...rest}
-			sx={{
-				...rest.sx,
-				...buttonStyles["tableBtn"],
-			}}
+			sx={mergeStyles(
+					rest.sx,
+					!outlined
+					? buttonStyles["tableBtn"]
+					: buttonStyles["outlined"]
+				)
+			}
 		>
 			{(!isLoading || isShowText) && (
 				<Box

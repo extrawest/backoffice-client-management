@@ -45,6 +45,15 @@ export const buttonStyles: SxStyles =  {
 			backgroundColor: "rgba(0, 0, 0, 0.05)",
 		}
 	},
+	outlined: {
+		backgorund: "transparent",
+		color: theme.palette.blue[600],
+		border: "none",
+		fontSize: pxToRem(14),
+		fontWeight: 600,
+		letterSpacing: "0.2px",
+		padding: 0
+	},
 	disabled: {
 		opacity: 0.24,
 	},

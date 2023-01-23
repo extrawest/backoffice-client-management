@@ -1,19 +1,12 @@
 import { FC } from "react";
 import { useIntl } from "react-intl";
-import {
-	Box,
-	Typography
-} from "@mui/material";
-import { Form, Formik } from "formik";
+import { Box, Typography } from "@mui/material";
+import { Form, Formik} from "formik";
 import { FormFieldText } from "../../components/common/FormFieldText/FormFieldText";
 import Button from "../../components/common/Button/Button";
 import { validateShema } from "./LoginForm.schema";
+import { loginStyles } from "./LoginForm.styles";
 import type { LoginFormProps } from "./LoginForm.types";
-import { LockIcon, UserIcon } from "../../icons";
-import { FormCheckbox } from "../../components/common/FormCheckbox";
-import Link from "../../components/common/Link/Link";
-import { AppRouteEnum } from "../../types";
-import { commonFormStyles } from "../commonForm.styles";
 
 export const LoginForm: FC<LoginFormProps> = ({
 	initialValues,
@@ -37,73 +30,42 @@ export const LoginForm: FC<LoginFormProps> = ({
 			{({
 				isSubmitting
 			}) => (
-				<Form
-					className="dark"
-				>
+				<Form className="dark">
+					<div className="primary.main">12312</div>
 					<Box
-						sx={commonFormStyles["formWrapper"]}
+						component="div"
+						sx={loginStyles.pageContent}
 					>
-						<Box
-							component="div"
-							sx={commonFormStyles["pageContent"]}
+						<Typography
+							sx={loginStyles.title}
+							variant="h1"
 						>
-							<Typography
-								sx={commonFormStyles["title"]}
-								variant="h1"
-							>
-								{intl.formatMessage({
-									id: "template.loginToAccount",
-									defaultMessage: "Log In"
-								})}
-							</Typography>
-							<Typography
-								sx={commonFormStyles["subtitle"]}
-								variant="body2"
-							>
-								{intl.formatMessage({
-									id: "template.loginDescription"
-								})}
-							</Typography>
-							<FormFieldText
+							{intl.formatMessage({
+								id: "template.login",
+								defaultMessage: "Log In"
+							})}
+						</Typography>
+						<FormFieldText
 								type="email"
-								name="email"
-								sx={commonFormStyles["textInput"]}
+								name="username"
+								sx={loginStyles.textInput}
 								title={""}
-								startIcon={<UserIcon />}
 								placeholder={loginText}
 								variant="filled"
 								color="primary"
-							/>
-							<FormFieldText
+						/>
+						<FormFieldText
 								type="password"
 								name="password"
-								sx={commonFormStyles["textInput"]}
+								sx={loginStyles.textInput}
 								title={""}
-								startIcon={<LockIcon />}
 								placeholder={intl.formatMessage({
-									id: "template.password",
-									defaultMessage: "Password"
-								})}
+										id: "template.password",
+										defaultMessage: "Password"
+									})}
 								variant="filled"
 								color="primary"
-							/>
-						</Box>
-						<Box sx={commonFormStyles["actionsWrapper"]}>
-							<FormCheckbox
-								label={intl.formatMessage({
-									id: "template.remember"
-								})}
-							/>
-							<Link href={AppRouteEnum.FORGOT}>
-								<Typography
-									variant="body1"
-								>
-									{intl.formatMessage({
-										id: "forgot"
-									})}
-								</Typography>
-							</Link>
-						</Box>
+						/>
 						<Button
 							color="primary"
 							disabled={isSubmitting}
@@ -112,22 +74,12 @@ export const LoginForm: FC<LoginFormProps> = ({
 							variant="contained"
 							data-testid="submitBtn"
 							isLoading={isLoading}
-							sx={commonFormStyles["submitButton"]}
 						>
 							{intl.formatMessage({
-								id: "template.login",
+								id: "template.go",
 								defaultMessage: "Go"
 							})}
 						</Button>
-						<Link href={AppRouteEnum.REGISTRATION}>
-							<Typography
-								variant="body1"
-							>
-								{intl.formatMessage({
-									id: "template.signUp"
-								})}
-							</Typography>
-						</Link>
 					</Box>
 				</Form>
 			)}

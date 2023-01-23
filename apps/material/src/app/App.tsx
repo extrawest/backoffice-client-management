@@ -18,7 +18,7 @@ import {
 	persistor,
 	AuthContext,
 	theme
-} from "@mono-redux-starter/tamplateapp";
+} from "@mono-redux-starter/material-lib";
 import AppRoutes from "../routes";
 import React from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers";

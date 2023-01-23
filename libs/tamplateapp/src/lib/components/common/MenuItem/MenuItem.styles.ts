@@ -1,18 +1,10 @@
 import { Theme } from "@mui/material";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
-import { theme } from "../../../theme";
 
 export const menuItemStyles = {
-	itemWrap: {
-		display: "flex",
-		alignItems: "center",
-		gap: theme.spacing(15/8)
-	},
-	svgIcon: {
-		overflow: "visible"
-	},
 	menuLink: {
 		width: "100%",
+		marginBottom: (theme: Theme) => theme.spacing(4 / 8),
 		display: "inline-flex",
 		fontSize: pxToRem(16),
 		fontWeight: 400,
@@ -35,5 +27,8 @@ export const menuItemStyles = {
 		"&.MuiTypography-root": {
 			marginRight: 0,
 		}
+	},
+	wrap: {
+		paddingLeft: (theme: Theme) => theme.spacing(30 / 8),
 	},
 };

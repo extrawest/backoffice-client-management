@@ -1,7 +1,11 @@
-import { alpha, Theme } from "@mui/material";
-import { theme } from "../../theme";
+import {
+	alpha,
+	SxProps,
+	Theme
+} from "@mui/material";
+import { SxStyles } from "libs/material-lib/src/lib/types/styles";
 
-export const mainLayoutStyles = {
+export const mainLayoutStyles: SxStyles = {
 	layoutContainer: {
 		display: "flex",
 		overflow: "hidden",
@@ -23,13 +27,13 @@ export const mainLayoutStyles = {
 		},
 		"&.MuiDrawer-root>.MuiPaper-root": {
 			width: "350px",
-			boxShadow: `0 4px 34px ${alpha(
+			boxShadow: (theme: Theme) => `0 4px 34px ${alpha(
 				theme.palette.secondary.main,
 				0.09
 			)}`,
 			position: "relative",
 			top: "0",
-			padding: theme.spacing(
+			padding: (theme: Theme) => theme.spacing(
 				6.25,
 				50/8,
 				5
@@ -47,7 +51,7 @@ export const mainLayoutStyles = {
 		}
 	},
 	menuButton: {
-		marginRight: theme.spacing(2),
+		marginRight: (theme: Theme) => theme.spacing(2),
 		display: {
 			xs: "flex",
 			md: "none",
@@ -75,7 +79,7 @@ export const mainLayoutStyles = {
 	},
 	wrapperSx: {
 		width: "100%",
-		padding: theme.spacing(
+		padding: (theme: Theme) => theme.spacing(
 			50/8,
 			20/8
 		)

@@ -15,7 +15,7 @@ export const privateRoutes: PrivateRoutes = [
 	},
 	{
 		element: <Clients />,
-		path: AppRouteEnum.CLIENTS,
+		path: AppRouteEnum.UNITS,
 		exact: true,
 		roles: [RoleEnum.ROLE_SUPER_ADMIN],
 		isAuth: true

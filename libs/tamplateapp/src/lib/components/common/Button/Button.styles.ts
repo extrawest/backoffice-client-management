@@ -1,37 +1,30 @@
 import {Theme} from "@mui/material";
-import { linearGradient, pxToRem } from "@mono-redux-starter/shared/utils";
-import { theme } from "../../../theme";
-import { SxStyles } from "../../../types/styles";
+import { pxToRem } from "@mono-redux-starter/shared/utils";
 
-export const buttonStyles: SxStyles =  {
+export const buttonStyles =  {
 	tableBtn: {
-		minWidth:  theme.spacing(100/8),
-		maxWidth: theme.spacing(180/8),
-		width: "100%",
-		minHeight:  theme.spacing(44/8),
+		minWidth: (theme: Theme) => theme.spacing(100/8),
+		minHeight: (theme: Theme) => theme.spacing(44/8),
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
-		padding:  theme.spacing(
+		padding: (theme: Theme) => theme.spacing(
 			1.25,
 			1.875
 		),
 		fontSize: pxToRem(14),
 		fontWeight: 700,
-		borderRadius: theme.spacing(50/8),
+		borderRadius: (theme: Theme) =>theme.spacing(2/8),
 		overflow: "hidden",
 		outline: "none",
 		transition: "0.3 ease",
-		background: linearGradient(
-			174.19,
-			-0.39,
-			154.32,
-			theme.palette.info.contrastText,
-			theme.palette.blue[600],
-		),
-		color: theme.palette.background.default,
+
 		"&.MuiButton-contained": {
-			color: "common.white",
+			color: "primary.contrastText",
+			"&.MuiButtonBase-root.MuiButton-root:hover": {
+				backgroundColor: "primary.main",
+				opacity: 0.8,
+			}
 		},
 
 		"&:disabled": {
@@ -45,21 +38,7 @@ export const buttonStyles: SxStyles =  {
 			backgroundColor: "rgba(0, 0, 0, 0.05)",
 		}
 	},
-	outlined: {
-		backgorund: "transparent",
-		color: theme.palette.blue[600],
-		border: "none",
-		fontSize: pxToRem(14),
-		fontWeight: 600,
-		letterSpacing: "0.2px",
-		padding: 0
-	},
 	disabled: {
 		opacity: 0.24,
-	},
-	boxWrapper: {
-		display: "flex",
-		gap: theme.spacing(5/8),
-		alingItems: "center"
 	}
 };

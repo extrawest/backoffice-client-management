@@ -6,7 +6,7 @@ import {
 	PrivateRoute,
 	PageLayout,
 	PublicRoute
-} from "@mono-redux-starter/tamplateapp";
+} from "@mono-redux-starter/material-lib";
 import { commonRoutes } from "./commonRoutes";
 import { privateRoutes } from "./privateRoutes";
 

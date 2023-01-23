@@ -1,6 +1,6 @@
 import { SxProps, Theme } from "@mui/material";
 import { Color } from "chart.js";
-import { SxStyles } from "libs/tamplateapp/src/lib/types/styles";
+import { SxStyles } from "../../../types/styles";
 
 export const chartStyles: SxStyles = {
 	headerWrapper: {
@@ -24,7 +24,7 @@ export const chartStyles: SxStyles = {
 		alignItems: "center",
 		gap: (theme: Theme) => theme.spacing(20/8)
 	},
-}
+};
 export const legendSx = (color: string): SxProps<Theme> => ({
 	position: "relative",
 	paddingLeft: (theme: Theme) => theme.spacing(30/8),
@@ -39,4 +39,4 @@ export const legendSx = (color: string): SxProps<Theme> => ({
 		height: (theme: Theme) => theme.spacing(4/8),
 		background: (theme: Theme) => color ?? theme.palette.grayscale[200]
 	}
-})
+});

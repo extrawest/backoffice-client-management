@@ -7,7 +7,7 @@ import logger from "redux-logger";
 import {
 	configureStore,
 	combineReducers,
-	Reducer
+	Reducer 
 } from "@reduxjs/toolkit";
 import storage from "reduxjs-toolkit-persist/lib/storage";
 import { CurriedGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
@@ -17,7 +17,7 @@ import {
 	PERSIST,
 	PURGE,
 	REGISTER,
-	REHYDRATE,
+	REHYDRATE, 
 	persistReducer,
 	persistStore,
 } from "reduxjs-toolkit-persist";
@@ -37,7 +37,7 @@ import { isDevelopmentMode } from "@mono-redux-starter/shared/utils";
 const secretKey: string = process.env["NX_CRYPTO_JS_KEY"] as string;
 
 const encryptor = encryptTransform({
-	secretKey: secretKey,
+	secretKey: "NX_CRYPTO_JS_KEY",
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	onError: (error: any) => {
 		// Handle the error.
@@ -95,7 +95,7 @@ const getPersistMiddleware = (getDefaultMiddleware: CurriedGetDefaultMiddleware<
 const getStoreMiddleware = (getDefaultMiddleware: CurriedGetDefaultMiddleware<unknown>) => (
 	// isDevelopmentMode()
 	// 	? [...getPersistMiddleware(getDefaultMiddleware), ...middlewareList, logger]
-	// 	:
+	// 	: 
 	getPersistMiddleware(getDefaultMiddleware).concat(...middlewareList)
 );
 

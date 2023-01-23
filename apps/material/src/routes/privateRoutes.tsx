@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { AppRouteEnum, PrivateRoutes } from "@mono-redux-starter/tamplateapp";
+import { AppRouteEnum, PrivateRoutes } from "@mono-redux-starter/material-lib";
 import { RoleEnum } from "@mono-redux-starter/shared/types";
 
 const Dashboard = lazy(() => import("../pages/Dashboard/Dashboard"));

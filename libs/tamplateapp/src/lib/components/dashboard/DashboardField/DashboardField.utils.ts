@@ -4,8 +4,8 @@ import { ContentElementType } from "./DashboardField.types";
 export const dashboardContent: Array<ContentElementType> = [
 	{
 		key: "unit",
-		title: AppRouteTitleEnum.CLIENTS,
+		title: AppRouteTitleEnum.UNITS,
 		quantity: 0,
-		link: "/clients"
+		link: "/units"
 	},
 ];

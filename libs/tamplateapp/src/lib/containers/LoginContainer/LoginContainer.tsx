@@ -2,54 +2,30 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import { FormikHelpers } from "formik";
+import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { LoginForm, Values } from "../../forms/LoginForm";
 import { useTypedDispatch } from "../../store";
 import { AppRouteEnum } from "../../types";
 import { styles } from "./LoginContainer.styles";
-import {
-	auth,
-	getDoc,
-	firestore,
-	doc
-} from "@mono-redux-starter/firebase";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { updateIsLoggedIn, updateManager } from "@mono-redux-starter/redux";
-import { Manager } from "@mono-redux-starter/shared/types";
 
-export const LoginContainer: FC = () => {
+export const MaterialLoginContainer: FC = () => {
 	const navigate = useNavigate();
 	const dispatch = useTypedDispatch();
+
 	const initialValuesLogin = {
-		email: "",
+		username: "",
 		password: ""
 	};
 
-	const [
-		signInWithEmailAndPassword,
-		user,
-		loading,
-		error,
-	] = useSignInWithEmailAndPassword(auth);
-
-	const onSubmit = async (
+	const onSubmit = async(
 		values: Values, form: FormikHelpers<Values>
 	) => {
-		const result = await signInWithEmailAndPassword(
-			values.email,
-			values.password
-		);
-		if(result){
-			const snapshot = await getDoc(doc(
-				firestore(),
-				"managers",
-				result.user.uid
-			));
-			const data = snapshot.data();
-			data && dispatch(updateManager(data as Manager));
-			dispatch(updateIsLoggedIn(true));
-			navigate(AppRouteEnum.DASHBOARD);
-			form.setSubmitting(false);
-		}
+		// login logic...
+
+		dispatch(updateIsLoggedIn(true));
+		navigate(AppRouteEnum.DASHBOARD);
+
+		form.setSubmitting(false);
 	};
 
 	return (
@@ -65,3 +41,5 @@ export const LoginContainer: FC = () => {
 		</Box>
 	);
 };
+
+export default MaterialLoginContainer;

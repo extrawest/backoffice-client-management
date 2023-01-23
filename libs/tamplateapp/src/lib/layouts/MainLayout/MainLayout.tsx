@@ -16,10 +16,7 @@ import { AppRouteEnum } from "../../types/paths";
 import { MainLayoutProps } from "./MainLayout.types";
 import { mainLayoutStyles } from "./MainLayout.styles";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { textFieldSx } from "../../containers/ClientsContainer/ClientsContainer.styles";
-import { Search } from "@mui/icons-material";
 import { useIntl } from "react-intl";
-import TextField from "../../components/common/TextField/TextField";
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	const theme = useTheme();
@@ -35,11 +32,11 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	return (
 		<Box
 			component="div"
-			sx={mainLayoutStyles.layoutContainer}
+			sx={mainLayoutStyles["layoutContainer"]}
 		>
 			<AppBar
 				position="fixed"
-				sx={mainLayoutStyles.appBar}
+				sx={mainLayoutStyles["appBar"]}
 			>
 				<Toolbar>
 					<IconButton
@@ -47,12 +44,12 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 						aria-label="open drawer"
 						edge="start"
 						onClick={toggleDrawer}
-						sx={mainLayoutStyles.menuButton}
+						sx={mainLayoutStyles["menuButton"]}
 					>
 						<MenuIcon />
 					</IconButton>
 					<Link
-						sx={mainLayoutStyles.title}
+						sx={mainLayoutStyles["title"]}
 						component={RouterLink}
 						to={AppRouteEnum.DASHBOARD}
 					>
@@ -64,7 +61,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 			</AppBar>
 			<Drawer
 				variant={isMdUp ? "permanent" : "temporary"}
-				sx={mainLayoutStyles.drawer}
+				sx={mainLayoutStyles["drawer"]}
 				anchor="left"
 				open={open}
 				onClose={toggleDrawer}
@@ -73,20 +70,10 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 			</Drawer>
 			<Box
 				component="div"
-				sx={mainLayoutStyles.contentWrap}
+				sx={mainLayoutStyles["contentWrap"]}
 				id="pageWrap"
 			>
-				<Box sx={mainLayoutStyles.wrapperSx}>
-					<TextField
-						sx={textFieldSx}
-						type="email"
-						name="email"
-						title=""
-						startIcon={<Search />}
-						placeholder={intl.formatMessage({id: "search"})}
-						variant="filled"
-						color="primary"
-					/>
+				<Box sx={mainLayoutStyles["wrapperSx"]}>
 					{children}
 				</Box>
 			</Box>

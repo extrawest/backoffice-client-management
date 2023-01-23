@@ -9,9 +9,6 @@ export const TextField: FC<TextFieldProps> = ({
 	title,
 	isPrice = false,
 	isArea = false,
-	startIcon,
-	endIcon,
-	onAdornmentClick,
 	...rest
 }) => {
 	/* eslint-disable @typescript-eslint/no-explicit-any */
@@ -26,17 +23,9 @@ export const TextField: FC<TextFieldProps> = ({
 			fullWidth
 			InputProps={{
 				inputComponent,
-				startAdornment: (
-					<InputAdornment position="start">
-						{startIcon}
-					</InputAdornment>
-				),
 				endAdornment: (
-					<InputAdornment
-						position="end"
-						onClick={onAdornmentClick}
-					>
-						{endIcon}
+					<InputAdornment position="end">
+						{title}
 					</InputAdornment>
 				)
 			}}

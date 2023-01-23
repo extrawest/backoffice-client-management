@@ -1,8 +1,7 @@
+import { Theme } from "@mui/material";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
-import { theme } from "../../theme";
-import { SxStyles } from "../../types/styles";
 
-export const sidebarStyles: SxStyles =  {
+export const sidebarStyles =  {
 	sidebarContainer: {
 		width: "240px",
 		height: `calc(100vh - 90px)`,
@@ -23,26 +22,15 @@ export const sidebarStyles: SxStyles =  {
 		}
 	},
 	sidebarWrap: {
-		marginBottom: theme.spacing(27 / 8),
+		marginBottom: (theme: Theme) => theme.spacing(27 / 8),
 	},
-	userName: {
-		marginTop: theme.spacing(20 / 8),
-		display: "block"
-	},
-	role: {
-		marginTop: theme.spacing(10 / 8),
-		display: "block"
+	wrap: {
+		paddingLeft: (theme: Theme) => theme.spacing(30 / 8),
 	},
 	caption: {
 		textTransform: "uppercase",
 		opacity: 0.5,
-		marginBottom: theme.spacing(5 / 8),
-	},
-	menuWrap: {
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "space-between",
-		height: "100%"
+		marginBottom: (theme: Theme) => theme.spacing(5 / 8),
 	},
 	menuLink: {
 		display: "inline-flex",
@@ -70,7 +58,7 @@ export const sidebarStyles: SxStyles =  {
 		}
 	},
 	sidebarFooter: {
-		paddingTop: theme.spacing(20 / 8),
+		paddingTop: (theme: Theme) => theme.spacing(20 / 8),
 		marginTop: "auto",
 		display: "flex",
 		flexDirection: "column",
@@ -82,14 +70,13 @@ export const sidebarStyles: SxStyles =  {
 		color: "primary.contrastText",
 		textAlign: "left",
 		justifyContent: "flex-start",
-		paddingLeft: 0,
 		"&.MuiButtonBase-root-MuiButton-root": {
 			justifyContent: "flex-start",
-			paddingTop: theme.spacing(4 / 8),
+			paddingTop: (theme: Theme) => theme.spacing(4 / 8),
 		}
 	},
 	buildingContainer: {
-		minHeight: theme.spacing(47 / 8),
+		minHeight: (theme: Theme) => theme.spacing(47 / 8),
 		display: "flex",
 		alignItems: "center"
 	}

@@ -9,5 +9,3 @@ export * from "./lib/layouts/PageLayout/PageLayout";
 export * from "./lib/containers";
 export * from "./lib/routes/PrivateRoute";
 export * from "./lib/routes/PublicRoute";
-export * from "./lib/icons";
-export * from "./lib/theme";

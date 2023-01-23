@@ -13,7 +13,6 @@ import { Modal } from "../../common/Modal/Modal";
 import { TaskList } from "../../common/TaskList/TaskList";
 import { tasksStyles } from "./Tasks.styles";
 import { TicketCreateFormWrapper } from "../TicketCreateFormWrapper/TicketCreateFormWrapper";
-import { mergeStyles } from "@mono-redux-starter/shared/utils";
 
 export const Tasks: FC = () => {
 	const intl = useIntl();
@@ -30,10 +29,7 @@ export const Tasks: FC = () => {
 	return (
 		<Box sx={tasksStyles["wrapper"]}>
 			<Box
-				sx={mergeStyles(
-					commonContainers["titleWrapperSx"],
-					tasksStyles["tasksWrapper"]
-				)}
+				sx={tasksStyles["tasksWrapper"]}
 			>
 				<Box sx={tasksStyles["titleWrapper"]}>
 					<Typography

@@ -1,4 +1,5 @@
 import { SimpleDataList } from "@mono-redux-starter/shared/types";
+import { mergeStyles } from "@mono-redux-starter/shared/utils";
 import {
 	Box,
 	Typography
@@ -33,10 +34,7 @@ export const UnresolvedTickets: FC = () => {
 	return (
 		<Box sx={unresolvedTicketsStyles["wrapper"]}>
 			<Box
-				sx={{
-					...commonContainers["titleWrapperSx"],
-					...unresolvedTicketsStyles["ticketsWrapper"]
-				}}
+				sx={unresolvedTicketsStyles["ticketsWrapper"]}
 			>
 				<Box sx={unresolvedTicketsStyles["titleWrapper"]}>
 					<Typography

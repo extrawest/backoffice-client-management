@@ -41,14 +41,14 @@ export const LoginForm: FC<LoginFormProps> = ({
 					className="dark"
 				>
 					<Box
-						sx={commonFormStyles.formWrapper}
+						sx={commonFormStyles["formWrapper"]}
 					>
 						<Box
 							component="div"
-							sx={commonFormStyles.pageContent}
+							sx={commonFormStyles["pageContent"]}
 						>
 							<Typography
-								sx={commonFormStyles.title}
+								sx={commonFormStyles["title"]}
 								variant="h1"
 							>
 								{intl.formatMessage({
@@ -57,7 +57,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 								})}
 							</Typography>
 							<Typography
-								sx={commonFormStyles.subtitle}
+								sx={commonFormStyles["subtitle"]}
 								variant="body2"
 							>
 								{intl.formatMessage({
@@ -67,7 +67,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 							<FormFieldText
 								type="email"
 								name="email"
-								sx={commonFormStyles.textInput}
+								sx={commonFormStyles["textInput"]}
 								title={""}
 								startIcon={<UserIcon />}
 								placeholder={loginText}
@@ -77,7 +77,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 							<FormFieldText
 								type="password"
 								name="password"
-								sx={commonFormStyles.textInput}
+								sx={commonFormStyles["textInput"]}
 								title={""}
 								startIcon={<LockIcon />}
 								placeholder={intl.formatMessage({
@@ -88,7 +88,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 								color="primary"
 							/>
 						</Box>
-						<Box sx={commonFormStyles.actionsWrapper}>
+						<Box sx={commonFormStyles["actionsWrapper"]}>
 							<FormCheckbox
 								label={intl.formatMessage({
 									id: "template.remember"
@@ -112,7 +112,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 							variant="contained"
 							data-testid="submitBtn"
 							isLoading={isLoading}
-							sx={commonFormStyles.submitButton}
+							sx={commonFormStyles["submitButton"]}
 						>
 							{intl.formatMessage({
 								id: "template.login",

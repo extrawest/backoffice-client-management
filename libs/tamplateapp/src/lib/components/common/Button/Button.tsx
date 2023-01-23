@@ -17,16 +17,7 @@ export const Button: FC<ButtonProps> = ({
 	return (
 		<MuiButton
 			{...rest}
-			sx={() => {
-				const firstStyle = !outlined
-					? buttonStyles["tableBtn"]
-					: buttonStyles["outlined"];
-				return mergeStyles(
-					firstStyle,
-					rest.sx
-				);
-			}
-			}
+			sx={rest.sx}
 		>
 			{(!isLoading || isShowText) && (
 				<Box

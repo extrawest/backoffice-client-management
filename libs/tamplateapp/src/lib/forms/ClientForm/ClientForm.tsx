@@ -107,9 +107,6 @@ export const ClientForm: FC<ClientFormProps> = ({
 									value={values["date"]}
 									inputFormat="DD.MM.YYYY"
 									mask="__.__.____"
-									inputProps={{
-										placeholder: dateText,
-									}}
 									InputProps={{
 										startAdornment: <UserIcon />,
 									}}

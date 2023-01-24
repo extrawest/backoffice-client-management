@@ -5,15 +5,8 @@ cache:
     - node_modules/
 
 stages:
-  - install
   - build
   - deploy
-
-install:
-  stage: install
-  script:
-    - npm install
-    - npm install -g firebase-tools
 
 build:
   only:
@@ -38,8 +31,10 @@ build:
 
 
 deploy:
+	before_script:
+    - npm i -g firebase-tools
   only:
     - development
   stage: deploy
   script:
-    - npx firebase deploy --only hosting:material-hosting --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:material-hosting --token $FIREBASE_TOKEN

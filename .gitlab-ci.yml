@@ -5,15 +5,8 @@ cache:
     - node_modules/
 
 stages:
-  - install
   - build
   - deploy
-
-install:
-  stage: install
-  script:
-    - npm install
-    - npm install -g firebase-tools
 
 build:
   only:
@@ -28,7 +21,6 @@ build:
     NX_FIREBASE_STORAGE_BUCKET: "$NX_FIREBASE_STORAGE_BUCKET"
     NX_FIREBASE_MESSAGING_SENDER_ID: "$NX_FIREBASE_MESSAGING_SENDER_ID"
     NX_FIREBASE_APP_ID: "$NX_FIREBASE_APP_ID"
-		FIREBASE_TOKEN: "$FIREBASE_TOKEN"
   script:
     - npm run build:material
   artifacts:
@@ -38,8 +30,10 @@ build:
 
 
 deploy:
+	before_script:
+    - npm i -g firebase-tools
   only:
 		- development
   stage: deploy
   script:
-    - npx firebase deploy --only hosting:material-hosting --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:material-hosting --token $FIREBASE_TOKEN

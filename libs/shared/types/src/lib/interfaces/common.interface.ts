@@ -21,7 +21,7 @@ export interface Tickets {
 	reference: DocumentReference<Clients>
 }
 
-export interface TicketsRequest {
+export interface TicketsFilterDataType {
 	priority: PriorityEnum | string,
 	date: string | number,
 	sortAsc: boolean,

@@ -15,7 +15,7 @@ import { TicketsTable } from "../../components/table/TicketsTable";
 import {
 	Tickets,
 	TicketSortFields,
-	TicketsRequest
+	TicketsFilterDataType
 } from "@mono-redux-starter/shared/types";
 import Button from "../../components/common/Button/Button";
 import { Modal } from "../../components/common/Modal/Modal";
@@ -39,7 +39,7 @@ const getTicketsCollection = (
 	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<DocumentData>[]>>,
 	setCount: Dispatch<SetStateAction<number>>,
 	limitValues = 10,
-	values?: TicketsRequest,
+	filterValues?: TicketsFilterDataType,
 	currentTickets: QueryDocumentSnapshot<DocumentData>[] = [],
 	getNext?: boolean,
 ) => async () => {
@@ -48,23 +48,20 @@ const getTicketsCollection = (
 	const firstVisible = currentTickets.at(0);
 	const lastVisible = currentTickets.at(-1);
 
-	if(values?.priority){
+	if(filterValues?.priority){
 		queryParams.push(where(
 			TicketSortFields.PRIORITY,
-			">=",
-			values.priority
+			"==",
+			filterValues.priority
 		));
-		queryParams.push(where(
-			TicketSortFields.PRIORITY,
-			"<=",
-			values.priority
-		));
-		values.sortField !== TicketSortFields.PRIORITY && queryParams.push(orderBy(TicketSortFields.PRIORITY));
+		filterValues.sortField !== TicketSortFields.PRIORITY && queryParams.push(orderBy(TicketSortFields.PRIORITY));
 	}
-	values?.sortField && queryParams.push(orderBy(
-		values.sortField,
-		values.sortAsc ? "asc" : "desc"
+
+	filterValues?.sortField && queryParams.push(orderBy(
+		filterValues.sortField,
+		filterValues.sortAsc ? "asc" : "desc"
 	));
+
 	if(getNext !== undefined){
 		getNext && lastVisible && queryParams.push(startAfter(lastVisible));
 		!getNext && firstVisible && queryParams.push(endBefore(firstVisible));
@@ -76,6 +73,7 @@ const getTicketsCollection = (
 	);
 	const countOfDocuments = await getCountFromServer(query(...queryParams));
 	getNext === undefined && setCount(countOfDocuments.data().count);
+	console.log(queryCollection);
 	const documentSnapshots = await getDocs(queryCollection);
 	setTickets(documentSnapshots.docs as QueryDocumentSnapshot<DocumentData>[]);
 	return;
@@ -89,7 +87,7 @@ export const ClientsContainer: FC = () => {
 	const [count, setCount] = useState<number>(0);
 	const [open, setOpen] = useState<boolean>(false);
 	const [limitElements, setLimitElements] = useState<number>(10);
-	const [filterValue, setFilterValue] = useState<TicketsRequest>();
+	const [filterValue, setFilterValue] = useState<TicketsFilterDataType>();
 
 	const handleClose = () => {
 		setOpen(false);
@@ -127,7 +125,7 @@ export const ClientsContainer: FC = () => {
 		)();
 	};
 
-	const handleUpdateTableData = (value: TicketsRequest) => {
+	const handleUpdateTableData = (value: TicketsFilterDataType) => {
 		setFilterValue(value);
 		getTicketsCollection(
 			setTicketsSnapshot,

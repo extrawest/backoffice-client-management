@@ -32,7 +32,7 @@ export const ImageWrapper: FC<ImageWrapperProps> = ({
 
 	useEffect(
 		() => {
-			if(!clientRef){
+			if(!clientRef || !clientRef["image"]["id"]){
 				return;
 			}
 			getFile(

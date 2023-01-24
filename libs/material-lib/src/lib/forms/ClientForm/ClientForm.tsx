@@ -108,7 +108,6 @@ export const ClientForm: FC<ClientFormProps> = ({
 									inputFormat="DD.MM.YYYY"
 									mask="__.__.____"
 									InputProps={{
-										placeholder: dateText,
 										startAdornment: <UserIcon />,
 									}}
 									onChange={(newValue) => {
@@ -120,6 +119,10 @@ export const ClientForm: FC<ClientFormProps> = ({
 									renderInput={(params) => (
 										<TextField
 											{...params}
+											inputProps={{
+												...params.inputProps,
+												placeholder:dateText
+											}}
 											helperText={errors["date"]}
 										/>
 									)}

@@ -39,7 +39,6 @@ export const ForgotContainer: FC = () => {
 			actionCodeSettings
 		);
 		if(result){
-			console.log(result);
 			navigate(AppRouteEnum.LOGIN);
 			form.setSubmitting(false);
 		}

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useIntl } from "react-intl";
 import { Box, Typography } from "@mui/material";
-import { Form, Formik } from "formik";
+import { Form, Formik} from "formik";
 import { FormFieldText } from "../../components/common/FormFieldText/FormFieldText";
 import Button from "../../components/common/Button/Button";
 import { validateShema } from "./LoginForm.schema";
@@ -31,6 +31,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 				isSubmitting
 			}) => (
 				<Form className="dark">
+					<div className="primary.main">12312</div>
 					<Box
 						component="div"
 						sx={loginStyles.pageContent}
@@ -45,25 +46,25 @@ export const LoginForm: FC<LoginFormProps> = ({
 							})}
 						</Typography>
 						<FormFieldText
-							type="email"
-							name="email"
-							sx={loginStyles.textInput}
-							title={""}
-							placeholder={loginText}
-							variant="filled"
-							color="primary"
+								type="email"
+								name="username"
+								sx={loginStyles.textInput}
+								title={""}
+								placeholder={loginText}
+								variant="filled"
+								color="primary"
 						/>
 						<FormFieldText
-							type="password"
-							name="password"
-							sx={loginStyles.textInput}
-							title={""}
-							placeholder={intl.formatMessage({
-								id: "template.password",
-								defaultMessage: "Password"
-							})}
-							variant="filled"
-							color="primary"
+								type="password"
+								name="password"
+								sx={loginStyles.textInput}
+								title={""}
+								placeholder={intl.formatMessage({
+										id: "template.password",
+										defaultMessage: "Password"
+									})}
+								variant="filled"
+								color="primary"
 						/>
 						<Button
 							color="primary"

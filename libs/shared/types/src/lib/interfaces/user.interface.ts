@@ -1,7 +1,10 @@
+import { DocumentData } from "firebase/firestore";
 import { RoleEnum } from "../enums";
 
 export interface AuthResponse {
 	access_token: string;
+	isLoggedIn: boolean;
+	managerInfo?: Manager;
 }
 
 export type Role = {
@@ -15,3 +18,11 @@ export interface User {
 	is_active: boolean;
 	role: Array<Role>;
 };
+
+export interface Manager {
+	email: string;
+	firstName: string;
+	lastName: string;
+	role: RoleEnum;
+	uid: string;
+}

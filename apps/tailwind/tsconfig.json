@@ -1,11 +1,16 @@
 {
-	"compilerOptions": {
-		"jsx": "react-jsx",
-		"allowJs": false,
-		"esModuleInterop": false,
-		"allowSyntheticDefaultImports": true,
-		"strict": true
-	},
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  },
 	"files": [],
 	"include": [],
 	"references": [

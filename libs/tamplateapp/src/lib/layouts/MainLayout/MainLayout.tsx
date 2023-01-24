@@ -16,9 +16,11 @@ import { AppRouteEnum } from "../../types/paths";
 import { MainLayoutProps } from "./MainLayout.types";
 import { mainLayoutStyles } from "./MainLayout.styles";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import { useIntl } from "react-intl";
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	const theme = useTheme();
+	const intl = useIntl();
 
 	const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 	const [open, setOpen] = useState(false);
@@ -30,11 +32,11 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	return (
 		<Box
 			component="div"
-			sx={mainLayoutStyles.layoutContainer}
+			sx={mainLayoutStyles["layoutContainer"]}
 		>
 			<AppBar
 				position="fixed"
-				sx={mainLayoutStyles.appBar}
+				sx={mainLayoutStyles["appBar"]}
 			>
 				<Toolbar>
 					<IconButton
@@ -42,12 +44,12 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 						aria-label="open drawer"
 						edge="start"
 						onClick={toggleDrawer}
-						sx={mainLayoutStyles.menuButton}
+						sx={mainLayoutStyles["menuButton"]}
 					>
 						<MenuIcon />
 					</IconButton>
 					<Link
-						sx={mainLayoutStyles.title}
+						sx={mainLayoutStyles["title"]}
 						component={RouterLink}
 						to={AppRouteEnum.DASHBOARD}
 					>
@@ -59,7 +61,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 			</AppBar>
 			<Drawer
 				variant={isMdUp ? "permanent" : "temporary"}
-				sx={mainLayoutStyles.drawer}
+				sx={mainLayoutStyles["drawer"]}
 				anchor="left"
 				open={open}
 				onClose={toggleDrawer}
@@ -68,10 +70,12 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 			</Drawer>
 			<Box
 				component="div"
-				sx={mainLayoutStyles.contentWrap}
+				sx={mainLayoutStyles["contentWrap"]}
 				id="pageWrap"
 			>
-				{children}
+				<Box sx={mainLayoutStyles["wrapperSx"]}>
+					{children}
+				</Box>
 			</Box>
 		</Box>
 	);

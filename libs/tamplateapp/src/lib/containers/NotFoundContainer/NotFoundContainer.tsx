@@ -3,7 +3,7 @@ import { useIntl } from "react-intl";
 import { Typography } from "@mui/material";
 import MainLayout from "../../layouts/MainLayout/MainLayout";
 
-export const NotFoundContainer: FC = () => {
+export const MaterialNotFoundContainer: FC = () => {
 	const intl = useIntl();
 
 	return (

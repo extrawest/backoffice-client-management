@@ -7,7 +7,7 @@ import logger from "redux-logger";
 import {
 	configureStore,
 	combineReducers,
-	Reducer
+	Reducer 
 } from "@reduxjs/toolkit";
 import storage from "reduxjs-toolkit-persist/lib/storage";
 import { CurriedGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
@@ -17,7 +17,7 @@ import {
 	PERSIST,
 	PURGE,
 	REGISTER,
-	REHYDRATE,
+	REHYDRATE, 
 	persistReducer,
 	persistStore,
 } from "reduxjs-toolkit-persist";
@@ -95,7 +95,7 @@ const getPersistMiddleware = (getDefaultMiddleware: CurriedGetDefaultMiddleware<
 const getStoreMiddleware = (getDefaultMiddleware: CurriedGetDefaultMiddleware<unknown>) => (
 	// isDevelopmentMode()
 	// 	? [...getPersistMiddleware(getDefaultMiddleware), ...middlewareList, logger]
-	// 	:
+	// 	: 
 	getPersistMiddleware(getDefaultMiddleware).concat(...middlewareList)
 );
 

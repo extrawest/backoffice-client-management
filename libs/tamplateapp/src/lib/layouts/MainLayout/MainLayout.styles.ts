@@ -1,6 +1,11 @@
-import { Theme } from "@mui/material";
+import {
+	alpha,
+	SxProps,
+	Theme
+} from "@mui/material";
+import { SxStyles } from "libs/material-lib/src/lib/types/styles";
 
-export const mainLayoutStyles = {
+export const mainLayoutStyles: SxStyles = {
 	layoutContainer: {
 		display: "flex",
 		overflow: "hidden",
@@ -15,26 +20,28 @@ export const mainLayoutStyles = {
 	},
 	drawer: {
 		flexShrink: 0,
-		width: "240px",
-		backgroundColor: "primary.main",
+		width: "370px",
 		overflowY: "auto",
 		"&.MuiDrawer-docked": {
 			overflowX: "hidden",
 		},
 		"&.MuiDrawer-root>.MuiPaper-root": {
-			width: "240px",
+			width: "350px",
+			boxShadow: (theme: Theme) => `0 4px 34px ${alpha(
+				theme.palette.secondary.main,
+				0.09
+			)}`,
 			position: "relative",
 			top: "0",
 			padding: (theme: Theme) => theme.spacing(
 				6.25,
-				0,
+				50/8,
 				5
 			),
-			backgroundColor: "primary.light",
+			backgroundColor: "background.default",
 			border: "none",
 			scrollWidth: 0,
 			overflowX: "hidden",
-
 			"&::-webkit-scrollbar-track": {
 				backgroundColor: "primary.main",
 			},
@@ -70,4 +77,11 @@ export const mainLayoutStyles = {
 			textDecoration: "none",
 		},
 	},
+	wrapperSx: {
+		width: "100%",
+		padding: (theme: Theme) => theme.spacing(
+			50/8,
+			20/8
+		)
+	}
 };

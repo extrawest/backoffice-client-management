@@ -1,52 +1,66 @@
-import './App.scss';
-import NxWelcome from './nx-welcome';
+import { FC, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { Provider } from "react-redux";
+import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
 
-import { Route, Routes, Link } from 'react-router-dom';
+import { SnackbarProvider } from "notistack";
+import { abilityCheckStorage, AbilityContext } from "@mono-redux-starter/shared/permissions";
+import { YupGlobalLocale } from "@mono-redux-starter/shared/ui";
+import { AppIntlProvider } from "@mono-redux-starter/shared/hoks";
+import {
+	store,
+	persistor,
+	AuthContext,
+} from "@mono-redux-starter/tailwind-lib";
+import AppRoutes from "../routes";
+import React from "react";
 
-const App = () => {
+const ability = abilityCheckStorage(store);
+
+export const App: FC = () => {
+
 	return (
-		<>
-			<NxWelcome title="tailwind" />
-			<div />
-
-			{/* START: routes */}
-			{/* These routes and navigation have been generated for you */}
-			{/* Feel free to move and update them to fit your needs */}
-			<br />
-			<hr />
-			<br />
-			<div role="navigation">
-				<ul>
-					<li>
-						<Link to="/">Home</Link>
-					</li>
-					<li>
-						<Link to="/page-2">Page 2</Link>
-					</li>
-				</ul>
-			</div>
-			<Routes>
-				<Route
-					path="/"
-					element={
-						<div>
-							This is the generated root route.{' '}
-							<Link to="/page-2">Click here for page 2.</Link>
-						</div>
-					}
-				/>
-				<Route
-					path="/page-2"
-					element={
-						<div>
-							<Link to="/">Click here to go back to root page.</Link>
-						</div>
-					}
-				/>
-			</Routes>
-			{/* END: routes */}
-		</>
+		<Provider store={store}>
+			<HelmetProvider>
+				<AppIntlProvider>
+					{/* <PersistGate
+						loading={
+							<div
+								component="div"
+								sx={{
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									minHeight: "100vh",
+								}}
+							>
+								<Loader />
+							</div>
+						}
+						persistor={persistor}
+					> */}
+						<BrowserRouter>
+							<AbilityContext.Provider value={ability}>
+								<SnackbarProvider
+									maxSnack={3}
+									anchorOrigin={{
+										horizontal: "center",
+										vertical: "bottom"
+									}}
+								>
+									<AuthContext>
+										<YupGlobalLocale />
+										<AppRoutes />
+									</AuthContext>
+								</SnackbarProvider>
+							</AbilityContext.Provider>
+						</BrowserRouter>
+					{/* </PersistGate> */}
+				</AppIntlProvider>
+			</HelmetProvider>
+		</Provider>
 	);
-}
+};
 
 export default App;

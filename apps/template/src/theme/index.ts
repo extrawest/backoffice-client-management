@@ -193,57 +193,57 @@ export const theme = (mode: PaletteMode = "light") => createTheme({
 	},
 });
 
-theme().typography.h4 = {
+theme.typography.h4 = {
 	fontSize: pxToRem(40),
-	[theme().breakpoints.down("xxl")]: {
+	[theme.breakpoints.down("xxl")]: {
 		fontSize: pxToRem(26),
 	},
 	fontWeight: 550,
 };
 
-theme().typography.h5 = {
+theme.typography.h5 = {
 	fontSize: pxToRem(40),
-	[theme().breakpoints.down("xxl")]: {
+	[theme.breakpoints.down("xxl")]: {
 		fontSize: pxToRem(26),
 	},
 	fontWeight: 550,
 };
 
-theme().typography.button = {
+theme.typography.button = {
 	fontSize: pxToRem(23),
-	[theme().breakpoints.down("xxl")]: {
+	[theme.breakpoints.down("xxl")]: {
 		fontSize: pxToRem(15),
 	},
 	fontWeight: 550,
 };
 
-theme().typography.body1 = {
+theme.typography.body1 = {
 	fontSize: pxToRem(20),
 	fontWeight: 550,
-	[theme().breakpoints.down("xxl")]: {
+	[theme.breakpoints.down("xxl")]: {
 		fontSize: pxToRem(14),
 	},
 };
 
-theme().typography.body2 = {
+theme.typography.body2 = {
 	fontSize: pxToRem(24),
 	letterSpacing: "2.8px",
 	fontWeight: 550,
-	[theme().breakpoints.down("xxl")]: {
+	[theme.breakpoints.down("xxl")]: {
 		fontSize: pxToRem(16),
 		letterSpacing: "1.82px"
 	},
 };
 
-theme().typography.caption = {
+theme.typography.caption = {
 	fontSize: pxToRem(19),
 	fontWeight: 700,
-	[theme().breakpoints.down("xxl")]: {
+	[theme.breakpoints.down("xxl")]: {
 		fontSize: pxToRem(12),
 	},
 };
 
-theme().components = {
+theme.components = {
 	MuiCssBaseline: {
 		styleOverrides: {
 			body: {
@@ -261,16 +261,16 @@ theme().components = {
 				fontSize: defaultBodyFontSize,
 			},
 			"& *": {
-				[theme().breakpoints.up("sm")]: {
+				[theme.breakpoints.up("sm")]: {
 					"&::-webkit-scrollbar": {
-						width: theme().spacing(4 / 8)
+						width: theme.spacing(4 / 8)
 					},
 					"&::-webkit-scrollbar-track": {
-						backgroundColor: theme().palette.common.white
+						backgroundColor: theme.palette.common.white
 					},
 					"&::-webkit-scrollbar-thumb": {
 						backgroundColor: "rgba(0, 0, 0, 0.25)",
-						borderRadius: theme().spacing(2 / 8),
+						borderRadius: theme.spacing(2 / 8),
 					}
 				}
 			},
@@ -279,13 +279,13 @@ theme().components = {
 	MuiButton: {
 		styleOverrides: {
 			root: {
-				borderRadius: theme().spacing(1),
+				borderRadius: theme.spacing(1),
 				whiteSpace: "nowrap",
 				boxShadow: "none",
 				width: "unset",
 				minWidth: "unset",
 				fontSize: pxToRem(23),
-				padding: theme().spacing(
+				padding: theme.spacing(
 					0,
 					24 / 8
 				),
@@ -293,7 +293,7 @@ theme().components = {
 					textOverflow: "ellipsis",
 					overflow: "hidden",
 					fontSize: pxToRem(21),
-					[theme().breakpoints.down("xxl")]: {
+					[theme.breakpoints.down("xxl")]: {
 						fontSize: pxToRem(13),
 					},
 				}
@@ -306,12 +306,12 @@ theme().components = {
 					color: "rgba(98, 88, 88, 0.8)",
 					backgroundColor: "rgba(255, 255, 255, 0.59)",
 					textTransform: "uppercase",
-					padding: theme().spacing(
+					padding: theme.spacing(
 						22/8,
 						10/8
 					),
-					[theme().breakpoints.down("xxl")]: {
-						padding: theme().spacing(
+					[theme.breakpoints.down("xxl")]: {
+						padding: theme.spacing(
 							12/8,
 							10/8
 						),
@@ -319,10 +319,10 @@ theme().components = {
 					borderRadius: 8,
 					backdropFilter: "blur(78.8302px)",
 					"&:hover": {
-						backgroundColor: theme().palette.common.white,
+						backgroundColor: theme.palette.common.white,
 					},
 					"&:active": {
-						backgroundColor: theme().palette.common.white,
+						backgroundColor: theme.palette.common.white,
 					},
 					"&:disabled": {
 						backgroundColor: "rgba(255, 255, 255, 0.3)"
@@ -334,7 +334,7 @@ theme().components = {
 	MuiPaper: {
 		styleOverrides: {
 			root: {
-				borderRadius: theme().spacing(1),
+				borderRadius: theme.spacing(1),
 				background: "rgba(255, 255, 255, 0.81)",
 				backdropFilter: "blur(5.2px)",
 			}
@@ -343,18 +343,18 @@ theme().components = {
 	MuiMenu: {
 		styleOverrides: {
 			paper: {
-				maxHeight: `${theme().spacing(280 / 8)}!important`,
-				[theme().breakpoints.down("xxl")]: {
-					maxHeight: `${theme().spacing(255 / 8)}!important`,
+				maxHeight: `${theme.spacing(280 / 8)}!important`,
+				[theme.breakpoints.down("xxl")]: {
+					maxHeight: `${theme.spacing(255 / 8)}!important`,
 				},
 			},
 			list: {
 				overflowY: "auto",
-				maxHeight: `${theme().spacing(280 / 8)}!important`,
-				paddingTop: theme().spacing(15 / 8),
-				paddingBottom: theme().spacing(15 / 8),
-				[theme().breakpoints.down("xxl")]: {
-					maxHeight: `${theme().spacing(255 / 8)}!important`,
+				maxHeight: `${theme.spacing(280 / 8)}!important`,
+				paddingTop: theme.spacing(15 / 8),
+				paddingBottom: theme.spacing(15 / 8),
+				[theme.breakpoints.down("xxl")]: {
+					maxHeight: `${theme.spacing(255 / 8)}!important`,
 				},
 			}
 		}
@@ -368,14 +368,14 @@ theme().components = {
 				flexDirection: "row",
 				justifyContent: "space-between",
 				alignItems: "center",
-				paddingTop: theme().spacing(10 / 8),
-				paddingBottom: theme().spacing(10 / 8),
-				paddingLeft: theme().spacing(20 / 8),
+				paddingTop: theme.spacing(10 / 8),
+				paddingBottom: theme.spacing(10 / 8),
+				paddingLeft: theme.spacing(20 / 8),
 				"&.Mui-selected": {
-					background: theme().palette.common.white,
+					background: theme.palette.common.white,
 					fontWeight: 550,
 				},
-				[theme().breakpoints.down("xxl")]: {
+				[theme.breakpoints.down("xxl")]: {
 					fontSize: pxToRem(13),
 				},
 			}
@@ -384,20 +384,20 @@ theme().components = {
 	MuiSelect: {
 		styleOverrides: {
 			standard: {
-				color: theme().palette.common.white,
+				color: theme.palette.common.white,
 				background: "transparent",
 				fontSize: pxToRem(21),
 				"&.Mui-disabled.MuiInput-input.MuiInputBase-input.Mui-disabled": {
-					color: theme().palette.common.white,
-					WebkitTextFillColor: theme().palette.common.white,
+					color: theme.palette.common.white,
+					WebkitTextFillColor: theme.palette.common.white,
 					opacity: "0.6"
 				},
-				[theme().breakpoints.down("xxl")]: {
+				[theme.breakpoints.down("xxl")]: {
 					fontSize: pxToRem(13),
 				},
 			},
 			icon: {
-				fill: theme().palette.common.white,
+				fill: theme.palette.common.white,
 				fontWeight: 400,
 				top: "calc(50% - 0.6em)",
 				right: "-10px",
@@ -411,7 +411,7 @@ theme().components = {
 		styleOverrides: {
 			flexContainer: {
 				gap: 24,
-				[theme().breakpoints.down("xxl")]: {
+				[theme.breakpoints.down("xxl")]: {
 					gap: 19,
 				},
 			},
@@ -441,11 +441,11 @@ theme().components = {
 				fontSize: pxToRem(23),
 				letterSpacing: "2.68333px",
 				color: "rgba(98, 88, 88, 0.8)",
-				width: theme().spacing(120 / 8),
-				height: theme().spacing(72 / 8),
-				[theme().breakpoints.down("xxl")]: {
-					width: theme().spacing(78 / 8),
-					height: theme().spacing(48 / 8),
+				width: theme.spacing(120 / 8),
+				height: theme.spacing(72 / 8),
+				[theme.breakpoints.down("xxl")]: {
+					width: theme.spacing(78 / 8),
+					height: theme.spacing(48 / 8),
 					fontSize: pxToRem(15),
 					letterSpacing: "1.74px",
 				},
@@ -470,15 +470,15 @@ theme().components = {
 				textAlign: "center",
 				fontSize: pxToRem(23),
 				fontWeight: "700",
-				backgroundColor: theme().palette.common.white,
-				padding: `0 ${theme().spacing(10 / 8)}`,
-				height: `${theme().spacing(74 / 8)}`,
-				maxHeight: `${theme().spacing(74 / 8)}`,
-				color: theme().palette.common.black,
-				[theme().breakpoints.down("xxl")]: {
+				backgroundColor: theme.palette.common.white,
+				padding: `0 ${theme.spacing(10 / 8)}`,
+				height: `${theme.spacing(74 / 8)}`,
+				maxHeight: `${theme.spacing(74 / 8)}`,
+				color: theme.palette.common.black,
+				[theme.breakpoints.down("xxl")]: {
 					fontSize: pxToRem(15),
-					height: `${theme().spacing(50 / 8)}`,
-					maxHeight: `${theme().spacing(50 / 8)}`
+					height: `${theme.spacing(50 / 8)}`,
+					maxHeight: `${theme.spacing(50 / 8)}`
 				},
 			},
 			stickyHeader: {
@@ -490,13 +490,13 @@ theme().components = {
 				alignItems: "center",
 				fontWeight: 400,
 				fontSize: 23,
-				color: theme().palette.common.black,
-				padding: `0 ${theme().spacing(10 / 8)}`,
-				height: `${theme().spacing(74 / 8)}`,
-				maxHeight: `${theme().spacing(74 / 8)}`,
-				[theme().breakpoints.down("xxl")]: {
-					height: `${theme().spacing(50 / 8)}`,
-					maxHeight: `${theme().spacing(50 / 8)}`,
+				color: theme.palette.common.black,
+				padding: `0 ${theme.spacing(10 / 8)}`,
+				height: `${theme.spacing(74 / 8)}`,
+				maxHeight: `${theme.spacing(74 / 8)}`,
+				[theme.breakpoints.down("xxl")]: {
+					height: `${theme.spacing(50 / 8)}`,
+					maxHeight: `${theme.spacing(50 / 8)}`,
 					fontSize: 15,
 				},
 				"&:last-child": {

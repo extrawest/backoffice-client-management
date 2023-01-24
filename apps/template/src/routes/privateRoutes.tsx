@@ -3,7 +3,7 @@ import { AppRouteEnum, PrivateRoutes } from "@mono-redux-starter/tamplateapp";
 import { RoleEnum } from "@mono-redux-starter/shared/types";
 
 const Dashboard = lazy(() => import("../pages/Dashboard/Dashboard"));
-const Units = lazy(() => import("../pages/Units/Units"));
+const Clients = lazy(() => import("../pages/Clients/Clients"));
 
 export const privateRoutes: PrivateRoutes = [
 	{
@@ -14,7 +14,7 @@ export const privateRoutes: PrivateRoutes = [
 		isAuth: true
 	},
 	{
-		element: <Units />,
+		element: <Clients />,
 		path: AppRouteEnum.UNITS,
 		exact: true,
 		roles: [RoleEnum.ROLE_SUPER_ADMIN],

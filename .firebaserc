@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "panel-app-8fcaa"
-  }
+  },
+  "targets": {
+    "panel-app-8fcaa": {
+      "hosting": {
+        "material-hosting": [
+          "material-panel-app"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

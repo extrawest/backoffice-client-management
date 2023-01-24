@@ -21,6 +21,7 @@ build:
     NX_FIREBASE_STORAGE_BUCKET: "$NX_FIREBASE_STORAGE_BUCKET"
     NX_FIREBASE_MESSAGING_SENDER_ID: "$NX_FIREBASE_MESSAGING_SENDER_ID"
     NX_FIREBASE_APP_ID: "$NX_FIREBASE_APP_ID"
+    FIREBASE_TOKEN: "$FIREBASE_TOKEN"
   script:
     - npm run build:material
   artifacts:
@@ -33,7 +34,7 @@ deploy:
 	before_script:
     - npm i -g firebase-tools
   only:
-		- development
+    - development
   stage: deploy
   script:
     - firebase deploy --only hosting:material-hosting --token $FIREBASE_TOKEN

@@ -31,7 +31,7 @@ build:
 
 
 deploy:
-	before_script:
+  before_script:
     - npm i -g firebase-tools
   only:
     - development

@@ -2,8 +2,8 @@
   "hosting": [
 		{
 
-			"public": "dist/apps/material",
 			"target": "material-hosting",
+			"public": "dist/apps/material",
 			"ignore": [
 				"firebase.json",
 				"**/.*",

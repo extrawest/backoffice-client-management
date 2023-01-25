@@ -16,10 +16,10 @@ import {
 import { AppRouteEnum } from "../../types";
 import { MenuItem as StyledMenuItem } from "../common/MenuItem/MenuItem";
 import { Button } from "../common/Button/Button";
-import { getContentLinks } from "./Sidebar.menu";
 import { sidebarStyles } from "./Sidebar.styles";
 import { Image } from "../common/Image/Image";
 import { Logout } from "@mui/icons-material";
+import { getContentLinks } from "./Sidebar.menu";
 
 export const Sidebar: FC = () => {
 	const intl = useIntl();

@@ -21,7 +21,7 @@ build:
   before_script:
     - npm ci --cache .npm --prefer-offline --force
   script:
-    - npm run build:material
+    - npm run build:all
   artifacts:
     expire_in: 1 hour
     paths:

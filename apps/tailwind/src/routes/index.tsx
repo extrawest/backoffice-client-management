@@ -2,29 +2,16 @@ import { FC, Suspense } from "react";
 import { Box } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import {
-	Loader,
 	PrivateRoute,
 	PageLayout,
 	PublicRoute
-} from "@mono-redux-starter/tamplateapp";
+} from "@mono-redux-starter/tailwind-lib";
 import { commonRoutes } from "./commonRoutes";
 import { privateRoutes } from "./privateRoutes";
 
 const AppRoutes: FC = () => {
 	return (
-		<Suspense
-			fallback={
-				<Box
-					component="div"
-					display="flex"
-					justifyContent="center"
-					alignItems="center"
-					height={"100vh"}
-				>
-					<Loader />
-				</Box>
-			}
-		>
+		<Suspense>
 			<Routes>
 				{[
 					...privateRoutes,

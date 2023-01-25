@@ -1,5 +1,6 @@
 const { createGlobPatternsForDependencies } = require('@nrwl/react/tailwind');
 const { join } = require('path');
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -61,16 +62,13 @@ module.exports = {
 			"blue-200": "#56CCF2",
 			"blue-400": "#2D9CDB",
 			"blue-600": "#2F80ED",
-			"blue-900": "#1D2992"
+			"blue-900": "#1D2992",
+			"chart-1": "#3751FF"
 		},
 		extend: {
 			height: {
 				'100vh': '100vh',
-				'100%': '100%',
 				'vh-90': 'calc(100vh - 90px)'
-			},
-			width: {
-				'100%': '100%'
 			},
 			fontSize: {
 				"4.5xl": "40px",
@@ -80,14 +78,15 @@ module.exports = {
 				1: '1px'
 			},
 			borderRadius: {
-				'circle': "50%"
+				'circle': "50%",
+				'50': "50px"
+			},
+			gridTemplateColumns: {
+				'9/3': '75% 25%'
+			},
+			maxWidth: {
+				50: '200px'
 			},
 		},
 	},
-	variants: {
-    extend: {
-    	fontWeight: ['active'],
-    },
-	},
-	plugins: [],
 };

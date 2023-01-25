@@ -51,7 +51,7 @@ export const Sidebar: FC = () => {
 					</Typography>
 				</div>
 			</div>
-			<div className="flex flex-col justify-between h-100%">
+			<div className="flex flex-col justify-between h-full">
 				<ul className="pb-2 m-0 flex flex-col gap-3 ">
 					{getContentLinks(intl)?.map(({ href, title, icon }) =>
 						<MenuItem

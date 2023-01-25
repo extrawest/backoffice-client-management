@@ -33,7 +33,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 			onSubmit={onSubmit}
 		>
 			{({errors, touched, }) => (
-				<Form className="w-100% flex flex-col items-center justify-center">
+				<Form className="w-full flex flex-col items-center justify-center">
 					<FormikField
 						type="text"
 						id="email"
@@ -53,7 +53,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 						startAdornment={<LockIcon />}
 						endAdornment
 					/>
-					<div className="w-100% flex justify-between items-center mb-4 p-4">
+					<div className="w-full flex justify-between items-center mb-4 p-4">
 						<Checkbox
 							label={intl.formatMessage({id: "template.remember"})}
 							name="forgot"

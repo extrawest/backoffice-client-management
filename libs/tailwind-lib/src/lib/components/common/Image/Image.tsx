@@ -14,7 +14,7 @@ export const Image: FC<ImageProps> = ({
 		>
 			<img
 				src={src ?? blankPhoto}
-				className="w-100% h-100%"
+				className="w-full h-full"
 				alt="pic"
 			/>
 		</div>

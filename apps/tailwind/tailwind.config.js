@@ -66,7 +66,8 @@ module.exports = {
 		extend: {
 			height: {
 				'100vh': '100vh',
-				'100%': '100%'
+				'100%': '100%',
+				'vh-90': 'calc(100vh - 90px)'
 			},
 			width: {
 				'100%': '100%'
@@ -80,8 +81,13 @@ module.exports = {
 			},
 			borderRadius: {
 				'circle': "50%"
-			}
+			},
 		},
+	},
+	variants: {
+    extend: {
+    	fontWeight: ['active'],
+    },
 	},
 	plugins: [],
 };

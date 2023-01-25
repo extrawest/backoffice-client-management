@@ -11,10 +11,11 @@ export const Typography: FC<TypographyProps> = ({children, type = TypographyEnum
 		[TypographyEnum.H5]: "lg:text-4.5xl font-medium text-2xl leading-tight text-center",
 		[TypographyEnum.BODY2]: "lg:text-sm text-xs leading-tight text-center",
 		[TypographyEnum.BODY1]: "lg:text-base text-sm leading-tight text-center",
-		[TypographyEnum.BUTTON]: "lg:text-2xl text-base text-common-white leading-tight text-center",
+		[TypographyEnum.BUTTON]: "lg:text-2xl text-base leading-tight text-center",
 		[TypographyEnum.CAPTION]: "lg:text-lg font-bold text-xs leading-tight text-center",
 		[TypographyEnum.SUBTITLE1]: "lg:text-lg font-medium text-base leading-tight text-center",
-		[TypographyEnum.DESCRIPTION]: "lg:text-base text-sm leading-tight text-grayscale-600 text-center"
+		[TypographyEnum.DESCRIPTION]: "lg:text-base text-sm leading-tight text-grayscale-600 text-center",
+		[TypographyEnum.TITLE]: "lg:text-lg text-sm leading-tight text-grayscale-600 text-center font-bold"
 	} as const;
 	return (
 		<Tag

@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 export interface IconButtonProps {
 	children: ReactNode,
 	onClick: () => void,
-	extraClasses?: string,
+	extraClasses?: HTMLAttributes<"button">["className"],
 }

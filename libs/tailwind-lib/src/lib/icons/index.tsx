@@ -7,9 +7,9 @@ export interface SVGIconProps {
 	className?: string,
 }
 
-export const UserIcon: FC<SVGIconProps> = ({className, size = 20, fill = "#979797"}) => (
+export const UserIcon: FC<SVGIconProps> = ({className, size = 24, fill = "#979797"}) => (
 	<svg
-		className={className}
+		className={`${className} overflow-hidden`}
 		width={size}
 		height={size}
 	>

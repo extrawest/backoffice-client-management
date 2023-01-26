@@ -7,6 +7,8 @@ import { AppRouteEnum } from "../../../types";
 import { IconButton } from "../../common/IconButton/IconButton";
 import { AddIcon } from "../../../icons";
 import { TaskList } from "../TaskList/TaskList";
+import { Modal } from "../../Modal/Modal";
+import { TicketCreateFormWrapper } from "../TicketCreateFormWrapper/TicketCreateFormWrapper";
 
 export const Tasks: FC = () => {
 	const intl = useIntl();
@@ -65,17 +67,13 @@ export const Tasks: FC = () => {
 				</div>
 				<TaskList />
 			</div>
-			{/* <Modal
+			<Modal
 				handleClose={handleClose}
         open={open}
-        title={intl.formatMessage({ id: "addNewClient" })}
-        type="md"
-        fullWidth
+        title={intl.formatMessage({ id: "addNewTicket" })}
 			>
-				<TicketCreateFormWrapper
-					handleClose={handleClose}
-				/>
-			</Modal> */}
+				<TicketCreateFormWrapper handleClose={handleClose} />
+			</Modal>
 		</div>
 	);
 };

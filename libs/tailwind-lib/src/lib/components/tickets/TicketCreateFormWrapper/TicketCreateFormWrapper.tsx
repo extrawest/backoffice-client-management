@@ -9,14 +9,11 @@ import {
 import { firestore } from "@mono-redux-starter/firebase";
 import { useGetCollectionClients } from "@mono-redux-starter/shared/hooks";
 import { CollectionEnum } from "@mono-redux-starter/shared/types";
-import { Box } from "@mui/material";
 import {
-	FC, useEffect, useMemo, useState
+	FC, useMemo, useState
 } from "react";
 import TicketForm from "../../../forms/TicketForm/TicketForm";
 import { TicketValues } from "../../../forms/TicketForm/TicketForm.types";
-import { FormSelect } from "../../common/FormSelect";
-import { wrapperSx } from "./TicketCreateFormWrapper.styles";
 import { TicketCreateFormWrapperProps } from "./TicketCreateFormWrapper.types";
 
 const handleSubmit = (handleClose: () => void) => async (values: TicketValues) => {
@@ -91,12 +88,12 @@ export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ hand
 	);
 
 	return (
-		<Box sx={wrapperSx}>
+		<div className="flex items-start justify-center gap-2.5">
 			<TicketForm
 				onSubmit={handleSubmit(handleClose)}
 				isLoading={false}
 				processedClients={processedClients}
 			/>
-		</Box>
+		</div>
 	);
 };

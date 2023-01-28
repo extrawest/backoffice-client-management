@@ -74,7 +74,6 @@ const getTicketsCollection = (
 	);
 	const countOfDocuments = await getCountFromServer(query(...queryParams));
 	getNext === undefined && setCount(countOfDocuments.data().count);
-	console.log(queryCollection);
 	const documentSnapshots = await getDocs(queryCollection);
 	setTickets(documentSnapshots.docs as QueryDocumentSnapshot<DocumentData>[]);
 	return;

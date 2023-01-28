@@ -32,12 +32,12 @@ export const ImageWrapper: FC<ImageWrapperProps> = ({
 
 	useEffect(
 		() => {
-			if(!clientRef || !clientRef["image"]["id"]){
+			if(!clientRef || !clientRef["image"]?.["id"]){
 				return;
 			}
 			getFile(
 				setImageSrc,
-				clientRef["image"]["id"]
+				clientRef["image"]?.["id"]
 			)();
 		},
 		[reference, clientRef]

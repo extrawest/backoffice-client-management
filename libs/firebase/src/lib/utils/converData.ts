@@ -5,6 +5,9 @@ export const convertData = (data: QueryDocumentSnapshot<unknown>[] | undefined) 
 		return [];
 	}
 	return data.map((item: DocumentData) => {
-		return item["data"]();
+		return {
+			...item["data"](),
+			uid: item["id"]
+		};
 	});
 };

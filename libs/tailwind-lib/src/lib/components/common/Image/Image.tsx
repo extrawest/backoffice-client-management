@@ -10,7 +10,7 @@ export const Image: FC<ImageProps> = ({
 
 	return (
 		<div
-			className={`${size === "big" ? "w-40" : "w-12"} ${rounded ? "rounded-circle" : "" } overflow-hidden shadow-md shadow-secondary-main`}
+			className={`${size === "big" ? "w-40 h-40" : "w-12 h-12"} ${rounded ? "rounded-circle" : "" } overflow-hidden shadow-md shadow-secondary-main`}
 		>
 			<img
 				src={src ?? blankPhoto}

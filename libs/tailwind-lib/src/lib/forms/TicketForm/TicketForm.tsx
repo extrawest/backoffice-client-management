@@ -62,14 +62,6 @@ export const TicketForm: FC<TicketFormProps> = ({
 						<div
 							className="w-full flex flex-col items-center justify-center p-0 mb-5 gap-5"
 						>
-							<Typography
-								type={TypographyEnum.BUTTON}
-							>
-								{intl.formatMessage({
-									id: "addNewTicket",
-									defaultMessage: "Add New Ticket"
-								})}
-							</Typography>
 							<FormikField
 								type="text"
 								name="name"

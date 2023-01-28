@@ -7,8 +7,8 @@ import { AppRouteEnum } from "../../../types";
 import { IconButton } from "../../common/IconButton/IconButton";
 import { AddIcon } from "../../../icons";
 import { TaskList } from "../TaskList/TaskList";
-import { Modal } from "../../Modal/Modal";
 import { TicketCreateFormWrapper } from "../TicketCreateFormWrapper/TicketCreateFormWrapper";
+import { Modal } from "../../common/Modal/Modal";
 
 export const Tasks: FC = () => {
 	const intl = useIntl();

@@ -84,6 +84,9 @@ module.exports = {
 			gridTemplateColumns: {
 				'9/3': '75% 25%'
 			},
+			width: {
+				'100%': '100%'
+			},
 			maxWidth: {
 				50: '200px'
 			},

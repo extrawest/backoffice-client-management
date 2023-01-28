@@ -267,12 +267,77 @@ export const AddIcon = () => (
 		fill="none"
 	>
 		<path
-			opacity="0.4" d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2Z"
+			opacity="0.4"
+d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2Z"
 			fill="#292D32"
 		/>
 		<path
 			d="M18 11.25H12.75V6C12.75 5.59 12.41 5.25 12 5.25C11.59 5.25 11.25 5.59 11.25 6V11.25H6C5.59 11.25 5.25 11.59 5.25 12C5.25 12.41 5.59 12.75 6 12.75H11.25V18C11.25 18.41 11.59 18.75 12 18.75C12.41 18.75 12.75 18.41 12.75 18V12.75H18C18.41 12.75 18.75 12.41 18.75 12C18.75 11.59 18.41 11.25 18 11.25Z"
 			fill="#292D32"
+		/>
+	</svg>
+);
+
+export const FitlerIcon: FC<{fill?: string}> = ({ fill = "#B6B6B6" }) => (
+	<svg
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path
+			d="M4.22657 2C2.50087 2 1.58526 4.03892 2.73175 5.32873L8.99972 12.3802V19C8.99972 19.3788 9.21373 19.725 9.55251 19.8944L13.5525 21.8944C13.8625 22.0494 14.2306 22.0329 14.5255 21.8507C14.8203 21.6684 14.9997 21.3466 14.9997 21V12.3802L21.2677 5.32873C22.4142 4.03893 21.4986 2 19.7729 2H4.22657Z"
+			fill={fill}
+		/>
+	</svg>
+);
+
+export const ArrowIcon: FC<{className?: string}> = ({className}) => (
+	<svg
+		width="36"
+		height="36"
+		viewBox="0 0 24 24"
+		fill="none"
+		className={className}
+	>
+
+		<g id="SVGRepo_iconCarrier">
+			<path
+				opacity="0.4"
+				d="M8.4707 13.4599L12.0007 9.93994L15.5307 13.4599"
+				stroke="#292D32"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</g>
+
+	</svg>
+);
+
+export const MenuIcon = () => (
+	<svg width="36px" height="36px" viewBox="0 0 64 64" fill="none" stroke="#B6B6B6">
+		<rect
+			x="31.5"
+			y="31.5"
+			width="6"
+			height="6"
+			fill="#B6B6B6"
+		/>
+		<rect
+			x="47"
+			y="31.5"
+			width="6"
+			height="6"
+			fill="#B6B6B6"
+		/>
+		<rect
+			x="16"
+			y="31.5"
+			width="6"
+			height="6"
+			fill="#B6B6B6"
 		/>
 	</svg>
 );

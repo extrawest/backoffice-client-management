@@ -23,7 +23,6 @@ export interface Tickets {
 
 export interface TicketsFilterDataType {
 	priority: PriorityEnum | string,
-	date: string | number,
 	sortAsc: boolean,
 	sortField: TicketSortFields | string
 }

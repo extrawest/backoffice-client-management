@@ -78,5 +78,6 @@
 	"finishTicket": "Finish ticket update",
 	"createNewTicket": "Create new ticket example",
 	"updateTicket": "Update ticket report",
-	"createNewTask": "Create new task"
+	"createNewTask": "Create new task",
+	"delete": "Delete"
 }

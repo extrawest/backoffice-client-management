@@ -6,7 +6,8 @@ import { ButtonProps } from "./Button.types";
 export const Button: FC<ButtonProps> = ({
 	children,
 	submitType = false,
-	extraClasses
+	extraClasses,
+	onClick
 }) => {
 	return (
 		<button
@@ -15,10 +16,9 @@ export const Button: FC<ButtonProps> = ({
 				extraClasses
 			)}
 			type={submitType ? "submit" : "button"}
+			onClick={onClick}
 		>
-			<Typography>
-				{children}
-			</Typography>
+			{children}
 		</button>
 	);
 };

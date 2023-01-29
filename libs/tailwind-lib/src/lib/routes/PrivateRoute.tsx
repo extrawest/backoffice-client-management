@@ -1,5 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout/MainLayout";
 
 import { RootState, useTypedSelector } from "../store";
 import { AppRouteEnum } from "../types/paths";
@@ -37,7 +38,7 @@ export const PrivateRoute: FC<PropsWithChildren<PrivateRouteProps>> = ({
 		);
 	}
 
-	return <div>{children}</div>;
+	return <MainLayout>{children}</MainLayout>;
 };
 
 export default PrivateRoute;

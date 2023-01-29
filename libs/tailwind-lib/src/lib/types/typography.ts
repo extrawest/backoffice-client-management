@@ -7,7 +7,8 @@ export const enum TypographyEnum {
 	BUTTON = "button",
 	SUBTITLE1 = "subtitle1",
 	DESCRIPTION = "description",
-	CAPTION = "caption"
+	CAPTION = "caption",
+	TITLE = "title"
 }
 
 export const enum TagEnum {

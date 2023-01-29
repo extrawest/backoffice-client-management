@@ -42,15 +42,15 @@ export const FormikField: FC<FormikFieldProps> = ({
 		setShowPassword(!showPassword);
 	};
 	return (
-		<div className="w-100% mb-4">
-			<div className={wrapperClass("rounded-full w-100% border-1 overflow-hidden px-4 flex justify-between items-center")}>
+		<div className="w-full mb-4">
+			<div className={wrapperClass("rounded-full w-full border-1 overflow-hidden px-4 flex justify-between items-center")}>
 				{startAdornment}
 				<Field
 					id={id}
 					name={name}
 					type={showPassword ? "text" : type}
 					placeholder={placeholder}
-					className="w-100% outline-none my-2 text-grayscale-700 mx-4"
+					className="w-full outline-none my-2 text-grayscale-700 mx-4"
 				/>
 				{type === "password" && (
 					<IconButton

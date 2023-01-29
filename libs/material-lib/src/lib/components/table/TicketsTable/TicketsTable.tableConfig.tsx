@@ -6,6 +6,7 @@ import { CellWithCaption } from "../../common/CellWithCaption/CellWithCaption";
 import { ClientCell } from "../../common/ClientCell/ClientCell";
 import { ImageWrapper } from "../../common/ImageWrapper/ImageWrapper";
 import { PriorityStatus } from "../../common/PriorityStatus/PriorityStatus";
+import { DeleteTicket } from "../DeleteTicket/DeleteTicket";
 
 export const columnConfigUsers: GridColumns = [
 	{
@@ -81,6 +82,6 @@ export const columnConfigUsers: GridColumns = [
 		flex: 1,
 		sortable: false,
 		minWidth: 80,
-		renderCell: (params) => (<>123</>)
+		renderCell: (params) => (<DeleteTicket uid={params.row.uid} />)
 	}
 ];

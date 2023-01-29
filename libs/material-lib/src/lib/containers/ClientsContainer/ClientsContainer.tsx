@@ -34,6 +34,7 @@ import {
 import { convertData, ticketsCollectionRef } from "@mono-redux-starter/firebase";
 import { ClientCreateFormWrapper } from "../../components/clients/ClientCreateFormWrapper/ClientCreateFormWrapper";
 import { commonContainers } from "../commonContainers.styles";
+import { ClientsProvider } from "./ClientsContainer.context";
 
 const getTicketsCollection = (
 	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<DocumentData>[]>>,
@@ -73,7 +74,6 @@ const getTicketsCollection = (
 	);
 	const countOfDocuments = await getCountFromServer(query(...queryParams));
 	getNext === undefined && setCount(countOfDocuments.data().count);
-	console.log(queryCollection);
 	const documentSnapshots = await getDocs(queryCollection);
 	setTickets(documentSnapshots.docs as QueryDocumentSnapshot<DocumentData>[]);
 	return;
@@ -152,44 +152,55 @@ export const ClientsContainer: FC = () => {
 		setCurrentPage(page);
 	};
 
+	const handleRecallClients = () => {
+		getTicketsCollection(
+			setTicketsSnapshot,
+			setCount,
+			limitElements,
+			filterValue
+		)();
+	};
+
 	return (
-		<Box sx={commonContainers["contentSx"]}>
-			<Box sx={commonContainers["titleWrapperSx"]}>
-				<Typography
-					variant="h5"
-					sx={{ width: "calc(100% - 240px)" }}
-				>
-					{intl.formatMessage({
-						id: "template.clients",
-						defaultMessage: "Clients"
-					})}
-				</Typography>
-				<Button
-					onClick={handleOpen}
-				>
-					<FormattedMessage id="addClient" />
-				</Button>
-			</Box>
-			{tickets && <TicketsTable
-				data={tickets}
-				currentPage={currentPage}
-				handleChangePage={handleChangePage}
-				handleUpdateTableData={handleUpdateTableData}
-				handleChangeRowsNumber={handleChangeRowsNumber}
-				totalElements={count}
-				limit={limitElements}
-			/>}
-			<Modal
-				handleClose={handleClose}
-        open={open}
-        title={intl.formatMessage({ id: "addNewClient" })}
-        type="md"
-        fullWidth
-			>
-				<ClientCreateFormWrapper
+		<ClientsProvider value={{handleRecallClients: handleRecallClients}}>
+			<Box sx={commonContainers["contentSx"]}>
+				<Box sx={commonContainers["titleWrapperSx"]}>
+					<Typography
+						variant="h5"
+						sx={{ width: "calc(100% - 240px)" }}
+					>
+						{intl.formatMessage({
+							id: "template.clients",
+							defaultMessage: "Clients"
+						})}
+					</Typography>
+					<Button
+						onClick={handleOpen}
+					>
+						<FormattedMessage id="addClient" />
+					</Button>
+				</Box>
+				{tickets && <TicketsTable
+					data={tickets}
+					currentPage={currentPage}
+					handleChangePage={handleChangePage}
+					handleUpdateTableData={handleUpdateTableData}
+					handleChangeRowsNumber={handleChangeRowsNumber}
+					totalElements={count}
+					limit={limitElements}
+				/>}
+				<Modal
 					handleClose={handleClose}
-				/>
-			</Modal>
-		</Box>
+					open={open}
+					title={intl.formatMessage({ id: "addNewClient" })}
+					type="md"
+					fullWidth
+				>
+					<ClientCreateFormWrapper
+						handleClose={handleClose}
+					/>
+				</Modal>
+			</Box>
+		</ClientsProvider>
 	);
 };

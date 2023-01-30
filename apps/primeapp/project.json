@@ -1,7 +1,7 @@
 {
-	"name": "prime",
+	"name": "primeapp",
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
-	"sourceRoot": "apps/prime/src",
+	"sourceRoot": "apps/primeapp/src",
 	"projectType": "application",
 	"targets": {
 		"build": {
@@ -10,14 +10,14 @@
 			"defaultConfiguration": "production",
 			"options": {
 				"compiler": "babel",
-				"outputPath": "dist/apps/prime",
-				"index": "apps/prime/src/index.html",
+				"outputPath": "dist/apps/primeapp",
+				"index": "apps/primeapp/src/index.html",
 				"baseHref": "/",
-				"main": "apps/prime/src/main.tsx",
-				"polyfills": "apps/prime/src/polyfills.ts",
-				"tsConfig": "apps/prime/tsconfig.app.json",
-				"assets": ["apps/prime/src/favicon.ico", "apps/prime/src/assets"],
-				"styles": ["apps/prime/src/styles.scss"],
+				"main": "apps/primeapp/src/main.tsx",
+				"polyfills": "apps/primeapp/src/polyfills.ts",
+				"tsConfig": "apps/primeapp/tsconfig.app.json",
+				"assets": ["apps/primeapp/src/favicon.ico", "apps/primeapp/src/assets"],
+				"styles": ["apps/primeapp/src/styles.scss"],
 				"scripts": [],
 				"webpackConfig": "@nrwl/react/plugins/webpack"
 			},
@@ -31,8 +31,8 @@
 				"production": {
 					"fileReplacements": [
 						{
-							"replace": "apps/prime/src/environments/environment.ts",
-							"with": "apps/prime/src/environments/environment.prod.ts"
+							"replace": "apps/primeapp/src/environments/environment.ts",
+							"with": "apps/primeapp/src/environments/environment.prod.ts"
 						}
 					],
 					"optimization": true,
@@ -48,15 +48,16 @@
 			"executor": "@nrwl/webpack:dev-server",
 			"defaultConfiguration": "development",
 			"options": {
-				"buildTarget": "prime:build",
+				"buildTarget": "primeapp:build",
 				"hmr": true
 			},
 			"configurations": {
 				"development": {
-					"buildTarget": "prime:build:development"
+					"buildTarget": "primeapp:build:development",
+					"port": 3001
 				},
 				"production": {
-					"buildTarget": "prime:build:production",
+					"buildTarget": "primeapp:build:production",
 					"hmr": false
 				}
 			}
@@ -65,14 +66,14 @@
 			"executor": "@nrwl/linter:eslint",
 			"outputs": ["{options.outputFile}"],
 			"options": {
-				"lintFilePatterns": ["apps/prime/**/*.{ts,tsx,js,jsx}"]
+				"lintFilePatterns": ["apps/primeapp/**/*.{ts,tsx,js,jsx}"]
 			}
 		},
 		"test": {
 			"executor": "@nrwl/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
 			"options": {
-				"jestConfig": "apps/prime/jest.config.ts",
+				"jestConfig": "apps/primeapp/jest.config.ts",
 				"passWithNoTests": true
 			}
 		}

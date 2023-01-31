@@ -58,7 +58,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 							<FormattedMessage id="template.remember"/>
 						</label>
 						<Checkbox
-							className="border-1 border-solid border-grayscale-400 border-round-md flex align-items-center justify-content-center w-1-5rem h-1-5rem"
+							className="border-1 border-solid border-gray-400 border-round-md flex align-items-center justify-content-center w-1-5rem h-1-5rem"
 							inputId="remember"
 							onChange={e => setChecked(e.checked)}
 							checked={checked}
@@ -69,9 +69,13 @@ export const LoginForm: FC<LoginFormProps> = ({
 							<FormattedMessage id="forgot" />
 						</Link>
 					</div>
-					<Button submitType>
-						<FormattedMessage id="template.login"/>
-					</Button>
+					<Button
+						submitType
+						label={intl.formatMessage({
+							id: "template.login",
+							defaultMessage: "Login"
+						})}
+					/>
 				</Form>
 			)}
 		</Formik>

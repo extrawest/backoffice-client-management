@@ -11,7 +11,7 @@ export const Image: FC<ImageProps> = ({
 
 	return (
 		<div
-			className={`${size === "large" ? "w-40rem h-40rem" : "w-12rem h-12rem"} ${rounded ? "border-circle" : "" } overflow-hidden shadow-md`}
+			className={`${size === "large" ? "w-40rem h-40rem" : "w-12rem h-12rem"} ${rounded ? "border-circle" : "" } overflow-hidden shadow-md flex justify-content-center align-items-center`}
 		>
 			<PrimeImage
 				src={src ?? blankPhoto}

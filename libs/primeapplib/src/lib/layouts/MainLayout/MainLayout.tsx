@@ -16,22 +16,22 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
 	return (
 		<div
-			className="flex overflow-hidden h-screen"
+			className="flex overflow-hidden h-screen relative"
 		>
-			<div className="w-96 shadow-md shadow-secondary-main flex justify-content-center align-items-center sticky">
+			<div className="absolute">
 				<Sidebar />
 			</div>
 			<div
-				className="xs:mt-12 mt-0 w-full overflow-x-hidden p-4"
+				className="xs:mt-4 mt-0 w-full overflow-x-hidden p-4"
 				id="pageWrap"
 			>
-				<div className="max-w-30rem w-full p-2 flex gap-2 border-1 border-solid border-grayscale-200 rounded-50">
+				<div className="max-w-30rem w-full p-2 flex gap-2 border-1 border-solid border-gray-400 border-round-half ml-6">
 					<SearchIcon />
 					<input
 						type="text"
 						id="search"
 						name="search"
-						className="w-full text-lg font-medium outline-none text-grayscale-600"
+						className="w-full text-lg font-medium outline-none text-gray-600 border-none"
 						placeholder={fieldText}
 					/>
 				</div>

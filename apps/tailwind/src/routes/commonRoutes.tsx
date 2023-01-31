@@ -1,12 +1,14 @@
 import { AppRouteEnum, RoutesType } from "libs/tailwind-lib/src";
 import { lazy } from "react";
 
-const Login = lazy(() => import("../pages/Login/Login"));
+const LoginPage = lazy(() => import("../pages/Login/Login"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
+const Forgot = lazy(() => import("../pages/Forgot/Forgot"));
+const Registration = lazy(() => import("../pages/Registration/Registration"));
 
 export const commonRoutes: RoutesType = [
 	{
-		element: <Login />,
+		element: <LoginPage />,
 		path: AppRouteEnum.LOGIN,
 		exact: true,
 		isAuth: false,
@@ -14,6 +16,16 @@ export const commonRoutes: RoutesType = [
 	},
 	{
 		element: <NotFound />,
+		isAuth: false,
+	},
+	{
+		element: <Forgot />,
+		path: AppRouteEnum.FORGOT,
+		isAuth: false,
+	},
+	{
+		element: <Registration />,
+		path: AppRouteEnum.REGISTRATION,
 		isAuth: false,
 	},
 ];

@@ -12,6 +12,9 @@ import {
 } from "../../icons";
 import { Checkbox } from "../../components/common/Checkbox/Checkbox";
 import { Link } from "../../components/common/Link/Link";
+import { AppRouteEnum } from "../../types";
+import { Typography } from "../../components/common/Typography/Typography";
+import { TypographyEnum } from "../../types/typography";
 
 export const LoginForm: FC<LoginFormProps> = ({
 	initialValues,
@@ -60,13 +63,18 @@ export const LoginForm: FC<LoginFormProps> = ({
 							id="forgotPass"
 							onChange={(e) => console.log(e)}
 						/>
-						<Link to="/">
+						<Link to={AppRouteEnum.FORGOT}>
 							<FormattedMessage id="forgot" />
 						</Link>
 					</div>
-					<Button submitType>
+					<Button submitType extraClasses="mb-2">
 						<FormattedMessage id="template.login"/>
 					</Button>
+					<Link to={AppRouteEnum.REGISTRATION}>
+						<Typography>
+							<FormattedMessage id="template.signUp" />
+						</Typography>
+					</Link>
 				</Form>
 			)}
 		</Formik>

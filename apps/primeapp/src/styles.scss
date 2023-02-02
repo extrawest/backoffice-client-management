@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'primeflex/primeflex.scss';
-@import 'primeflex/themes/saga-blue.scss';
+@import 'primereact/resources/themes/saga-blue/theme.css';
 @import './assets/fonts/stylesheet.css';
 @import 'primeicons/primeicons.css';
 @import 'primereact/resources/primereact.min.css';
@@ -42,4 +42,7 @@ body {
 }
 .-translate-y-50{
 	transform: translateY(-50%);
+}
+.max-w-40rem {
+	max-width: 40rem;
 }

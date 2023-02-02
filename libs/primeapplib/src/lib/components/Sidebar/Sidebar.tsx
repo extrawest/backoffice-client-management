@@ -41,10 +41,10 @@ export const Sidebar: FC = () => {
 	};
 
 	return (
-		<div>
+		<div className="py-3">
 			<IconButton
 				icon="pi pi-th-large text-lg"
-				extraClasses="bg-transparent"
+				extraClasses="bg-transparent z-5 relative"
 				onClick={handleOpenSidebar}
 			/>
 			<PrimarySidebar
@@ -55,7 +55,7 @@ export const Sidebar: FC = () => {
 				maskClassName="bg-black-alpha-40"
 				showCloseIcon={false}
 			>
-				<div className="w-60 h-full flex flex-column justify-content-start shrink-0 text-grayscale-800 outline-none bg-white py-2">
+				<div className="w-60 h-full flex flex-column justify-content-start shrink-0 text-gray-800 outline-none bg-white py-2">
 					<div className="mb-2 flex flex-column p-4">
 						<Image
 							size="large"

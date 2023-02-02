@@ -11,11 +11,12 @@ export const Image: FC<ImageProps> = ({
 
 	return (
 		<div
-			className={`${size === "large" ? "w-40rem h-40rem" : "w-12rem h-12rem"} ${rounded ? "border-circle" : "" } overflow-hidden shadow-2 flex justify-content-center align-items-center`}
+			className={`${size === "large" ? "w-40rem h-40rem" : "w-6rem h-6rem"} ${rounded ? "border-circle" : "" } overflow-hidden shadow-2 flex justify-content-center align-items-center`}
 		>
 			<PrimeImage
 				src={src ?? blankPhoto}
-				width="100%"
+				imageClassName="w-full h-auto"
+				className="w-full h-full flex justify-content-center align-items-center"
 				alt="pic"
 			/>
 		</div>

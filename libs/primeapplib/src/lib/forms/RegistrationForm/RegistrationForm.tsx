@@ -38,10 +38,8 @@ export const RegistrationForm: FC<RegistrationFormProps> = ({
 			validationSchema={validateShema}
 			onSubmit={onSubmit}
 		>
-			<Form className="w-full flex flex-col items-center justify-center">
-					<div
-						className="w-full flex flex-col items-center justify-center p-0"
-					>
+				<Form className="w-full flex flex-column align-items-center justify-content-center">
+
 						<div className="flex items-center justify-between gap-2.5">
 							<FormikField
 								type="text"
@@ -79,7 +77,6 @@ export const RegistrationForm: FC<RegistrationFormProps> = ({
 							type="password"
 							startAdornment={<LockIcon />}
 						/>
-					</div>
 					<Button
 						submitType
 						extraClasses="mb-2"

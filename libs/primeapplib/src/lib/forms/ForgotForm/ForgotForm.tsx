@@ -33,7 +33,7 @@ export const ForgotForm: FC<ForgotFormProps> = ({
 			onSubmit={onSubmit}
 		>
 			{({errors, touched, }) => (
-				<Form className="w-full flex flex-col items-center justify-center">
+				<Form className="w-full flex flex-column align-items-center justify-content-center">
 					<FormikField
 						type="text"
 						id="email"

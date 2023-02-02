@@ -75,9 +75,9 @@ export const RegistrationContainer: FC = () => {
 
 	return (
 		<div
-			className="h-screen flex flex-col justify-center items-center bg-background.paper max-w-lg mx-auto"
+			className="h-screen flex flex-column justify-content-center align-items-center bg-background max-w-30rem mx-auto"
 		>
-			<div className="flex flex-col justify-center items-center gap-5 mb-10 lead">
+			<div className="flex flex-column justify-content-center align-items-center gap-2 mb-4 lead">
 				<Typography
 					type={TypographyEnum.H1}
 					extraClasses="max-w-sm leading-tight"

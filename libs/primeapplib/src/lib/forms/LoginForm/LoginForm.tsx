@@ -12,6 +12,7 @@ import {
 import { Checkbox } from "primereact/checkbox";
 import { Link } from "../../components/common/Link/Link";
 import { FormikPasswordField } from "../../components/common/FormikPasswordField/FormikPasswordField";
+import { AppRouteEnum } from "../../types";
 
 export const LoginForm: FC<LoginFormProps> = ({
 	initialValues,
@@ -65,17 +66,21 @@ export const LoginForm: FC<LoginFormProps> = ({
 						/>
 					</div>
 
-						<Link to="/">
+						<Link to={AppRouteEnum.FORGOT}>
 							<FormattedMessage id="forgot" />
 						</Link>
 					</div>
 					<Button
 						submitType
+						extraClasses="mb-2"
 						label={intl.formatMessage({
 							id: "template.login",
 							defaultMessage: "Login"
 						})}
 					/>
+					<Link to={AppRouteEnum.REGISTRATION}>
+						<FormattedMessage id="template.signUp" />
+					</Link>
 				</Form>
 			)}
 		</Formik>

@@ -43,7 +43,6 @@ export const TaskList: FC = () => {
 						className="flex py-4 px-6 align-items-center justify-content-between gap-3 border-bottom-1 border-gray-200 last-of-type:border-none relative"
 					>
 						<RadioButton
-							className={`border-1 border-solid border-gray-400 border-circle flex align-items-center justify-content-center w-1-5rem h-1-5rem ${activeTask === item.text ? "bg-blue-600" : "bg-transparent"}`}
 							inputId={`${item.id}-task`}
 							name="task"
 							value={item.text}

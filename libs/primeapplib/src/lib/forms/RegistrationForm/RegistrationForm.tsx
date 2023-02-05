@@ -60,7 +60,7 @@ export const RegistrationForm: FC<RegistrationFormProps> = ({
 							type="text"
 							id="email"
 							name="email"
-							placeholder={lastNameText}
+							placeholder={emailText}
 							startAdornment={<UserIcon />}
 						/>
 						<FormikField

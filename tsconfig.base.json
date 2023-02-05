@@ -24,6 +24,7 @@
 				"libs/semanticapplib/src/index.ts"
 			],
 			"@mono-redux-starter/shared": ["libs/shared/src/index.ts"],
+			"@mono-redux-starter/shared/color": ["libs/shared/consts/color.ts"],
 			"@mono-redux-starter/shared/fonts": ["libs/shared/fonts/stylesheet.css"],
 			"@mono-redux-starter/shared/hoks": ["libs/shared/hoks/src/index.ts"],
 			"@mono-redux-starter/shared/hooks": ["libs/shared/hooks/src/index.ts"],

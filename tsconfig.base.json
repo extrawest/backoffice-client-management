@@ -20,6 +20,9 @@
 			"@mono-redux-starter/material-lib": ["libs/material-lib/src/index.ts"],
 			"@mono-redux-starter/primeapplib": ["libs/primeapplib/src/index.ts"],
 			"@mono-redux-starter/redux": ["libs/redux/src/index.ts"],
+			"@mono-redux-starter/semanticapplib": [
+				"libs/semanticapplib/src/index.ts"
+			],
 			"@mono-redux-starter/shared": ["libs/shared/src/index.ts"],
 			"@mono-redux-starter/shared/fonts": ["libs/shared/fonts/stylesheet.css"],
 			"@mono-redux-starter/shared/hoks": ["libs/shared/hoks/src/index.ts"],

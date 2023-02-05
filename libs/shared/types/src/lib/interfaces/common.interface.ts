@@ -1,4 +1,5 @@
 import { DocumentReference } from "firebase/firestore";
+import { CSSProperties } from "react";
 import { TicketSortFields } from "../enums";
 import { PriorityEnum, TaskStatusEnum } from "../enums/PriorityEnum";
 
@@ -51,4 +52,8 @@ export interface TaskDataList {
 	id: number,
 	text: string,
 	taskStatus: TaskStatusEnum
+}
+
+export interface CSSStyles {
+	[key: string]: CSSProperties
 }

@@ -4,6 +4,6 @@ export const containerStyle = {
 		alignItems: "center",
 		justifyContent: "center",
 		flexDirection: "column",
-		height: "inherit"
+		height: "100vh"
 	},
 };

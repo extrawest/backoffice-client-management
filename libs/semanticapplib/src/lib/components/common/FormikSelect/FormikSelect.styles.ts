@@ -8,7 +8,7 @@ export const formikSelectStyle: CSSStyles = {
 		margin: "0.75rem 0",
 		border: `${pxToRem(1)} solid`,
 		borderRadius: pxToRem(50),
-		padding: `0 ${pxToRem(15)}`
+		padding: `0 ${pxToRem(15)}`,
 	},
 	inputWrapper: {
 		display: "flex",

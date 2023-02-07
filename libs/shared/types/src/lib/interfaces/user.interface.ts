@@ -24,5 +24,6 @@ export interface Manager {
 	firstName: string;
 	lastName: string;
 	role: RoleEnum;
-	uid: string;
+	manager_uid: string;
+	photoUrl: string | null
 }

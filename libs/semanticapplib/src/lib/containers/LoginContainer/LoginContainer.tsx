@@ -5,9 +5,14 @@ import { LoginForm, Values } from "../../forms/LoginForm";
 import { useTypedDispatch } from "../../store";
 import { AppRouteEnum } from "../../types";
 import { getAuth } from "firebase/auth";
-import { firebaseApp } from "@mono-redux-starter/firebase";
+import {
+	doc,
+	firebaseApp,
+	firestore,
+	getDoc
+} from "@mono-redux-starter/firebase";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { updateIsLoggedIn } from "@mono-redux-starter/redux";
+import { updateIsLoggedIn, updateManager } from "@mono-redux-starter/redux";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 import { FormattedMessage } from "react-intl";
 import {
@@ -18,6 +23,7 @@ import {
 import { containerStyle } from "../containerStyle";
 import { Typography } from "../../components/common/Typography/Typography";
 import { TypographyEnum } from "../../types/typography";
+import { Manager } from "@mono-redux-starter/shared/types";
 
 export const LoginContainer: FC = () => {
 	const navigate = useNavigate();
@@ -43,15 +49,27 @@ export const LoginContainer: FC = () => {
 	const onSubmit = async (
 		values: Values, form: FormikHelpers<Values>
 	) => {
-		const result = await signInWithEmailAndPassword(
-			values.email,
-			values.password
-		);
-		if(result){
-			dispatch(updateIsLoggedIn(true));
-			navigate(AppRouteEnum.DASHBOARD);
-			form.setSubmitting(false);
+		try{
+			const result = await signInWithEmailAndPassword(
+				values.email,
+				values.password
+			);
+			if(result){
+				const snapshot = await getDoc(doc(
+					firestore(),
+					"managers",
+					result.user.uid
+				));
+				const data = snapshot.data();
+				data && dispatch(updateManager(data as Manager));
+				dispatch(updateIsLoggedIn(true));
+				navigate(AppRouteEnum.DASHBOARD);
+				form.setSubmitting(false);
+			}
+		} catch (loginError) {
+			console.log(loginError);
 		}
+
 	};
 
 	return (

@@ -43,6 +43,12 @@ export interface SelectValue {
 	name: string
 }
 
+export interface SemanticSelectValue {
+	value: string,
+	id: number,
+	text: string
+}
+
 export interface SimpleDataList {
 	value: string,
 	title: string

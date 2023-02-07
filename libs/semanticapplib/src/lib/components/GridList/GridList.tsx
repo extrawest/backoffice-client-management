@@ -1,21 +1,22 @@
-import { grayscale400 } from "@mono-redux-starter/shared/color";
+import { commonBlack, grayscale400 } from "@mono-redux-starter/shared/color";
 import { SimpleDataList } from "@mono-redux-starter/shared/types";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { FC } from "react";
-import { Grid, GridColumn } from "semantic-ui-react";
+import {
+	Grid, GridColumn, List, ListItem
+} from "semantic-ui-react";
 import { TypographyEnum } from "../../types/typography";
 import { Typography } from "../common/Typography/Typography";
 import { gridListStyles } from "./GridList.styles";
-
 import { GridListProps } from "./GridList.types";
 
 export const GridList: FC<GridListProps> = ({
 	data,
 	direction = "column"
 }) => {
+
 	return (
-		<Grid
-			columns={direction === "row" ? "equal" : 1}
+		<div
 			style={gridListStyles.gridListWrapper}
 		>
 			{
@@ -23,27 +24,31 @@ export const GridList: FC<GridListProps> = ({
 					item: SimpleDataList,
 					index: number
 				) => (
-					<GridColumn
+					<div
 						key={index}
 						style={{
-							...gridListStyles.gridColumn(direction),
+							...(direction === "row" ? gridListStyles.gridRow : gridListStyles.gridColumn),
 							borderBottom: index !== data.length - 1 ? `${pxToRem(1)} solid ${grayscale400}` : "none"
 						}}
 					>
 						<Typography
-							style={gridListStyles.title(direction)}
+							style={{
+								fontWeight: direction === "row" ? 600 : 400
+							}}
 						>
 							{item.title}
 						</Typography>
 						<Typography
 							type={TypographyEnum.TITLE}
-							style={gridListStyles.value(direction)}
+							style={{
+								color: direction === "row" ? grayscale400 : commonBlack
+							}}
 						>
 							{item.value}
 						</Typography>
-					</GridColumn>
+					</div>
 				))
 			}
-		</Grid>
+		</div>
 	);
 };

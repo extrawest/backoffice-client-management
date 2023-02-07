@@ -1,21 +1,24 @@
-import { commonBlack, grayscale400 } from "@mono-redux-starter/shared/color";
+import { CSSStyles } from "@mono-redux-starter/shared/types";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
-import { CSSProperties } from "react";
 
-export const gridListStyles = {
+export const gridListStyles: CSSStyles = {
 	gridListWrapper: {
-		height: "100%"
-	},
-	gridColumn: (direction: "row" | "column"): CSSProperties => ({
+		height: "100%",
 		display: "flex",
 		flexDirection: "column",
-		padding: direction === "row" ? `${pxToRem(16)} 0` : `${pxToRem(32)} 0`,
-		justifyContent: direction === "row" ? "space-between": "center"
-	}),
-	title: (direction: "row" | "column"): CSSProperties => ({
-		fontWeight: direction === "row" ? 600 : 400,
-	}),
-	value: (direction: "row" | "column"): CSSProperties => ({
-		color: direction === "row" ? grayscale400 : commonBlack,
-	}),
+		padding: 0,
+	},
+	gridColumn: {
+		display: "flex",
+		flexDirection: "column",
+		padding: `${pxToRem(32)} 0`,
+		justifyContent: "center",
+		height: "100%"
+	},
+	gridRow: {
+		display: "flex",
+		flexDirection: "row",
+		padding: `${pxToRem(16)} ${pxToRem(20)}`,
+		justifyContent:"space-between",
+	}
 };

@@ -6,5 +6,6 @@ export interface TypographyProps {
 	type?: TypographyEnum,
 	extraClasses?: string,
 	tag?: TagEnum,
-	style?: CSSProperties
+	style?: CSSProperties,
+	textAlign?: "center" | "start" | "end"
 }

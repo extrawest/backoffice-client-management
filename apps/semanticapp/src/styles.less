@@ -9,7 +9,7 @@
 	margin: 0;
 	padding: 0;
 }
-.ui.text.container, body{
+.ui.text.container, body, .ui{
 	font-family: "Open Sans" !important;
 }
 
@@ -19,9 +19,7 @@ body {
 
 .pageLayout {
 	height: 100vh;
-	& > div {
-		height: inherit;
-	}
+	overflow-y: scroll
 };
 
 h1.ui.header {
@@ -54,4 +52,8 @@ h6.ui.header {
 
 .ui.input>input{
 	border: none;
+}
+
+.overflow-visible {
+	overflow: visible !important;
 }

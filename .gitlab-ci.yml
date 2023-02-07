@@ -11,9 +11,10 @@ install:
     - npm ci
   cache:
     key:
-      - package-json.lock
-    files:
-      - node_modules/
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
     policy: push
 
 build:
@@ -34,9 +35,10 @@ build:
     - npm run build:all
   cache:
     key:
-      - package-json.lock
-    files:
-      - node_modules/
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
     policy: pull
   artifacts:
     expire_in: 1 hour

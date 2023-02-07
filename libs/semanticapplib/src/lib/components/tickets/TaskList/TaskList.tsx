@@ -1,10 +1,14 @@
 import { grayscale400 } from "@mono-redux-starter/shared/color";
 import { TaskDataList, TaskStatusEnum } from "@mono-redux-starter/shared/types";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useIntl } from "react-intl";
-import { Radio } from "semantic-ui-react";
-import { Typography } from "../../common/Typography/Typography";
+import {
+	CheckboxProps,
+	Form,
+	FormField,
+	Radio
+} from "semantic-ui-react";
 import { TaskStatus } from "../TaskStatus/TaskStatus";
 import { taskListStyles } from "./TaskList.styles";
 
@@ -29,14 +33,23 @@ export const TaskList: FC = () => {
 		}
 	];
 
+	const [value, setValue] = useState<string>("");
+
+	const handleChange: CheckboxProps["onChange"] = (
+		e,
+		dropdownData
+	) => {
+		setValue(String(dropdownData.value));
+	};
+
 	return (
-		<div style={taskListStyles.wrapper}>
+		<Form style={taskListStyles.wrapper}>
 			{
 				data.map((
 					item: TaskDataList,
 					index: number
 					) => (
-					<div
+					<FormField
 						key={index}
 						style={{
 							...taskListStyles.columnWrapper,
@@ -46,16 +59,20 @@ export const TaskList: FC = () => {
 						<div style={taskListStyles.column}>
 							<Radio
 								label={item.text}
+								name="task"
+								value={item.taskStatus}
+								checked={value === item.taskStatus}
 								style={{
 									fontWeight: 600
 								}}
+								onChange={handleChange}
 							/>
 
 							<TaskStatus status={item.taskStatus} />
 						</div>
-					</div>
+					</FormField>
 				))
 			}
-		</div>
+		</Form>
 	);
 };

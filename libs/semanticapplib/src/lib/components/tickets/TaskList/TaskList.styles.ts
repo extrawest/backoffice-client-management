@@ -13,9 +13,10 @@ export const taskListStyles: CSSStyles = {
 	columnWrapper: {
 		display: "flex",
 		flexDirection: "column",
-		padding: `${pxToRem(17)} 0`,
+		padding: `${pxToRem(14)} 0`,
 		justifyContent: "center",
 		height: "100%",
+		margin: 0
 	},
 	column: {
 		display: "flex",

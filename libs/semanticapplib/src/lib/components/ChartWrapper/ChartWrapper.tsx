@@ -3,7 +3,11 @@ import { SimpleDataList } from "@mono-redux-starter/shared/types";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { FC } from "react";
 import { useIntl } from "react-intl";
-import { Grid, GridColumn } from "semantic-ui-react";
+import {
+	Container,
+	Grid,
+	GridColumn
+} from "semantic-ui-react";
 import { Chart } from "../Chart/Chart";
 import { GridList } from "../GridList/GridList";
 import { chartWrapperStyle } from "./ChartWrapper.styles";
@@ -33,28 +37,33 @@ export const ChartWrapper: FC = () => {
 		}
 	];
 	return (
-		<Grid
-			columns={2}
-			style={chartWrapperStyle.wrapper}
-		>
-			<GridColumn
-				computer={12}
-				mobile={16}
-				style={{
-					borderRight: `${pxToRem(1)} solid ${grayscale400}`
-				}}
+		<Container fluid>
+			<Grid
+				columns={2}
+				style={chartWrapperStyle.wrapper}
 			>
-				<Chart />
-			</GridColumn>
-			<GridColumn
-				computer={4}
-				mobile={16}
-			>
-				<GridList
-					data={trendsData}
-					direction="column"
-				/>
-			</GridColumn>
-		</Grid>
+				<GridColumn
+					computer={12}
+					mobile={16}
+					style={{
+						borderRight: `${pxToRem(1)} solid ${grayscale400}`
+					}}
+				>
+					<Chart />
+				</GridColumn>
+				<GridColumn
+					computer={4}
+					mobile={16}
+					style={{
+						padding: 0
+					}}
+				>
+					<GridList
+						data={trendsData}
+						direction="column"
+					/>
+				</GridColumn>
+			</Grid>
+		</Container>
 	);
 };

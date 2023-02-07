@@ -22,7 +22,7 @@
 				],
 				"styles": ["apps/semanticapp/src/styles.less"],
 				"scripts": [],
-				"webpackConfig": "@nrwl/react/plugins/webpack"
+				"webpackConfig": "apps/semanticapp/webpack.config.js"
 			},
 			"configurations": {
 				"development": {

@@ -3,7 +3,6 @@ import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
 import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
-
 import { SnackbarProvider } from "notistack";
 import { abilityCheckStorage, AbilityContext } from "@mono-redux-starter/shared/permissions";
 import { YupGlobalLocale } from "@mono-redux-starter/shared/ui";
@@ -16,6 +15,7 @@ import {
 import AppRoutes from "../routes";
 import React from "react";
 import { Loader, Modal } from "semantic-ui-react";
+import "semantic-ui-less/semantic.less";
 
 const ability = abilityCheckStorage(store);
 

@@ -7,7 +7,7 @@ export const formikFieldStyle: CSSStyles = {
 		width: "100%",
 		margin: "0.75rem 0",
 		border: `${pxToRem(1)} solid`,
-		borderRadius: pxToRem(8),
+		borderRadius: pxToRem(50),
 		overflow: "hidden",
 		padding: `0 ${pxToRem(15)}`
 	},
@@ -16,8 +16,7 @@ export const formikFieldStyle: CSSStyles = {
 		alignItems: "center",
 		justifyContent: "center",
 		width: "100%",
-		padding: `${pxToRem(10)} 0
-		`
+		padding: `${pxToRem(10)} 0`
 	},
 	error: {
 		textAlign: "start",

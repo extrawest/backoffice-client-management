@@ -6,7 +6,6 @@ import { Container } from "semantic-ui-react";
 export const PageLayout: FC<PageLayoutProps> = ({ children }) =>  (
 	<Container
 		fluid
-		className="pageLayout"
 	>
 		<HelmetHead />
 		{children}

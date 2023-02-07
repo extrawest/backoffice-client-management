@@ -1,49 +1,76 @@
 import { FC, useState } from "react";
-import { NavLink as RouterLink } from "react-router-dom";
-import { AppRouteEnum } from "../../types/paths";
 import { MainLayoutProps } from "./MainLayout.types";
-import { mainLayoutStyles } from "./MainLayout.styles";
-import { IconButton } from "../../components/common/IconButton/IconButton";
-import { Link } from "../../components/common/Link/Link";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { FormikField } from "../../components/common/FormikField/FormikField";
 import { useIntl } from "react-intl";
 import { SearchIcon } from "../../icons";
+import {
+	Container,
+	Input,
+	Menu,
+	Segment,
+	Sidebar as SemanticSidebar,
+	SidebarPushable,
+	SidebarPusher
+} from "semantic-ui-react";
+import { IconButton } from "../../components/common/IconButton/IconButton";
+import { mainLayoutStyles } from "./MainLayout.styles";
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	const intl = useIntl();
 	const [open, setOpen] = useState(false);
 
-	const toggleDrawer = () => {
-		setOpen(!open);
+	const handleOpen = () => {
+		setOpen(true);
+	};
+	const handleClose = () => {
+		setOpen(false);
 	};
 
 	const fieldText = intl.formatMessage({id: "search"});
 
 	return (
-		<div
-			className="flex overflow-hidden h-100vh"
-		>
-			<div className="w-96 shadow-md shadow-secondary-main flex justify-center items-center sticky">
-				<Sidebar />
-			</div>
-			<div
-				className="xs:mt-12 mt-0 w-full overflow-x-hidden p-4"
-				id="pageWrap"
-			>
-				<div className="max-w-lg w-full p-2 flex gap-2 border-1 border-solid border-grayscale-200 rounded-50">
-					<SearchIcon />
-					<input
-						type="text"
-						id="search"
-						name="search"
-						className="w-full text-lg font-medium outline-none text-grayscale-600"
-						placeholder={fieldText}
+		<Container fluid style={mainLayoutStyles.layoutContainer}>
+			<IconButton
+				icon="content"
+				onClick={handleOpen}
+			/>
+			<SemanticSidebar.Pushable style={{width: "100%", position: "sticky"}}>
+				<SemanticSidebar
+					as={Menu}
+					visible={open}
+					animation="push"
+					onHide={handleClose}
+					direction="left"
+
+					vertical
+					width='wide'
+				>
+					<Sidebar
+						handleClose={handleClose}
 					/>
-				</div>
-				{children}
-			</div>
-		</div>
+				</SemanticSidebar>
+				<SemanticSidebar.Pusher>
+					<Container
+						fluid
+						className="pageLayout"
+						style={mainLayoutStyles.content}
+					>
+						<div className="max-w-30rem w-full p-2 flex gap-2 border-1 border-solid border-gray-400 border-round-half ml-6">
+							<Input
+								type="text"
+								id="search"
+								name="search"
+								icon="search"
+								iconPosition="left"
+								style={mainLayoutStyles.seachInput}
+								placeholder={fieldText}
+							/>
+						</div>
+						{children}
+					</Container>
+				</SemanticSidebar.Pusher>
+			</SemanticSidebar.Pushable>
+		</Container>
 	);
 };
 

@@ -52,3 +52,6 @@ deploy:
   stage: deploy
   script:
     - firebase deploy --only hosting:material-hosting --token $FIREBASE_TOKEN
+		- firebase deploy --only hosting:tailwind-hosting --token $FIREBASE_TOKEN
+		- firebase deploy --only hosting:primeapp-hosting --token $FIREBASE_TOKEN
+		- firebase deploy --only hosting:semanticapp-hosting --token $FIREBASE_TOKEN

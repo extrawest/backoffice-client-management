@@ -17,7 +17,7 @@
 			]
 		},
 		{
-
+			"target": "tailwind-hosting",
 			"public": "dist/apps/tailwind ",
 			"ignore": [
 				"firebase.json",
@@ -28,6 +28,36 @@
 				{
 					"source": "/tailwind/**",
 					"destination": "/tailwind/index.html"
+				}
+			]
+		},
+		{
+			"target": "primeapp-hosting",
+			"public": "dist/apps/primeapp ",
+			"ignore": [
+				"firebase.json",
+				"**/.*",
+				"**/node_modules/**"
+			],
+			"rewrites": [
+				{
+					"source": "/primeapp/**",
+					"destination": "/primeapp/index.html"
+				}
+			]
+		},
+		{
+			"target": "semanticapp-hosting",
+			"public": "dist/apps/semanticapp ",
+			"ignore": [
+				"firebase.json",
+				"**/.*",
+				"**/node_modules/**"
+			],
+			"rewrites": [
+				{
+					"source": "/semanticapp/**",
+					"destination": "/semanticapp/index.html"
 				}
 			]
 		}

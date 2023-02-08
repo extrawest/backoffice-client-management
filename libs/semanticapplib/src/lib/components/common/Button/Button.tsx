@@ -10,7 +10,10 @@ export const Button: FC<ButtonProps> = ({
 	return (
 		<SemanticButton
 			{...rest}
-			style={outlined ? buttonStyle.outlined : buttonStyle.default}
+			style={{
+				...(outlined ? buttonStyle.outlined : buttonStyle.default),
+				...rest.style
+			}}
 		/>
 	);
 };

@@ -2,16 +2,18 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormikHelpers } from "formik";
 import { LoginForm, Values } from "../../forms/LoginForm";
-import { useTypedDispatch } from "../../store";
+import { useTypedDispatch, useTypedSelector } from "../../store";
 import { AppRouteEnum } from "../../types";
 import { getAuth } from "firebase/auth";
 import { firebaseApp } from "@mono-redux-starter/firebase";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 import { Typography } from "../../components/common/Typography/Typography";
 import { TypographyEnum } from "../../types/typography";
 import { FormattedMessage } from "react-intl";
+import { IconButton } from "../../components/common/IconButton/IconButton";
+import { GoogleIcon } from "../../icons";
 
 export const LoginContainer: FC = () => {
 	const navigate = useNavigate();
@@ -27,6 +29,15 @@ export const LoginContainer: FC = () => {
 		loading,
 		error,
 	] = useSignInWithEmailAndPassword(auth);
+
+	const { managerInfo } = useTypedSelector(state => state.authSlice);
+
+	const [
+		signInWithGoogle,
+		googleUser,
+		googleLoading,
+		googleError
+	] = useSignInWithGoogle(auth);
 
 	useShowSnackBarMessage(
 		!!error,
@@ -45,6 +56,28 @@ export const LoginContainer: FC = () => {
 			dispatch(updateIsLoggedIn(true));
 			navigate(AppRouteEnum.DASHBOARD);
 			form.setSubmitting(false);
+		}
+	};
+
+	const handleLoginViaGoogle = async () => {
+		try{
+			const result = await signInWithGoogle();
+			if(result){
+				const snapshot = await getDoc(doc(
+					firestore(),
+					"managers",
+					result.user.uid
+				));
+				const data = {
+					...snapshot.data(),
+					photoUrl: result.user.photoURL
+				};
+				data && dispatch(updateManager(data as Manager));
+				dispatch(updateIsLoggedIn(true));
+				navigate(AppRouteEnum.DASHBOARD);
+			}
+		} catch(loginError) {
+			console.log(loginError);
 		}
 	};
 
@@ -68,6 +101,12 @@ export const LoginContainer: FC = () => {
 				onSubmit={onSubmit}
 				isLoading={false}
 			/>
+			<IconButton
+				onClick={handleLoginViaGoogle}
+				extraClasses="mt-2"
+			>
+				<GoogleIcon />
+			</IconButton>
 		</div>
 	);
 };

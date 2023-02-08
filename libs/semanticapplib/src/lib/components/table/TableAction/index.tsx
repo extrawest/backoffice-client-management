@@ -1,17 +1,16 @@
-import { FormikValues } from "formik";
 import {
 	FC,
 	useState
 } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { AddIcon, FitlerIcon } from "../../../icons";
+import { Popup } from "semantic-ui-react";
 import { TypographyEnum } from "../../../types/typography";
 import { Button } from "../../common/Button/Button";
 import { Modal } from "../../common/Modal/Modal";
-import { Popover } from "../../common/Popover/Popover";
 import { Typography } from "../../common/Typography/Typography";
 import { TicketCreateFormWrapper } from "../../tickets/TicketCreateFormWrapper/TicketCreateFormWrapper";
 import { FilterForm } from "../FilterForm";
+import { tableActionsStyles } from "./TableAction.styles";
 import { FilterValue, TableActionProps } from "./TableAction.types";
 
 export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
@@ -48,42 +47,49 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
 	};
 
 	return (
-    <div className="flex justify-between items-center px-5 py-4">
+    <div style={tableActionsStyles.wrapper}>
 			<Typography type={TypographyEnum.BUTTON}>
 				<FormattedMessage id='allTickets' />
 			</Typography>
-      <div className="relative flex items-center gap-3">
+      <div style={tableActionsStyles.header}>
 				<Button
-          extraClasses="bg-background rounded-sm bg-gradient-none flex items-center justify-center from-background to-background text-secondary-main w-16 border-solid border-1 border-grayscale-400 "
-          onClick={handleOpenModal}
-				>
-          <AddIcon />
-          <Typography type={TypographyEnum.BODY2}>
-            <FormattedMessage id='add' />
-          </Typography>
-				</Button>
-        <Button
-          extraClasses="bg-background rounded-sm bg-gradient-none flex items-center justify-center from-background to-background text-secondary-main w-16 border-solid border-1 border-grayscale-400 "
-          onClick={handleOpenFilterForm}
-        >
-          {!isFilterActive && <FitlerIcon /> }
-          {isFilterActive && <FitlerIcon fill="#2F80ED" />}
-          <Typography type={TypographyEnum.BODY2}>
-            <FormattedMessage id='filter' />
-          </Typography>
-        </Button>
-        <Popover
-          open={openFilter}
-					handleClose={handleCloseFilterForm}
-        >
-          <FilterForm
-            handleFilter={handleSubmit}
-            isFilterActive={filterStatus}
-            handleClose={handleCloseFilterForm}
-            activePriority={activePriority}
-            setActivePriority={(value: string) => setActivePriority(value)}
-          />
-        </Popover>
+					onClick={handleOpenModal}
+					content={intl.formatMessage({id: "add"})}
+					icon="plus"
+					type="button"
+					outlined
+				/>
+				<Popup
+					content={
+						<FilterForm
+							handleFilter={handleSubmit}
+							isFilterActive={filterStatus}
+							handleClose={handleCloseFilterForm}
+							activePriority={activePriority}
+							setActivePriority={(value: string) => setActivePriority(value)}
+						/>
+					}
+					position="bottom right"
+					on='click'
+					pinned
+					trigger={
+						<div
+							style={{
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center"
+							}}
+						>
+							<Button
+								onClick={handleOpenFilterForm}
+								content={intl.formatMessage({id: "filter"})}
+								icon="filter"
+								type="button"
+								outlined
+							/>
+						</div>
+					}
+				/>
       </div>
 			<Modal
 				handleClose={handleCloseModal}

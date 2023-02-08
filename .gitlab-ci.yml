@@ -42,8 +42,6 @@ build:
         - package-lock.json
     paths:
       - node_modules
-    files:
-      - node_modules
     policy: pull
   artifacts:
     expire_in: 1 hour

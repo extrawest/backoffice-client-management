@@ -33,17 +33,25 @@ import { ClientCreateFormWrapper } from "../../components/clients/ClientCreateFo
 import { Modal } from "../../components/common/Modal/Modal";
 import { ClientsProvider } from "./ClientsContainer.context";
 import { DataTableProps } from "primereact/datatable";
+import { useTypedSelector } from "../../store";
 
 const getTicketsCollection = (
 	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<DocumentData>[]>>,
 	setCount: Dispatch<SetStateAction<number>>,
+	uid?: string,
 	filterValues?: TicketsFilterDataType,
 	currentTickets: QueryDocumentSnapshot<DocumentData>[] = [],
+
 ) => async () => {
 	const queryParams: Parameters<typeof query> = [ticketsCollectionRef];
 
 	const firstVisible = currentTickets.at(0);
 	const lastVisible = currentTickets.at(-1);
+	queryParams.push(where(
+		"manager_uid",
+		"==",
+		uid
+	));
 
 	if(filterValues?.priority){
 		queryParams.push(where(
@@ -83,6 +91,7 @@ export const ClientsContainer: FC = () => {
 	const [open, setOpen] = useState<boolean>(false);
 	const [limitElements, setLimitElements] = useState<number>(5);
 	const [filterValue, setFilterValue] = useState<TicketsFilterDataType>();
+	const { managerInfo } = useTypedSelector(state => state.authSlice);
 
 	const handleClose = () => {
 		setOpen(false);
@@ -96,7 +105,8 @@ export const ClientsContainer: FC = () => {
 		() => {
 			getTicketsCollection(
 				setTicketsSnapshot,
-				setCount
+				setCount,
+				managerInfo?.manager_uid
 			)();
 		},
 		[]
@@ -114,6 +124,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
+			managerInfo?.manager_uid,
 			value
 		)();
 	};
@@ -122,6 +133,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
+			managerInfo?.manager_uid,
 			filterValue
 		)();
 	};
@@ -131,6 +143,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
+			managerInfo?.manager_uid,
 			filterValue && filterValue,
 			ticketsSnapshot,
 		)();

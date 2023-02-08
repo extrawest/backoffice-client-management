@@ -31,10 +31,12 @@ import { TicketsTable } from "../../components/tickets/TicketsTable";
 import { ClientCreateFormWrapper } from "../../components/clients/ClientCreateFormWrapper/ClientCreateFormWrapper";
 import { Modal } from "../../components/common/Modal/Modal";
 import { ClientsProvider } from "./ClientsContainer.context";
+import { useTypedSelector } from "../../store";
 
 const getTicketsCollection = (
 	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<DocumentData>[]>>,
 	setCount: Dispatch<SetStateAction<number>>,
+	uid?: string,
 	limitValues = 10,
 	filterValues?: TicketsFilterDataType,
 	currentTickets: QueryDocumentSnapshot<DocumentData>[] = [],
@@ -44,6 +46,11 @@ const getTicketsCollection = (
 
 	const firstVisible = currentTickets.at(0);
 	const lastVisible = currentTickets.at(-1);
+	queryParams.push(where(
+		"manager_uid",
+		"==",
+		uid
+	));
 
 	if(filterValues?.priority){
 		queryParams.push(where(
@@ -89,6 +96,7 @@ export const ClientsContainer: FC = () => {
 	const [open, setOpen] = useState<boolean>(false);
 	const [limitElements, setLimitElements] = useState<number>(10);
 	const [filterValue, setFilterValue] = useState<TicketsFilterDataType>();
+	const { managerInfo } = useTypedSelector(state => state.authSlice);
 
 	const handleClose = () => {
 		setOpen(false);
@@ -102,7 +110,8 @@ export const ClientsContainer: FC = () => {
 		() => {
 			getTicketsCollection(
 				setTicketsSnapshot,
-				setCount
+				setCount,
+				managerInfo?.manager_uid,
 			)();
 		},
 		[]
@@ -121,6 +130,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
+			managerInfo?.manager_uid,
 			currentLimit,
 			filterValue
 		)();
@@ -131,6 +141,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
+			managerInfo?.manager_uid,
 			limitElements,
 			value
 		)();
@@ -140,6 +151,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
+			managerInfo?.manager_uid,
 			limitElements,
 			filterValue
 		)();
@@ -154,6 +166,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
+			managerInfo?.manager_uid,
 			limitElements,
 			filterValue && filterValue,
 			ticketsSnapshot,

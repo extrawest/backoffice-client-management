@@ -1,26 +1,31 @@
 
 import { TicketSortFields } from "@mono-redux-starter/shared/types";
 import { convertToDate, convertToDateTime } from "@mono-redux-starter/shared/utils";
-import { Box } from "@mui/material";
-import { GridSortItem, GridSortModel } from "@mui/x-data-grid";
 import {
 	FC,
 	useEffect,
 	useState
 } from "react";
 import { FormattedMessage } from "react-intl";
-import { Item } from "semantic-ui-react";
-import { ArrowIcon } from "../../../icons";
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableHeader,
+	TableHeaderCell,
+	TableRow
+} from "semantic-ui-react";
 import { CellWithCaption } from "../../common/CellWithCaption/CellWithCaption";
 import { ClientCell } from "../../common/ClientCell/ClientCell";
 import { IconButton } from "../../common/IconButton/IconButton";
 import { ImageWrapper } from "../../common/ImageWrapper/ImageWrapper";
 import { PriorityStatus } from "../../common/PriorityStatus/PriorityStatus";
-// import { DeleteTicket } from "../../table/DeleteTicket/DeleteTicket";
+import { DeleteTicket } from "../../table/DeleteTicket/DeleteTicket";
 import { TableAction } from "../../table/TableAction";
 import { FilterValue } from "../../table/TableAction/TableAction.types";
 import { TablePagination } from "../../table/TablePagination";
 import { TableRowCounter } from "../../table/TableRowCounter";
+import { tableStyles } from "./TicketsTable.styles";
 import { TicketsTableProps } from "./TicketsTable.types";
 
 export const TicketsTable: FC<TicketsTableProps> = ({
@@ -32,15 +37,17 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 	handleChangePage,
 	handleChangeRowsNumber
 }) => {
-	const [sortValue, setSortValue] = useState<GridSortItem>({ field: "", sort: "asc" });
+	const [sortValue, setSortValue] = useState({ field: "", sort: "asc" });
 	const [filterValue, setFilterValue] = useState<FilterValue>({ priority: "" });
 	useEffect(
 		() => {
-			handleUpdateTableData({
-				...filterValue,
-				sortAsc: sortValue ? sortValue.sort === "asc" : true,
-				sortField: (sortValue && sortValue.field) || TicketSortFields.DATE
-			});
+			if(sortValue.field || filterValue.priority){
+				handleUpdateTableData({
+					...filterValue,
+					sortAsc: sortValue ? sortValue.sort === "asc" : true,
+					sortField: sortValue.field ?? ""
+				});
+			}
 		},
 		[sortValue, filterValue]
 	);
@@ -53,89 +60,95 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 	};
 
 	return (
-    <div className="w-full border-1 border-solid border-grayscale-400 rounded-lg overflow-hidden">
+    <div style={tableStyles.wrapper}>
       <TableAction
         handleFilter={( value: FilterValue ) => setFilterValue(value)}
       />
-			{/* <div className="px-4">
-				<table className="table w-full">
-					<thead>
-						<tr>
-							<th className="text-start"></th>
-							<th>
-								<div className="flex items-center">
-									<FormattedMessage id={"ticketDetails"} />
-									<IconButton onClick={() => handleSort(TicketSortFields.NAME)}>
-										{sortValue.sort === "desc" && sortValue.field === TicketSortFields.NAME ? <ArrowIcon/> : <ArrowIcon className="transform rotate-180"/>}
-									</IconButton>
-								</div>
-							</th>
-							<th className="text-start">
+			<Table
+				singleLine
+				sortable
+				fixed
+				style={{
+					border: "none",
+				}}
+			>
+				<TableHeader>
+					<TableRow >
+						<TableHeaderCell></TableHeaderCell>
+						<TableHeaderCell>
+							<FormattedMessage id={"ticketDetails"} />
+						</TableHeaderCell>
+						<TableHeaderCell>
+							<div
+								style={tableStyles.cell}
+							>
 								<FormattedMessage id={"customerName"} />
-							</th>
-							<th>
-								<div className="flex items-center">
-									<FormattedMessage id={"date"} />
-									<IconButton onClick={() => handleSort(TicketSortFields.DATE)}>
-										{sortValue.sort === "desc" && sortValue.field === TicketSortFields.DATE ? <ArrowIcon/> : <ArrowIcon className="transform rotate-180"/>}
-									</IconButton>
-								</div>
-							</th>
-							<th>
-								<div className="flex items-center">
-									<FormattedMessage id={"priority"} />
-									<IconButton onClick={() => handleSort(TicketSortFields.PRIORITY)}>
-										{sortValue.sort === "desc" && sortValue.field === TicketSortFields.PRIORITY ? <ArrowIcon/> : <ArrowIcon className="transform rotate-180"/>}
-									</IconButton>
-								</div>
-							</th>
-							<th className="text-start"></th>
-						</tr>
-					</thead>
-					<tbody>
-						{
-							data.map((
-								item, index
-							) => (
-								<tr key={index}>
-									<td>
-										<ImageWrapper
-											reference={item.reference}
-											size="small"
-											rounded
-										/>
-									</td>
-									<td>
-										<CellWithCaption
-											mainText={item.name}
-											captionFormatMessage="lastUpdated"
-											caption={convertToDate(item.last_updated.seconds)}
-										/>
-									</td>
-									<td>
-										<ClientCell
-											clientReference={item.reference}
-										/>
-									</td>
-									<td>
-										<CellWithCaption
-											mainText={convertToDateTime(item.date.seconds).date}
-											caption={convertToDateTime(item.date.seconds).time}
-										/>
-									</td>
-									<td>
-										<PriorityStatus priority={item.priority} />
-									</td>
-									<td>
-										<DeleteTicket uid={item.uid}/>
-									</td>
-								</tr>
-							))
-						}
-					</tbody>
-				</table>
-			</div> */}
-      <div className="flex items-center justify-end py-1 w-max ml-auto px-4">
+								<IconButton
+									onClick={() => handleSort(TicketSortFields.DATE)}
+									icon={sortValue.sort === "desc" && sortValue.field === TicketSortFields.DATE ? "arrow up" : "arrow down"}
+								/>
+							</div>
+						</TableHeaderCell>
+						<TableHeaderCell>
+							<div
+								style={tableStyles.cell}
+							>
+								<FormattedMessage id={"date"} />
+								<IconButton
+									onClick={() => handleSort(TicketSortFields.PRIORITY)}
+									icon={sortValue.sort === "desc" && sortValue.field === TicketSortFields.PRIORITY ? "arrow up" : "arrow down"}
+								/>
+							</div>
+						</TableHeaderCell>
+						<TableHeaderCell>
+							<FormattedMessage id={"priority"} />
+						</TableHeaderCell>
+						<TableHeaderCell></TableHeaderCell>
+					</TableRow>
+				</TableHeader>
+				<TableBody>
+					{
+						data.map((
+							item, index
+						) => (
+							<TableRow key={index}>
+								<TableCell>
+									<ImageWrapper
+										reference={item.reference}
+										size="small"
+										rounded
+									/>
+								</TableCell>
+								<TableCell>
+									<CellWithCaption
+										mainText={item.name}
+										captionFormatMessage="lastUpdated"
+										caption={convertToDate(item.last_updated.seconds)}
+									/>
+								</TableCell>
+								<TableCell>
+									<ClientCell
+										clientReference={item.reference}
+									/>
+								</TableCell>
+								<TableCell>
+									<CellWithCaption
+										mainText={convertToDateTime(item.date.seconds).date}
+										caption={convertToDateTime(item.date.seconds).time}
+									/>
+								</TableCell>
+								<TableCell>
+									<PriorityStatus priority={item.priority} />
+								</TableCell>
+								<TableCell>
+									<DeleteTicket uid={item.uid}/>
+								</TableCell>
+							</TableRow>
+						))
+					}
+				</TableBody>
+			</Table>
+      <div style={tableStyles.paginationWrapper}>
         <TableRowCounter
           handleChangeRowsNumber={handleChangeRowsNumber}
         />

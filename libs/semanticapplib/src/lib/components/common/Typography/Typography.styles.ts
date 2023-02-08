@@ -13,7 +13,7 @@ export const typographyStyle: CSSStyles = {
 	},
 	[TypographyEnum.H4]: {
 		fontSize: "2rem",
-		fontWeight: 500,
+		fontWeight: 600,
 		textAlign: "center",
 		lineHeight: 1.2,
 		margin: pxToRem(8)
@@ -62,6 +62,14 @@ export const typographyStyle: CSSStyles = {
 		textAlign: "center",
 		lineHeight: 1.2,
 		margin: pxToRem(8),
+		color: grayscale400
+	},
+	[TypographyEnum.DESCRIPTION2]: {
+		fontSize: "1rem",
+		textAlign: "center",
+		lineHeight: 1.2,
+		fontWeight: 600,
+		margin: pxToRem(4),
 		color: grayscale400
 	},
 	[TypographyEnum.TITLE]: {

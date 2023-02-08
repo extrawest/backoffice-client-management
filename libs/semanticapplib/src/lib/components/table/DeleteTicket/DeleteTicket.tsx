@@ -5,12 +5,11 @@ import {
 	FC, useContext, useState
 } from "react";
 import { FormattedMessage } from "react-intl";
+import { Popup } from "semantic-ui-react";
 import { ClientsContext } from "../../../containers/ClientsContainer/ClientsContainer.context";
-import { MenuIcon } from "../../../icons";
 import { TypographyEnum } from "../../../types/typography";
 import { Button } from "../../common/Button/Button";
 import { IconButton } from "../../common/IconButton/IconButton";
-import { Popover } from "../../common/Popover/Popover";
 import { Typography } from "../../common/Typography/Typography";
 import { DeleteTicketProps } from "./DeleteTicket.types";
 
@@ -54,27 +53,41 @@ export const DeleteTicket: FC<DeleteTicketProps> = ({ uid }) => {
 	};
 
 	return (
-		<div className="relative">
-			<IconButton
-				onClick={handleOpen}
-				icon="ellipsis vertical"
-			/>
-			<Popover
-				open={open}
-				smallSize
-				handleClose={handleClose}
-			>
-				<div className="flex flex-col gap-3 p-4">
-					<Button
-							extraClasses=" bg-background rounded-sm bg-gradient-none flex items-center justify-center from-background to-background text-secondary-main border-solid border-1 border-grayscale-400 w-100%"
-							onClick={handleDelete}
+			<Popup
+				content={
+					<div
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center"
+						}}
 					>
-							<Typography type={TypographyEnum.BODY2}>
-								<FormattedMessage id='delete' />
-							</Typography>
-					</Button>
-				</div>
-			</Popover>
-		</div>
+						<Button
+							type="button"
+							onClick={handleDelete}
+						>
+								<Typography type={TypographyEnum.BODY2}>
+									<FormattedMessage id='delete' />
+								</Typography>
+						</Button>
+					</div>
+				}
+				on='click'
+				pinned
+				trigger={
+					<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center"
+					}}
+					>
+						<IconButton
+							onClick={handleOpen}
+							icon="ellipsis vertical"
+						/>
+					</div>
+				}
+			/>
 	);
 };

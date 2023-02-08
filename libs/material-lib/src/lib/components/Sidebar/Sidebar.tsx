@@ -48,6 +48,7 @@ export const Sidebar: FC = () => {
 				<Image
 					size="125"
 					rounded
+					src={managerInfo?.photoUrl}
 				/>
 				<Typography
 					variant="button"

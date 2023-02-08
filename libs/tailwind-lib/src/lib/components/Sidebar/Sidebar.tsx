@@ -33,7 +33,7 @@ export const Sidebar: FC = () => {
 		<div className="w-60 h-vh-90 flex flex-col justify-start shrink-0 text-grayscale-800 outline-none">
 			<div className="mb-6 flex flex-col">
 				<Image
-					size="big"
+					size="large"
 					rounded
 				/>
 				<div className="flex flex-col items-start">

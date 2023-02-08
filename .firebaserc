@@ -9,6 +9,27 @@
           "material-panel-app"
         ]
       }
+    },
+		"tailwind-panel-app": {
+      "hosting": {
+        "tailwind-hosting": [
+          "tailwind-panel-app"
+        ]
+      }
+    },
+		"primeapp-panel-app": {
+      "hosting": {
+        "primeapp-hosting": [
+          "primeapp-panel-app"
+        ]
+      }
+    },
+		"semancitapp-panel-app": {
+      "hosting": {
+        "semanticapp-hosting": [
+          "semancitapp-panel-app"
+        ]
+      }
     }
   },
   "etags": {}

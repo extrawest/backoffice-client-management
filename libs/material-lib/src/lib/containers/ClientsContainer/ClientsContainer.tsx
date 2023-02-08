@@ -52,7 +52,12 @@ const getTicketsCollection = (
 	if(filterValues?.priority){
 		queryParams.push(where(
 			TicketSortFields.PRIORITY,
-			"==",
+			">=",
+			filterValues.priority
+		));
+		queryParams.push(where(
+			TicketSortFields.PRIORITY,
+			"<=",
 			filterValues.priority
 		));
 		filterValues.sortField !== TicketSortFields.PRIORITY && queryParams.push(orderBy(TicketSortFields.PRIORITY));

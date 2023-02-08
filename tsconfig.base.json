@@ -18,9 +18,13 @@
 		"paths": {
 			"@mono-redux-starter/firebase": ["libs/firebase/src/index.ts"],
 			"@mono-redux-starter/material-lib": ["libs/material-lib/src/index.ts"],
-			"@mono-redux-starter/prime-lib": ["libs/prime-lib/src/index.ts"],
+			"@mono-redux-starter/primeapplib": ["libs/primeapplib/src/index.ts"],
 			"@mono-redux-starter/redux": ["libs/redux/src/index.ts"],
+			"@mono-redux-starter/semanticapplib": [
+				"libs/semanticapplib/src/index.ts"
+			],
 			"@mono-redux-starter/shared": ["libs/shared/src/index.ts"],
+			"@mono-redux-starter/shared/color": ["libs/shared/consts/color.ts"],
 			"@mono-redux-starter/shared/fonts": ["libs/shared/fonts/stylesheet.css"],
 			"@mono-redux-starter/shared/hoks": ["libs/shared/hoks/src/index.ts"],
 			"@mono-redux-starter/shared/hooks": ["libs/shared/hooks/src/index.ts"],

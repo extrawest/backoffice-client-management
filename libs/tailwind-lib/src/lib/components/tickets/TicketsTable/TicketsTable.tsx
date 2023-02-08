@@ -3,7 +3,6 @@ import { TicketSortFields } from "@mono-redux-starter/shared/types";
 import { convertToDate, convertToDateTime } from "@mono-redux-starter/shared/utils";
 import { Box } from "@mui/material";
 import { GridSortItem, GridSortModel } from "@mui/x-data-grid";
-import { PriorityStatus } from "libs/material-lib/src/lib/components/common/PriorityStatus/PriorityStatus";
 import {
 	FC,
 	useEffect,
@@ -16,6 +15,7 @@ import { CellWithCaption } from "../../common/CellWithCaption/CellWithCaption";
 import { ClientCell } from "../../common/ClientCell/ClientCell";
 import { IconButton } from "../../common/IconButton/IconButton";
 import { ImageWrapper } from "../../common/ImageWrapper/ImageWrapper";
+import { PriorityStatus } from "../../common/PriorityStatus/PriorityStatus";
 import { DeleteTicket } from "../../table/DeleteTicket/DeleteTicket";
 import { TableAction } from "../../table/TableAction";
 import { FilterValue } from "../../table/TableAction/TableAction.types";
@@ -49,8 +49,8 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 		setSortValue({
 			field,
 			sort: sortValue.sort === "asc" ? "desc" : "asc"
-		})
-	}
+		});
+	};
 
 	return (
     <div className="w-full border-1 border-solid border-grayscale-400 rounded-lg overflow-hidden">

@@ -8,7 +8,7 @@ import { FC } from "react";
 import { useIntl } from "react-intl";
 import { Chart } from "../Chart/Chart";
 import { GridList } from "../GridList/GridList";
-import { chartWrapper } from "./ChartWrapper.styles";
+import { chartWrapperSx } from "./ChartWrapper.styles";
 
 export const ChartWrapper: FC = () => {
 	const intl = useIntl();
@@ -45,7 +45,7 @@ export const ChartWrapper: FC = () => {
 				md={9}
 			>
 				<Box
-					sx={chartWrapper}
+					sx={chartWrapperSx}
 				>
 					<Chart />
 				</Box>

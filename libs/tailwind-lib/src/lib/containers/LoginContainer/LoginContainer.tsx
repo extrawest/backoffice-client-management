@@ -5,15 +5,21 @@ import { LoginForm, Values } from "../../forms/LoginForm";
 import { useTypedDispatch, useTypedSelector } from "../../store";
 import { AppRouteEnum } from "../../types";
 import { getAuth } from "firebase/auth";
-import { firebaseApp } from "@mono-redux-starter/firebase";
+import {
+	doc,
+	firebaseApp,
+	firestore,
+	getDoc
+} from "@mono-redux-starter/firebase";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { updateIsLoggedIn } from "@mono-redux-starter/redux";
+import { updateIsLoggedIn, updateManager } from "@mono-redux-starter/redux";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 import { Typography } from "../../components/common/Typography/Typography";
 import { TypographyEnum } from "../../types/typography";
 import { FormattedMessage } from "react-intl";
 import { IconButton } from "../../components/common/IconButton/IconButton";
 import { GoogleIcon } from "../../icons";
+import { Manager } from "@mono-redux-starter/shared/types";
 
 export const LoginContainer: FC = () => {
 	const navigate = useNavigate();

@@ -12,7 +12,7 @@ export const DashboardContainer: FC = () => (
 	<Container fluid>
 		<div style={dashboardStyle.titleWrapper}>
 			<Typography
-				type={TypographyEnum.H5}
+				type={TypographyEnum.H4}
 			>
 				<FormattedMessage id="template.dashboard" />
 			</Typography>

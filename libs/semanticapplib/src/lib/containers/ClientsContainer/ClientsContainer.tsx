@@ -34,6 +34,7 @@ import { ClientsProvider } from "./ClientsContainer.context";
 import { Container } from "semantic-ui-react";
 import { containerStyle } from "./ClientsContainer.styles";
 import { useTypedSelector } from "../../store";
+import { dashboardStyle } from "../DashboardContainer/DashboardContainer.styles";
 
 const getTicketsCollection = (
 	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<DocumentData>[]>>,
@@ -125,8 +126,8 @@ export const ClientsContainer: FC = () => {
 		[ticketsSnapshot]
 	);
 
-	const handleChangeRowsNumber = (e: any) => {
-		const currentLimit = e.target.value as number;
+	const handleChangeRowsNumber = (value: number) => {
+		const currentLimit = value;
 		setLimitElements(currentLimit);
 		getTicketsCollection(
 			setTicketsSnapshot,
@@ -179,10 +180,9 @@ export const ClientsContainer: FC = () => {
 	return (
 		<ClientsProvider value={{handleRecallClients: handleRecallClients}}>
 			<Container fluid>
-					<div style={containerStyle.titleWrapper}>
+					<div style={dashboardStyle.titleWrapper}>
 					<Typography
-						type={TypographyEnum.H5}
-						extraClasses="max-w-40 w-full text-start"
+						type={TypographyEnum.H4}
 					>
 						{intl.formatMessage({
 							id: "template.clients",

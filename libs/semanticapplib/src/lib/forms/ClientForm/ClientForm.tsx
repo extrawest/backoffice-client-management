@@ -56,7 +56,6 @@ export const ClientForm: FC<ClientFormProps> = ({
 							type="text"
 							name="firstName"
 							placeholder={firstNameText}
-							hasError={Boolean(errors.firstName && touched.firstName)}
 							error={errors.firstName}
 							startAdornment={<UserIcon />}
 						/>
@@ -64,7 +63,6 @@ export const ClientForm: FC<ClientFormProps> = ({
 							type="text"
 							name="lastName"
 							placeholder={lastNameText}
-							hasError={Boolean(errors.lastName && touched.lastName)}
 							error={errors.lastName}
 							startAdornment={<UserIcon />}
 						/>
@@ -72,7 +70,6 @@ export const ClientForm: FC<ClientFormProps> = ({
 							type="email"
 							name="email"
 							placeholder={emailText}
-							hasError={Boolean(errors.email && touched.email)}
 							error={errors.email}
 							startAdornment={<UserIcon />}
 						/>
@@ -104,7 +101,7 @@ export const ClientForm: FC<ClientFormProps> = ({
 								/>
 							</div>
 						</div>
-						<Button submitType>
+						<Button type="submit">
 							<FormattedMessage id="template.submit"/>
 						</Button>
 					</Container>

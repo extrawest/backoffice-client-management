@@ -44,8 +44,6 @@ export const LoginForm: FC<LoginFormProps> = ({
 						id="email"
 						name="email"
 						placeholder={loginText}
-						hasError={Boolean(errors.email && touched.email)}
-						error={errors.email}
 						startAdornment={<UserIcon />}
 					/>
 					<FormikPasswordField
@@ -53,8 +51,6 @@ export const LoginForm: FC<LoginFormProps> = ({
 						name="password"
 						placeholder="*********"
 						type="password"
-						hasError={Boolean(errors.password && touched.password)}
-						error={errors.password}
 						startAdornment={<LockIcon />}
 					/>
 					<Container text style={commonFormStyles.spaceBetweenWrapper}>

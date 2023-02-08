@@ -61,7 +61,6 @@ export const TicketForm: FC<TicketFormProps> = ({
 							type="text"
 							name="name"
 							placeholder={ticketNameText}
-							hasError={Boolean(errors.name && touched.name)}
 							error={errors.name}
 							startAdornment={<UserIcon />}
 						/>
@@ -82,7 +81,7 @@ export const TicketForm: FC<TicketFormProps> = ({
 							startAdornment={<UserIcon/>}
 						/>
 					</Container>
-					<Button submitType>
+					<Button type="submit">
 						<FormattedMessage id="template.submit"/>
 					</Button>
 				</Form>

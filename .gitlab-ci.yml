@@ -1,8 +1,21 @@
 image: node:16.13
 
 stages:
+	- install
   - build
   - deploy
+
+install:
+  stage: install
+  script:
+    - npm ci
+	cache:
+		key:
+			-	package-json.lock
+		files:
+			node_modules/
+		policy:
+			push
 
 build:
   only:
@@ -18,15 +31,18 @@ build:
     NX_FIREBASE_MESSAGING_SENDER_ID: "$NX_FIREBASE_MESSAGING_SENDER_ID"
     NX_FIREBASE_APP_ID: "$NX_FIREBASE_APP_ID"
     FIREBASE_TOKEN: "$FIREBASE_TOKEN"
-  before_script:
-    - npm ci --cache .npm --prefer-offline --force
   script:
     - npm run build:all
+	cache:
+		key:
+			-	package-json.lock
+		files:
+			- node_modules/
+		policy:	pull
   artifacts:
     expire_in: 1 hour
     paths:
       - dist/apps
-
 
 deploy:
   before_script:

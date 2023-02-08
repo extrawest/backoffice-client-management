@@ -1,24 +1,24 @@
 image: node:16.13
 
 stages:
-	- install
+  - install
   - build
   - deploy
 
 install:
-	only:
-			refs:
-				- development
+  only:
+    refs:
+      - development
   stage: install
   script:
     - npm ci
-	cache:
-		key:
-			-	package-json.lock
-		files:
-			node_modules/
-		policy:
-			push
+  cache:
+    key:
+      -	package-json.lock
+    files:
+      node_modules/
+    policy:
+      push
 
 build:
   only:
@@ -36,12 +36,12 @@ build:
     FIREBASE_TOKEN: "$FIREBASE_TOKEN"
   script:
     - npm run build:all
-	cache:
-		key:
-			-	package-json.lock
-		files:
-			- node_modules/
-		policy:	pull
+  cache:
+    key:
+      - package-json.lock
+    files:
+      - node_modules/
+  policy: pull
   artifacts:
     expire_in: 1 hour
     paths:
@@ -55,6 +55,6 @@ deploy:
   stage: deploy
   script:
     - firebase deploy --only hosting:material-hosting --token $FIREBASE_TOKEN
-		- firebase deploy --only hosting:tailwind-hosting --token $FIREBASE_TOKEN
-		- firebase deploy --only hosting:primeapp-hosting --token $FIREBASE_TOKEN
-		- firebase deploy --only hosting:semanticapp-hosting --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:tailwind-hosting --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:primeapp-hosting --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:semanticapp-hosting --token $FIREBASE_TOKEN

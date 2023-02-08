@@ -1,22 +1,35 @@
+import {
+	errorMain,
+	successDark,
+	successMain,
+	warningMain
+} from "@mono-redux-starter/shared/color";
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import { FC } from "react";
+import { TypographyEnum } from "../../../types/typography";
 import { Typography } from "../Typography/Typography";
-import { typographySx } from "./PriorityStatus.styles";
+import { priorityStatusStyles } from "./PriorityStatus.styles";
 import { PriorityStatusProps } from "./PriorityStatus.types";
 
 export const PriorityStatus: FC<PriorityStatusProps> = ({ priority }) => {
 	const MapStylesWrapper = {
-		[PriorityEnum.HIGH]: "bg-error-main",
-		[PriorityEnum.NORMAL]: "bg-success-main",
-		[PriorityEnum.LOW]: "bg-warning-main",
+		[PriorityEnum.HIGH]: errorMain,
+		[PriorityEnum.NORMAL]: successMain,
+		[PriorityEnum.LOW]: warningMain,
 	} as const;
 
 	return (
 		<div
-			className="rounded-50 px-2 py-1 bg"
+			style={{
+				...priorityStatusStyles,
+				background: MapStylesWrapper[priority as PriorityEnum]
+			}}
 		>
 			<Typography
-				extraClasses="text-common-white text-4 font-bold"
+				type={TypographyEnum.SUBTITLE1}
+				style={{
+					fontWeight: 600
+				}}
 			>
 				{priority}
 			</Typography>

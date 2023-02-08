@@ -6,6 +6,9 @@ stages:
   - deploy
 
 install:
+	only:
+			refs:
+				- development
   stage: install
   script:
     - npm ci

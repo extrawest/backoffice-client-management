@@ -3,7 +3,7 @@
     "default": "panel-app-8fcaa"
   },
   "targets": {
-    "panel-app-8fcaa": {
+    "material-panel-app": {
       "hosting": {
         "material-hosting": [
           "material-panel-app"

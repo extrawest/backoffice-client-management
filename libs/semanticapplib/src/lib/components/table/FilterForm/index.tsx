@@ -5,9 +5,11 @@ import {
 import { Form, Formik } from "formik";
 import { FC, FormEvent } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
+import { commonFormStyles } from "../../../forms/formStyles";
 import { UserIcon } from "../../../icons";
 import { Button } from "../../common/Button/Button";
 import { FormikSelect } from "../../common/FormikSelect/FormikSelect";
+import { filterFormStyles } from "./FilterForm.styles";
 import { FilterFormProps } from "./FilterForm.types";
 
 export const FilterForm: FC<FilterFormProps>= ({
@@ -61,36 +63,30 @@ export const FilterForm: FC<FilterFormProps>= ({
 				errors,
 				touched
 			}) => (
-				<Form
-					className="dark w-full flex justify-center flex-col"
-				>
-      <div className="p-5">
-				<FormikSelect
-					data={processedPriority()}
-					placeholder={"priority"}
-					name={"priority"}
-					hasError={Boolean(errors.priority && touched.priority)}
-					error={errors.priority}
-					startAdornment={<UserIcon className="overflow-visible"/>}
-				/>
-      </div>
-			<span className="my-3 border-t-1 border-solid border-grayscale-400"/>
-      <div className="flex justify-end items-center gap-1 py-2.5 px-5">
-				<Button
-					submitType
-					extraClasses="rounded-lg border-1 border-solid border-grayscale-600 to-grayscale-200 from-grayscale-200 text-secondary-main"
-					onClick={handleClose}
-				>
-					<FormattedMessage id="clear"/>
-				</Button>
-				<Button
-					submitType
-					extraClasses="rounded-lg"
-				>
-					<FormattedMessage id="template.submit"/>
-				</Button>
-      </div>
-    </Form>
+				<Form style={commonFormStyles.wrapper}>
+					<FormikSelect
+						data={processedPriority()}
+						placeholder={"priority"}
+						name={"priority"}
+						hasError={Boolean(errors.priority && touched.priority)}
+						error={errors.priority}
+						startAdornment={<UserIcon className="overflow-visible"/>}
+					/>
+					<Divider orientation="horizontal" />
+					<div style={filterFormStyles.buttonsWrapper}>
+						<Button
+							type="submit"
+							onClick={handleClose}
+						>
+							<FormattedMessage id="clear"/>
+						</Button>
+						<Button
+							type="submit"
+						>
+							<FormattedMessage id="template.submit"/>
+						</Button>
+					</div>
+				</Form>
 			)}
 		</Formik>
 	);

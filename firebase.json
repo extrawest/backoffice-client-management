@@ -27,7 +27,7 @@
 			"rewrites": [
 				{
 					"source": "/tailwind/**",
-					"destination": "/tailwind/index.html"
+					"destination": "/index.html"
 				}
 			]
 		},
@@ -42,7 +42,7 @@
 			"rewrites": [
 				{
 					"source": "/primeapp/**",
-					"destination": "/primeapp/index.html"
+					"destination": "/index.html"
 				}
 			]
 		},
@@ -57,7 +57,7 @@
 			"rewrites": [
 				{
 					"source": "/semanticapp/**",
-					"destination": "/semanticapp/index.html"
+					"destination": "/index.html"
 				}
 			]
 		}

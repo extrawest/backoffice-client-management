@@ -3,29 +3,17 @@
     "default": "panel-app-8fcaa"
   },
   "targets": {
-    "material-panel-app": {
+    "panel-app-8fcaa": {
       "hosting": {
         "material-hosting": [
           "material-panel-app"
-        ]
-      }
-    },
-		"tailwind-panel-app": {
-      "hosting": {
+        ],
         "tailwind-hosting": [
           "tailwind-panel-app"
-        ]
-      }
-    },
-		"primeapp-panel-app": {
-      "hosting": {
+        ],
         "primeapp-hosting": [
           "primeapp-panel-app"
-        ]
-      }
-    },
-		"semancitapp-panel-app": {
-      "hosting": {
+        ],
         "semanticapp-hosting": [
           "semancitapp-panel-app"
         ]

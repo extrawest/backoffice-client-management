@@ -2,8 +2,9 @@
 	"$schema": "./node_modules/nx/schemas/workspace-schema.json",
 	"version": 2,
 	"projects": {
-		"antd": "apps/antd",
-		"antd-e2e": "apps/antd-e2e",
+		"antdapp": "apps/antdapp",
+		"antdapp-e2e": "apps/antdapp-e2e",
+		"antdapplib": "libs/antdapplib",
 		"firebase": "libs/firebase",
 		"material": "apps/material",
 		"material-e2e": "apps/material-e2e",

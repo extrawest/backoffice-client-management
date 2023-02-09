@@ -3,7 +3,7 @@
 		{
 
 			"target": "material-hosting",
-			"public": "dist/apps/material",
+			"public": "dist/apps/materia",
 			"ignore": [
 				"firebase.json",
 				"**/.*",
@@ -18,7 +18,7 @@
 		},
 		{
 			"target": "tailwind-hosting",
-			"public": "dist/apps/tailwind ",
+			"public": "dist/apps/tailwind",
 			"ignore": [
 				"firebase.json",
 				"**/.*",
@@ -33,7 +33,7 @@
 		},
 		{
 			"target": "primeapp-hosting",
-			"public": "dist/apps/primeapp ",
+			"public": "dist/apps/primeapp",
 			"ignore": [
 				"firebase.json",
 				"**/.*",
@@ -48,7 +48,7 @@
 		},
 		{
 			"target": "semanticapp-hosting",
-			"public": "dist/apps/semanticapp ",
+			"public": "dist/apps/semanticapp",
 			"ignore": [
 				"firebase.json",
 				"**/.*",

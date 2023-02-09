@@ -1,19 +1,19 @@
 {
-	"name": "antd-e2e",
+	"name": "antdapp-e2e",
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
-	"sourceRoot": "apps/antd-e2e/src",
+	"sourceRoot": "apps/antdapp-e2e/src",
 	"projectType": "application",
 	"targets": {
 		"e2e": {
 			"executor": "@nrwl/cypress:cypress",
 			"options": {
-				"cypressConfig": "apps/antd-e2e/cypress.config.ts",
-				"devServerTarget": "antd:serve:development",
+				"cypressConfig": "apps/antdapp-e2e/cypress.config.ts",
+				"devServerTarget": "antdapp:serve:development",
 				"testingType": "e2e"
 			},
 			"configurations": {
 				"production": {
-					"devServerTarget": "antd:serve:production"
+					"devServerTarget": "antdapp:serve:production"
 				}
 			}
 		},
@@ -21,10 +21,10 @@
 			"executor": "@nrwl/linter:eslint",
 			"outputs": ["{options.outputFile}"],
 			"options": {
-				"lintFilePatterns": ["apps/antd-e2e/**/*.{js,ts}"]
+				"lintFilePatterns": ["apps/antdapp-e2e/**/*.{js,ts}"]
 			}
 		}
 	},
 	"tags": [],
-	"implicitDependencies": ["antd"]
+	"implicitDependencies": ["antdapp"]
 }

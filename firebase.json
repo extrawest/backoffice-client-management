@@ -56,7 +56,7 @@
 			],
 			"rewrites": [
 				{
-					"source": "/semanticapp/**",
+					"source": "**",
 					"destination": "/index.html"
 				}
 			]

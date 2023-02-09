@@ -17,7 +17,10 @@ import { updateIsLoggedIn, updateManager } from "@mono-redux-starter/redux";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 import { FormattedMessage } from "react-intl";
 import { Manager } from "@mono-redux-starter/shared/types";
-import { Col, Row } from "antd";
+import {
+	Button,
+	Col, Divider, Row
+} from "antd";
 import { Content } from "antd/es/layout/layout";
 import { containerStyle } from "../containerStyle";
 import { TypographyTitle } from "../../components/common/TypographyTitle/TypographyTitle";
@@ -55,9 +58,7 @@ export const LoginContainer: FC = () => {
 		"error"
 	);
 
-	const onSubmit = async (
-		values: Values, form: FormikHelpers<Values>
-	) => {
+	const onSubmit = async (values: Values) => {
 		const result = await signInWithEmailAndPassword(
 			values.email,
 			values.password
@@ -65,7 +66,6 @@ export const LoginContainer: FC = () => {
 		if(result){
 			dispatch(updateIsLoggedIn(true));
 			navigate(AppRouteEnum.DASHBOARD);
-			form.setSubmitting(false);
 		}
 	};
 
@@ -148,6 +148,25 @@ export const LoginContainer: FC = () => {
 					initialValues={initialValuesLogin}
 					onSubmit={onSubmit}
 					isLoading={false}
+				/>
+				<Divider
+					dashed
+					type="vertical"
+				/>
+				<Row
+					align="middle"
+					justify="center"
+				>
+					<Button
+						type="link"
+						href={AppRouteEnum.REGISTRATION}
+					>
+						<FormattedMessage id="template.signUp" />
+					</Button>
+				</Row>
+				<Divider
+					dashed
+					type="vertical"
 				/>
 				<Row
 					align="middle"

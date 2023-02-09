@@ -8,5 +8,5 @@ export type Values = {
 export type LoginFormProps = {
 	initialValues: Values;
 	isLoading: boolean;
-	onSubmit: (values: Values, form: FormikHelpers<Values>) => void;
+	onSubmit: (values: Values) => void;
 };

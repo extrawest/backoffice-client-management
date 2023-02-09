@@ -3,7 +3,6 @@ import {
 } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 // import { Form, Formik } from "formik";
-import { validateShema } from "./LoginForm.schema";
 import type { LoginFormProps } from "./LoginForm.types";
 // import { Button } from "../../components/common/Button/Button";
 import {
@@ -38,13 +37,9 @@ export const LoginForm: FC<LoginFormProps> = ({
 	});
 	const form = Form.useForm();
 
-	const handleSubmit: FormProps["onFinish"] = (val) => {
-		console.log(val);
-	};
-
 	return (
 		<Form
-			onFinish={handleSubmit}
+			onFinish={onSubmit}
 		>
 			<Form.Item
 				name="email"
@@ -52,6 +47,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 			>
 
 				<Input
+					type="email"
 					placeholder={intl.formatMessage({id: "template.email"})}
 					prefix={<UserIcon />}
 				/>
@@ -87,14 +83,14 @@ export const LoginForm: FC<LoginFormProps> = ({
 				</Col>
 			</Row>
 			<Divider dashed/>
-			<Form.Item wrapperCol={{span: 4, offset: 10}}>
+			<Row align="middle" justify="center">
 				<Button
 					type="primary"
 					htmlType="submit"
 				>
-					<FormattedMessage id="template.submit" />
+					<FormattedMessage id="template.login" />
 				</Button>
-			</Form.Item>
+			</Row>
 		</Form>
 	);
 };

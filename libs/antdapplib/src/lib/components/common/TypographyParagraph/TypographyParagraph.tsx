@@ -8,7 +8,8 @@ export const TypographyParagraph: FC<TypographyParagraphProps> = ({textAlign = "
 		<Paragraph
 			{...rest}
 			style={{
-				textAlign: textAlign
+				textAlign: textAlign,
+				...rest.style
 			}}
 		/>
 	);

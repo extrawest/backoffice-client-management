@@ -79,5 +79,6 @@
 	"createNewTicket": "Create new ticket example",
 	"updateTicket": "Update ticket report",
 	"createNewTask": "Create new task",
-	"delete": "Delete"
+	"delete": "Delete",
+	"deleteTicket": "Delete ticket"
 }

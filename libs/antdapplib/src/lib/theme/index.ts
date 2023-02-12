@@ -28,5 +28,7 @@ export const theme: ThemeConfig = {
 		colorInfoActive: "#2F80ED",
 		colorInfoTextActive: "#1D2992",
 		colorInfoText: "#3751FF",
+		colorBgBase: "#fff",
+		colorBgContainer: "#fff"
 	},
 };

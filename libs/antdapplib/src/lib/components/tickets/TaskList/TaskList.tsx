@@ -1,10 +1,9 @@
 import {
-	RadioDataList, TaskDataList, TaskStatusEnum
+	RadioDataList,
+	TaskStatusEnum
 } from "@mono-redux-starter/shared/types";
 import { FC, useState } from "react";
 import { useIntl } from "react-intl";
-import { RadioButton, RadioButtonChangeParams } from "primereact/radiobutton";
-import { Typography } from "../../common/Typography/Typography";
 import { TaskStatus } from "../TaskStatus/TaskStatus";
 import {
 	Col, Radio, RadioGroupProps, Row

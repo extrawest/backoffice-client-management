@@ -1,14 +1,14 @@
 import { DeleteOutlined } from "@ant-design/icons";
 import { doc, firestore } from "@mono-redux-starter/firebase";
 import { CollectionEnum } from "@mono-redux-starter/shared/types";
-import { Button, Popconfirm } from "antd";
+import { Popconfirm } from "antd";
 import { deleteDoc } from "firebase/firestore";
 import {
-	FC, useContext, useState
+	FC,
+	useContext
 } from "react";
 import { useIntl } from "react-intl";
 import { ClientsContext } from "../../../containers/ClientsContainer/ClientsContainer.context";
-import { Popover } from "../../common/Popover/Popover";
 import { DeleteTicketProps } from "./DeleteTicket.types";
 
 const handleDeleteTicket = async (

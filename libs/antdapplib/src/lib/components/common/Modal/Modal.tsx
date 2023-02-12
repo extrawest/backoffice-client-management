@@ -1,11 +1,7 @@
 
 import { FC } from "react";
 import { TypographyEnum } from "../../../types/typography";
-import { IconButton } from "../IconButton/IconButton";
-import { Typography } from "../Typography/Typography";
 import { ModalProps } from "./Modal.types";
-import { Dialog } from "primereact/dialog";
-import { OverlayPanel } from "primereact/overlaypanel";
 import { Modal as AntdModal } from "antd";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 

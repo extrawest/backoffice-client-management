@@ -1,7 +1,5 @@
 import { FC, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Typography } from "../../common/Typography/Typography";
-import { Link } from "../../common/Link/Link";
 import { AppRouteEnum } from "../../../types";
 import { TaskList } from "../TaskList/TaskList";
 import { TicketCreateFormWrapper } from "../TicketCreateFormWrapper/TicketCreateFormWrapper";
@@ -17,6 +15,7 @@ import { TypographyParagraph } from "../../common/TypographyParagraph/Typography
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { grayscale400 } from "@mono-redux-starter/shared/color";
 import { PlusOutlined } from "@ant-design/icons";
+import Link from "antd/es/typography/Link";
 
 export const Tasks: FC = () => {
 	const intl = useIntl();
@@ -54,7 +53,7 @@ export const Tasks: FC = () => {
 					</Col>
 				</Row>
 				<Link
-					to={AppRouteEnum.CLIENTS}
+					href={AppRouteEnum.CLIENTS}
 				>
 					<FormattedMessage id="viewAll" />
 				</Link>
@@ -66,11 +65,11 @@ export const Tasks: FC = () => {
 						borderBottom: `${pxToRem(1)} solid ${grayscale400}`
 					}}
 				>
-					<Typography
-						extraClasses="text-gray-400"
+					<TypographyParagraph
+						style={{color: grayscale400}}
 					>
 						<FormattedMessage id="createNewTask" />
-					</Typography>
+					</TypographyParagraph>
 					<Button
 						onClick={handleOpen}
 						type="ghost"

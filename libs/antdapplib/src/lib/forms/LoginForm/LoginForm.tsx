@@ -1,10 +1,9 @@
 import {
-	FC, useEffect, useState
+	FC,
+	useState
 } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-// import { Form, Formik } from "formik";
 import type { LoginFormProps } from "./LoginForm.types";
-// import { Button } from "../../components/common/Button/Button";
 import {
 	LockIcon,
 	UserIcon
@@ -15,11 +14,9 @@ import {
 	Col,
 	Divider,
 	Form,
-	FormProps,
 	Input,
 	Row,
 } from "antd";
-import { InputField } from "../../components/common/InputField/InputField";
 import Link from "antd/es/typography/Link";
 import { AppRouteEnum } from "../../types";
 

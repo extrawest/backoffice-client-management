@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { FormikHelpers } from "formik";
 import { AppRouteEnum } from "../../types";
 import {
 	auth,
@@ -12,7 +11,6 @@ import {
 } from "react-firebase-hooks/auth";
 import { useShowSnackBarMessage } from "@mono-redux-starter/shared/hooks";
 import { doc, setDoc } from "firebase/firestore";
-import { Typography } from "../../components/common/Typography/Typography";
 import { FormattedMessage } from "react-intl";
 import { RegistrationForm, Values } from "../../forms/RegistrationForm";
 import { Content } from "antd/es/layout/layout";

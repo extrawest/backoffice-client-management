@@ -2,8 +2,6 @@ import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { Col, Row } from "antd";
 import { FC } from "react";
 import { FormattedMessage } from "react-intl";
-import { TypographyEnum } from "../../../types/typography";
-import { Typography } from "../Typography/Typography";
 import { TypographyParagraph } from "../TypographyParagraph/TypographyParagraph";
 import { CellWithCaptionProps } from "./CellWithCaption.types";
 

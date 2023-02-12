@@ -1,10 +1,8 @@
 import { SimpleDataList } from "@mono-redux-starter/shared/types";
 import { Col, Row } from "antd";
+import Link from "antd/es/typography/Link";
 import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { TypographyEnum } from "../../../types/typography";
-import { Link } from "../../common/Link/Link";
-import { Typography } from "../../common/Typography/Typography";
 import { TypographyParagraph } from "../../common/TypographyParagraph/TypographyParagraph";
 import { TypographyTitle } from "../../common/TypographyTitle/TypographyTitle";
 import { GridList } from "../../GridList/GridList";
@@ -54,7 +52,7 @@ export const UnresolvedTickets: FC = () => {
 						</TypographyParagraph>
 					</Col>
 				</Row>
-				<Link to="#">
+				<Link href="#">
 					<FormattedMessage id="viewDetails" />
 				</Link>
 			</Row>

@@ -12,7 +12,7 @@ export const theme: ThemeConfig = {
 		colorFill: "#E6E6E6",
 		colorFillSecondary: "#D1D1D1",
 		colorFillTertiary: "#B9B9B9",
-		colorFillQuaternary: "#828282",
+		colorFillQuaternary: "#FFFFFF",
 		colorWarningBg: "#FFFBEE",
 		colorWarningBgHover: "#FFF7DE",
 		colorWarningBorder: "#FFF0BD",

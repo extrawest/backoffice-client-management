@@ -36,19 +36,21 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
 	};
 
 	const handleOpenFilter = () => {
-		setOpenModal(true);
+		setOpenFilter(true);
 	};
 
 	const handleCloseFilter = () => {
-		setOpenModal(false);
+		setOpenFilter(false);
 	};
 
 	const handleClear = () => {
 		handleFilter({priority: ""});
+		handleCloseFilter();
 	};
 
 	const handleSubmit = (values: FilterValue) => {
 		handleFilter(values);
+		handleCloseFilter();
 	};
 
 	return (
@@ -118,14 +120,14 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
 					</Row>
 				</Button>
         <Modal
-					handleClose={handleClear}
+					handleClose={handleCloseFilter}
 					open={openFilter}
 					title={intl.formatMessage({ id: "filter" })}
         >
           <FilterForm
             handleFilter={handleSubmit}
             isFilterActive={filterStatus}
-            handleClose={handleCloseFilter}
+            handleClose={handleClear}
             activePriority={activePriority}
             setActivePriority={(value: string) => setActivePriority(value)}
           />

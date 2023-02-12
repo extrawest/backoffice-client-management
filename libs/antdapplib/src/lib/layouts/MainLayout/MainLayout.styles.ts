@@ -6,6 +6,8 @@ export const layoutStyle: CSSStyles = {
 		height: "100vh"
 	},
 	content: {
-		padding: `${pxToRem(10)} ${pxToRem(15)}`
+		padding: `${pxToRem(10)} ${pxToRem(15)}`,
+		height: "100%",
+		overflowY: "auto"
 	}
 };

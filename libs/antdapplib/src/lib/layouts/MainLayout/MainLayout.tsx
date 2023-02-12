@@ -26,7 +26,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 				<Sidebar />
 			</Sider>
 			<Content style={layoutStyle.content}>
-				<Row style={{maxWidth: pxToRem(400)}}>
+				<Row style={{maxWidth: pxToRem(400), marginBottom: pxToRem(30)}}>
 					<Input
 						type="text"
 						id="search"

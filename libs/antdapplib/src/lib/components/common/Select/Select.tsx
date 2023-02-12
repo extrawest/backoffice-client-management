@@ -20,12 +20,12 @@ export const Select: FC<SelectProps> = ({
 		>
 			{
 				data.map((item) => (
-					<Option
+					<AntdSelect.Option
 						key={item.value}
 						value={item.value}
 					>
 						{item.name}
-					</Option>
+					</AntdSelect.Option>
 				))
 			}
 		</AntdSelect>

@@ -70,7 +70,7 @@ const getTicketsCollection = (
 	}
 
 	filterValues?.sortField && queryParams.push(orderBy(
-		filterValues.sortField,
+		String(filterValues.sortField),
 		filterValues.sortAsc ? "asc" : "desc"
 	));
 
@@ -114,7 +114,7 @@ export const ClientsContainer: FC = () => {
 			getTicketsCollection(
 				setTicketsSnapshot,
 				setCount,
-				managerInfo?.manager_uid
+				managerInfo?.uid
 			)();
 		},
 		[]
@@ -133,7 +133,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
-			managerInfo?.manager_uid,
+			managerInfo?.uid,
 			currentLimit,
 			filterValue
 		)();
@@ -144,7 +144,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
-			managerInfo?.manager_uid,
+			managerInfo?.uid,
 			limitElements,
 			value
 		)();
@@ -154,7 +154,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
-			managerInfo?.manager_uid,
+			managerInfo?.uid,
 			limitElements,
 			filterValue
 		)();
@@ -169,7 +169,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
-			managerInfo?.manager_uid,
+			managerInfo?.uid,
 			limitElements,
 			filterValue && filterValue,
 			ticketsSnapshot,

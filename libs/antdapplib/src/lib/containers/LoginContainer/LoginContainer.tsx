@@ -64,6 +64,16 @@ export const LoginContainer: FC = () => {
 			values.password
 		);
 		if(result){
+			const snapshot = await getDoc(doc(
+				firestore(),
+				"managers",
+				result.user.uid
+			));
+			const data = {
+				...snapshot.data(),
+				photoUrl: result.user.photoURL
+			};
+			data && dispatch(updateManager(data as Manager));
 			dispatch(updateIsLoggedIn(true));
 			navigate(AppRouteEnum.DASHBOARD);
 		}

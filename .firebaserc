@@ -16,6 +16,9 @@
         ],
         "semanticapp-hosting": [
           "semancitapp-panel-app"
+        ],
+        "antdapp-hosting": [
+          "antdapp-panel-app"
         ]
       }
     }

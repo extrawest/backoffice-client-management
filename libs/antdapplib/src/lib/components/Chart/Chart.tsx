@@ -18,8 +18,6 @@ import {
 import { Line } from "react-chartjs-2";
 import { data, options } from "./Chart.data";
 import { FormattedMessage } from "react-intl";
-import { Typography } from "../common/Typography/Typography";
-import { TypographyEnum } from "../../types/typography";
 import {
 	Container,
 	List,
@@ -57,13 +55,11 @@ export const Chart: FC = () => {
 	);
 
 	return (
-		<Container
-			fluid
-		>
+		<Row>
 			<div style={chartStyles.titleWrapper}>
 				<Col
 					xs={24}
-					md={12}
+					md={18}
 					style={chartStyles.title}
 				>
 					<TypographyTitle
@@ -81,7 +77,7 @@ export const Chart: FC = () => {
 				<Col
 					style={chartStyles.legendsList}
 					xs={24}
-					md={12}
+					md={6}
 				>
 					{legends?.length && legends.map((
 						legend: LegendItem,
@@ -98,13 +94,9 @@ export const Chart: FC = () => {
 									background: index === 0 ? chart1 : grayscale400
 								}}
 							/>
-							<ListContent>
-								<Typography
-									type={TypographyEnum.DESCRIPTION}
-								>
-									{legend.text}
-								</Typography>
-							</ListContent>
+							<TypographyParagraph style={{marginBottom: 0}}>
+								{legend.text}
+							</TypographyParagraph>
 						</Col>
 					))}
 				</Col>
@@ -114,6 +106,6 @@ export const Chart: FC = () => {
 				options={options}
 				data={data}
 			/>
-		</Container>
+		</Row>
 	);
 };

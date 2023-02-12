@@ -6,8 +6,9 @@ export const chartStyles: CSSStyles = {
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "flex-end",
-		marginBottom: pxToRem(30),
-		flexWrap: "wrap"
+		marginBottom: pxToRem(20),
+		flexWrap: "wrap",
+		width: "100%"
 	},
 	title: {
 		display: "flex",

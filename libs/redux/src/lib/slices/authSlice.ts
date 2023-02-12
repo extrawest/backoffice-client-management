@@ -14,7 +14,7 @@ export const authSlice = createSlice({
 	initialState,
 	reducers: {
 		updateManager(
-			state, action: PayloadAction<Manager>
+			state, action: PayloadAction<Manager | undefined>
 		) {
 			state.managerInfo = action.payload;
 		},

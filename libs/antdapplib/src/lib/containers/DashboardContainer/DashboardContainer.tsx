@@ -45,11 +45,11 @@ export const DashboardContainer: FC = () => (
 				</Col>
 				<Col
 					xs={24}
-					md={11}
-					style={{
-						...containerStyle.colWrapper,
-						height: "100%"
+					md={{
+						offset: 1,
+						span: 11
 					}}
+					style={containerStyle.colWrapper}
 					className="flex flex-col justify-between"
 				>
 					<Tasks />

@@ -20,38 +20,6 @@ export const getContentLinks = (intl: IntlShape): Array<MenuItemProps> => [
 		})
 	},
 	{
-		href: AppRouteEnum.TEAM,
-		icon: TeamIcon,
-		title: intl.formatMessage({
-			id: "template.team",
-			defaultMessage: "Team"
-		})
-	},
-	{
-		href: AppRouteEnum.OFFERS,
-		icon: OffersIcon,
-		title: intl.formatMessage({
-			id: "template.offers",
-			defaultMessage: "Offers"
-		})
-	},
-	{
-		href: AppRouteEnum.PARTNERS,
-		icon: PartnersIcon,
-		title: intl.formatMessage({
-			id: "template.partners",
-			defaultMessage: "Partners"
-		})
-	},
-	{
-		href: AppRouteEnum.FINANCES,
-		icon: FinancesIcon,
-		title: intl.formatMessage({
-			id: "template.finances",
-			defaultMessage: "Finances"
-		})
-	},
-	{
 		href: AppRouteEnum.CLIENTS,
 		icon: ClientsIcon,
 		title: intl.formatMessage({

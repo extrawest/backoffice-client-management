@@ -1,4 +1,4 @@
-import { updateIsLoggedIn } from "@mono-redux-starter/redux";
+import { updateIsLoggedIn, updateManager } from "@mono-redux-starter/redux";
 import { FC, useState } from "react";
 import { useIntl } from "react-intl";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -43,6 +43,7 @@ export const Sidebar: FC = () => {
 
 	const handleLogOut = () => {
 		// logout logic...
+		dispatch(updateManager(undefined));
 		dispatch(updateIsLoggedIn(false));
 		navigate(AppRouteEnum.LOGIN);
 	};
@@ -75,7 +76,7 @@ export const Sidebar: FC = () => {
 				<AlignLeftOutlined style={{fontSize: "1.2rem", color: grayscale600}}/>
 			</Button>
 			<Drawer
-				width="300"
+				width={300}
 				open={visible}
 				placement="left"
 				onClose={handleCloseSidebar}
@@ -142,7 +143,7 @@ export const Sidebar: FC = () => {
 							}
 					</Row>
 					<Button
-						onClick={handleOpenSidebar}
+						onClick={handleLogOut}
 						type="primary"
 						style={{
 							marginTop: "auto",

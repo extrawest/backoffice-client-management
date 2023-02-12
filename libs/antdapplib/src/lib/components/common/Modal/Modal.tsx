@@ -7,6 +7,7 @@ import { ModalProps } from "./Modal.types";
 import { Dialog } from "primereact/dialog";
 import { OverlayPanel } from "primereact/overlaypanel";
 import { Modal as AntdModal } from "antd";
+import { pxToRem } from "@mono-redux-starter/shared/utils";
 
 export const Modal: FC<ModalProps> = ({title, open, handleClose, children}) => {
 	return (
@@ -16,6 +17,11 @@ export const Modal: FC<ModalProps> = ({title, open, handleClose, children}) => {
 			title={title}
 			footer={false}
 			centered
+			width={"auto"}
+			style={{
+				maxWidth: pxToRem(700),
+				width: "100%"
+			}}
 		>
 			{children}
 		</AntdModal>

@@ -59,3 +59,4 @@ deploy:
     - firebase deploy --only hosting:tailwind-hosting --token $FIREBASE_TOKEN
     - firebase deploy --only hosting:primeapp-hosting --token $FIREBASE_TOKEN
     - firebase deploy --only hosting:semanticapp-hosting --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:antdapp-hosting --token $FIREBASE_TOKEN

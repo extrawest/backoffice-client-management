@@ -60,6 +60,12 @@ export interface TaskDataList {
 	taskStatus: TaskStatusEnum
 }
 
+export interface RadioDataList {
+	id: number,
+	label: string,
+	value: TaskStatusEnum
+}
+
 export interface CSSStyles {
 	[key: string]: CSSProperties
 }

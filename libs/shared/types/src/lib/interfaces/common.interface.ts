@@ -1,3 +1,4 @@
+import { Key } from "antd/es/table/interface";
 import { DocumentReference } from "firebase/firestore";
 import { CSSProperties } from "react";
 import { TicketSortFields } from "../enums";
@@ -25,7 +26,7 @@ export interface Tickets {
 export interface TicketsFilterDataType {
 	priority: PriorityEnum | string,
 	sortAsc: boolean,
-	sortField: TicketSortFields | string
+	sortField: TicketSortFields | string | Key
 }
 
 export interface Clients {

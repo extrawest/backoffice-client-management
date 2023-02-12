@@ -16,6 +16,7 @@
 		"resolveJsonModule": true,
 		"baseUrl": ".",
 		"paths": {
+			"@mono-redux-starter/antdapplib": ["libs/antdapplib/src/index.ts"],
 			"@mono-redux-starter/firebase": ["libs/firebase/src/index.ts"],
 			"@mono-redux-starter/material-lib": ["libs/material-lib/src/index.ts"],
 			"@mono-redux-starter/primeapplib": ["libs/primeapplib/src/index.ts"],

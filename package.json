@@ -7,7 +7,7 @@
 		"start:template": "nx serve template",
 		"build:template": "nx build template --skip-nx-cache --prod",
 		"build:material": "nx build material --skip-nx-cache --prod",
-		"build:all": "npx nx run-many --target=build --projects=material,tailwind,primeapp,semanticapp --prod",
+		"build:all": "npx nx run-many --target=build --projects=material,tailwind,primeapp,semanticapp,antdapp --prod",
 		"lint:template": "nx lint --project=template",
 		"lint": "nx workspace-lint && nx lint",
 		"lint:all": "nx run-many --target=lint --all --maxWarnings=0",
@@ -20,6 +20,7 @@
 	},
 	"private": true,
 	"dependencies": {
+		"@ant-design/icons": "^5.0.1",
 		"@casl/ability": "^6.1.1",
 		"@casl/react": "^3.1.0",
 		"@emotion/react": "11.10.5",

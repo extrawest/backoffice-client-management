@@ -14,9 +14,13 @@ import {
 } from "react";
 import TicketForm from "../../../forms/TicketForm/TicketForm";
 import { TicketValues } from "../../../forms/TicketForm/TicketForm.types";
+import { useTypedSelector } from "../../../store";
 import { TicketCreateFormWrapperProps } from "./TicketCreateFormWrapper.types";
 
-const handleSubmit = (handleClose: () => void) => async (values: TicketValues) => {
+const handleSubmit = (
+	handleClose: () => void,
+	manager_uid?: string
+) => async (values: TicketValues) => {
 	const ticketsRef = collection(
 		firestore(),
 		CollectionEnum.TICKETS
@@ -35,7 +39,8 @@ const handleSubmit = (handleClose: () => void) => async (values: TicketValues) =
 			name: values.name,
 			priority: values.priority,
 			id:"id" + currentDate,
-			reference: clientRef
+			reference: clientRef,
+			manager_uid: manager_uid ?? ""
 		};
 
 		const currentTicketDoc = await addDoc(
@@ -69,6 +74,7 @@ export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ hand
 
 	const [value] = useGetCollectionClients();
 	const [activeClient, setActiveClient] = useState<string>("");
+	const { managerInfo } = useTypedSelector(state => state.authSlice);
 
 	const processedClients = useMemo(
 		() => {
@@ -90,7 +96,10 @@ export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ hand
 	return (
 		<div className="flex items-start justify-content-center gap-2.5">
 			<TicketForm
-				onSubmit={handleSubmit(handleClose)}
+				onSubmit={handleSubmit(
+					handleClose,
+					managerInfo?.uid
+				)}
 				isLoading={false}
 				processedClients={processedClients}
 			/>

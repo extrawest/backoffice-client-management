@@ -60,6 +60,21 @@
 					"destination": "/index.html"
 				}
 			]
+		},
+		{
+			"target": "antdapp-hosting",
+			"public": "dist/apps/antdapp ",
+			"ignore": [
+				"firebase.json",
+				"**/.*",
+				"**/node_modules/**"
+			],
+			"rewrites": [
+				{
+					"source": "**",
+					"destination": "/index.html"
+				}
+			]
 		}
 	]
 }

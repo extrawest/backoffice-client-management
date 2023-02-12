@@ -106,7 +106,7 @@ export const ClientsContainer: FC = () => {
 			getTicketsCollection(
 				setTicketsSnapshot,
 				setCount,
-				managerInfo?.manager_uid
+				managerInfo?.uid
 			)();
 		},
 		[]
@@ -124,7 +124,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
-			managerInfo?.manager_uid,
+			managerInfo?.uid,
 			value
 		)();
 	};
@@ -133,7 +133,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
-			managerInfo?.manager_uid,
+			managerInfo?.uid,
 			filterValue
 		)();
 	};
@@ -143,7 +143,7 @@ export const ClientsContainer: FC = () => {
 		getTicketsCollection(
 			setTicketsSnapshot,
 			setCount,
-			managerInfo?.manager_uid,
+			managerInfo?.uid,
 			filterValue && filterValue,
 			ticketsSnapshot,
 		)();

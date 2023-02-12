@@ -1,0 +1,82 @@
+{
+	"name": "antdapp",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "apps/antdapp/src",
+	"projectType": "application",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/webpack:webpack",
+			"outputs": ["{options.outputPath}"],
+			"defaultConfiguration": "production",
+			"options": {
+				"compiler": "babel",
+				"outputPath": "dist/apps/antdapp",
+				"index": "apps/antdapp/src/index.html",
+				"baseHref": "/",
+				"main": "apps/antdapp/src/main.tsx",
+				"polyfills": "apps/antdapp/src/polyfills.ts",
+				"tsConfig": "apps/antdapp/tsconfig.app.json",
+				"assets": ["apps/antdapp/src/favicon.ico", "apps/antdapp/src/assets"],
+				"styles": ["apps/antdapp/src/styles.less"],
+				"scripts": [],
+				"webpackConfig": "@nrwl/react/plugins/webpack"
+			},
+			"configurations": {
+				"development": {
+					"extractLicenses": false,
+					"optimization": false,
+					"sourceMap": true,
+					"vendorChunk": true
+				},
+				"production": {
+					"fileReplacements": [
+						{
+							"replace": "apps/antdapp/src/environments/environment.ts",
+							"with": "apps/antdapp/src/environments/environment.prod.ts"
+						}
+					],
+					"optimization": true,
+					"outputHashing": "all",
+					"sourceMap": false,
+					"namedChunks": false,
+					"extractLicenses": true,
+					"vendorChunk": false
+				}
+			}
+		},
+		"serve": {
+			"executor": "@nrwl/webpack:dev-server",
+			"defaultConfiguration": "development",
+			"options": {
+				"buildTarget": "antdapp:build",
+				"hmr": true
+			},
+			"configurations": {
+				"development": {
+					"buildTarget": "antdapp:build:development",
+					"port": 3003
+				},
+				"production": {
+					"buildTarget": "antdapp:build:production",
+					"hmr": false
+				}
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["apps/antdapp/**/*.{ts,tsx,js,jsx}"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "apps/antdapp/jest.config.ts",
+				"passWithNoTests": true
+			}
+		}
+	},
+	"tags": []
+}

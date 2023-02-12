@@ -98,7 +98,7 @@ export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ hand
 			<TicketForm
 				onSubmit={handleSubmit(
 					handleClose,
-					managerInfo?.manager_uid
+					managerInfo?.uid
 				)}
 				isLoading={false}
 				processedClients={processedClients}

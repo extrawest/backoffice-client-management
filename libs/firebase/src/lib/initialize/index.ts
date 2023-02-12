@@ -16,6 +16,7 @@ import {
 	useDocumentData
 } from "react-firebase-hooks/firestore";
 import { getStorage, ref as refStorage } from "firebase/storage";
+import { CollectionEnum } from "@mono-redux-starter/shared/types";
 
 export const firebaseApp = firebase.initializeApp({
 	apiKey: process.env["NX_FIREBASE_API_KEY"],
@@ -42,7 +43,7 @@ export {useCollection,
 
 export const ticketsCollectionRef = collection(
 	firestore(),
-	"tickets"
+	CollectionEnum.TICKETS
 );
 
 export const storage = getStorage(firebaseApp);

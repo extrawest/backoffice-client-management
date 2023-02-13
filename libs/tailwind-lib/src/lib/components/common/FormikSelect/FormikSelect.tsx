@@ -2,6 +2,7 @@ import { SelectValue } from "@mono-redux-starter/shared/types";
 import { mergeStrings } from "@mono-redux-starter/shared/utils";
 import { Field } from "formik";
 import { FC, useCallback } from "react";
+import { FormattedMessage } from "react-intl";
 import { TypographyEnum } from "../../../types/typography";
 import { Typography } from "../Typography/Typography";
 import { FormikSelectProps } from "./FormikSelect.types";
@@ -41,6 +42,13 @@ export const FormikSelect: FC<FormikSelectProps> = ({
 					placeholder={placeholder}
 					className="w-full outline-none my-2 text-grayscale-700 mx-4"
 				>
+					<option
+						value={""}
+						disabled
+						defaultChecked
+					>
+						<FormattedMessage id="select" />
+					</option>
 					{
 						data.map((item: SelectValue) => (
 							<option

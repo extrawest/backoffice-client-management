@@ -1,5 +1,5 @@
 
-import { TicketSortFields } from "@mono-redux-starter/shared/types";
+import { PriorityEnum, TicketSortFields } from "@mono-redux-starter/shared/types";
 import { convertToDate, convertToDateTime } from "@mono-redux-starter/shared/utils";
 import { Box } from "@mui/material";
 import { GridSortItem, GridSortModel } from "@mui/x-data-grid";
@@ -124,7 +124,7 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 										/>
 									</td>
 									<td>
-										<PriorityStatus priority={item.priority} />
+										<PriorityStatus priority={item.priority as PriorityEnum} />
 									</td>
 									<td>
 										<DeleteTicket uid={item.uid}/>
@@ -135,7 +135,7 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 					</tbody>
 				</table>
 			</div>
-      <div className="flex items-center justify-end py-1 w-max ml-auto px-4">
+      <div className="flex items-center justify-end py-1 w-max ml-auto px-4 gap-3">
         <TableRowCounter
           handleChangeRowsNumber={handleChangeRowsNumber}
         />

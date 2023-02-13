@@ -46,6 +46,7 @@ const getTicketsCollection = (
 
 	const firstVisible = currentTickets.at(0);
 	const lastVisible = currentTickets.at(-1);
+	console.log(uid);
 	queryParams.push(where(
 		"manager_uid",
 		"==",

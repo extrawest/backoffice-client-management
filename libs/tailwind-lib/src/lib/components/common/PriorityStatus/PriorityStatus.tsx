@@ -13,7 +13,7 @@ export const PriorityStatus: FC<PriorityStatusProps> = ({ priority }) => {
 
 	return (
 		<div
-			className="rounded-50 px-2 py-1 bg"
+			className={`rounded-50 px-2 py-1 bg ${MapStylesWrapper[priority]} w-32`}
 		>
 			<Typography
 				extraClasses="text-common-white text-4 font-bold"

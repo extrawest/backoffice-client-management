@@ -35,11 +35,7 @@ build:
     NX_FIREBASE_APP_ID: "$NX_FIREBASE_APP_ID"
     FIREBASE_TOKEN: "$FIREBASE_TOKEN"
   script:
-    - nx run material:build:production
-		- nx run antdapp:build:production
-		- nx run tailwind:build:production
-		- nx run primeapp:build:production
-		- nx run semanticapp:build:production
+    - npm run build:all
   cache:
     key:
       files:

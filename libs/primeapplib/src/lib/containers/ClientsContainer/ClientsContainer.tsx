@@ -68,7 +68,7 @@ const getTicketsCollection = (
 	}
 
 	filterValues?.sortField && queryParams.push(orderBy(
-		filterValues.sortField,
+		String(filterValues.sortField),
 		filterValues.sortAsc ? "asc" : "desc"
 	));
 	const queryCollection = query(

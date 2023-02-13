@@ -18,7 +18,7 @@
           "semancitapp-panel-app"
         ],
         "antdapp-hosting": [
-          "antd-panel-app"
+          "antdapp-panel-app"
         ]
       }
     }

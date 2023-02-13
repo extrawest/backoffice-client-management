@@ -63,7 +63,7 @@
 		},
 		{
 			"target": "antdapp-hosting",
-			"public": "dist/apps/antdapp ",
+			"public": "dist/apps/antdapp",
 			"ignore": [
 				"firebase.json",
 				"**/.*",

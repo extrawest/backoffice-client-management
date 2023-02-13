@@ -24,7 +24,7 @@ export const CellWithCaption: FC<CellWithCaptionProps> = ({ mainText, captionFor
 			{caption &&
 				<Col span={24}>
 					<Row
-						justify="space-between"
+						justify="start"
 						gutter={[0, 16]}
 						style={{gap: pxToRem(5)}}
 					>

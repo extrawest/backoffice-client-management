@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, SyntheticEvent } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import {
 	Form,
@@ -17,7 +17,7 @@ import { Typography } from "../../components/common/Typography/Typography";
 import { TypographyEnum } from "../../types/typography";
 import { Button } from "../../components/common/Button/Button";
 import { commonFormStyles } from "../formStyles";
-import { Container } from "semantic-ui-react";
+import { Container, DropdownProps } from "semantic-ui-react";
 
 export const TicketForm: FC<TicketFormProps> = ({
 	isLoading,
@@ -70,6 +70,13 @@ export const TicketForm: FC<TicketFormProps> = ({
 							name={"client"}
 							hasError={Boolean(errors.client && touched.client)}
 							error={errors.client}
+							handleChange={(
+								e: SyntheticEvent<HTMLElement, Event>,
+								data: DropdownProps
+								) => setFieldValue(
+								"client",
+								data.value
+							)}
 							startAdornment={<UserIcon />}
 						/>
 						<FormikSelect
@@ -78,6 +85,13 @@ export const TicketForm: FC<TicketFormProps> = ({
 							name={"priority"}
 							hasError={Boolean(errors.priority && touched.priority)}
 							error={errors.priority}
+							handleChange={(
+								e: SyntheticEvent<HTMLElement, Event>,
+								data: DropdownProps
+							) => setFieldValue(
+								"priority",
+								data.value
+							)}
 							startAdornment={<UserIcon/>}
 						/>
 					</Container>

@@ -39,30 +39,32 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 }) => {
 	const [sortValue, setSortValue] = useState({ field: "", sort: "asc" });
 	const [filterValue, setFilterValue] = useState<FilterValue>({ priority: "" });
-	useEffect(
-		() => {
-			if(sortValue.field || filterValue.priority){
-				handleUpdateTableData({
-					...filterValue,
-					sortAsc: sortValue ? sortValue.sort === "asc" : true,
-					sortField: sortValue.field ?? ""
-				});
-			}
-		},
-		[sortValue, filterValue]
-	);
+
+	const handleUpdate = () => {
+		handleUpdateTableData({
+			...filterValue,
+			sortAsc: sortValue ? sortValue.sort === "asc" : true,
+			sortField: sortValue.field ?? ""
+		});
+	};
+
+	const handleFilter = (value: FilterValue) => {
+		setFilterValue(value);
+		handleUpdate();
+	};
 
 	const handleSort = (field: TicketSortFields) => {
 		setSortValue({
 			field,
 			sort: sortValue.sort === "asc" ? "desc" : "asc"
 		});
+		handleUpdate();
 	};
 
 	return (
     <div style={tableStyles.wrapper}>
       <TableAction
-        handleFilter={( value: FilterValue ) => setFilterValue(value)}
+        handleFilter={handleFilter}
       />
 			<Table
 				singleLine

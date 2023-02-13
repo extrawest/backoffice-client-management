@@ -33,6 +33,7 @@ export const FormikField: FC<FormikFieldProps> = ({
 							<Input
 								{...rest}
 								{...fieldProps}
+								error={Boolean(rest.error)}
 								transparent
 								style={{
 									width: "100%",

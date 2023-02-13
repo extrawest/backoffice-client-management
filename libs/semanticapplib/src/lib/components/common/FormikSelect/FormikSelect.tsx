@@ -12,48 +12,44 @@ import { FormikSelectProps } from "./FormikSelect.types";
 export const FormikSelect: FC<FormikSelectProps> = ({
 	placeholder,
 	name,
+	error,
+	value,
+	hasError,
+	handleChange,
 	startAdornment,
 	data
 }) => {
-
 	return (
-		<Field
-			name={name}
-		>
-		{({ field, meta }: FieldProps) => {
-			const { value, ...fieldProps } = field;
-			return (
-				<>
-					<div
+		<>
+			<div
+				style={{
+					...formikSelectStyle.wrapper,
+					borderColor: hasError ? errorMain : grayscale200
+				}}
+			>
+				<div style={formikSelectStyle.inputWrapper}>
+					{startAdornment}
+					<Dropdown
+						onChange={handleChange}
+						placeholder={placeholder}
+						fluid
+						selection
+						value={value}
+						options={data}
 						style={{
-							...formikSelectStyle.wrapper,
-							borderColor: hasErrorForMetaField(meta) ? errorMain : grayscale200
+							border: "none"
 						}}
-					>
-						<div style={formikSelectStyle.inputWrapper}>
-							{startAdornment}
-							<Dropdown
-								placeholder={placeholder}
-								fluid
-								selection
-								options={data}
-								style={{
-									border: "none"
-								}}
-							/>
-						</div>
-					</div>
-					{hasErrorForMetaField(meta) && (
-						<Typography
-							type={TypographyEnum.BODY1}
-							style={formikSelectStyle.error}
-						>
-							{meta.error}
-						</Typography>
-					)}
-				</>
-			);
-		}}
-  </Field>
+					/>
+				</div>
+			</div>
+			{hasError && (
+				<Typography
+					type={TypographyEnum.BODY1}
+					style={formikSelectStyle.error}
+				>
+					{error}
+				</Typography>
+			)}
+		</>
 	);
 };

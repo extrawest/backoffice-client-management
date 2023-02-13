@@ -180,7 +180,7 @@ export const ClientsContainer: FC = () => {
 	return (
 		<ClientsProvider value={{handleRecallClients: handleRecallClients}}>
 			<Container fluid>
-					<div style={dashboardStyle.titleWrapper}>
+				<div style={dashboardStyle.titleWrapper}>
 					<Typography
 						type={TypographyEnum.H4}
 					>

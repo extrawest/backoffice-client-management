@@ -1,10 +1,17 @@
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import {
-	Divider, SelectChangeEvent, Typography, Box
+	Divider,
+	SelectChangeEvent
 } from "@mui/material";
-import { Form, Formik } from "formik";
-import { FC, FormEvent } from "react";
+import {
+	Form, Formik, FormikConfig
+} from "formik";
+import {
+	FC,
+	SyntheticEvent
+} from "react";
 import { FormattedMessage, useIntl } from "react-intl";
+import { DropdownProps } from "semantic-ui-react";
 import { commonFormStyles } from "../../../forms/formStyles";
 import { UserIcon } from "../../../icons";
 import { Button } from "../../common/Button/Button";
@@ -35,12 +42,9 @@ export const FilterForm: FC<FilterFormProps>= ({
 		priority: ""
 	};
 
-	const handleChangeRole = (event: SelectChangeEvent<string>) => {
-		setActivePriority(event.target.value);
-	};
-
-	const handleSubmit = () => {
-		handleFilter({ priority: activePriority});
+	const handleSubmit: FormikConfig<{priority: string}>["onSubmit"] = (values) => {
+		setActivePriority(values.priority);
+		handleFilter(values);
 		isFilterActive(true);
 		handleClose();
 	};
@@ -49,12 +53,13 @@ export const FilterForm: FC<FilterFormProps>= ({
 		setActivePriority("");
 		handleFilter({ priority: "" });
 		isFilterActive(false);
+		handleClose();
 	};
 	return (
 		<Formik
 			initialValues={initialValue}
 			validateOnBlur={false}
-			onSubmit={handleFilter}
+			onSubmit={handleSubmit}
 		>
 			{({
 				isSubmitting,
@@ -70,13 +75,20 @@ export const FilterForm: FC<FilterFormProps>= ({
 						name={"priority"}
 						hasError={Boolean(errors.priority && touched.priority)}
 						error={errors.priority}
+						handleChange={(
+							e: SyntheticEvent<HTMLElement, Event>,
+							data: DropdownProps
+						) => setFieldValue(
+							"priority",
+							data.value
+						)}
 						startAdornment={<UserIcon className="overflow-visible"/>}
 					/>
 					<Divider orientation="horizontal" />
 					<div style={filterFormStyles.buttonsWrapper}>
 						<Button
 							type="submit"
-							onClick={handleClose}
+							onClick={handleClear}
 						>
 							<FormattedMessage id="clear"/>
 						</Button>

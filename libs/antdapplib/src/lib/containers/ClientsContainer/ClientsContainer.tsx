@@ -204,6 +204,7 @@ export const ClientsContainer: FC = () => {
 					{tickets && <TicketsTable
 						data={tickets.map(item => ({...item, key: item.id}))}
 						currentPage={currentPage}
+						handleRecallClients={handleRecallClients}
 						handleChangePage={handleChangePage}
 						handleUpdateTableData={handleUpdateTableData}
 						totalElements={count}

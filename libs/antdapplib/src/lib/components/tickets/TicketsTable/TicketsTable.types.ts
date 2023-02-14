@@ -5,6 +5,7 @@ export interface TicketsTableProps {
 	totalElements: number,
 	currentPage: number,
 	limit: number,
+	handleRecallClients: () => void,
 	handleUpdateTableData: (value: TicketsFilterDataType) => void,
 	handleChangePage: (page?: number, size?: number) => void ,
 }

@@ -24,6 +24,7 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 	currentPage,
 	totalElements,
 	limit,
+	handleRecallClients,
 	handleUpdateTableData,
 	handleChangePage,
 }) => {
@@ -55,6 +56,7 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 	return (
     <Col>
       <TableAction
+				handleRecallClients={handleRecallClients}
         handleFilter={( value: FilterValue ) => setFilterValue(value)}
       />
 			<Divider

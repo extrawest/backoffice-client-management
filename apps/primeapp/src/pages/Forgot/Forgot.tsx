@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { ForgotContainer } from "libs/primeapplib/src";
-import React from "react";
+import { ForgotContainer } from "@mono-redux-starter/primeapplib";
 
 export const Forgot: FC = () => (
 	<ForgotContainer />

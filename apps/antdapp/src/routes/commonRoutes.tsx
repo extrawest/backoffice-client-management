@@ -1,4 +1,4 @@
-import { AppRouteEnum, RoutesType } from "libs/antdapplib/src";
+import { AppRouteEnum, RoutesType } from "@mono-redux-starter/antdapplib";
 import { lazy } from "react";
 
 const LoginPage = lazy(() => import("../pages/Login/Login"));

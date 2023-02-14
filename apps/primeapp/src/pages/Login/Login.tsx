@@ -1,4 +1,4 @@
-import { LoginContainer } from "libs/primeapplib/src";
+import { LoginContainer } from "@mono-redux-starter/primeapplib";
 import { FC } from "react";
 
 const Login: FC = () => {

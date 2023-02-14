@@ -1,5 +1,4 @@
-import { Button } from "antd";
-import { LoginContainer } from "libs/antdapplib/src";
+import { LoginContainer } from "@mono-redux-starter/antdapplib";
 import { FC } from "react";
 
 const Login: FC = () => {

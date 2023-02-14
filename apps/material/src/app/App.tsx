@@ -20,7 +20,6 @@ import {
 	theme
 } from "@mono-redux-starter/material-lib";
 import AppRoutes from "../routes";
-import React from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 

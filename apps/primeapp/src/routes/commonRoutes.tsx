@@ -1,4 +1,4 @@
-import { AppRouteEnum, RoutesType } from "libs/primeapplib/src";
+import { AppRouteEnum, RoutesType } from "@mono-redux-starter/primeapplib";
 import { lazy } from "react";
 
 const LoginPage = lazy(() => import("../pages/Login/Login"));

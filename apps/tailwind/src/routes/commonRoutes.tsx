@@ -1,4 +1,4 @@
-import { AppRouteEnum, RoutesType } from "libs/tailwind-lib/src";
+import { AppRouteEnum, RoutesType } from "@mono-redux-starter/tailwind-lib";
 import { lazy } from "react";
 
 const LoginPage = lazy(() => import("../pages/Login/Login"));

@@ -1,4 +1,4 @@
-import { AppRouteEnum, RoutesType } from "libs/semanticapplib/src";
+import { AppRouteEnum, RoutesType } from "@mono-redux-starter/semanticapplib";
 import { lazy } from "react";
 
 const LoginPage = lazy(() => import("../pages/Login/Login"));

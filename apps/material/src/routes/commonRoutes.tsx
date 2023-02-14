@@ -1,6 +1,5 @@
 import { lazy } from "react";
 import { AppRouteEnum, RoutesType } from "@mono-redux-starter/material-lib";
-import React from "react";
 
 const LoginPage = lazy(() => import("../pages/Login/Login"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));

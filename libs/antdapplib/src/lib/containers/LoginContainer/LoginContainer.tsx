@@ -38,9 +38,9 @@ export const LoginContainer: FC = () => {
 	const auth = getAuth(firebaseApp);
 	const [
 		signInWithEmailAndPassword,
-		user,
-		loading,
-		error,
+		,
+		,
+		error
 	] = useSignInWithEmailAndPassword(auth);
 
 	const { managerInfo } = useTypedSelector(state => state.authSlice);
@@ -48,8 +48,6 @@ export const LoginContainer: FC = () => {
 	const [
 		signInWithGoogle,
 		googleUser,
-		googleLoading,
-		googleError
 	] = useSignInWithGoogle(auth);
 
 	useShowSnackBarMessage(

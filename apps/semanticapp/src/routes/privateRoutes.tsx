@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { RoleEnum } from "@mono-redux-starter/shared/types";
-import { AppRouteEnum, PrivateRoutes } from "libs/semanticapplib/src";
+import { AppRouteEnum, PrivateRoutes } from "@mono-redux-starter/semanticapplib";
 
 const Dashboard = lazy(() => import("../pages/Dashboard/Dashboard"));
 const Clients = lazy(() => import("../pages/Clients/Clients"));

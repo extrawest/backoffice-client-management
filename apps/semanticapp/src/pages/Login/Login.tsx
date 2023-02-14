@@ -1,4 +1,4 @@
-import { LoginContainer } from "libs/semanticapplib/src";
+import { LoginContainer } from "@mono-redux-starter/semanticapplib";
 import { FC } from "react";
 
 const Login: FC = () => {

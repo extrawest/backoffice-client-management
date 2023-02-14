@@ -50,7 +50,7 @@ build:
 deploy:
   before_script:
     - npm i -g firebase-tools
-		- export FIREBASE_TOKEN=$FIREBASE_TOKEN
+    - export FIREBASE_TOKEN=$FIREBASE_TOKEN
   only:
     - development
   stage: deploy

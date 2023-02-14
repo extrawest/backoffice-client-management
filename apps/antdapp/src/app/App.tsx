@@ -14,7 +14,6 @@ import {
 	theme,
 } from "@mono-redux-starter/antdapplib";
 import AppRoutes from "../routes";
-import React from "react";
 import { ConfigProvider } from "antd";
 
 const ability = abilityCheckStorage(store);

@@ -3,18 +3,14 @@
 	"version": 2,
 	"projects": {
 		"antdapp": "apps/antdapp",
-		"antdapp-e2e": "apps/antdapp-e2e",
 		"antdapplib": "libs/antdapplib",
 		"firebase": "libs/firebase",
 		"material": "apps/material",
-		"material-e2e": "apps/material-e2e",
 		"material-lib": "libs/material-lib",
 		"primeapp": "apps/primeapp",
-		"primeapp-e2e": "apps/primeapp-e2e",
 		"primeapplib": "libs/primeapplib",
 		"redux": "libs/redux",
 		"semanticapp": "apps/semanticapp",
-		"semanticapp-e2e": "apps/semanticapp-e2e",
 		"semanticapplib": "libs/semanticapplib",
 		"shared": "libs/shared",
 		"shared-hoks": "libs/shared/hoks",
@@ -24,10 +20,6 @@
 		"shared-ui": "libs/shared/ui",
 		"shared-utils": "libs/shared/utils",
 		"tailwind": "apps/tailwind",
-		"tailwind-e2e": "apps/tailwind-e2e",
-		"tailwind-lib": "libs/tailwind-lib",
-		"tamplateapp": "libs/tamplateapp",
-		"template": "apps/template",
-		"template-e2e": "apps/template-e2e"
+		"tailwind-lib": "libs/tailwind-lib"
 	}
 }

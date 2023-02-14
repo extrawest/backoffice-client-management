@@ -15,19 +15,6 @@ export const PrivateRoute: FC<PropsWithChildren<PrivateRouteProps>> = ({
 
 	const isLoggedIn = useTypedSelector((state: RootState) => state.authSlice.isLoggedIn);
 
-	//part for real app
-	// const { isAuth, isUserLoggedIn } = useIsLoggedIn();
-	// const userRoles = useTypedSelector(state => state.userSlice.role);
-
-	// const isPermissions = roles?.includes(userRoles[0]?.name);
-
-	// useEffect(
-	// 	() => {
-	// 		if (isAuth) dispatch(resetStateAction());
-	// 	},
-	// 	[isAuth]
-	// );
-
 	if (!isLoggedIn) {
 		return (
 			<Navigate

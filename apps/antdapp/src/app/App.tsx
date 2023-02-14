@@ -29,15 +29,6 @@ export const App: FC = () => {
 				>
 				<AppIntlProvider>
 					<PersistGate
-						// loading={
-						// 	<Modal
-						// 		basic
-						// 		open={true}
-						// 		size='small'
-						// 	>
-						// 		<Loader />
-						// 	</Modal>
-						// }
 						persistor={persistor}
 					>
 						<BrowserRouter>

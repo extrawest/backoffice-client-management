@@ -33,7 +33,6 @@ build:
     NX_FIREBASE_STORAGE_BUCKET: "$NX_FIREBASE_STORAGE_BUCKET"
     NX_FIREBASE_MESSAGING_SENDER_ID: "$NX_FIREBASE_MESSAGING_SENDER_ID"
     NX_FIREBASE_APP_ID: "$NX_FIREBASE_APP_ID"
-    FIREBASE_TOKEN: "$FIREBASE_TOKEN"
   script:
     - npm run build:all
   cache:
@@ -51,12 +50,13 @@ build:
 deploy:
   before_script:
     - npm i -g firebase-tools
+		- export FIREBASE_TOKEN=$FIREBASE_TOKEN
   only:
     - development
   stage: deploy
   script:
-    - firebase deploy --only hosting:material-hosting --token $FIREBASE_TOKEN
-    - firebase deploy --only hosting:tailwind-hosting --token $FIREBASE_TOKEN
-    - firebase deploy --only hosting:primeapp-hosting --token $FIREBASE_TOKEN
-    - firebase deploy --only hosting:semanticapp-hosting --token $FIREBASE_TOKEN
-    - firebase deploy --only hosting:antdapp-hosting --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:material-hosting
+    - firebase deploy --only hosting:tailwind-hosting
+    - firebase deploy --only hosting:primeapp-hosting
+    - firebase deploy --only hosting:semanticapp-hosting
+    - firebase deploy --only hosting:antdapp-hosting

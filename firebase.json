@@ -3,7 +3,7 @@
 		{
 
 			"target": "material-hosting",
-			"public": "dist/apps/material",
+			"public": "dist/apps/materialapp",
 			"ignore": [
 				"firebase.json",
 				"**/.*",
@@ -18,7 +18,7 @@
 		},
 		{
 			"target": "tailwind-hosting",
-			"public": "dist/apps/tailwind",
+			"public": "dist/apps/tailwindapp",
 			"ignore": [
 				"firebase.json",
 				"**/.*",

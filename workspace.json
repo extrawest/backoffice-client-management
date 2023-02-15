@@ -5,7 +5,7 @@
 		"antdapp": "apps/antdapp",
 		"antdapplib": "libs/antdapplib",
 		"firebase": "libs/firebase",
-		"material": "apps/material",
+		"materialapp": "apps/materialapp",
 		"material-lib": "libs/material-lib",
 		"primeapp": "apps/primeapp",
 		"primeapplib": "libs/primeapplib",
@@ -19,7 +19,7 @@
 		"shared-types": "libs/shared/types",
 		"shared-ui": "libs/shared/ui",
 		"shared-utils": "libs/shared/utils",
-		"tailwind": "apps/tailwind",
+		"tailwindapp": "apps/tailwindapp",
 		"tailwind-lib": "libs/tailwind-lib"
 	}
 }

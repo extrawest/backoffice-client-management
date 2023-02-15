@@ -1,4 +1,4 @@
-import { errorMain, grayscale400 } from "@mono-redux-starter/shared/color";
+import { errorMain } from "@mono-redux-starter/shared/color";
 import { CSSStyles } from "@mono-redux-starter/shared/types";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 

@@ -1,9 +1,5 @@
 import { FC } from "react";
 import { useIntl } from "react-intl";
-import {
-	Box,
-	Typography
-} from "@mui/material";
 import { Form, Formik } from "formik";
 import { validateShema } from "./ForgotForm.schema";
 import type { ForgotFormProps } from "./ForgotForm.types";
@@ -13,6 +9,7 @@ import { FormikField } from "../../components/common/FormikField/FormikField";
 import { Button } from "../../components/common/Button/Button";
 import { Link } from "../../components/common/Link/Link";
 import { commonFormStyles } from "../formStyles";
+import { Typography } from "../../components/common/Typography/Typography";
 
 export const ForgotForm: FC<ForgotFormProps> = ({
 	initialValues,
@@ -53,9 +50,7 @@ export const ForgotForm: FC<ForgotFormProps> = ({
 						})}
 					</Button>
 					<Link to={AppRouteEnum.LOGIN}>
-						<Typography
-							variant="body1"
-						>
+						<Typography>
 							{intl.formatMessage({
 								id: "return"
 							})}

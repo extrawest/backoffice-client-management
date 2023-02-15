@@ -32,7 +32,6 @@ import { ClientCreateFormWrapper } from "../../components/clients/ClientCreateFo
 import { Modal } from "../../components/common/Modal/Modal";
 import { ClientsProvider } from "./ClientsContainer.context";
 import { Container } from "semantic-ui-react";
-import { containerStyle } from "./ClientsContainer.styles";
 import { useTypedSelector } from "../../store";
 import { dashboardStyle } from "../DashboardContainer/DashboardContainer.styles";
 

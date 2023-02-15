@@ -2,9 +2,6 @@ import { commonBlack, grayscale400 } from "@mono-redux-starter/shared/color";
 import { SimpleDataList } from "@mono-redux-starter/shared/types";
 import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { FC } from "react";
-import {
-	Grid, GridColumn, List, ListItem
-} from "semantic-ui-react";
 import { TypographyEnum } from "../../types/typography";
 import { Typography } from "../common/Typography/Typography";
 import { gridListStyles } from "./GridList.styles";

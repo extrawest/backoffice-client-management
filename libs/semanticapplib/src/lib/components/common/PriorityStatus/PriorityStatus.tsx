@@ -1,6 +1,5 @@
 import {
 	errorMain,
-	successDark,
 	successMain,
 	warningMain
 } from "@mono-redux-starter/shared/color";

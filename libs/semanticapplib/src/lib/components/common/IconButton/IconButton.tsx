@@ -1,4 +1,3 @@
-import { mergeStrings } from "@mono-redux-starter/shared/utils";
 import { FC } from "react";
 import { Button } from "semantic-ui-react";
 import { IconButtonProps } from "./IconButton.types";

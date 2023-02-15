@@ -2,15 +2,11 @@ import { FC, useState } from "react";
 import { MainLayoutProps } from "./MainLayout.types";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { useIntl } from "react-intl";
-import { SearchIcon } from "../../icons";
 import {
 	Container,
 	Input,
 	Menu,
-	Segment,
 	Sidebar as SemanticSidebar,
-	SidebarPushable,
-	SidebarPusher
 } from "semantic-ui-react";
 import { IconButton } from "../../components/common/IconButton/IconButton";
 import { mainLayoutStyles } from "./MainLayout.styles";
@@ -29,7 +25,10 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	const fieldText = intl.formatMessage({id: "search"});
 
 	return (
-		<Container fluid style={mainLayoutStyles.layoutContainer}>
+		<Container
+			fluid
+			style={mainLayoutStyles.layoutContainer}
+		>
 			<IconButton
 				icon="content"
 				onClick={handleOpen}

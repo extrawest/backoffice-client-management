@@ -1,7 +1,6 @@
 import {
 	FC,
 	useEffect,
-	useMemo,
 	useState
 } from "react";
 import { Pagination, PaginationProps } from "semantic-ui-react";

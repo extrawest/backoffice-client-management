@@ -1,4 +1,3 @@
-import { mergeStrings } from "@mono-redux-starter/shared/utils";
 import { FC } from "react";
 import { TagEnum, TypographyEnum } from "../../../types/typography";
 import { typographyStyle } from "./Typography.styles";

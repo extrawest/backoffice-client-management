@@ -3,7 +3,6 @@ import { TicketSortFields } from "@mono-redux-starter/shared/types";
 import { convertToDate, convertToDateTime } from "@mono-redux-starter/shared/utils";
 import {
 	FC,
-	useEffect,
 	useState
 } from "react";
 import { FormattedMessage } from "react-intl";

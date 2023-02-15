@@ -14,8 +14,6 @@ import {
 	Divider
 } from "semantic-ui-react";
 import { containerStyle } from "../containerStyle";
-import { Typography } from "../../components/common/Typography/Typography";
-import { TypographyEnum } from "../../types/typography";
 
 export const ForgotContainer: FC = () => {
 	const navigate = useNavigate();
@@ -24,7 +22,7 @@ export const ForgotContainer: FC = () => {
 	};
 	const [
 		sendPasswordResetEmail,
-		sending,
+		,
 		error
 	] = useSendPasswordResetEmail(auth);
 

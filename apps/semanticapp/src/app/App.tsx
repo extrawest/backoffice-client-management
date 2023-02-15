@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
@@ -13,7 +13,6 @@ import {
 	AuthContext,
 } from "@mono-redux-starter/tailwind-lib";
 import AppRoutes from "../routes";
-import React from "react";
 import { Loader, Modal } from "semantic-ui-react";
 import "semantic-ui-less/semantic.less";
 

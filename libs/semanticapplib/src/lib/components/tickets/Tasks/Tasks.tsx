@@ -5,7 +5,6 @@ import { TypographyEnum } from "../../../types/typography";
 import { Link } from "../../common/Link/Link";
 import { AppRouteEnum } from "../../../types";
 import { IconButton } from "../../common/IconButton/IconButton";
-import { AddIcon } from "../../../icons";
 import { TaskList } from "../TaskList/TaskList";
 import { TicketCreateFormWrapper } from "../TicketCreateFormWrapper/TicketCreateFormWrapper";
 import { Modal } from "../../common/Modal/Modal";

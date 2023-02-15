@@ -18,7 +18,6 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
 
 	const [activePriority, setActivePriority] = useState<string>("");
 	const [isFilterActive, setIsFilterActive] = useState<boolean>(false);
-	const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 	const [openModal, setOpenModal] = useState<boolean>(false);
 	const [openFilter, setOpenFilter] = useState<boolean>(false);
 

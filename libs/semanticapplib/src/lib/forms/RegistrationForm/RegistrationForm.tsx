@@ -7,12 +7,10 @@ import { LockIcon, UserIcon } from "../../icons";
 import { AppRouteEnum } from "../../types";
 import { FormikField } from "../../components/common/FormikField/FormikField";
 import { Button } from "../../components/common/Button/Button";
-import { TypographyEnum } from "../../types/typography";
 import { Link } from "../../components/common/Link/Link";
 import { Typography } from "../../components/common/Typography/Typography";
 import { FormikPasswordField } from "../../components/common/FormikPasswordField/FormikPasswordField";
 import { commonFormStyles } from "../formStyles";
-import { common } from "@mui/material/colors";
 
 export const RegistrationForm: FC<RegistrationFormProps> = ({
 	initialValues,

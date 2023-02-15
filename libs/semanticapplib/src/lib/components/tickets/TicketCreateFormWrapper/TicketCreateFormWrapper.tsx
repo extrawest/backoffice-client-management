@@ -9,9 +9,7 @@ import {
 import { firestore } from "@mono-redux-starter/firebase";
 import { useGetCollectionClients } from "@mono-redux-starter/shared/hooks";
 import { CollectionEnum } from "@mono-redux-starter/shared/types";
-import {
-	FC, useMemo, useState
-} from "react";
+import { FC, useMemo } from "react";
 import TicketForm from "../../../forms/TicketForm/TicketForm";
 import { TicketValues } from "../../../forms/TicketForm/TicketForm.types";
 import { useTypedSelector } from "../../../store";
@@ -72,7 +70,6 @@ const handleSubmit = (
 export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ handleClose }) => {
 
 	const [value] = useGetCollectionClients();
-	const [activeClient, setActiveClient] = useState<string>("");
 
 	const { managerInfo } = useTypedSelector(state => state.authSlice);
 

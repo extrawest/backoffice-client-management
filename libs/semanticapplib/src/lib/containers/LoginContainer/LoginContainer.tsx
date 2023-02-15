@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormikHelpers } from "formik";
 import { LoginForm, Values } from "../../forms/LoginForm";
-import { useTypedDispatch, useTypedSelector } from "../../store";
+import { useTypedDispatch } from "../../store";
 import { AppRouteEnum } from "../../types";
 import { getAuth } from "firebase/auth";
 import {
@@ -36,18 +36,13 @@ export const LoginContainer: FC = () => {
 	const auth = getAuth(firebaseApp);
 	const [
 		signInWithEmailAndPassword,
-		user,
-		loading,
+		,
+		,
 		error,
 	] = useSignInWithEmailAndPassword(auth);
 
-	const { managerInfo } = useTypedSelector(state => state.authSlice);
-
 	const [
-		signInWithGoogle,
-		googleUser,
-		googleLoading,
-		googleError
+		signInWithGoogle
 	] = useSignInWithGoogle(auth);
 
 	useShowSnackBarMessage(

@@ -6,14 +6,12 @@ import type { LoginFormProps } from "./LoginForm.types";
 import { FormikField } from "../../components/common/FormikField/FormikField";
 import { Button } from "../../components/common/Button/Button";
 import {
-	EyeIcon,
 	LockIcon,
 	UserIcon
 } from "../../icons";
 import { Link } from "../../components/common/Link/Link";
 import { AppRouteEnum } from "../../types";
 import { Typography } from "../../components/common/Typography/Typography";
-import { TypographyEnum } from "../../types/typography";
 import { FormikPasswordField } from "../../components/common/FormikPasswordField/FormikPasswordField";
 import { commonFormStyles } from "../formStyles";
 import { Checkbox, Container } from "semantic-ui-react";
@@ -53,7 +51,10 @@ export const LoginForm: FC<LoginFormProps> = ({
 						type="password"
 						startAdornment={<LockIcon />}
 					/>
-					<Container text style={commonFormStyles.spaceBetweenWrapper}>
+					<Container
+						text
+						style={commonFormStyles.spaceBetweenWrapper}
+					>
 						<Checkbox
 							label={intl.formatMessage({id: "template.remember"})}
 							name="forgot"

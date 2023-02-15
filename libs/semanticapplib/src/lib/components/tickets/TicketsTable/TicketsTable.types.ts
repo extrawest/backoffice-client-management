@@ -1,5 +1,4 @@
 import { Tickets, TicketsFilterDataType } from "@mono-redux-starter/shared/types";
-import { ChangeEventHandler } from "react";
 
 export interface TicketsTableProps {
 	data: Tickets[],

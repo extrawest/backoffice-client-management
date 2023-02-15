@@ -1,8 +1,5 @@
 import { errorMain, grayscale200 } from "@mono-redux-starter/shared/color";
-import { SelectValue } from "@mono-redux-starter/shared/types";
-import { hasErrorForMetaField, mergeStrings } from "@mono-redux-starter/shared/utils";
-import { Field, FieldProps } from "formik";
-import { FC, useCallback } from "react";
+import { FC } from "react";
 import { Dropdown } from "semantic-ui-react";
 import { TypographyEnum } from "../../../types/typography";
 import { Typography } from "../Typography/Typography";

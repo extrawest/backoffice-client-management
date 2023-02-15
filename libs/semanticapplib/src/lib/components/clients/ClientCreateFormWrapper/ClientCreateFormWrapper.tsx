@@ -12,6 +12,8 @@ import { useUploadFile } from "react-firebase-hooks/storage";
 import { ref } from "firebase/storage";
 import { Values } from "../../../forms/ClientForm/ClientForm.types";
 import ClientForm from "../../../forms/ClientForm/ClientForm";
+import DropZone from "../../common/DropZone";
+import { clientCreateFormWrapperStyles } from "./ClientCreateFormWrapper.styles";
 
 type UploadFileHookType = ReturnType<typeof useUploadFile>[0];
 
@@ -67,17 +69,17 @@ const handleSubmit = (
 
 export const ClientCreateFormWrapper: FC<ClientCreateFormWrapperProps> = ({ handleClose }) => {
 	const [image, setImage] = useState<File | null>(null);
-	const [uploadFile, uploading, snapshot, error] = useUploadFile();
+	const [uploadFile] = useUploadFile();
 
 	const handleFile = (file: File | null) => {
 		file && setImage(file);
 	};
 
 	return (
-		<div className="flex items-start justify-center gap-2.5">
-			{/* <DropZone
+		<div style={clientCreateFormWrapperStyles.wrapper}>
+			<DropZone
 				handleFile={handleFile}
-			/> */}
+			/>
 			<ClientForm
 				onSubmit={
 					handleSubmit(

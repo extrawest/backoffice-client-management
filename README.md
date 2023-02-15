@@ -24,11 +24,11 @@ React application with different 5 most design system (Ant, Material UI, Tailwin
 
 ## Demo
 
-![Tailwind App](https://tailwind-panel-app.firebaseapp.com/)
-![Semantic UI App](https://semancitapp-panel-app.firebaseapp.com/)
-![PrimeFaces App](https://primeapp-panel-app.firebaseapp.com/)
-![Ant Design App](https://antdapp-panel.firebaseapp.com/)
-![Material UI App](https://material-panel-app.firebaseapp.com/)
+[![Tailwind App](https://img.shields.io/badge/Tailwind-15B50D?style=for-the-badge&logoColor=white)](https://tailwind-panel-app.firebaseapp.com/)
+[![Semantic UI App](https://img.shields.io/badge/Semantic--UI-C5CA03?style=for-the-badge&logoColor=white)](https://semancitapp-panel-app.firebaseapp.com/)
+[![PrimeFaces App](https://img.shields.io/badge/PrimeFaces-0081CB?style=for-the-badge&logoColor=white)](https://primeapp-panel-app.firebaseapp.com/)
+[![Ant Design App](https://img.shields.io/badge/Ant--Design-D00510?style=for-the-badge&logoColor=white)](https://antdapp-panel.firebaseapp.com/)
+[![Material UI App](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)](https://material-panel-app.firebaseapp.com/)
 
 ## Development
 
@@ -69,6 +69,7 @@ Run `npm run lint:all:fix` to fix the lint errors.
 
 ## Authors
 Developer: Denys Bobrov
+
 Reviewer: Anatolii Krotov
 
 - [Powered by Extrawest](https://www.extrawest.com/)

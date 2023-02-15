@@ -33,11 +33,15 @@ export const UnresolvedTickets: FC = () => {
 			>
 				<div className="flex flex-col gap-1 w-3/4">
 					<Typography
-						type={TypographyEnum.BUTTON} extraClasses="text-start"
+						type={TypographyEnum.BUTTON}
+						extraClasses="text-start"
 					>
 						<FormattedMessage id="unresolvedTickets"/>
 					</Typography>
-					<Typography type={TypographyEnum.DESCRIPTION} extraClasses="text-start">
+					<Typography
+						type={TypographyEnum.DESCRIPTION}
+						extraClasses="text-start"
+					>
 						<FormattedMessage
 							id="group"
 							values={{caption: "Support"}}

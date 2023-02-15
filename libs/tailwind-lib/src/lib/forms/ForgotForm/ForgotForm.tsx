@@ -1,9 +1,6 @@
 import { FC } from "react";
 import { useIntl } from "react-intl";
-import {
-	Box,
-	Typography
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import { Form, Formik } from "formik";
 import { validateShema } from "./ForgotForm.schema";
 import type { ForgotFormProps } from "./ForgotForm.types";

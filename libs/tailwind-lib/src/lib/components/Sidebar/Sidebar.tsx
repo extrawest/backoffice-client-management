@@ -39,7 +39,7 @@ export const Sidebar: FC = () => {
 				<div className="flex flex-col items-start">
 					<Typography
 						type={TypographyEnum.H5}
-						extraClasses="block mt-5 lg:text-3xl"
+						extraClasses="block mt-5 lg:text-3xl text-start"
 					>
 						{managerInfo ? `${managerInfo["firstName"]} ${managerInfo["lastName"]}` : "John Doe"}
 					</Typography>

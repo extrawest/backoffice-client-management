@@ -1,9 +1,4 @@
 import { SimpleDataList } from "@mono-redux-starter/shared/types";
-import {
-	Box,
-	Grid,
-	Typography
-} from "@mui/material";
 import { FC } from "react";
 import { useIntl } from "react-intl";
 import { Chart } from "../Chart/Chart";
@@ -38,7 +33,10 @@ export const ChartWrapper: FC = () => {
 			<div className="p-8 border-r-1 border-r-grayscale-200 border-solid h-full">
 				<Chart />
 			</div>
-			<GridList data={trendsData} direction="column"/>
+			<GridList
+				data={trendsData}
+				direction="column"
+			/>
 		</div>
 	);
 };

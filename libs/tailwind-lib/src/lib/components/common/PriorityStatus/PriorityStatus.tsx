@@ -1,7 +1,6 @@
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import { FC } from "react";
 import { Typography } from "../Typography/Typography";
-import { typographySx } from "./PriorityStatus.styles";
 import { PriorityStatusProps } from "./PriorityStatus.types";
 
 export const PriorityStatus: FC<PriorityStatusProps> = ({ priority }) => {

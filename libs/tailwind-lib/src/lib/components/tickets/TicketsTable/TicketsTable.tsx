@@ -1,15 +1,13 @@
 
 import { PriorityEnum, TicketSortFields } from "@mono-redux-starter/shared/types";
 import { convertToDate, convertToDateTime } from "@mono-redux-starter/shared/utils";
-import { Box } from "@mui/material";
-import { GridSortItem, GridSortModel } from "@mui/x-data-grid";
+import { GridSortItem } from "@mui/x-data-grid";
 import {
 	FC,
 	useEffect,
 	useState
 } from "react";
 import { FormattedMessage } from "react-intl";
-import { Item } from "semantic-ui-react";
 import { ArrowIcon } from "../../../icons";
 import { CellWithCaption } from "../../common/CellWithCaption/CellWithCaption";
 import { ClientCell } from "../../common/ClientCell/ClientCell";

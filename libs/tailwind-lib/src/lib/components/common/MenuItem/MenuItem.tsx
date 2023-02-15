@@ -1,8 +1,5 @@
 import { FC } from "react";
-import { render } from "react-dom";
 import { NavLink } from "react-router-dom";
-import { TypographyEnum } from "../../../types/typography";
-import { Typography } from "../Typography/Typography";
 import { MenuItemProps } from "./MenuItem.types";
 
 export const MenuItem: FC<MenuItemProps> = ({ href, title, icon}) => {

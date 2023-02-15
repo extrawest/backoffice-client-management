@@ -2,19 +2,15 @@ import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import {
 	Form,
-	Formik,
-	FormikHandlers,
-	FormikHelpers
+	Formik
 } from "formik";
 import { validateShema } from "./TicketForm.schema";
-import type { TicketFormProps, TicketValues } from "./TicketForm.types";
+import type { TicketFormProps } from "./TicketForm.types";
 import { UserIcon } from "../../icons";
 import { initialValues } from "./TicketForm.initialValue";
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import { FormikField } from "../../components/common/FormikField/FormikField";
 import { FormikSelect } from "../../components/common/FormikSelect/FormikSelect";
-import { Typography } from "../../components/common/Typography/Typography";
-import { TypographyEnum } from "../../types/typography";
 import { Button } from "../../components/common/Button/Button";
 
 export const TicketForm: FC<TicketFormProps> = ({

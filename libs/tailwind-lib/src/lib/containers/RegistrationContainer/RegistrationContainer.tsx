@@ -1,12 +1,10 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormikHelpers } from "formik";
 import { AppRouteEnum } from "../../types";
 import {
 	auth,
-	firestore,
-	useCollection,
-	collection
+	firestore
 } from "@mono-redux-starter/firebase";
 import {
 	useCreateUserWithEmailAndPassword,
@@ -30,15 +28,13 @@ export const RegistrationContainer: FC = () => {
 	};
 	const [
 		createUserWithEmailAndPassword,
-		user,
-		loading,
+		,
+		,
 		createUserError,
 	] = useCreateUserWithEmailAndPassword(auth);
 
 	const [
-		sendEmailVerification,
-		sending,
-		verificationError
+		sendEmailVerification
 	] = useSendEmailVerification(auth);
 
 	useShowSnackBarMessage(

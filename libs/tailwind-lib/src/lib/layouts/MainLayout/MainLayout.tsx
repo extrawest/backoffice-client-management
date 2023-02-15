@@ -1,23 +1,11 @@
-import { FC, useState } from "react";
-import { NavLink as RouterLink } from "react-router-dom";
-import { AppRouteEnum } from "../../types/paths";
+import { FC } from "react";
 import { MainLayoutProps } from "./MainLayout.types";
-import { mainLayoutStyles } from "./MainLayout.styles";
-import { IconButton } from "../../components/common/IconButton/IconButton";
-import { Link } from "../../components/common/Link/Link";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { FormikField } from "../../components/common/FormikField/FormikField";
 import { useIntl } from "react-intl";
 import { SearchIcon } from "../../icons";
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	const intl = useIntl();
-	const [open, setOpen] = useState(false);
-
-	const toggleDrawer = () => {
-		setOpen(!open);
-	};
-
 	const fieldText = intl.formatMessage({id: "search"});
 
 	return (

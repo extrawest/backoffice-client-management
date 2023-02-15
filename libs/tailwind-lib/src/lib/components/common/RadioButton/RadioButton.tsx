@@ -12,7 +12,10 @@ export const RadioButton: FC<RadioButtonProps> = ({children, ...rest}) => {
 				/>
 				<span className="block peer-checked/radio:bg-blue-600 w-5 h-5 border-1 border-solid border-grayscale-400 rounded-circle"/>
 			</div>
-			<label htmlFor={rest.id} className="w-full">
+			<label
+				htmlFor={rest.id}
+				className="w-full"
+			>
 				{children}
 			</label>
 		</div>

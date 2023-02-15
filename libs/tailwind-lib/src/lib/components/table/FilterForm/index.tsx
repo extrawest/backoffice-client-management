@@ -1,10 +1,7 @@
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
-import {
-	Divider, SelectChangeEvent, Typography, Box
-} from "@mui/material";
 import { Form, Formik } from "formik";
-import { FC, FormEvent } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FC } from "react";
+import { FormattedMessage } from "react-intl";
 import { UserIcon } from "../../../icons";
 import { Button } from "../../common/Button/Button";
 import { FormikSelect } from "../../common/FormikSelect/FormikSelect";
@@ -17,7 +14,6 @@ export const FilterForm: FC<FilterFormProps>= ({
 	activePriority,
 	setActivePriority
 }) => {
-	const intl = useIntl();
 	const processedPriority = () => {
 		const data = Object.values(PriorityEnum).map((
 			priority, index
@@ -31,22 +27,6 @@ export const FilterForm: FC<FilterFormProps>= ({
 
 	const initialValue = {
 		priority: ""
-	};
-
-	const handleChangeRole = (event: SelectChangeEvent<string>) => {
-		setActivePriority(event.target.value);
-	};
-
-	const handleSubmit = () => {
-		handleFilter({ priority: activePriority});
-		isFilterActive(true);
-		handleClose();
-	};
-
-	const handleClear = () => {
-		setActivePriority("");
-		handleFilter({ priority: "" });
-		isFilterActive(false);
 	};
 	return (
 		<Formik

@@ -1,4 +1,5 @@
 import {
+	ChangeEventHandler,
 	Dispatch,
 	FC,
 	SetStateAction,
@@ -125,8 +126,8 @@ export const ClientsContainer: FC = () => {
 		[ticketsSnapshot]
 	);
 
-	const handleChangeRowsNumber = (e: any) => {
-		const currentLimit = e.target.value as number;
+	const handleChangeRowsNumber: ChangeEventHandler<HTMLSelectElement> = (e) => {
+		const currentLimit = +e.target.value;
 		setLimitElements(currentLimit);
 		getTicketsCollection(
 			setTicketsSnapshot,

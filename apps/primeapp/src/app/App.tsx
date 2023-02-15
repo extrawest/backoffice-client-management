@@ -1,8 +1,7 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
-import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
 import { SnackbarProvider } from "notistack";
 import { abilityCheckStorage, AbilityContext } from "@mono-redux-starter/shared/permissions";
 import { YupGlobalLocale } from "@mono-redux-starter/shared/ui";
@@ -12,7 +11,6 @@ import {
 	AuthContext,
 } from "@mono-redux-starter/primeapplib";
 import AppRoutes from "../routes";
-import React from "react";
 
 const ability = abilityCheckStorage(store);
 

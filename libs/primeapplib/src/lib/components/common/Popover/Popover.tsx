@@ -1,10 +1,10 @@
 import { Button, ButtonProps } from "primereact/button";
-import { OverlayPanel, OverlayPanelProps } from "primereact/overlaypanel";
+import { OverlayPanel } from "primereact/overlaypanel";
 import { FC, useRef } from "react";
 import { PopoverProps } from "./Popover.types";
 
 export const Popover: FC<PopoverProps> = ({ children, buttonLabel, icon }) => {
-	const ref = useRef<any>(null);
+	const ref = useRef<OverlayPanel>(null);
 
 	const handleClick: ButtonProps["onClick"] = (e) => {
 		ref.current && ref.current.toggle(e);

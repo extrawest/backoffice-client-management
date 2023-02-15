@@ -1,12 +1,10 @@
-import { SelectValue } from "@mono-redux-starter/shared/types";
-import { hasErrorForMetaField, mergeStrings } from "@mono-redux-starter/shared/utils";
+import { hasErrorForMetaField } from "@mono-redux-starter/shared/utils";
 import { Field, FieldProps } from "formik";
-import { FC, useCallback } from "react";
+import { FC } from "react";
 import { TypographyEnum } from "../../../types/typography";
 import { Typography } from "../Typography/Typography";
 import { FormikSelectProps } from "./FormikSelect.types";
 import { Dropdown } from "primereact/dropdown";
-import TreeNode from "primereact/treenode";
 import { useIntl } from "react-intl";
 
 export const FormikSelect: FC<FormikSelectProps> = ({

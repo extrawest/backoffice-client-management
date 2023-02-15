@@ -23,8 +23,10 @@ export interface Tickets {
 	reference: DocumentReference<Clients>
 }
 
-export interface TicketsFilterDataType {
-	priority: PriorityEnum | string,
+export interface TicketsFilterValue {
+	priority: PriorityEnum | string
+}
+export interface TicketsFilterDataType extends TicketsFilterValue {
 	sortAsc: boolean,
 	sortField: TicketSortFields | string | Key
 }

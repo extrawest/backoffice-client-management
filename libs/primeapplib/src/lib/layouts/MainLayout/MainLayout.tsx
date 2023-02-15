@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { MainLayoutProps } from "./MainLayout.types";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { useIntl } from "react-intl";
@@ -6,11 +6,6 @@ import { SearchIcon } from "../../icons";
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 	const intl = useIntl();
-	const [open, setOpen] = useState(false);
-
-	const toggleDrawer = () => {
-		setOpen(!open);
-	};
 
 	const fieldText = intl.formatMessage({id: "search"});
 

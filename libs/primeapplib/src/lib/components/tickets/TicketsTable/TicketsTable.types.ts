@@ -1,12 +1,11 @@
-import { Tickets, TicketsFilterDataType } from "@mono-redux-starter/shared/types";
+import { Tickets, TicketsFilterValue } from "@mono-redux-starter/shared/types";
 import { DataTableProps } from "primereact/datatable";
-import { ChangeEventHandler } from "react";
 
 export interface TicketsTableProps {
 	data: Tickets[],
 	totalElements: number,
 	currentPage: number,
 	limit: number,
-	handleUpdateTableData: (value: TicketsFilterDataType) => void,
+	handleUpdateTableData: (value: TicketsFilterValue) => void,
 	handleChangePage: DataTableProps["onPage"],
 }

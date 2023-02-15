@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import {
@@ -64,12 +63,12 @@ export const ClientForm: FC<ClientFormProps> = ({
 							<FormikField
 								id="email"
 								name="email"
-								placeholder={lastNameText}
+								placeholder={emailText}
 								startAdornment={<UserIcon />}
 								value={values["email"]}
 							/>
 							<FormikCalendar
-								placeholder="Select date"
+								placeholder={dateText}
 								name="date"
 							/>
 						</div>

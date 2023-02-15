@@ -1,25 +1,18 @@
 
-import { TicketSortFields } from "@mono-redux-starter/shared/types";
 import { convertToDate, convertToDateTime } from "@mono-redux-starter/shared/utils";
-import { GridSortItem, GridSortModel } from "@mui/x-data-grid";
 import {
 	FC,
 	useEffect,
 	useState
 } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
-import { Item } from "semantic-ui-react";
-import { ArrowIcon } from "../../../icons";
+import { useIntl } from "react-intl";
 import { CellWithCaption } from "../../common/CellWithCaption/CellWithCaption";
 import { ClientCell } from "../../common/ClientCell/ClientCell";
-import { IconButton } from "../../common/IconButton/IconButton";
 import { ImageWrapper } from "../../common/ImageWrapper/ImageWrapper";
 import { PriorityStatus } from "../../common/PriorityStatus/PriorityStatus";
 import { DeleteTicket } from "../../table/DeleteTicket/DeleteTicket";
 import { TableAction } from "../../table/TableAction";
 import { FilterValue } from "../../table/TableAction/TableAction.types";
-import { TablePagination } from "../../table/TablePagination";
-import { TableRowCounter } from "../../table/TableRowCounter";
 import { TicketsTableProps } from "./TicketsTable.types";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
@@ -34,17 +27,12 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 }) => {
 	const intl = useIntl();
 
-	const [sortValue, setSortValue] = useState<GridSortItem>({ field: "", sort: "asc" });
 	const [filterValue, setFilterValue] = useState<FilterValue>({ priority: "" });
 	useEffect(
 		() => {
-			handleUpdateTableData({
-				...filterValue,
-				sortAsc: sortValue ? sortValue.sort === "asc" : true,
-				sortField: (sortValue && sortValue.field) || TicketSortFields.DATE
-			});
+			handleUpdateTableData(filterValue);
 		},
-		[sortValue, filterValue]
+		[filterValue]
 	);
 
 	return (

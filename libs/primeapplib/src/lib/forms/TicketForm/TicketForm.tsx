@@ -3,8 +3,6 @@ import { FormattedMessage, useIntl } from "react-intl";
 import {
 	Form,
 	Formik,
-	FormikHandlers,
-	FormikHelpers
 } from "formik";
 import { validateShema } from "./TicketForm.schema";
 import type { TicketFormProps } from "./TicketForm.types";
@@ -14,7 +12,6 @@ import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import { FormikField } from "../../components/common/FormikField/FormikField";
 import { FormikSelect } from "../../components/common/FormikSelect/FormikSelect";
 import { Button } from "../../components/common/Button/Button";
-import TreeNode from "primereact/treenode";
 
 export const TicketForm: FC<TicketFormProps> = ({
 	isLoading,

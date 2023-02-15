@@ -5,20 +5,17 @@ import {
 	useEffect,
 	useState
 } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 import {
 	Tickets,
 	TicketSortFields,
-	TicketsFilterDataType
+	TicketsFilterValue
 } from "@mono-redux-starter/shared/types";
 import {
 	query,
-	startAfter,
-	endBefore,
 	where,
 	orderBy,
 	limit,
-	limitToLast,
 	getDocs,
 	DocumentData,
 	QueryDocumentSnapshot,
@@ -39,14 +36,12 @@ const getTicketsCollection = (
 	setTickets: Dispatch<SetStateAction<QueryDocumentSnapshot<DocumentData>[]>>,
 	setCount: Dispatch<SetStateAction<number>>,
 	uid?: string,
-	filterValues?: TicketsFilterDataType,
+	filterValues?: TicketsFilterValue,
 	currentTickets: QueryDocumentSnapshot<DocumentData>[] = [],
 
 ) => async () => {
 	const queryParams: Parameters<typeof query> = [ticketsCollectionRef];
 
-	const firstVisible = currentTickets.at(0);
-	const lastVisible = currentTickets.at(-1);
 	queryParams.push(where(
 		"manager_uid",
 		"==",
@@ -64,13 +59,8 @@ const getTicketsCollection = (
 			"<=",
 			filterValues.priority
 		));
-		filterValues.sortField !== TicketSortFields.PRIORITY && queryParams.push(orderBy(TicketSortFields.PRIORITY));
+		queryParams.push(orderBy(TicketSortFields.PRIORITY));
 	}
-
-	filterValues?.sortField && queryParams.push(orderBy(
-		String(filterValues.sortField),
-		filterValues.sortAsc ? "asc" : "desc"
-	));
 	const queryCollection = query(
 		...queryParams,
 		limit(10000)
@@ -90,7 +80,7 @@ export const ClientsContainer: FC = () => {
 	const [count, setCount] = useState<number>(0);
 	const [open, setOpen] = useState<boolean>(false);
 	const [limitElements, setLimitElements] = useState<number>(5);
-	const [filterValue, setFilterValue] = useState<TicketsFilterDataType>();
+	const [filterValue, setFilterValue] = useState<TicketsFilterValue>();
 	const { managerInfo } = useTypedSelector(state => state.authSlice);
 
 	const handleClose = () => {
@@ -119,7 +109,7 @@ export const ClientsContainer: FC = () => {
 		[ticketsSnapshot]
 	);
 
-	const handleUpdateTableData = (value: TicketsFilterDataType) => {
+	const handleUpdateTableData = (value: TicketsFilterValue) => {
 		setFilterValue(value);
 		getTicketsCollection(
 			setTicketsSnapshot,

@@ -3,7 +3,8 @@ import { CollectionEnum } from "@mono-redux-starter/shared/types";
 import { deleteDoc } from "firebase/firestore";
 import { Button } from "primereact/button";
 import {
-	FC, useContext, useState
+	FC,
+	useContext
 } from "react";
 import { useIntl } from "react-intl";
 import { ClientsContext } from "../../../containers/ClientsContainer/ClientsContainer.context";

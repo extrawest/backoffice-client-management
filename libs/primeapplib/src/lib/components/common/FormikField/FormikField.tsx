@@ -1,14 +1,8 @@
-import { hasErrorForMetaField, mergeStrings } from "@mono-redux-starter/shared/utils";
+import { hasErrorForMetaField } from "@mono-redux-starter/shared/utils";
 import { Field, FieldProps } from "formik";
-import { InputText, InputTextProps } from "primereact/inputtext";
-import {
-	FC,
-	useCallback,
-	useState
-} from "react";
-import { EyeIcon } from "../../../icons";
+import { InputText } from "primereact/inputtext";
+import { FC } from "react";
 import { TypographyEnum } from "../../../types/typography";
-import { IconButton } from "../IconButton/IconButton";
 import { Typography } from "../Typography/Typography";
 import { FormikFieldProps } from "./FormikField.types";
 
@@ -47,6 +41,6 @@ export const FormikField: FC<FormikFieldProps> = ({
 				</div>
 			);
 		}}
-	</Field>
+  </Field>
 	);
 };

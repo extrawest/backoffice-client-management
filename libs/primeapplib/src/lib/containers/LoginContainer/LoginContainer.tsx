@@ -32,8 +32,8 @@ export const LoginContainer: FC = () => {
 	const auth = getAuth(firebaseApp);
 	const [
 		signInWithEmailAndPassword,
-		user,
-		loading,
+		,
+		,
 		error,
 	] = useSignInWithEmailAndPassword(auth);
 
@@ -42,8 +42,6 @@ export const LoginContainer: FC = () => {
 	const [
 		signInWithGoogle,
 		googleUser,
-		googleLoading,
-		googleError
 	] = useSignInWithGoogle(auth);
 
 	useShowSnackBarMessage(

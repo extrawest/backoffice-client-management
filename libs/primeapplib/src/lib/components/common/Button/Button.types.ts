@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes } from "react";
 import { ButtonProps as PrimeButtonProps } from "primereact/button";
 
 export interface ButtonProps extends PrimeButtonProps {

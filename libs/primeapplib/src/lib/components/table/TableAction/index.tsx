@@ -3,7 +3,6 @@ import {
 	useState
 } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { AddIcon, FitlerIcon } from "../../../icons";
 import { TypographyEnum } from "../../../types/typography";
 import { Button } from "../../common/Button/Button";
 import { Modal } from "../../common/Modal/Modal";
@@ -19,7 +18,6 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
 	const [activePriority, setActivePriority] = useState<string>("");
 	const [isFilterActive, setIsFilterActive] = useState<boolean>(false);
 	const [openModal, setOpenModal] = useState<boolean>(false);
-	const [openFilter, setOpenFilter] = useState<boolean>(false);
 
 	const filterStatus = (value: boolean) => {
 		setIsFilterActive(value);

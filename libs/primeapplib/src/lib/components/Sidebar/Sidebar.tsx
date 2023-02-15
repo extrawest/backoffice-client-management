@@ -1,8 +1,7 @@
 import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { FC, useState } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { LogOutIcon } from "../../icons";
 import {
 	AppDispatch,
 	useTypedDispatch,

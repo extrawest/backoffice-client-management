@@ -1,8 +1,7 @@
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import { Form, Formik } from "formik";
-import TreeNode from "primereact/treenode";
 import { FC } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 import { UserIcon } from "../../../icons";
 import { Button } from "../../common/Button/Button";
 import { FormikSelect } from "../../common/FormikSelect/FormikSelect";

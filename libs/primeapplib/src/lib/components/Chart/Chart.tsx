@@ -1,9 +1,4 @@
-import {
-	FC,
-	useEffect,
-	useRef,
-	useState
-} from "react";
+import { FC } from "react";
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -13,8 +8,6 @@ import {
 	Title,
 	Tooltip,
 	Legend,
-	LegendItem,
-	ChartData,
 	ChartDataset
 } from "chart.js";
 import { Chart as ChartPrime } from "primereact/chart";

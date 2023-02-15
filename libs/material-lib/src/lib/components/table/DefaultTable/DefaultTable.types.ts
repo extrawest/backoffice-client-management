@@ -5,12 +5,11 @@ import {
 	GridCallbackDetails,
 	DataGridProps
 } from "@mui/x-data-grid";
-import { JSXElementConstructor, ReactElement } from "react";
 
 export interface DefaultTableProps extends DataGridProps {
 	rows: GridRowsProp,
 	columns: GridColDef[],
-	handleSort?: (model: GridSortModel, details: GridCallbackDetails<any>) => void,
+	handleSort?: (model: GridSortModel, details: GridCallbackDetails<"filter">) => void,
 	rowsPerPageOptions?: number[],
 	hideFooter?: boolean,
 }

@@ -11,7 +11,6 @@ import { ModalProps } from "./Modal.types";
 import {
 	headerSx, rootSx, contentSx, titleSx
 } from "./Modal.styles";
-import React from "react";
 
 export const Modal: FC<ModalProps> = ({
 	handleClose,

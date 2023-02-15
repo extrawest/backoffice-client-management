@@ -7,10 +7,7 @@ import {
 	Select,
 	Typography
 } from "@mui/material";
-import {
-	FC,
-	useState
-} from "react";
+import { FC } from "react";
 import { useIntl, FormattedMessage } from "react-intl";
 import { PriorityStatus } from "../PriorityStatus/PriorityStatus";
 import {
@@ -31,6 +28,7 @@ export const FormSelect: FC<SelectInputProps> = ({
 	label,
 	onChange,
 	onClick,
+	onBlur,
 	defaultValue,
 	description,
 	disabled,
@@ -39,13 +37,6 @@ export const FormSelect: FC<SelectInputProps> = ({
 	...rest
 }) => {
 	const intl = useIntl();
-	const [showPlaceholder, setShowPlaceholder] = useState<boolean>(true);
-	const handleFocusField = () => {
-		setShowPlaceholder(false);
-	};
-	const handleBlurField = () => {
-		placeholder && setShowPlaceholder(true);
-	};
 
 	const inputIsPriority = input === "priority";
 
@@ -80,8 +71,7 @@ export const FormSelect: FC<SelectInputProps> = ({
           name={input}
           IconComponent={KeyboardArrowDown}
           onChange={onChange}
-          onFocus={handleFocusField}
-          onBlur={handleBlurField}
+          onBlur={onBlur}
           defaultValue={data.length ? data[0].value : ""}
           value={data.length ? value : ""}
           disabled={!data.length || disabled}

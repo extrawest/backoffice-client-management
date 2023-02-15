@@ -10,7 +10,6 @@ import {
 	useState
 } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { ClientCreateFormWrapper } from "../../clients/ClientCreateFormWrapper/ClientCreateFormWrapper";
 import { Modal } from "../../common/Modal/Modal";
 import { TicketCreateFormWrapper } from "../../tickets/TicketCreateFormWrapper/TicketCreateFormWrapper";
 import { FilterForm } from "../FilterForm";
@@ -67,7 +66,7 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
           <Typography variant='body2'>
             <FormattedMessage id='add' />
           </Typography>
-        </IconButton>
+    </IconButton>
         <IconButton
           sx={filterButtonSx}
           onClick={handleOpen}

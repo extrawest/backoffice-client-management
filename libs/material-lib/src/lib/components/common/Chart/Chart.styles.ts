@@ -1,5 +1,4 @@
 import { SxProps, Theme } from "@mui/material";
-import { Color } from "chart.js";
 import { SxStyles } from "../../../types/styles";
 
 export const chartStyles: SxStyles = {

@@ -167,9 +167,13 @@ export const ClientsIcon = createSvgIcon(
 		/>
 		</g>
 		<defs>
-		<clipPath id="clip0_7_391">
-		<rect width="26" height="26" fill="white"/>
-		</clipPath>
+			<clipPath id="clip0_7_391">
+				<rect
+					width="26"
+					height="26"
+					fill="white"
+				/>
+			</clipPath>
 		</defs>
 	</>,
 	"ClientsIcon"

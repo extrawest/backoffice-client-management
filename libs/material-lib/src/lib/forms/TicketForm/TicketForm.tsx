@@ -2,13 +2,11 @@ import { FC } from "react";
 import { useIntl } from "react-intl";
 import {
 	Box,
-	TextField,
 	Typography
 } from "@mui/material";
 import {
 	Form,
 	Formik,
-	FormikHandlers,
 	FormikHelpers
 } from "formik";
 import { FormFieldText } from "../../components/common/FormFieldText/FormFieldText";
@@ -18,7 +16,6 @@ import type { TicketFormProps, TicketValues } from "./TicketForm.types";
 import { UserIcon } from "../../icons";
 import { commonFormStyles } from "../commonForm.styles";
 import { initialValues } from "./TicketForm.initialValue";
-import { DatePicker } from "@mui/x-date-pickers";
 import { FormSelect } from "../../components/common/FormSelect";
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import { SelectInputProps } from "../../components/common/FormSelect/FormSelect.types";

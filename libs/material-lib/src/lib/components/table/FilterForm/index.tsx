@@ -1,8 +1,10 @@
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import {
-	Divider, SelectChangeEvent, Typography, Box
+	Divider,
+	Box,
+	SelectProps
 } from "@mui/material";
-import { FC, FormEvent } from "react";
+import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { commonFormStyles } from "../../../forms/commonForm.styles";
 import Button from "../../common/Button/Button";
@@ -29,8 +31,10 @@ export const FilterForm: FC<FilterFormProps>= ({
 		return data;
 	};
 
-	const handleChangeRole = (event: SelectChangeEvent<string>) => {
-		setActivePriority(event.target.value);
+	const handleChangeRole: SelectProps["onChange"] = (event) => {
+		if(event.target?.value){
+			setActivePriority(String(event.target.value));
+		}
 	};
 
 	const handleSubmit = () => {

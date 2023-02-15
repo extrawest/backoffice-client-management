@@ -1,6 +1,5 @@
 import { Tickets, TicketsFilterDataType } from "@mono-redux-starter/shared/types";
 import { SelectProps } from "@mui/material";
-import { ChangeEvent } from "react";
 
 export interface TicketsTableProps {
 	data: Tickets[],

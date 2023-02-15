@@ -1,4 +1,4 @@
-import { alpha, Theme } from "@mui/material";
+import { alpha } from "@mui/material";
 import { theme } from "../../theme";
 
 export const mainLayoutStyles = {

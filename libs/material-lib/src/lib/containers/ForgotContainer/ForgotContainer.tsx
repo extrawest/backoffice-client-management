@@ -17,7 +17,7 @@ export const ForgotContainer: FC = () => {
 	};
 	const [
 		sendPasswordResetEmail,
-		sending,
+		,
 		error
 	] = useSendPasswordResetEmail(auth);
 

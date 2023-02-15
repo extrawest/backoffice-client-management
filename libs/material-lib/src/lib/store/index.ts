@@ -3,7 +3,6 @@ import {
 	useDispatch,
 	useSelector
 } from "react-redux";
-import logger from "redux-logger";
 import {
 	configureStore,
 	combineReducers,
@@ -32,7 +31,6 @@ import {
 	unAuthenticatedMiddleware,
 	RESET_STATE_ACTION_TYPE
 } from "@mono-redux-starter/redux";
-import { isDevelopmentMode } from "@mono-redux-starter/shared/utils";
 
 const secretKey: string = process.env["NX_CRYPTO_JS_KEY"] as string;
 

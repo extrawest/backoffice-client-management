@@ -1,8 +1,7 @@
 import { SimpleDataList } from "@mono-redux-starter/shared/types";
 import {
 	Box,
-	Grid,
-	Typography
+	Grid
 } from "@mui/material";
 import { FC } from "react";
 import { useIntl } from "react-intl";

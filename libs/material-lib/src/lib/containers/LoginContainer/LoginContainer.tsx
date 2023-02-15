@@ -29,13 +29,10 @@ export const LoginContainer: FC = () => {
 	};
 
 	const [
-		signInWithEmailAndPassword,
-		user,
-		loading,
-		error,
+		signInWithEmailAndPassword
 	] = useSignInWithEmailAndPassword(auth);
 
-	const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+	const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
 
 	const onSubmit = async (
 		values: Values, form: FormikHelpers<Values>

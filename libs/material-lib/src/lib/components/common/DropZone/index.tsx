@@ -5,15 +5,8 @@ import {
 	useEffect
 } from "react";
 import { useDropzone } from "react-dropzone";
-import { FormattedMessage, useIntl } from "react-intl";
-import {
-	Box,
-	Grid,
-	Typography,
-	useTheme
-} from "@mui/material";
+import { Box } from "@mui/material";
 import { styles } from "./DropZone.sx";
-import { Check } from "@mui/icons-material";
 import { Image } from "../Image/Image";
 
 interface DropZoneProps {
@@ -21,11 +14,8 @@ interface DropZoneProps {
 }
 
 const DropZone: FC<DropZoneProps> = ({ handleFile }) => {
-	const theme = useTheme();
 	const [file, setFile] = useState<File | null>(null);
 	const [url, setUrl] = useState<string | undefined>(undefined);
-
-	const intl = useIntl();
 
 	const onDrop = useCallback(
 		(acceptedFiles: File[]) => {

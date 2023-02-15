@@ -45,10 +45,10 @@ export const TaskList: FC = () => {
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue="female"
         name="radio-buttons-group"
-      >
+			>
 				<Grid
 					container
-					>
+				>
 					{
 						data.map((
 							item: TaskDataList,

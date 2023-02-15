@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import {DataGrid, GridNoRowsOverlay} from "@mui/x-data-grid";
+import { FC } from "react";
+import { DataGrid } from "@mui/x-data-grid";
 import { DefaultTableProps } from "./DefaultTable.types";
 import { EmptyTable } from "../EmptyTable/EmptyTable";
 import { Theme } from "@mui/material";
@@ -7,7 +7,6 @@ import { Theme } from "@mui/material";
 export const DefaultTable: FC<DefaultTableProps> = ({ rows, columns, handleSort, ...rest}) => {
 	return (
     <DataGrid
-      // checkboxSelection={rest.checkboxSelection ?? true}
       disableSelectionOnClick
       rows={rows}
       columns={columns}

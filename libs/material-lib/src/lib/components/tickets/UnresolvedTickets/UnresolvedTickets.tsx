@@ -5,7 +5,6 @@ import {
 } from "@mui/material";
 import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { commonContainers } from "../../../containers/commonContainers.styles";
 import Button from "../../common/Button/Button";
 import { GridList } from "../../common/GridList/GridList";
 import { unresolvedTicketsStyles } from "./UnresolvedTickets.styles";

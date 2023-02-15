@@ -10,11 +10,9 @@ import Button from "../../components/common/Button/Button";
 import { validateShema } from "./RegistrationForm.schema";
 import type { RegistrationFormProps } from "./RegistrationForm.types";
 import { LockIcon, UserIcon } from "../../icons";
-import { FormCheckbox } from "../../components/common/FormCheckbox";
 import Link from "../../components/common/Link/Link";
 import { AppRouteEnum } from "../../types";
 import { commonFormStyles } from "../commonForm.styles";
-import { Visibility } from "semantic-ui-react";
 
 export const RegistrationForm: FC<RegistrationFormProps> = ({
 	initialValues,

@@ -6,14 +6,12 @@ import {
 } from "@mui/material";
 import { FC, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { commonContainers } from "../../../containers/commonContainers.styles";
 import { AppRouteEnum } from "../../../types";
 import Link from "../../common/Link/Link";
 import { Modal } from "../../common/Modal/Modal";
 import { TaskList } from "../../common/TaskList/TaskList";
 import { tasksStyles } from "./Tasks.styles";
 import { TicketCreateFormWrapper } from "../TicketCreateFormWrapper/TicketCreateFormWrapper";
-import { mergeStyles } from "@mono-redux-starter/shared/utils";
 
 export const Tasks: FC = () => {
 	const intl = useIntl();

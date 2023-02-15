@@ -1,3 +1,3 @@
 import { LinkBaseProps } from "@mui/material";
 
-export type LinkProps = LinkBaseProps
+export type LinkProps = LinkBaseProps;

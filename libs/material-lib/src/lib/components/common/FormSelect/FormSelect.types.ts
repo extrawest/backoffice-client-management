@@ -1,18 +1,17 @@
 import { SelectValue } from "@mono-redux-starter/shared/types";
 import {
-	SelectChangeEvent,
+	SelectProps,
 	SxProps,
 	Theme
 } from "@mui/material";
-import { FocusEvent } from "react";
 
 export interface SelectInputProps {
 	label?: string,
 	input: string,
 	disabled?: boolean,
 	value: string | number;
-	onBlur?: (e: FocusEvent<any>) => void;
-	onChange?: (e: SelectChangeEvent<any>) => void;
+	onBlur?: SelectProps["onBlur"];
+	onChange?: SelectProps["onChange"];
 	onClick?: (value: string | number) => void
 	hasError?: boolean | string;
 	helperText?: string;

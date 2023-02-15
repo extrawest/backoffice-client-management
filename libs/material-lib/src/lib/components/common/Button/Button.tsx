@@ -8,7 +8,6 @@ import {
 import Loader from "../Loader/Loader";
 import { buttonStyles } from "./Button.styles";
 import { ButtonProps } from "./Button.types";
-import { mergeStyles } from "@mono-redux-starter/shared/utils";
 
 export const Button: FC<ButtonProps> = ({
 	children,

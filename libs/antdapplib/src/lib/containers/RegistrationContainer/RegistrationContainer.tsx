@@ -32,16 +32,12 @@ export const RegistrationContainer: FC = () => {
 	};
 	const [
 		createUserWithEmailAndPassword,
-		user,
-		loading,
+		,
+		,
 		createUserError,
 	] = useCreateUserWithEmailAndPassword(auth);
 
-	const [
-		sendEmailVerification,
-		sending,
-		verificationError
-	] = useSendEmailVerification(auth);
+	const [sendEmailVerification] = useSendEmailVerification(auth);
 
 	useShowSnackBarMessage(
 		!!createUserError,

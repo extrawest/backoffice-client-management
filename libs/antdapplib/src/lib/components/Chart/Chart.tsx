@@ -18,12 +18,6 @@ import {
 import { Line } from "react-chartjs-2";
 import { data, options } from "./Chart.data";
 import { FormattedMessage } from "react-intl";
-import {
-	Container,
-	List,
-	ListContent,
-	ListItem
-} from "semantic-ui-react";
 import { chartStyles } from "./Chart.styles";
 import { chart1, grayscale400 } from "@mono-redux-starter/shared/color";
 import { TypographyTitle } from "../common/TypographyTitle/TypographyTitle";

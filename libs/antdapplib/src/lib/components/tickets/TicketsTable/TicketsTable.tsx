@@ -5,14 +5,12 @@ import {
 	useEffect,
 	useState
 } from "react";
-import { useIntl } from "react-intl";
 import { TableAction } from "../../table/TableAction";
 import { FilterValue } from "../../table/TableAction/TableAction.types";
 import { TicketsTableProps } from "./TicketsTable.types";
 import {
 	Col,
 	Divider,
-	Row,
 	Table,
 	TableProps
 } from "antd";
@@ -28,7 +26,6 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 	handleUpdateTableData,
 	handleChangePage,
 }) => {
-	const intl = useIntl();
 
 	const [sortValue, setSortValue] = useState<SorterResult<Tickets>>({ columnKey: "", order: "ascend" });
 	const [filterValue, setFilterValue] = useState<FilterValue>({ priority: "" });

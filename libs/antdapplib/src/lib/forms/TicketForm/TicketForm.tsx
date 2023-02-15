@@ -5,7 +5,6 @@ import { UserIcon } from "../../icons";
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import {
 	Button,
-	Col,
 	Divider,
 	Form,
 	Input,

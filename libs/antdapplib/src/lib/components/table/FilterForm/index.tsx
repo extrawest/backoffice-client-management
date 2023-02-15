@@ -1,11 +1,14 @@
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 import {
-	Button, Col, Divider, Form, Input, Row
+	Button,
+	Col,
+	Divider,
+	Form,
+	Row
 } from "antd";
 import { FC } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { formStyles } from "../../../forms/commonForms.styles";
-import { UserIcon } from "../../../icons";
 import { Select } from "../../common/Select/Select";
 import { FilterFormProps } from "./FilterForm.types";
 
@@ -16,7 +19,6 @@ export const FilterForm: FC<FilterFormProps>= ({
 	activePriority,
 	setActivePriority
 }) => {
-	const intl = useIntl();
 	const processedPriority = () => {
 
 		const data = Object.values(PriorityEnum).map((
@@ -39,7 +41,10 @@ export const FilterForm: FC<FilterFormProps>= ({
 				name="priority"
 				rules={[{ required: true }]}
 			>
-				<Select defaultValue={activePriority} data={processedPriority()} />
+				<Select
+					defaultValue={activePriority}
+					data={processedPriority()}
+				/>
 			</Form.Item>
 			<Divider dashed/>
 			<Row

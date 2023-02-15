@@ -7,7 +7,6 @@ import {
 } from "@mono-redux-starter/shared/color";
 import { TaskStatusEnum } from "@mono-redux-starter/shared/types";
 import { FC } from "react";
-import { TypographyEnum } from "../../../types/typography";
 import { TypographyParagraph } from "../../common/TypographyParagraph/TypographyParagraph";
 import { TaskStatusProps } from "./TaskStatus.types";
 import { taskStatusStyle } from "./TaskStatys.styles";

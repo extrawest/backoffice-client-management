@@ -18,7 +18,6 @@ import {
 	where,
 	orderBy,
 	limit,
-	limitToLast,
 	getDocs,
 	DocumentData,
 	QueryDocumentSnapshot,

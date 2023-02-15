@@ -22,9 +22,7 @@ import {
 	Divider,
 	Drawer,
 	Menu,
-	MenuProps,
-	Row,
-	Space
+	Row
 } from "antd";
 import { TypographyTitle } from "../common/TypographyTitle/TypographyTitle";
 import { TypographyParagraph } from "../common/TypographyParagraph/TypographyParagraph";
@@ -54,10 +52,6 @@ export const Sidebar: FC = () => {
 
 	const handleCloseSidebar = () => {
 		setVisible(false);
-	};
-
-	const hadnleChangeCurrentMenuItem: MenuProps["onClick"] = e => {
-		setCurrentMenuItem(e.key);
 	};
 
 	useEffect(

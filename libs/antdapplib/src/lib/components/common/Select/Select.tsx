@@ -2,8 +2,6 @@ import { FC } from "react";
 import { SelectProps } from "./Select.types";
 import { useIntl } from "react-intl";
 import { Select as AntdSelect } from "antd";
-import { Option } from "antd/es/mentions";
-import { selectStyles } from "./Select.styles";
 
 export const Select: FC<SelectProps> = ({
 	data,
@@ -14,7 +12,6 @@ export const Select: FC<SelectProps> = ({
 		<AntdSelect
 			placeholder={intl.formatMessage({id: "select"})}
 			allowClear
-			style={selectStyles.select}
 			className="selectDropdown"
 			{...rest}
 		>

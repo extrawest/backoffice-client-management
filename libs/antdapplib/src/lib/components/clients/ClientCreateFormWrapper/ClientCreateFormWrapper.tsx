@@ -70,7 +70,7 @@ const handleSubmit = (
 
 export const ClientCreateFormWrapper: FC<ClientCreateFormWrapperProps> = ({ handleClose }) => {
 	const [image, setImage] = useState<File | null>(null);
-	const [uploadFile, uploading, snapshot, error] = useUploadFile();
+	const [uploadFile] = useUploadFile();
 
 	const handleFile = (file: File | null) => {
 		file && setImage(file);

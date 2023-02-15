@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { MainLayoutProps } from "./MainLayout.types";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { useIntl } from "react-intl";

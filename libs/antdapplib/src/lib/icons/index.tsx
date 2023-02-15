@@ -316,7 +316,13 @@ export const ArrowIcon: FC<{className?: string}> = ({className}) => (
 );
 
 export const MenuIcon = () => (
-	<svg width="36px" height="36px" viewBox="0 0 64 64" fill="none" stroke="#B6B6B6">
+	<svg
+		width="36px"
+		height="36px"
+		viewBox="0 0 64 64"
+		fill="none"
+		stroke="#B6B6B6"
+	>
 		<rect
 			x="31.5"
 			y="31.5"

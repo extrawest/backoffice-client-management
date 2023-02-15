@@ -1,6 +1,5 @@
 import { Tickets, TicketSortFields } from "@mono-redux-starter/shared/types";
-import { convertToDate, convertToDateTime } from "@mono-redux-starter/shared/utils";
-import { GridColumns } from "@mui/x-data-grid";
+import { convertToDate } from "@mono-redux-starter/shared/utils";
 import { ColumnsType } from "antd/es/table";
 import { FormattedMessage } from "react-intl";
 import { CellWithCaption } from "../../common/CellWithCaption/CellWithCaption";

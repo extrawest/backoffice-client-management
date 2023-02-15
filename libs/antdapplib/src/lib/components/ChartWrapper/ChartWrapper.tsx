@@ -1,6 +1,4 @@
-import { grayscale400 } from "@mono-redux-starter/shared/color";
 import { SimpleDataList } from "@mono-redux-starter/shared/types";
-import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { Col } from "antd";
 import { FC } from "react";
 import { useIntl } from "react-intl";

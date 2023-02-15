@@ -2,10 +2,8 @@ import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import type { ForgotFormProps } from "./ForgotForm.types";
 import { UserIcon } from "../../icons";
-import { AppRouteEnum } from "../../types";
 import {
 	Button,
-	Divider,
 	Form,
 	Input,
 	Row
@@ -33,7 +31,7 @@ export const ForgotForm: FC<ForgotFormProps> = ({
 			>
 
 				<Input
-					placeholder={intl.formatMessage({id: "template.email"})}
+					placeholder={loginText}
 					prefix={<UserIcon />}
 				/>
 			</Form.Item>

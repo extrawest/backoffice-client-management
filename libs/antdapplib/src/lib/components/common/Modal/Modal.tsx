@@ -1,6 +1,5 @@
 
 import { FC } from "react";
-import { TypographyEnum } from "../../../types/typography";
 import { ModalProps } from "./Modal.types";
 import { Modal as AntdModal } from "antd";
 import { pxToRem } from "@mono-redux-starter/shared/utils";

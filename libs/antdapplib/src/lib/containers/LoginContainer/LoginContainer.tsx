@@ -1,6 +1,5 @@
 import { FC, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FormikHelpers } from "formik";
 import { LoginForm, Values } from "../../forms/LoginForm";
 import { useTypedDispatch, useTypedSelector } from "../../store";
 import { AppRouteEnum } from "../../types";

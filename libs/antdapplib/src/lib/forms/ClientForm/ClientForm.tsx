@@ -1,10 +1,8 @@
 /* eslint-disable react/no-unknown-property */
 import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { validateShema } from "./ClientForm.schema";
 import type { ClientFormProps } from "./ClientForm.types";
 import { UserIcon } from "../../icons";
-import { initialValues } from "./ClientForm.initialValue";
 import {
 	Button,
 	Col,

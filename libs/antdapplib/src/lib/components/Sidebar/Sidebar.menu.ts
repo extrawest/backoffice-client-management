@@ -1,10 +1,6 @@
 import { IntlShape } from "react-intl";
 import {
 	DashboardIcon,
-	TeamIcon,
-	OffersIcon,
-	PartnersIcon,
-	FinancesIcon,
 	ClientsIcon
 } from "../../icons";
 import { AppRouteEnum } from "../../types";

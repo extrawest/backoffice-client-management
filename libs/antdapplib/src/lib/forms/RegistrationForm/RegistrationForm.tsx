@@ -44,7 +44,7 @@ export const RegistrationForm: FC<RegistrationFormProps> = ({
 						rules={[{ required: true, message: "Required" }]}
 					>
 						<Input
-							placeholder={emailText}
+							placeholder={firstNameText}
 							prefix={<UserIcon />}
 						/>
 					</Form.Item>
@@ -58,7 +58,7 @@ export const RegistrationForm: FC<RegistrationFormProps> = ({
 					>
 
 						<Input
-							placeholder={firstNameText}
+							placeholder={lastNameText}
 							prefix={<UserIcon />}
 						/>
 					</Form.Item>
@@ -71,7 +71,7 @@ export const RegistrationForm: FC<RegistrationFormProps> = ({
 
 				<Input
 					type="email"
-					placeholder={lastNameText}
+					placeholder={emailText}
 					prefix={<UserIcon />}
 				/>
 			</Form.Item>

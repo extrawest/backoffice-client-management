@@ -1,5 +1,5 @@
 import { FilterOutlined, PlusOutlined } from "@ant-design/icons";
-import { commonWhite, grayscale600 } from "@mono-redux-starter/shared/color";
+import { grayscale600 } from "@mono-redux-starter/shared/color";
 import {
 	Button, Divider, Row
 } from "antd";

@@ -1,7 +1,4 @@
-import {
-	FC,
-	useState
-} from "react";
+import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import type { LoginFormProps } from "./LoginForm.types";
 import {
@@ -17,7 +14,6 @@ import {
 	Input,
 	Row,
 } from "antd";
-import Link from "antd/es/typography/Link";
 import { AppRouteEnum } from "../../types";
 
 export const LoginForm: FC<LoginFormProps> = ({
@@ -26,13 +22,11 @@ export const LoginForm: FC<LoginFormProps> = ({
 	onSubmit
 }) => {
 	const intl = useIntl();
-	const [checked, setChecked] = useState(false);
 
 	const loginText = intl.formatMessage({
 		id: "template.email",
 		defaultMessage: "Email"
 	});
-	const form = Form.useForm();
 
 	return (
 		<Form
@@ -45,7 +39,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 
 				<Input
 					type="email"
-					placeholder={intl.formatMessage({id: "template.email"})}
+					placeholder={loginText}
 					prefix={<UserIcon />}
 				/>
 			</Form.Item>
@@ -80,7 +74,10 @@ export const LoginForm: FC<LoginFormProps> = ({
 				</Col>
 			</Row>
 			<Divider dashed/>
-			<Row align="middle" justify="center">
+			<Row
+align="middle"
+justify="center"
+			>
 				<Button
 					type="primary"
 					htmlType="submit"

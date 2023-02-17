@@ -23,7 +23,8 @@ export const MenuItem: FC<MenuItemProps> = ({
 				to={href}
 				style={({isActive}) => ({
 					...menuItemStyles.link,
-					fontWeight: isActive ? 600 : 400
+					fontWeight: isActive ? 700 : 400,
+					textDecoration: isActive ? "underline" : "none"
 				})}
 				onClick={handleClick}
 			>

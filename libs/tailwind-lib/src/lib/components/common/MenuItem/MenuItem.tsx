@@ -13,7 +13,7 @@ export const MenuItem: FC<MenuItemProps> = ({ href, title, icon}) => {
 				/>
 				<NavLink
 					to={href}
-					className={({isActive}) => ` ${isActive ? "font-medium" : "font-normal"} w-full inline-flex decoration-none cursor-pointer outline-none hover:opacity-70 text-lg`}
+					className={({isActive}) => ` ${isActive ? "font-bold underline" : "font-normal"} w-full inline-flex decoration-none cursor-pointer outline-none hover:opacity-70 text-lg`}
 				>
 					{title}
 				</NavLink>

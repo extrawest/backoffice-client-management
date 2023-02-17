@@ -22,7 +22,8 @@ export const menuItemStyles = {
 		cursor: "pointer",
 		outline: "none",
 		"&.active": {
-			fontWeight: 600,
+			fontWeight: 700,
+			textDecoration: "underline"
 		},
 		"&:hover": {
 			opacity: "0.7",

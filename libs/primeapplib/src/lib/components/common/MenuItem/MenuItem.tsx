@@ -17,7 +17,7 @@ export const MenuItem: FC<MenuItemProps> = ({
 			/>
 			<NavLink
 				to={href}
-				className={({isActive}) => ` ${isActive ? "font-bold" : "font-normal"} w-full inline-flex no-underline cursor-pointer outline-none hover:opacity-70 text-lg text-color`}
+				className={({isActive}) => ` ${isActive ? "font-bold underline" : "font-normal"} w-full inline-flex no-underline cursor-pointer outline-none hover:opacity-70 text-lg text-color`}
 				onClick={handleClick}
 			>
 				{title}

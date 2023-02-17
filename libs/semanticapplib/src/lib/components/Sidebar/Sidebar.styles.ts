@@ -20,7 +20,7 @@ export const sidebarStyles: CSSStyles = {
 		alignItems: "flex-start"
 	},
 	menuWrapper: {
-		height: "95%",
+		height: "65%",
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "flex-start",
@@ -33,5 +33,11 @@ export const sidebarStyles: CSSStyles = {
 		border: "none",
 		boxShadow: "none",
 		gap: pxToRem(10)
+	},
+	copyright: {
+		display: "flex",
+		alignItems: "center",
+		gap: pxToRem(8),
+		marginTop: pxToRem(10)
 	}
 };

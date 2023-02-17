@@ -1,6 +1,7 @@
 import { updateIsLoggedIn } from "@mono-redux-starter/redux";
+import { pxToRem } from "@mono-redux-starter/shared/utils";
 import { FC } from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import {
 	Container,
@@ -8,6 +9,7 @@ import {
 	GridColumn,
 	Menu
 } from "semantic-ui-react";
+import { ExtrawestIcon } from "../../icons";
 import {
 	AppDispatch,
 	useTypedDispatch,
@@ -42,6 +44,7 @@ export const Sidebar: FC<SidebarProps> = ({handleClose}) => {
 		>
 			<Grid
 				columns={1}
+				style={{height: "100%"}}
 			>
 				<GridColumn style={sidebarStyles.sidebarTitleWrapper}>
 					<Image
@@ -73,12 +76,20 @@ export const Sidebar: FC<SidebarProps> = ({handleClose}) => {
 							/>)
 						}
 					</Menu>
-					<Button
-						onClick={handleLogOut}
-						content={intl.formatMessage({id: "template.signOut"})}
-						icon="sign out"
-						type="button"
-					/>
+					<GridColumn style={{marginTop: pxToRem(20)}}>
+						<Button
+							onClick={handleLogOut}
+							content={intl.formatMessage({id: "template.signOut"})}
+							icon="sign out"
+							type="button"
+						/>
+						<div style={sidebarStyles.copyright}>
+							<Typography type={TypographyEnum.SUBTITLE1}>
+								<FormattedMessage id="poweredBy" />
+							</Typography>
+							<ExtrawestIcon />
+						</div>
+					</GridColumn>
 				</GridColumn>
 			</Grid>
 		</Container>

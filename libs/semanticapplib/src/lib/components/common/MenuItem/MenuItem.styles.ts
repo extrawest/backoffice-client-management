@@ -15,6 +15,6 @@ export const menuItemStyles: CSSStyles = {
 		cursor: "pointer",
 		outline: "none",
 		fontSize: pxToRem(18),
-		color: grayscale600
+		padding: `${pxToRem(8)} ${pxToRem(15)}`
 	}
 };

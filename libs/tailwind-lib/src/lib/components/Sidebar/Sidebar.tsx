@@ -2,7 +2,7 @@ import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { LogOutIcon } from "../../icons";
+import { ExtrawestIcon, LogOutIcon } from "../../icons";
 import {
 	AppDispatch,
 	useTypedDispatch,
@@ -62,19 +62,28 @@ export const Sidebar: FC = () => {
 						/>)
 					}
 				</ul>
-				<Button
-					onClick={handleLogOut}
-					extraClasses="flex items-center gap-6 px-4 py-2"
-				>
-					<LogOutIcon
-						size={20}
-						className="overflow-visible"
-						fill="white"
-					/>
-					<Typography>
-						<FormattedMessage id="template.signOut"/>
-					</Typography>
-				</Button>
+
+				<div className="mt-8">
+					<Button
+						onClick={handleLogOut}
+						extraClasses="flex items-center gap-6 px-4 py-2"
+					>
+						<LogOutIcon
+							size={20}
+							className="overflow-visible"
+							fill="white"
+						/>
+						<Typography>
+							<FormattedMessage id="template.signOut"/>
+						</Typography>
+					</Button>
+					<div className="flex justify-start align-center gap-1 mt-4">
+						<Typography type={TypographyEnum.SUBTITLE1}>
+							<FormattedMessage id="poweredBy" />
+						</Typography>
+						<ExtrawestIcon />
+					</div>
+				</div>
 			</div>
 		</div>
 	);

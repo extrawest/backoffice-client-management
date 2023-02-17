@@ -92,5 +92,11 @@ export const sidebarStyles: SxStyles =  {
 		minHeight: theme.spacing(47 / 8),
 		display: "flex",
 		alignItems: "center"
+	},
+	poweredWrapper: {
+		marginTop: theme.spacing(10/8),
+		display: "flex",
+		gap: theme.spacing(8/8),
+		alignItems: "center"
 	}
 };

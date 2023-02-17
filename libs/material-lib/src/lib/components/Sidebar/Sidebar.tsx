@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import {
 	Box,
 	MenuList,
+	SvgIcon,
 	Typography
 } from "@mui/material";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { logOut, updateIsLoggedIn } from "@mono-redux-starter/redux";
 import {
 	AppDispatch,
@@ -19,6 +20,8 @@ import { sidebarStyles } from "./Sidebar.styles";
 import { Image } from "../common/Image/Image";
 import { Logout } from "@mui/icons-material";
 import { getContentLinks } from "./Sidebar.menu";
+import { ExtrawestIcon } from "../../icons";
+import { menuItemStyles } from "../common/MenuItem/MenuItem.styles";
 
 export const Sidebar: FC = () => {
 	const intl = useIntl();
@@ -73,26 +76,43 @@ export const Sidebar: FC = () => {
 						/>)
 					}
 				</MenuList>
-				<Button
-					variant="text"
-					sx={{
-						...sidebarStyles["btnOut"],
-					}}
-					onClick={handleLogOut}
-					isLoading={isLoading}
-					isShowText
-				>
-					<Logout />
-					<Typography
-						variant="body1"
-						fontWeight="400"
+				<Box>
+					<Button
+						variant="text"
+						sx={{
+							...sidebarStyles["btnOut"],
+						}}
+						onClick={handleLogOut}
+						isLoading={isLoading}
+						isShowText
 					>
-						{intl.formatMessage({
-							id: "template.signOut",
-							defaultMessage: "Sign Out"
-						})}
-					</Typography>
-				</Button>
+						<Logout />
+						<Typography
+							variant="body1"
+							fontWeight="400"
+						>
+							{intl.formatMessage({
+								id: "template.signOut",
+								defaultMessage: "Sign Out"
+							})}
+						</Typography>
+					</Button>
+					<Box sx={sidebarStyles["poweredWrapper"]}>
+						<Typography variant="subtitle1">
+							<FormattedMessage id="poweredBy"/>
+						</Typography>
+						<SvgIcon
+							sx={menuItemStyles.svgIcon}
+							component={() => (
+								<ExtrawestIcon
+									viewBox="0 0 37 38"
+									fontSize="large"
+									sx={{overflow: "visible"}}
+								/>
+							)}
+						/>
+					</Box>
+				</Box>
 			</Box>
 		</Box>
 	);

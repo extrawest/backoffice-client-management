@@ -80,5 +80,6 @@
 	"updateTicket": "Update ticket report",
 	"createNewTask": "Create new task",
 	"delete": "Delete",
-	"deleteTicket": "Delete ticket"
+	"deleteTicket": "Delete ticket",
+	"poweredBy": "Powered by Extrawest"
 }

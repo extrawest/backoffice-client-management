@@ -34,7 +34,8 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 	limit,
 	handleUpdateTableData,
 	handleChangePage,
-	handleChangeRowsNumber
+	handleChangeRowsNumber,
+	handleRecallClients
 }) => {
 	const [sortValue, setSortValue] = useState({ field: "", sort: "asc" });
 	const [filterValue, setFilterValue] = useState<FilterValue>({ priority: "" });
@@ -64,6 +65,7 @@ export const TicketsTable: FC<TicketsTableProps> = ({
     <div style={tableStyles.wrapper}>
       <TableAction
         handleFilter={handleFilter}
+				handleRecallClients={handleRecallClients}
       />
 			<Table
 				singleLine

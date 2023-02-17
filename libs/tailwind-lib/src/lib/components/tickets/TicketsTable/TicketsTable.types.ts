@@ -8,5 +8,6 @@ export interface TicketsTableProps {
 	limit: number,
 	handleUpdateTableData: (value: TicketsFilterDataType) => void,
 	handleChangePage: (page: number) => void,
-	handleChangeRowsNumber: ChangeEventHandler<HTMLSelectElement>
+	handleChangeRowsNumber: ChangeEventHandler<HTMLSelectElement>,
+	handleRecallClients: () => void
 }

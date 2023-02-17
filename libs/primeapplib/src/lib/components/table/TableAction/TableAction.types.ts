@@ -1,7 +1,7 @@
 import { PriorityEnum } from "@mono-redux-starter/shared/types";
 
 export interface TableActionProps {
-	// handleSearch: (value: string) => void,
+	handleRecallClients: () => void,
 	handleFilter: (value: FilterValue) => void,
 }
 

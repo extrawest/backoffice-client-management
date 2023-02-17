@@ -166,6 +166,7 @@ export const ClientsContainer: FC = () => {
 					handleUpdateTableData={handleUpdateTableData}
 					totalElements={count}
 					limit={limitElements}
+					handleRecallClients={handleRecallClients}
 				/>}
 				<Modal
 					handleClose={handleClose}

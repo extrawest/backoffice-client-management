@@ -12,7 +12,7 @@ import { TicketCreateFormWrapper } from "../../tickets/TicketCreateFormWrapper/T
 import { FilterForm } from "../FilterForm";
 import { FilterValue, TableActionProps } from "./TableAction.types";
 
-export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
+export const TableAction: FC<TableActionProps> = ({ handleFilter, handleRecallClients }) => {
 	const intl = useIntl();
 
 	const [activePriority, setActivePriority] = useState<string>("");
@@ -72,6 +72,7 @@ export const TableAction: FC<TableActionProps> = ({ handleFilter }) => {
 			>
 				<TicketCreateFormWrapper
 					handleClose={handleCloseModal}
+					handleRecallClients={handleRecallClients}
 				/>
 			</Modal>
     </div>

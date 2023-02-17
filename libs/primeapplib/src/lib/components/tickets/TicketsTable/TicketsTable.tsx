@@ -24,6 +24,7 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 	limit,
 	handleUpdateTableData,
 	handleChangePage,
+	handleRecallClients
 }) => {
 	const intl = useIntl();
 
@@ -39,6 +40,7 @@ export const TicketsTable: FC<TicketsTableProps> = ({
     <div className="w-full border-1 border-solid border-gray-400 rounded-lg overflow-hidden">
       <TableAction
         handleFilter={( value: FilterValue ) => setFilterValue(value)}
+				handleRecallClients={handleRecallClients}
       />
 			<DataTable
 				value={data}

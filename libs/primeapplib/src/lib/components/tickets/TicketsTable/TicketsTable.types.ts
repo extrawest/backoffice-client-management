@@ -8,4 +8,5 @@ export interface TicketsTableProps {
 	limit: number,
 	handleUpdateTableData: (value: TicketsFilterValue) => void,
 	handleChangePage: DataTableProps["onPage"],
+	handleRecallClients: () => void
 }

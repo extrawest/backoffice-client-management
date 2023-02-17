@@ -20,7 +20,8 @@ import { TicketCreateFormWrapperProps } from "./TicketCreateFormWrapper.types";
 
 const handleSubmit = (
 	handleClose: () => void,
-	manager_uid?: string
+	manager_uid?: string,
+	handleRecallClients?: () => void
 ) => async (values: TicketValues) => {
 	const ticketsRef = collection(
 		firestore(),
@@ -63,7 +64,7 @@ const handleSubmit = (
 				}
 			);
 		}
-
+		handleRecallClients && handleRecallClients();
 	} catch (error) {
 		console.log(error);
 	} finally {
@@ -71,7 +72,7 @@ const handleSubmit = (
 	}
 };
 
-export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ handleClose }) => {
+export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ handleClose, handleRecallClients }) => {
 
 	const [value] = useGetCollectionClients();
 	const { managerInfo } = useTypedSelector(state => state.authSlice);
@@ -98,7 +99,8 @@ export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ hand
 			<TicketForm
 				onSubmit={handleSubmit(
 					handleClose,
-					managerInfo?.uid
+					managerInfo?.uid,
+					handleRecallClients
 				)}
 				isLoading={false}
 				processedClients={processedClients}

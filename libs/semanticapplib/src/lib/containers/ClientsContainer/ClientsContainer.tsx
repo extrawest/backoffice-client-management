@@ -202,6 +202,7 @@ export const ClientsContainer: FC = () => {
 					handleChangeRowsNumber={handleChangeRowsNumber}
 					totalElements={count}
 					limit={limitElements}
+					handleRecallClients={handleRecallClients}
 				/>}
 				<Modal
 					handleClose={handleClose}

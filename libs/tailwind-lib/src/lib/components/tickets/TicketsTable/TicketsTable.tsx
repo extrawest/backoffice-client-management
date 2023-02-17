@@ -28,7 +28,8 @@ export const TicketsTable: FC<TicketsTableProps> = ({
 	limit,
 	handleUpdateTableData,
 	handleChangePage,
-	handleChangeRowsNumber
+	handleChangeRowsNumber,
+	handleRecallClients
 }) => {
 	const [sortValue, setSortValue] = useState<GridSortItem>({ field: "", sort: "asc" });
 	const [filterValue, setFilterValue] = useState<FilterValue>({ priority: "" });
@@ -54,6 +55,7 @@ export const TicketsTable: FC<TicketsTableProps> = ({
     <div className="w-full border-1 border-solid border-grayscale-400 rounded-lg overflow-hidden">
       <TableAction
         handleFilter={( value: FilterValue ) => setFilterValue(value)}
+				handleRecallClients={handleRecallClients}
       />
 			<div className="px-4">
 				<table className="table w-full">

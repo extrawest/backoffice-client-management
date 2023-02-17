@@ -12,8 +12,10 @@ import { CollectionEnum } from "@mono-redux-starter/shared/types";
 import { Box } from "@mui/material";
 import {
 	FC,
+	useContext,
 	useMemo
 } from "react";
+import { ClientsContext } from "../../../containers/ClientsContainer/ClientsContainer.context";
 import TicketForm from "../../../forms/TicketForm/TicketForm";
 import { TicketValues } from "../../../forms/TicketForm/TicketForm.types";
 import { useTypedSelector } from "../../../store";
@@ -22,7 +24,8 @@ import { TicketCreateFormWrapperProps } from "./TicketCreateFormWrapper.types";
 
 const handleSubmit = (
 	handleClose: () => void,
-	manager_uid?: string
+	manager_uid?: string,
+	handleRecallClients?: () => void
 ) => async (values: TicketValues) => {
 	const ticketsRef = collection(
 		firestore(),
@@ -65,7 +68,7 @@ const handleSubmit = (
 				}
 			);
 		}
-
+		handleRecallClients && handleRecallClients();
 	} catch (error) {
 		console.log(error);
 	} finally {
@@ -77,6 +80,7 @@ export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ hand
 
 	const [value] = useGetCollectionClients();
 	const { managerInfo } = useTypedSelector(state => state.authSlice);
+	const context = useContext(ClientsContext);
 
 	const processedClients = useMemo(
 		() => {
@@ -100,7 +104,8 @@ export const TicketCreateFormWrapper: FC<TicketCreateFormWrapperProps> = ({ hand
 			<TicketForm
 				onSubmit={handleSubmit(
 					handleClose,
-					managerInfo?.uid
+					managerInfo?.uid,
+					context?.handleRecallClients
 				)}
 				isLoading={false}
 				processedClients={processedClients}

@@ -1,6 +1,6 @@
 import { updateIsLoggedIn } from "@mono-redux-starter/redux";
 import { FC, useState } from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import {
 	AppDispatch,
@@ -16,6 +16,7 @@ import { Typography } from "../common/Typography/Typography";
 import { getContentLinks } from "./Sidebar.menu";
 import { Sidebar as PrimarySidebar } from "primereact/sidebar";
 import { IconButton } from "../common/IconButton/IconButton";
+import { ExtrawestIcon } from "../../icons";
 
 export const Sidebar: FC = () => {
 	const intl = useIntl();
@@ -87,11 +88,19 @@ export const Sidebar: FC = () => {
 								/>)
 							}
 						</ul>
-						<Button
-							onClick={handleLogOut}
-							label={intl.formatMessage({id: "template.signOut"})}
-							icon="pi pi-sign-out"
-						/>
+						<div>
+							<Button
+								onClick={handleLogOut}
+								label={intl.formatMessage({id: "template.signOut"})}
+								icon="pi pi-sign-out"
+							/>
+							<div className="flex justify-content-start align-items-center gap-2 mt-4">
+								<Typography type={TypographyEnum.SUBTITLE1}>
+									<FormattedMessage id="poweredBy" />
+								</Typography>
+								<ExtrawestIcon />
+							</div>
+						</div>
 					</div>
 				</div>
 			</PrimarySidebar>

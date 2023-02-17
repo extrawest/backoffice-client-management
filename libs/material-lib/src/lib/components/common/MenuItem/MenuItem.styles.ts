@@ -21,9 +21,10 @@ export const menuItemStyles = {
 		transition: "0.3s ease",
 		cursor: "pointer",
 		outline: "none",
+		padding: theme.spacing(5/8),
 		"&.active": {
-			fontWeight: 700,
-			textDecoration: "underline"
+			fontWeight: 600,
+			background: theme.palette.grayscale[100]
 		},
 		"&:hover": {
 			opacity: "0.7",

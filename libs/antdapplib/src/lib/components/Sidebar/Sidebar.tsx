@@ -1,6 +1,6 @@
 import { updateIsLoggedIn, updateManager } from "@mono-redux-starter/redux";
 import { FC, useState } from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
 	AppDispatch,
@@ -28,6 +28,9 @@ import { TypographyTitle } from "../common/TypographyTitle/TypographyTitle";
 import { TypographyParagraph } from "../common/TypographyParagraph/TypographyParagraph";
 import { useEffect } from "react";
 import { ItemType } from "antd/es/menu/hooks/useItems";
+import { ExtrawestIcon } from "../../icons";
+import { sidebarStyles } from "./Sidebar.styles";
+import { pxToRem } from "@mono-redux-starter/shared/utils";
 
 export const Sidebar: FC = () => {
 	const intl = useIntl();
@@ -103,66 +106,85 @@ export const Sidebar: FC = () => {
 								Admin
 							</TypographyParagraph>
 						</Col>
-					</Row>
-					<Row
-						gutter={[8,16]}
-						justify="start"
-						align={"middle"}
-						style={{width: "100%"}}
-
-					>
-						<Menu
-							selectedKeys={[currentMenuItem]}
-							mode="vertical"
-							style={{
-								width: "100%",
-								border: "none",
-								boxShadow: "none"
-							}}
-							items={getContentLinks(intl)?.map(({ href, title, icon }): ItemType => (
-									{
-										label: (
-											<MenuItem
-												icon={icon}
-												href={href}
-												title={title}
-												key={title}
-												handleClick={handleCloseSidebar}
-											/>
-										),
-										key: href
-									}))}
-						/>
-						{
-							}
-					</Row>
-					<Button
-						onClick={handleLogOut}
-						type="primary"
-						style={{
-							marginTop: "auto",
-						}}
-					>
 						<Row
-							gutter={[-10, 16]}
+							gutter={[8,16]}
+							justify="start"
 							align={"middle"}
+							style={{width: "100%"}}
+
 						>
-							<LogoutOutlined style={{fontSize: "1.5rem", color: commonWhite}}/>
-							<Divider
-								type="vertical"
-							/>
-							<TypographyParagraph
-								textAlign="start"
-								// strong
+							<Menu
+								selectedKeys={[currentMenuItem]}
+								mode="vertical"
 								style={{
-									margin: 0,
-									color: commonWhite
+									width: "100%",
+									border: "none",
+									boxShadow: "none"
+								}}
+								items={getContentLinks(intl)?.map(({ href, title, icon }): ItemType => (
+										{
+											label: (
+												<MenuItem
+													icon={icon}
+													href={href}
+													title={title}
+													key={title}
+													handleClick={handleCloseSidebar}
+												/>
+											),
+											key: href
+										}))}
+							/>
+							{
+								}
+						</Row>
+					</Row>
+					<Row>
+						<Col span={24}>
+							<Button
+								onClick={handleLogOut}
+								type="primary"
+								style={{
+									marginTop: "auto",
 								}}
 							>
-								{intl.formatMessage({id: "template.signOut"})}
+								<Row
+									gutter={[-10, 16]}
+									align={"middle"}
+								>
+									<LogoutOutlined style={{fontSize: "1.5rem", color: commonWhite}}/>
+									<Divider
+										type="vertical"
+									/>
+									<TypographyParagraph
+										textAlign="start"
+										// strong
+										style={{
+											margin: 0,
+											color: commonWhite
+										}}
+									>
+										{intl.formatMessage({id: "template.signOut"})}
+									</TypographyParagraph>
+								</Row>
+							</Button>
+						</Col>
+						<Col
+							span={24}
+							style={sidebarStyles.copyright}
+						>
+							<TypographyParagraph
+								style={{
+									fontWeight: 500,
+									fontSize: pxToRem(18),
+									margin: 0
+								}}
+							>
+								<FormattedMessage id="poweredBy" />
 							</TypographyParagraph>
-						</Row>
-					</Button>
+							<ExtrawestIcon />
+						</Col>
+					</Row>
 				</Row>
 			</Drawer>
 		</>

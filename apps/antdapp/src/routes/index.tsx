@@ -22,7 +22,7 @@ const AppRoutes: FC = () => {
 						{...route}
 						key={`r_${index}_${route.path}`}
 						element={route.isAuth ? (
-							<PrivateRoute roles={route.roles}>
+							<PrivateRoute >
 								<PageLayout>
 									{route.element}
 								</PageLayout>
@@ -30,7 +30,7 @@ const AppRoutes: FC = () => {
 						) : (
 							<PublicRoute
 								denyShowLoginPage={route?.denyShowLoginPage}
-								roles={route.roles}
+
 							>
 								<PageLayout>
 									{route.element}

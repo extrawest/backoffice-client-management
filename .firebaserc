@@ -1,0 +1,27 @@
+{
+  "projects": {
+    "default": "panel-app-8fcaa"
+  },
+  "targets": {
+    "panel-app-8fcaa": {
+      "hosting": {
+        "material-hosting": [
+          "material-panel-app"
+        ],
+        "tailwind-hosting": [
+          "tailwind-panel-app"
+        ],
+        "primeapp-hosting": [
+          "primeapp-panel-app"
+        ],
+        "semanticapp-hosting": [
+          "semancitapp-panel-app"
+        ],
+        "antdapp-hosting": [
+          "antdapp-panel"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,17 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AuthResponse } from "@mono-redux-starter/shared/types";
+import { AuthResponse, Manager } from "@mono-redux-starter/shared/types";
 import { login } from "../apis/authService";
 import { logOut } from "../apis/userService";
 
-const initialState: AuthResponse & { isLoggedIn: boolean } = {
+const initialState: AuthResponse = {
 	access_token: "",
-	isLoggedIn: false
+	isLoggedIn: false,
+	managerInfo: undefined
 };
 
 export const authSlice = createSlice({
 	name: "authSlice",
 	initialState,
 	reducers: {
+		updateManager(
+			state, action: PayloadAction<Manager | undefined>
+		) {
+			state.managerInfo = action.payload;
+		},
 		updateAccessToken(
 			state, action: PayloadAction<string>
 		) {
@@ -44,5 +50,7 @@ export const authSlice = createSlice({
 	},
 });
 
+export const getManagerInfo = (state: AuthResponse) => state.managerInfo;
+
 export const authReducer = authSlice.reducer;
-export const { updateAccessToken, updateIsLoggedIn } = authSlice.actions;
+export const { updateAccessToken, updateIsLoggedIn, updateManager } = authSlice.actions;

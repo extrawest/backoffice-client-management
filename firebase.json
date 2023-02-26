@@ -1,0 +1,80 @@
+{
+  "hosting": [
+		{
+
+			"target": "material-hosting",
+			"public": "dist/apps/materialapp",
+			"ignore": [
+				"firebase.json",
+				"**/.*",
+				"**/node_modules/**"
+			],
+			"rewrites": [
+				{
+					"source": "**",
+					"destination": "/index.html"
+				}
+			]
+		},
+		{
+			"target": "tailwind-hosting",
+			"public": "dist/apps/tailwindapp",
+			"ignore": [
+				"firebase.json",
+				"**/.*",
+				"**/node_modules/**"
+			],
+			"rewrites": [
+				{
+					"source": "**",
+					"destination": "/index.html"
+				}
+			]
+		},
+		{
+			"target": "primeapp-hosting",
+			"public": "dist/apps/primeapp",
+			"ignore": [
+				"firebase.json",
+				"**/.*",
+				"**/node_modules/**"
+			],
+			"rewrites": [
+				{
+					"source": "**",
+					"destination": "/index.html"
+				}
+			]
+		},
+		{
+			"target": "semanticapp-hosting",
+			"public": "dist/apps/semanticapp",
+			"ignore": [
+				"firebase.json",
+				"**/.*",
+				"**/node_modules/**"
+			],
+			"rewrites": [
+				{
+					"source": "**",
+					"destination": "/index.html"
+				}
+			]
+		},
+		{
+			"target": "antdapp-hosting",
+			"public": "dist/apps/antdapp",
+			"ignore": [
+				"firebase.json",
+				"**/.*",
+				"**/node_modules/**"
+			],
+			"rewrites": [
+				{
+					"source": "**",
+					"destination": "/index.html"
+				}
+			]
+		}
+	]
+}

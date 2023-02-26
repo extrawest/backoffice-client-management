@@ -1,112 +1,49 @@
+![Maintaner](https://img.shields.io/badge/maintainer-extrawest.com-blue)
+![GitHub license](https://img.shields.io/github/license/extrawest/react-nx-starter)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/extrawest/react-nx-starter/graphs/commit-activity)
+![GitHub release](https://img.shields.io/github/v/release/extrawest/react-nx-starter)
+[![GitHub tag](https://img.shields.io/github/v/tag/extrawest/react-nx-starter)](https://github.com/extrawest/react-nx-starter/tags/)
 
-### Project structure
-```text
-react_app
-├──  .env
-├──  .env.dist
-├── tsconfig.base.json
-├── workspace.json
-├── .eslintrc
-├── .editorconfig
-├── .prettierrc
-├── .prettierignore
-├── .nxignore
-├──  package.json
-├──  package-lock.json
-├── apps
-    ├── template
-        ├── favicon.ico
-        ├── index.html
-        |── main.tsx
-        ├── src
-        |    ├── app
-        |    └── assets
-        |    └── environments
-        |    └── pages
-        |    └── routes
-        |    └── theme
-    ├── template-e2e
-    |  └── ...
-├── libs
-    ├── redux
-    |   |──src 
-    |   |   ├── apis
-    |   |   |   ├── ...
-    |   |   ├── axios
-    |   |   |   ├── ...
-    |   |   ├── middleware
-    |   |   |   ├── ...
-    |   |   ├── slices
-    |   |       ├── ...          
-│   ├── shared
-    |   |──src 
-    |   |   ├── hocs
-    |   |   |   ├── ...
-    |   |   ├── hooks
-    |   |   |   ├── ...
-    |   |   ├── i18n
-    |   |   |   ├── ...
-    |   |   ├── permissions
-    |   |   |   ├── ...
-    |   |   ├── types
-    |   |   |   ├── dto
-    |   |   |   ├── interfaces
-    |   |   |   ├── enums
-    |   |   ├── ui
-    |   |   |   ├── ...
-    |   |   ├── utils
-    |   |   |   ├── ...
-    └── templateapp
-        └── src
-            ├── assets
-            │  ├── images
-            |  └── ...
-            ├── components
-            |  ├── common
-            |  |  ├── ...
-            |  |  └── ...
-            │  └── ...
-            ├── hocs
-            │ └── ...
-            ├── hooks
-            │ └── ...
-            ├── layouts
-            |   └── ...
-            ├── routes
-            |   └── ...
-            ├── forms
-            |   └── ...
-            ├── containers
-            │   └── ...
-            ├── utils
-            |   ├── ....
-            |──...
+### List of Tools
 
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-15B50D?style=for-the-badge&logoColor=white)
+![Semantic UI](https://img.shields.io/badge/Semantic--UI-C5CA03?style=for-the-badge&logoColor=white)
+![PrimeFaces](https://img.shields.io/badge/PrimeFaces-0081CB?style=for-the-badge&logoColor=white)
+![Ant Design](https://img.shields.io/badge/Ant--Design-D00510?style=for-the-badge&logoColor=white)
+![Material UI](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)
+![Nx](https://img.shields.io/badge/workspace-143157?style=for-the-badge&logo=NX&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCB2B?style=for-the-badge&logo=firebase&logoColor=333333)
 
-# Available Scripts
+# Backpanel panel App
 
-Expected node version ">=12"
+React application with different 5 most design system (Ant, Material UI, Tailwind, Semantic, PrimeFaces)
 
-Clone the repo on your computer. In your terminal, cd into the directory you just added
-To install all dependencies, run
+## Demo
 
-npm i || yarn install
+[![Tailwind App](https://img.shields.io/badge/Tailwind--App-15B50D?style=for-the-badge&logoColor=white)](https://tailwind-panel-app.firebaseapp.com/)
+[![Semantic UI App](https://img.shields.io/badge/Semantic--UI--App-C5CA03?style=for-the-badge&logoColor=white)](https://semancitapp-panel-app.firebaseapp.com/)
+[![PrimeFaces App](https://img.shields.io/badge/PrimeFaces--App-0081CB?style=for-the-badge&logoColor=white)](https://primeapp-panel-app.firebaseapp.com/)
+[![Ant Design App](https://img.shields.io/badge/Ant--Design--App-D00510?style=for-the-badge&logoColor=white)](https://antdapp-panel.firebaseapp.com/)
+[![Material UI App](https://img.shields.io/badge/Material--UI--App-0081CB?style=for-the-badge&logo=mui&logoColor=white)](https://material-panel-app.firebaseapp.com/)
 
 ## Development
 
-## Development server
+Install all dependencies use `npm`
 
-For a dev templatel server run: 
-`npm run start:template`
-or
-`yarn start:template`.
+npm i
 
-Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+For a dev Material app server run:
+`npm run start:material`
 
+Navigate to http://localhost:3000/. The app will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `npm run build:template` to build the template application. The build artifacts will be stored in the `dist/` directory.
+Run `npm run build:material` to build the material app application. The build artifacts will be stored in the `dist/` directory.
 
 Run `npm run run:many` to build all projects. The build artifacts will be stored in the `dist/` directory. Use this command for CI
 
@@ -118,29 +55,27 @@ Run `npm run lint:all` to check the lint for all applications, libs.
 
 Run `npm run lint:all:fix` to fix the lint errors.
 
-### Config params
+## ENVIRONMENT VARIABLES LIST
 
 1. `NX_BACKEND_URL`- api endpoint
 2. `NX_CRYPTO_JS_KEY` - key for decrypt & encrypt
+3. `NX_FIREBASE_API_KEY ` - firebase api key
+4. `NX_FIREBASE_AUTH_DOMAIN` - firebase auth domain
+5. `NX_FIREBASE_DATA_BASE_URL` - firebase data base url
+6. `NX_FIREBASE_PROJECT_ID` - firebase project id
+7. `NX_FIREBASE_STORAGE_BUCKET` - firebase storage bucket
+8. `NX_FIREBASE_MESSAGING_SENDER_ID` - firebase messaging sender id
+9. `NX_FIREBASE_APP_ID` - firebase app id
 
-Code Splitting
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Authors
+Developer: Denys Bobrov
 
-Analyzing the Bundle Size
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Reviewer: Anatolii Krotov
 
-Making a Progressive Web App
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- [Powered by Extrawest](https://www.extrawest.com/)
 
-Advanced Configuration
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+![Logo](https://www.extrawest.com/wp-content/uploads/2017/08/logo-2.png)
 
-Deployment
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## License
 
-yarn build fails to minify
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-
-Created by Extrawest React.js Team
-Extrawest.com, 2022
+[MIT](https://choosealicense.com/licenses/mit/)

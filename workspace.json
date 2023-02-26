@@ -1,21 +1,25 @@
 {
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
-  "version": 2,
-  "projects": {
-    "redux": "libs/redux",
-    "shared": "libs/shared",
-    "shared-hoks": "libs/shared/hoks",
-    "shared-hooks": "libs/shared/hooks",
-    "shared-permissions": "libs/shared/permissions",
-    "shared-types": "libs/shared/types",
-    "shared-ui": "libs/shared/ui",
-    "shared-utils": "libs/shared/utils",
-    "template-material": "apps/template-material",
-    "template-tailwind": "apps/template-tailwind",
-    "template-semantic": "apps/template-semantic",
-    "template-antd": "apps/template-antd",
-    "template-prime": "apps/template-prime",
-    "template-e2e": "apps/template-e2e",
-    "tamplateapp": "libs/tamplateapp"
-  }
+	"$schema": "./node_modules/nx/schemas/workspace-schema.json",
+	"version": 2,
+	"projects": {
+		"antdapp": "apps/antdapp",
+		"antdapplib": "libs/antdapplib",
+		"firebase": "libs/firebase",
+		"materialapp": "apps/materialapp",
+		"material-lib": "libs/material-lib",
+		"primeapp": "apps/primeapp",
+		"primeapplib": "libs/primeapplib",
+		"redux": "libs/redux",
+		"semanticapp": "apps/semanticapp",
+		"semanticapplib": "libs/semanticapplib",
+		"shared": "libs/shared",
+		"shared-hoks": "libs/shared/hoks",
+		"shared-hooks": "libs/shared/hooks",
+		"shared-permissions": "libs/shared/permissions",
+		"shared-types": "libs/shared/types",
+		"shared-ui": "libs/shared/ui",
+		"shared-utils": "libs/shared/utils",
+		"tailwindapp": "apps/tailwindapp",
+		"tailwind-lib": "libs/tailwind-lib"
+	}
 }
